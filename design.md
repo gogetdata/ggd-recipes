@@ -35,6 +35,26 @@ where $PREFIX is populated by `conda` species will be like `Homo_sapiens` or `Mu
 build will be `grch37` or `mm10` (must be lower-case) and recipe will be `$build-$name`, .e.g.
 `hg19-clinvar`
 
+## Chromosome Naming
+
+For each genome build, we will register a convention on chromosome naming. E.g. for hg19 recipes,
+'chr' prefix will be required. For grch37, it will be avoided. For most species, we hope to have
+a single build so we aren't replicating recipes just to add/remove 'chr'.
+
+This convention will go in a yaml and we'll provide a `ggd` sub-command to strip or add prefixes.
+
+## Data Preprocessing and QC
+
+Where possible all files should be bgzipped and tabixed. 
+Records should be in `natural sort` order (1, 2, ... 9, 10, 11 instead of `1, 10, 11, ... 19, 2, 20`.
+
+VCF files will go through a minimal validator. BED files will be checked for abberant spaces.
+
+SAM files should be converted to sorted, indexed BAM.
+
+If we store a genome_sizes file for each genome build, we can check that all records fall in the
+expected bounds.
+
 ## Plans
 
 We will provide a `ggd` executable that wraps some conda functionality and provides
