@@ -38,20 +38,19 @@ build will be `grch37` or `mm10` (must be lower-case) and recipe will be `$build
 ## Chromosome Naming
 
 For each genome build, there will be a required .genome file in this repo that lists
-the the chromosomes in their prescribed order and their lengths.
+that the chromosomes in their prescribed order and their lengths.
 
 This genome file will dictate, for that build:
 + whether to use the 'chr' prefix or not
 + the chromosome ordering
 + the valid chromosomes.
 
-This convention will go in a yaml and we'll provide a `ggd` sub-command to strip or add prefixes
-and sort common file formats according to a genome file.
+We will provide `ggd` sub-command to strip or add prefixes and sort common file formats according to a genome file.
 
 ## Data Preprocessing and QC
 
 Where possible all files should be bgzipped and tabixed. 
-Records should be in the order dictated by the genome file as described above.
+Records should be in the order dictated by the genome file described above.
 
 All text-based files will be checked for sort-order as part of testing.
 
