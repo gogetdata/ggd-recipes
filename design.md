@@ -47,6 +47,7 @@ This convention will go in a yaml and we'll provide a `ggd` sub-command to strip
 
 Where possible all files should be bgzipped and tabixed. 
 Records should be in `natural sort` order (1, 2, ... 9, 10, 11 instead of `1, 10, 11, ... 19, 2, 20`.
+All text-based files will be checked for sort-order as part of testing.
 
 VCF files will go through a minimal validator. BED files will be checked for abberant spaces.
 
@@ -54,6 +55,15 @@ SAM files should be converted to sorted, indexed BAM.
 
 If we store a genome_sizes file for each genome build, we can check that all records fall in the
 expected bounds.
+
+
+Should there be a convention to [vt normalize](https://github.com/atks/vt) VCFs?
+
+VCFs that have been `normalized` and `decomposed` should have a naming convention in the file
+to indicate. e.g. .vt-norm-decomp.vcf.gz.
+
+A single recipe may provide a lightly processed VCF and one that has also been normalized and decomposed?
+
 
 ## Plans
 
