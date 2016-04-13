@@ -57,6 +57,8 @@ If we store a genome_sizes file for each genome build, we can check that all rec
 expected bounds.
 
 
+#### VCF QC
+
 Should there be a convention to [vt normalize](https://github.com/atks/vt) VCFs?
 
 VCFs that have been `normalized` and `decomposed` should have a naming convention in the file
@@ -64,6 +66,16 @@ to indicate. e.g. .vt-norm-decomp.vcf.gz.
 
 A single recipe may provide a lightly processed VCF and one that has also been normalized and decomposed?
 
+### Fasta QC
+
+all fastas should have a .fai (what about .dict)?
+
+Should we enforce bwa and bowtie(2) indexing of of fasta?
+
+## Subdirectories
+
+a pre-link.sh script may (in practice) create any sub-directories. How can we
+track this so we can still use `ggd recipe-files $recipe` ? glob.glob on the directory?
 
 ## Plans
 
