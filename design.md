@@ -37,25 +37,27 @@ build will be `grch37` or `mm10` (must be lower-case) and recipe will be `$build
 
 ## Chromosome Naming
 
-For each genome build, we will register a convention on chromosome naming. E.g. for hg19 recipes,
-'chr' prefix will be required. For grch37, it will be avoided. For most species, we hope to have
-a single build so we aren't replicating recipes just to add/remove 'chr'.
+For each genome build, there will be a required .genome file in this repo that lists
+the the chromosomes in their prescribed order and their lengths.
 
-This convention will go in a yaml and we'll provide a `ggd` sub-command to strip or add prefixes.
+This genome file will dictate, for that build:
++ whether to use the 'chr' prefix or not
++ the chromosome ordering
++ the valid chromosomes.
+
+This convention will go in a yaml and we'll provide a `ggd` sub-command to strip or add prefixes
+and sort common file formats according to a genome file.
 
 ## Data Preprocessing and QC
 
 Where possible all files should be bgzipped and tabixed. 
-Records should be in `natural sort` order (1, 2, ... 9, 10, 11 instead of `1, 10, 11, ... 19, 2, 20`.
+Records should be in the order dictated by the genome file as described above.
+
 All text-based files will be checked for sort-order as part of testing.
 
 VCF files will go through a minimal validator. BED files will be checked for abberant spaces.
 
 SAM files should be converted to sorted, indexed BAM.
-
-If we store a genome_sizes file for each genome build, we can check that all records fall in the
-expected bounds.
-
 
 #### VCF QC
 
@@ -106,6 +108,8 @@ The path of `$PREFIX/$species/$build/$recipe/` will be availabe as `$RECIPE_DIR`
 
 One of the reasons for the success of the bioconda project is the amazing automated testing. We will
 need to figure out how to replicate this for data-based recipes.
+
+This is started in the [ggd-utils repo](https://github.com/gogetdata/ggd-utils/)
 
 ## Participation
 
