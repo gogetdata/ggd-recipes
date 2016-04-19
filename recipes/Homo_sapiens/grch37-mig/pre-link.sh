@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/GRCh37/MIG.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/grch37-mig/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/grch37-mig/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/
 
 baseurl=http://bcbio_nextgen.s3.amazonaws.com/MIG.zip
 mkdir -p prioritization
@@ -14,3 +14,4 @@ file=MIG.bed
 sed 's/^chr//g' $file > $file.tmp
 mv $file.tmp $file
 cd ..
+

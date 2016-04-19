@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/hg38/dream-syn3-crossmap.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/hg38-dream-syn3-crossmap/ && cd $PREFIX/share/ggd/Homo_sapiens/hg38/hg38-dream-syn3-crossmap/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/ && cd $PREFIX/share/ggd/Homo_sapiens/hg38/
 
 dir=validation/dream-syn3-crossmap
 orig=synthetic_challenge_set3_tumor_20pctmasked_truth-crossmap-hg38
@@ -17,3 +17,4 @@ cp $orig/${orig}_sv_DEL.bed $dir/truth_DEL.bed
 cp $orig/${orig}_sv_DUP.bed $dir/truth_DUP.bed
 cp $orig/${orig}_sv_INV.bed $dir/truth_INV.bed
 cp $orig/${orig}_sv_INV.bed $dir/truth_INS.bed
+

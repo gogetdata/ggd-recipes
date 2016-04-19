@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/mm10/mirbase.yaml
 
-mkdir -p $PREFIX/share/ggd/Mus_musculus/mm10/mm10-srnaseq/ && cd $PREFIX/share/ggd/Mus_musculus/mm10/mm10-srnaseq/
+mkdir -p $PREFIX/share/ggd/Mus_musculus/mm10/ && cd $PREFIX/share/ggd/Mus_musculus/mm10/
 
 mkdir -p srnaseq
 cd srnaseq
@@ -28,3 +28,4 @@ wget --no-check-certificate -q -N -c -O miR_Family_Info.txt.zip http://www.targe
 wget --no-check-certificate -q -N -c ftp://mirbase.org/pub/mirbase/21/database_files/mirna_mature.txt.gz
 # tdrmapper
 wget --no-check-certificate -N -c -O trna_mature_pre.fa https://github.com/sararselitsky/tDRmapper/raw/master/mm10_mature_pre_for_tdrMapper.fa
+

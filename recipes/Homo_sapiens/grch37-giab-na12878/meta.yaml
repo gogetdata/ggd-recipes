@@ -10,8 +10,10 @@ package:
   name: grch37-giab-na12878
   version: v2_19_1
 requirements:
-  build: []
-  run: []
+  build:
+  - htslib
+  run:
+  - htslib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

@@ -11,8 +11,12 @@ package:
   name: grch37-ga4gh-problem-regions
   version: '20151116'
 requirements:
-  build: []
-  run: []
+  build:
+  - htslib
+  - zlib
+  run:
+  - htslib
+  - zlib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

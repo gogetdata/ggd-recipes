@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/hg38-noalt/1000g_indels.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38-noalt/hg38-noalt-1000g_indels/ && cd $PREFIX/share/ggd/Homo_sapiens/hg38-noalt/hg38-noalt-1000g_indels/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38-noalt/ && cd $PREFIX/share/ggd/Homo_sapiens/hg38-noalt/
 
 url=https://s3.amazonaws.com/biodata/hg38_bundle
 base=1000G_phase1.indels.b38.primary_assembly
@@ -13,3 +13,4 @@ for suffix in .vcf.gz .vcf.gz.tbi
 do
   [[ -f variation/$new$suffix ]] || wget -c -O variation/$new$suffix $url/$base$suffix
 done
+

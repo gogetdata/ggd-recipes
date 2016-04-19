@@ -9,8 +9,10 @@ package:
   name: hg19-battenberg
   version: v3.20150610
 requirements:
-  build: []
-  run: []
+  build:
+  - perl
+  run:
+  - perl
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

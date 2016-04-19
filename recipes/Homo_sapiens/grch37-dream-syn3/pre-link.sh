@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/GRCh37/dream-syn3.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/grch37-dream-syn3/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/grch37-dream-syn3/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/
 
 dir=validation/dream-syn3
 orig=synthetic_challenge_set3_tumor_20pctmasked_truth
@@ -17,3 +17,4 @@ cp ${orig}_sv_DEL.bed $dir/truth_DEL.bed
 cp ${orig}_sv_DUP.bed $dir/truth_DUP.bed
 cp ${orig}_sv_INS.bed $dir/truth_INS.bed
 cp ${orig}_sv_INV.bed $dir/truth_INV.bed
+

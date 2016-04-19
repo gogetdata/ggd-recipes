@@ -13,8 +13,10 @@ package:
   name: hg38-noalt-coverage
   version: 2015.11.17
 requirements:
-  build: []
-  run: []
+  build:
+  - htslib
+  run:
+  - htslib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

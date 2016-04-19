@@ -7,8 +7,12 @@ package:
   name: hg19-dbnsfp
   version: 3.1c
 requirements:
-  build: []
-  run: []
+  build:
+  - htslib
+  - zlib
+  run:
+  - htslib
+  - zlib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

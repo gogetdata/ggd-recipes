@@ -7,8 +7,12 @@ package:
   name: hg19-1000g_snps
   version: '2.8'
 requirements:
-  build: []
-  run: []
+  build:
+  - htslib
+  - zlib
+  run:
+  - htslib
+  - zlib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

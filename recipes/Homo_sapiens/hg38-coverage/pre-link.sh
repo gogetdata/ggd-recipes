@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/hg38/coverage.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/hg38-coverage/ && cd $PREFIX/share/ggd/Homo_sapiens/hg38/hg38-coverage/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/ && cd $PREFIX/share/ggd/Homo_sapiens/hg38/
 
 repeats=coverage/problem_regions/repeats
 mkdir -p $repeats
@@ -13,3 +13,4 @@ url=https://github.com/lh3/varcmp/raw/bb5b616526c5c3ecb46abfd9877e1bd6d50d1802/s
 out=$repeats/LCR.bed.gz
 wget --no-check-certificate -O $out -c $url
 tabix -f -p bed $out
+

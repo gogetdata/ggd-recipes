@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/hg19/battenberg.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg19/hg19-battenberg/ && cd $PREFIX/share/ggd/Homo_sapiens/hg19/hg19-battenberg/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg19/ && cd $PREFIX/share/ggd/Homo_sapiens/hg19/
 
 proburl=https://github.com/cancerit/cgpBattenberg/raw/dev/perl/share/battenberg/probloci.txt.gz
 impute_info=battenberg/impute/impute_info.txt
@@ -22,3 +22,4 @@ sed -i "s/^\([0-9]\+\)\t/chr\1\t/g" $impute_info
 sed -i "s/^X/chrX/g" $impute_info
 sed -i "s/^\([0-9]\+\)\t/chr\1\t/g" battenberg/1000genomesloci/1000genomesloci2012_chr*
 sed -i "s/^X/chrX/g" battenberg/1000genomesloci/1000genomesloci2012_chr23.txt
+

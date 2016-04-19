@@ -3,7 +3,7 @@ set -eo pipefail
 
 # converted from: ../cloudbiolinux/ggd-recipes/GRCh37/mirbase.yaml
 
-mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/grch37-srnaseq/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/grch37-srnaseq/
+mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/
 
 mkdir -p srnaseq
 cd srnaseq
@@ -31,3 +31,4 @@ wget --no-check-certificate -q -N -c -O Rfam_for_miRDeep.fa.gz https://github.co
 wget --no-check-certificate -q -N -c -O Summary_Counts.txt.zip http://www.targetscan.org/vert_70/vert_70_data_download/Summary_Counts.all_predictions.txt.zip && unzip Summary_Counts.txt.zip
 wget --no-check-certificate -q -N -c -O miR_Family_Info.txt.zip http://www.targetscan.org/vert_70/vert_70_data_download/miR_Family_Info.txt.zip && unzip miR_Family_Info.txt.zip
 wget --no-check-certificate -q -N -c ftp://mirbase.org/pub/mirbase/21/database_files/mirna_mature.txt.gz
+
