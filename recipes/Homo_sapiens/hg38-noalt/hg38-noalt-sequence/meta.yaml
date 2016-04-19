@@ -9,7 +9,7 @@ build:
 extra:
   authors: bcbio
 package:
-  name: hg38-noalt-seq
+  name: hg38-noalt-sequence
   version: '0.1'
 requirements:
   build: []

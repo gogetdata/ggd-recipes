@@ -8,9 +8,9 @@ mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/ && cd $PREFIX/share/ggd/Homo_sapie
 url=ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome
 base=GRCh38_full_analysis_set_plus_decoy_hla
 new=hg38
-mkdir -p seq
+mkdir -p sequence
 for suffix in .fa .dict .fa.fai
 do
-  [[ -f seq/$new$suffix ]] || wget -c -O seq/$new$suffix $url/$base$suffix
+  [[ -f sequence/$new$suffix ]] || wget -c -O sequence/$new$suffix $url/$base$suffix
 done
 

@@ -7,7 +7,7 @@ build:
 extra:
   authors: bcbio
 package:
-  name: hg38-seq
+  name: hg38-sequence
   version: 1000g.20150219
 requirements:
   build: []
