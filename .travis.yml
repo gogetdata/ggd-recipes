@@ -3,5 +3,5 @@ os:
 sudo: required
 dist: trusty
 language: c
-install: scripts/travis-install.sh
+install: scripts/travis-setup.sh
 script: travis_wait 119 scripts/travis-test.sh

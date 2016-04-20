@@ -4,6 +4,7 @@ about:
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 4
 extra:
   authors: bcbio
 package:

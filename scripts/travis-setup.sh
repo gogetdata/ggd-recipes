@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail 
+set -exo pipefail 
 
 # NOTE: much of this is taken from bioconda.
 if [[ $TRAVIS_OS_NAME = "linux" ]]; then
@@ -10,10 +10,10 @@ if [[ $TRAVIS_OS_NAME = "linux" ]]; then
 	mkdir -p /anaconda/conda-bld/{linux,osx}-64
 	export PATH=/anaconda/bin:$PATH
 	conda config --add channels bioconda
-	curl -o /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.1/check-sort-order-linux_amd64
+	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.1/check-sort-order-linux_amd64
 	chmod +x /anaconda/bin/check-sort-order
+	conda install -y conda-build-all --channel conda-forge
 	conda install -y conda-build anaconda-client
-
 else
 	# http://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
 	echo "TODO!!!"
