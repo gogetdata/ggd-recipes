@@ -1,12 +1,15 @@
 about:
-  summary: ' Medically Interpretable Genes, compiled by Personalis: http://www.genomemedicine.com/content/pdf/s13073-015-0197-4.pdf
-
-    '
+  summary: 'Medically Interpretable Genes, compiled by Personalis: http://www.genomemedicine.com/content/pdf/s13073-015-0197-4.pdf'
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
   authors: bcbio
+  genome-build: hg19
+  species: Homo_sapiens
+  keywords:
+  - clinical
 package:
   name: hg19-mig
   version: '20150730'

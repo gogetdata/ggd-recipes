@@ -1,10 +1,16 @@
 about:
-  summary: " Truth sets from Illumina Platinum Genomes project\n\n http://www.illumina.com/platinumgenomes/\n"
+  summary: "Truth sets from Illumina Platinum Genomes project\n\n http://www.illumina.com/platinumgenomes/\n"
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
   authors: bcbio
+  genome-build: hg19
+  species: Homo_sapiens
+  keywords:
+  - valiation
+  - truth
 package:
   name: hg19-platinum-genome-na12878
   version: v8_0_1

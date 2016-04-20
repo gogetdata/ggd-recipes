@@ -9,6 +9,18 @@ baseurl=https://s3.amazonaws.com/biodata/coverage/prioritize/prioritize-cancer-h
 outdir=coverage/prioritize
 mkdir -p $outdir
 cd $outdir
-wget --no-check-certificate -c -O cancer.tar.gz $baseurl
+wget --quiet --no-check-certificate -c -O cancer.tar.gz $baseurl
 tar -xzvpf cancer.tar.gz
+rm cancer.tar.gz
+cd cancer
+rm *.tbi
 
+wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome
+
+for f in *.bed.gz; do
+	gsort $f hg19.genome | bgzip -c > tmp
+	mv tmp $f
+	tabix $f
+done
+
+rm hg19.genome

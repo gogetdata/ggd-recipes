@@ -1,5 +1,5 @@
 about:
-  summary: " Ensembl GTF file distributed by Ensembl for hg38-noalt\n\n Cleans GTF\
+  summary: "Ensembl GTF file distributed by Ensembl for hg38-noalt\n\n Cleans GTF\
     \ file by converting chromosome names to standard names \n\n Uses https://github.com/dpryan79/ChromosomeMappings\
     \ to remap the chromosome names\n"
 build:
@@ -7,6 +7,10 @@ build:
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38-noalt
+  species: Homo_sapiens
+  keywords:
+  - naming
 package:
   name: hg38-noalt-gtf
   version: '78'

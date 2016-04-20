@@ -1,14 +1,19 @@
 about:
-  summary: " Transcript, annotation and indices for RNA-seq analysis\n\n Prepared\
-    \ from Ensembl transcripts using: \n\n https://github.com/chapmanb/cloudbiolinux/blob/master/utils/prepare_tx_gff.py\n"
+  summary: "RADAR RNA editing events: (http://www.stanford.edu/~gokulr/database/Human_AG_all_hg19_v2.txt)\n\
+    \n installs a BED file of the RADAR events"
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
   authors: bcbio
+  genome-build: hg19
+  species: Homo_sapiens
+  keywords:
+  - RNA
 package:
-  name: grch37-transcripts
-  version: 2015.12.01
+  name: hg19-radar
+  version: '1'
 requirements:
   build: []
   run: []

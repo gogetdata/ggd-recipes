@@ -4,8 +4,14 @@ about:
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 2
 extra:
   authors: bcbio
+  genome-build: GRCh37
+  species: Homo_sapiens
+  keywords:
+      - GIAB
+      - truth-set
 package:
   name: grch37-giab-na12878
   version: v2_19_1

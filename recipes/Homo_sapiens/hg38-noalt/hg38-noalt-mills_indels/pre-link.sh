@@ -11,6 +11,6 @@ new=Mills_and_1000G_gold_standard.indels
 mkdir -p variation
 for suffix in .vcf.gz .vcf.gz.tbi
 do
-  [[ -f variation/$new$suffix ]] || wget --no-check-certificate -c -O variation/$new$suffix $url/$base$suffix
+  [[ -f variation/$new$suffix ]] || wget --quiet --no-check-certificate -c -O variation/$new$suffix $url/$base$suffix
 done
 

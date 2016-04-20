@@ -1,8 +1,13 @@
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
   authors: bcbio
+  genome-build: hg19
+  species: Homo_sapiens
+  keywords:
+  - ancestral
 package:
   name: hg19-ancestral
   version: '20141010'
@@ -14,3 +19,5 @@ requirements:
 #source:
     #url: http://example.com/ex.tgz
     #fn: ex.tgz
+about:
+  summary: "ancestral"

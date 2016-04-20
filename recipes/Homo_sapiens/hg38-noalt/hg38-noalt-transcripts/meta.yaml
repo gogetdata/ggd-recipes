@@ -1,11 +1,16 @@
 about:
-  summary: " Transcript, annotation and indices for RNA-seq analysis\n\n Prepared\
+  summary: "Transcript, annotation and indices for RNA-seq analysis\n\n Prepared\
     \ from Ensembl transcripts using: \n\n https://github.com/chapmanb/cloudbiolinux/blob/master/utils/prepare_tx_gff.py\n"
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38-noalt
+  species: Homo_sapiens
+  keywords:
+  - rna
+  - transcripts
 package:
   name: hg38-noalt-transcripts
   version: 2015.11.22

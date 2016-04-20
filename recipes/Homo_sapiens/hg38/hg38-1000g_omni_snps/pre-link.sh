@@ -9,8 +9,13 @@ url=https://s3.amazonaws.com/biodata/hg38_bundle
 base=1000G_omni2.5.b38.primary_assembly
 new=1000G_omni2.5
 mkdir -p variation
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg38/hg38.genome
+
 for suffix in .vcf.gz .vcf.gz.tbi
 do
-  [[ -f variation/$new$suffix ]] || wget -c -O variation/$new$suffix $url/$base$suffix
+  [[ -f variation/$new$suffix ]] || wget --quiet -c -O - \
+	  | gsort /dev/stdin $genome \
+	  | bgzip - c \
+	  > variation/$new$suffix $url/$base$suffix
 done
 

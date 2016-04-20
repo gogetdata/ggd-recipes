@@ -1,8 +1,13 @@
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 3
 extra:
   authors: bcbio
+  genome-build: GRCh37
+  species: Homo_sapiens
+  keywords:
+      - 1000G
 package:
   name: grch37-ancestral
   version: '20141010'
@@ -14,3 +19,6 @@ requirements:
 #source:
     #url: http://example.com/ex.tgz
     #fn: ex.tgz
+    #
+about:
+    summary: "ancestral" 

@@ -11,6 +11,6 @@ new=hg38
 mkdir -p sequence
 for suffix in .fa .dict .fa.fai
 do
-  [[ -f sequence/$new$suffix ]] || wget -c -O sequence/$new$suffix $url/$base$suffix
+  [[ -f sequence/$new$suffix ]] || wget --quiet -c -O sequence/$new$suffix $url/$base$suffix
 done
 

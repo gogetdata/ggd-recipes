@@ -11,6 +11,6 @@ new=1000G_phase1.snps.high_confidence
 mkdir -p variation
 for suffix in .vcf.gz .vcf.gz.tbi
 do
-  [[ -f variation/$new$suffix ]] || wget -c -O variation/$new$suffix $url/$base$suffix
+  [[ -f variation/$new$suffix ]] || wget --quiet -c -O variation/$new$suffix $url/$base$suffix
 done
 

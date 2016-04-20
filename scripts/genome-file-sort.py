@@ -2,7 +2,7 @@
 helper for getting genome files set up.
 we want lexical sort, but we want, e.g
 chr2_xxx_random to be at the bottom of the file
-here we just check for '_' and move those to the
+here we just check for '_|.' and move those to the
 bottom, otherwise, we do lexical sort.
 """
 
@@ -17,7 +17,7 @@ for i, toks in enumerate(x.rstrip().split() for x in f if x.strip()):
         header.extend(toks)
         continue
 
-    (weird if '_' in toks[0] else normal).append(tuple(toks))
+    (weird if '_' in toks[0] or '.' in toks[0] else normal).append(tuple(toks))
 
 print "\t".join(header)
 print "\n".join("%s\t%s" % p for p in sorted(normal))

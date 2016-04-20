@@ -1,5 +1,5 @@
 about:
-  summary: " Truth sets from the Genome in a Bottle project (https://sites.stanford.edu/abms/giab)\n\
+  summary: "Truth sets from the Genome in a Bottle project (https://sites.stanford.edu/abms/giab)\n\
     \n Converted to hg38 coordinates using scripts from:\n\n https://github.com/hbc/giab_remap_38\n\
     \n These are created using NCBI's remap\n"
 build:
@@ -7,6 +7,11 @@ build:
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38
+  species: Homo_sapiens
+  keywords:
+  - truthset
+  - validation
 package:
   name: hg38-giab-na12878-remap
   version: v2_19_1

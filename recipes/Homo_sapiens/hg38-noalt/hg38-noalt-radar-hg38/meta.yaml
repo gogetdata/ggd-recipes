@@ -1,5 +1,5 @@
 about:
-  summary: " RADAR RNA editing events: (http://www.stanford.edu/~gokulr/database/Human_AG_all_hg19_v2.txt)\n\
+  summary: "RADAR RNA editing events: (http://www.stanford.edu/~gokulr/database/Human_AG_all_hg19_v2.txt)\n\
     \n installs a BED file of the RADAR events, preconverted to hg38\n\n how this\
     \ file was created:\n\n\n\n 1. Download the hg19 RADAR file and converted to BED\
     \ format.\n\n url=http://www.stanford.edu/~gokulr/database/Human_AG_all_hg19_v2.txt\n\
@@ -18,6 +18,10 @@ build:
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38-noalt
+  species: Homo_sapiens
+  keywords:
+  - RNA
 package:
   name: hg38-noalt-radar-hg38
   version: '1'

@@ -11,6 +11,6 @@ new=hg38.fa
 mkdir -p bwa
 for suffix in .bwt .amb .ann .pac .sa .alt
 do
-  [[ -f bwa/$new$suffix ]] || wget -c -O bwa/$new$suffix $url/$base$suffix
+  [[ -f bwa/$new$suffix ]] || wget --quiet -c -O bwa/$new$suffix $url/$base$suffix
 done
 

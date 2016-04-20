@@ -1,5 +1,5 @@
 about:
-  summary: " Problematic and other coverage regions of interest\n\n\n\n Low complexity\
+  summary: "Problematic and other coverage regions of interest\n\n\n\n Low complexity\
     \ regions from supplemental data of Heng Li's work on\n\n reducing variant calling\
     \ artifacts:\n\n\n\n http://bioinformatics.oxfordjournals.org/content/30/20/2843\n\
     \n https://github.com/lh3/varcmp/tree/master/scripts\n\n\n\n Centromere and other\
@@ -9,6 +9,10 @@ build:
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38-noalt
+  species: Homo_sapiens
+  keywords:
+  - regions
 package:
   name: hg38-noalt-coverage
   version: 2015.11.17

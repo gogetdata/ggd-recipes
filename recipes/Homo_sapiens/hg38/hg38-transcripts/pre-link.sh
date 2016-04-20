@@ -9,4 +9,4 @@ baseurl=https://s3.amazonaws.com/biodata/annotation/hg38-rnaseq-2015-11-24.tar.x
 wget -c -N $baseurl
 xz -dc *-rnaseq-*.tar.xz | tar -xpf -
 mv */rnaseq-* rnaseq
-
+rm *.tar.gz

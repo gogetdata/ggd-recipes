@@ -1,20 +1,26 @@
-about:
-  summary: ' small RNA seq annotation from different sources
-
-    '
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
-  authors: bcbio
+  authors: brentp
+  genome-build: GRCh37
+  species: Homo_sapiens
+  keywords:
+      - fasta
 package:
-  name: mm10-srnaseq
-  version: '20160328'
+  name: grch37-sequence
+  version: '37'
 requirements:
-  build: []
-  run: []
+  build:
+  - htslib
+  run:
+  - htslib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:
     #url: http://example.com/ex.tgz
     #fn: ex.tgz
+    #
+about:
+    summary: "fasta sequence from 1kg"

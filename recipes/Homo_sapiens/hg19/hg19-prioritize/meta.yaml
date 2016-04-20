@@ -1,5 +1,5 @@
 about:
-  summary: " Regions for prioritization:\n\n cancer\n\n  - civic -- known cancer genes\
+  summary: "Regions for prioritization:\n\n cancer\n\n  - civic -- known cancer genes\
     \ from the CIViC database\n\n  - az300 -- list of 300 cancer genes of interest\
     \ from AstraZeneca Oncology\n\n  - az300-with-fusion -- az300 list plus known\
     \ interacting fusions\n\n      from FusionCatcher https://github.com/ndaniel/fusioncatcher/blob/master/bin/generate_known.py#L102\n\
@@ -7,8 +7,13 @@ about:
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
   authors: bcbio
+  genome-build: hg19
+  species: Homo_sapiens
+  keywords:
+  - cancer
 package:
   name: hg19-prioritize
   version: '20160215'

@@ -1,12 +1,13 @@
 about:
-  summary: " Full hg38/GRCh38 reference genome distributed by 1000 genomes\n\n Derived\
+  summary: "Full hg38/GRCh38 reference genome distributed by 1000 genomes\n\n Derived\
     \ from NCBI set with HLA and decoy alternative alleles\n\n ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/\n"
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
-  number: 4
 extra:
   authors: bcbio
+  genome-build: hg38
+  species: Homo_sapiens
 package:
   name: hg38-sequence
   version: 1000g.20150219

@@ -8,10 +8,11 @@ mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sap
 baseurl=http://bcbio_nextgen.s3.amazonaws.com/MIG.zip
 mkdir -p prioritization
 cd prioritization
-wget -c -O MIG.zip $baseurl
+wget --quiet -c -O MIG.zip $baseurl
 unzip MIG.zip
+rm MIG.zip
 file=MIG.bed
-sed 's/^chr//g' $file > $file.tmp
-mv $file.tmp $file
-cd ..
 
+sed 's/^chr//g' $file | gsort /dev/stdin https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome | bgzip -c > $file.gz
+tabix $file.gz
+rm $file

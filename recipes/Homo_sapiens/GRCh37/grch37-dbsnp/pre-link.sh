@@ -8,6 +8,6 @@ mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sap
 baseurl=ftp://gsapubftp-anonymous:none@ftp.broadinstitute.org/bundle/2.8/b37/dbsnp_138.b37.vcf.gz
 mkdir -p variation
 cd variation
-wget -O - $baseurl | gunzip -c | bgzip -c > dbsnp_138.vcf.gz
+wget --quiet -O - $baseurl | gunzip -c | gsort /dev/stdin https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome | bgzip -c > dbsnp_138.vcf.gz
 tabix -f -p vcf dbsnp_138.vcf.gz
 

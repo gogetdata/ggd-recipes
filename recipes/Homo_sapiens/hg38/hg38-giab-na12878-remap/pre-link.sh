@@ -7,7 +7,7 @@ mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/ && cd $PREFIX/share/ggd/Homo_sapie
 
 dir=validation/giab-NA12878-remap
 mkdir -p $dir
-wget --no-check-certificate -c -O $dir/truth_small_variants.vcf.gz https://biodata.s3.amazonaws.com/giab_hg38_remap/GiaB_v2_19-38_remap.vcf.gz
-wget --no-check-certificate -c -O $dir/truth_small_variants.vcf.gz.tbi https://biodata.s3.amazonaws.com/giab_hg38_remap/GiaB_v2_19-38_remap.vcf.gz.tbi
-wget --no-check-certificate -c -O - https://biodata.s3.amazonaws.com/giab_hg38_remap/GiaB_v2_19-38_remap-regions.bed | grep -v ^chrM > $dir/truth_regions.bed
+wget --quiet --no-check-certificate -c -O $dir/truth_small_variants.vcf.gz https://biodata.s3.amazonaws.com/giab_hg38_remap/GiaB_v2_19-38_remap.vcf.gz
+wget --quiet --no-check-certificate -c -O $dir/truth_small_variants.vcf.gz.tbi https://biodata.s3.amazonaws.com/giab_hg38_remap/GiaB_v2_19-38_remap.vcf.gz.tbi
+wget --quiet --no-check-certificate -c -O - https://biodata.s3.amazonaws.com/giab_hg38_remap/GiaB_v2_19-38_remap-regions.bed | grep -v ^chrM > $dir/truth_regions.bed
 

@@ -11,4 +11,4 @@ mkdir -p $outdir
 cd $outdir
 wget --no-check-certificate -c -O cancer.tar.gz $baseurl
 tar -xzvpf cancer.tar.gz
-
+rm -rf cancer.tar.gz

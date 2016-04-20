@@ -35,6 +35,9 @@ where $PREFIX is populated by `conda` species will be like `Homo_sapiens` or `Mu
 build will be `grch37` or `mm10` (must be lower-case) and recipe will be `$build-$name`, .e.g.
 `hg19-clinvar`
 
+The recipe must specify the $species and $build under extra/genome-build and extra/species respectively.
+A fasta and genome-file must be present for those.
+
 ## Chromosome Naming
 
 For each genome build, there will be a required .genome file in this repo that lists

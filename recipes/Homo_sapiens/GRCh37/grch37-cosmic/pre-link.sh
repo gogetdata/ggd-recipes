@@ -8,6 +8,8 @@ mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sap
 baseurl=https://s3.amazonaws.com/biodata/variants/cosmic-v68-GRCh37.vcf.gz
 mkdir -p variation
 cd variation
-wget --no-check-certificate -c -N $baseurl
-wget --no-check-certificate -c -N $baseurl.tbi
+wget --quiet -O - --no-check-certificate -c -N $baseurl \
+	| gsort /dev/stdin/ https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome \
+	| bgzip -c > cosmic-v68-GRCh37.vcf.gz
 
+tabix cosmic-v68-GRCh37.vcf.gz

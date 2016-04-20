@@ -7,6 +7,10 @@ build:
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38-noalt
+  species: Homo_sapiens
+  keywords:
+  - 1000G
 package:
   name: hg38-noalt-1000g_omni_snps
   version: 2.8_hg38_20150522

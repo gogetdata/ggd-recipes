@@ -5,14 +5,23 @@ about:
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
+  number: 1
 extra:
   authors: bcbio
+  genome-build: GRCh37
+  species: Homo_sapiens
+  keywords:
+      - validation
 package:
   name: grch37-dream-syn4
   version: 2014.08.09
 requirements:
-  build: []
-  run: []
+  build:
+  - gsort
+  - htslib
+  run:
+  - gsort
+  - htslib
 # to make a pre-built package, move pre-link.sh to build.sh
 # and add source and fn here
 #source:

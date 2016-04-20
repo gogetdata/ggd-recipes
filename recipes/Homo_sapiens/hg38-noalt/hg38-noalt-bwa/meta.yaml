@@ -1,13 +1,15 @@
 about:
-  summary: ' pre-built bwa indices from NCBIs hg38 distribution with no alternative
-    alleles
-
-    '
+  summary: 'pre-built bwa indices from NCBIs hg38 distribution with no alternative alleles'
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
 extra:
   authors: bcbio
+  genome-build: hg38-noalt
+  species: Homo_sapiens
+  keywords:
+  - bwa
+  - index
 package:
   name: hg38-noalt-bwa
   version: '0.1'
