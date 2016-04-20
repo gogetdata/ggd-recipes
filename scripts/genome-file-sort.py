@@ -10,10 +10,7 @@ import sys
 
 f = open(sys.argv[1])
 
-
-header = []
-normal = []
-weird = []
+header, normal, weird = [], [], []
 
 for i, toks in enumerate(x.rstrip().split() for x in f if x.strip()):
     if i == 0 and not toks[1].isdigit():
@@ -22,9 +19,6 @@ for i, toks in enumerate(x.rstrip().split() for x in f if x.strip()):
 
     (weird if '_' in toks[0] else normal).append(tuple(toks))
 
-normal.sort()
-weird.sort()
-
 print "\t".join(header)
-print "\n".join("%s\t%s" % p for p in normal)
-print "\n".join("%s\t%s" % p for p in weird)
+print "\n".join("%s\t%s" % p for p in sorted(normal))
+print "\n".join("%s\t%s" % p for p in sorted(weird))

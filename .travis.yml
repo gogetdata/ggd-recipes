@@ -1,0 +1,7 @@
+os:
+- linux
+sudo: required
+dist: trusty
+language: c
+install: scripts/travis-install.sh
+script: travis_wait 119 scripts/travis-test.sh
