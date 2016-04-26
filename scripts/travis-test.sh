@@ -51,5 +51,12 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	echo "############################################################"
 	echo "############################################################"
 	ggd check-recipe $bz2
-	anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+
+	# upload
+	set +o nounset
+	if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+		anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+	fi
+	set -o nounset
+
 done
