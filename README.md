@@ -45,6 +45,8 @@ Now, we use the ggd command-line tool to turn this into a proper recipe:
 
 ```
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
+conda install -y conda-build
+
 ggd from-bash --species Homo_sapiens --genome-build hg19 \
               --authors bsp --version 1 \
               --dependency htslib --dependency gsort \
