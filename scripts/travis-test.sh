@@ -4,7 +4,6 @@ TMPDIR=${TMPDIR:-/tmp/}
 
 set -eo pipefail -o nounset
 
-[[ -z $ANACONDA_GGD_TOKEN ]] && (echo "ANACONDA_GGD_TOKEN not found!!!"; sleep 2);
 
 export PATH=/anaconda/bin:$PATH
 #check-sort-order --help
@@ -55,7 +54,12 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	# upload
 	set +o nounset
 	if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-		anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+		if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
+			echo "\n> WARNING:"
+			echo '> $ANACONDA_GGD_TOKEN not set'
+		else
+			anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+		fi
 	fi
 	set -o nounset
 
