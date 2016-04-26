@@ -18,6 +18,12 @@ You can use the recipes from this repo using the [ggd-alpha channel](https://ana
 conda install -c ggd-alpha hg19-dbsnp
 ```
 
+**NOTE**: many recipes will depend on software in [bioconda](https://github.com/bioconda/bioconda-recipes) so please use: 
+
+```
+conda config --add channels bioconda
+```
+
 ## QuickStart
 
 to build a recipe. First make a bash script. Here's an example that gets cpg-island for hg19.
@@ -44,7 +50,11 @@ and tabix where possible.
 Now, we use the ggd command-line tool to turn this into a proper recipe:
 
 ```
+conda config --add channels bioconda
+
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
+conda install -y conda-build
+
 ggd from-bash --species Homo_sapiens --genome-build hg19 \
               --authors bsp --version 1 \
               --dependency htslib --dependency gsort \
