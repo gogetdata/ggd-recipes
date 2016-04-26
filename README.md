@@ -35,7 +35,7 @@ tabix cpg.bed.gz
 
 ```
 
-The only extra piece that may not be familiar is gsort (available via `conda install -c bioconda gsort)
+A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort)
 that will sort according the a genome file.
 
 `ggd` requires that the chromosomes be ordered as specified in the genome file and that files are bgzipped
