@@ -4,7 +4,7 @@ set -eo pipefail
 # converted from: ../cloudbiolinux/ggd-recipes/GRCh37/giab-NA12878.yaml
 
 mkdir -p $PREFIX/share/ggd/Homo_sapiens/GRCh37/ && cd $PREFIX/share/ggd/Homo_sapiens/GRCh37/
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/GRCh37/GRCh37.genome
 
 dir=validation/giab-NA12878
 mkdir -p $dir

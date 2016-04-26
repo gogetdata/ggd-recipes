@@ -11,7 +11,7 @@ mkdir -p $dir
 wget --quiet --no-check-certificate -c https://s3.amazonaws.com/bcbio_nextgen/dream/synthetic_challenge_set4_tumour_25pctmasked_truth.tar.gz
 tar -xzvpf ${orig}.tar.gz
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/GRCh37/GRCh37.genome
 gsort ${orig}.vcf.gz $genome | bgzip -c > $dir/truth_small_variants.vcf.gz
 tabix $dir/truth_small_variants.vcf.gz
 rm ${orig}.vcf.gz

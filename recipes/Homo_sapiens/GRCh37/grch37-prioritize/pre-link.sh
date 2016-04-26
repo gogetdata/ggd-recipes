@@ -14,7 +14,7 @@ tar -xzvpf cancer.tar.gz
 rm cancer.tar.gz
 rm cancer/*.tbi
 
-wget --quiet --no-check-certificate https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome
+wget --quiet --no-check-certificate https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/GRCh37/GRCh37.genome
 genome=GRCh37.genome
 ls cancer/
 

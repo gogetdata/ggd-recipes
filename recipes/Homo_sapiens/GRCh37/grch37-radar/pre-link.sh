@@ -12,7 +12,7 @@ remap_url=http://raw.githubusercontent.com/dpryan79/ChromosomeMappings/master/GR
 wget --quiet --no-check-certificate -qO- $remap_url | awk '{if($1!=$2) print "s/^"$1"/"$2"/g"}' > remap.sed
 wget --quiet --no-check-certificate -qO- $url | sed -f remap.sed | awk 'BEGIN{OFS="\t"}(NR ==1){printf "#"}; {print $1,$2,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11}' | sed "s/position	position/start	end/" > RADAR-GRCh37.bed
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/GRCh37/GRCh37.genome
 gsort RADAR-GRCh37.bed $genome | bgzip -c > RADAR-GRCh37.bed.gz
 tabix RADAR-GRCh37.bed.gz
 rm remap.sed RADAR-GRCh37.bed

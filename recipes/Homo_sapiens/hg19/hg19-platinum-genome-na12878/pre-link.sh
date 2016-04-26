@@ -11,7 +11,7 @@ wget --quiet --no-check-certificate -c -O $dir/truth_small_variants.vcf.gz ftp:/
 wget --quiet --no-check-certificate -c -O - ftp://platgene_ro:@ussd-ftp.illumina.com/hg19/8.0.1/NA12878/ConfidentRegions.bed.gz | gunzip -c > $dir/truth_regions.bed
 
 cd $dir/
-wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome
+wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/hg19/hg19.genome
 mkdir tmp
 gsort truth_small_variants.vcf.gz hg19.genome | bgzip -c > tmp/truth_small_variants.vcf.gz
 gsort truth_regions.bed hg19.genome | bgzip -c > tmp/truth_regions.bed.gz

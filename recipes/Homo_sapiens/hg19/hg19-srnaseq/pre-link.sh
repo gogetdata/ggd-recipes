@@ -24,7 +24,7 @@ wget -q -N -c -O refGene.txt.gz http://hgdownload.soe.ucsc.edu/goldenPath/hg19/d
 gzip -dc refGene.txt.gz | awk '{print $3"\t.\tgene\t"$5"\t"$6"\t.\t"$4"\t.\tname "$13";"}' >> srna-transcripts.gtf
 rm refGene.txt.gz
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/hg19/hg19.genome
 gsort srna-transcripts.gtf $genome | bgzip -c > srna-transcripts.gtf.gz
 tabix srna-transcripts.gtf.gz
 

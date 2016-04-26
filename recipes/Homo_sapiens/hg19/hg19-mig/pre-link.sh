@@ -11,6 +11,6 @@ cd prioritization
 wget --quiet -c -O MIG.zip $baseurl
 unzip MIG.zip
 rm MIG.zip
-gsort MIG.bed https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome | bgzip -c > MIG.bed.gz
+gsort MIG.bed https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/hg19/hg19.genome | bgzip -c > MIG.bed.gz
 tabix MIG.bed.gz
 rm MIG.bed

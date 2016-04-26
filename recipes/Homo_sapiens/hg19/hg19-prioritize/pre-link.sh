@@ -15,7 +15,7 @@ rm cancer.tar.gz
 cd cancer
 rm *.tbi
 
-wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome
+wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/hg19/hg19.genome
 
 for f in *.bed.gz; do
 	gsort $f hg19.genome | bgzip -c > tmp

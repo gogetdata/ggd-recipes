@@ -11,7 +11,7 @@ cd coverage/problem_regions/GA4GH
 wget --quiet --no-check-certificate -c -O GA4GH_problem_regions.zip $baseurl
 unzip -o GA4GH_problem_regions.zip
 rm GA4GH_problem_regions.zip
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/hg19/hg19.genome
 
 for f in ./*.bed; do
 	gsort $f $genome | bgzip -c > $f.gz
@@ -31,7 +31,7 @@ mkdir -p $repeats
 wget --no-check-certificate -O - https://raw.githubusercontent.com/chapmanb/delly/master/human.hg19.excl.tsv | grep ^chr | grep -wv chrMT | gsort /dev/stdin $genome | bgzip -c > $repeats/sv_repeat_telomere_centromere.bed.gz
 tabix $repeats/sv_repeat_telomere_centromere.bed.gz
 
-wget --no-check-certificate -O - https://github.com/lh3/varcmp/raw/master/scripts/LCR-hs37d5.bed.gz | zgrep -v ^GL | grep -v ^NC | grep -v ^hs | sed 's/^/chr/' | gsort /dev/stdin https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/hg19/hg19.genome | bgzip -c > $repeats/LCR.bed.gz
+wget --no-check-certificate -O - https://github.com/lh3/varcmp/raw/master/scripts/LCR-hs37d5.bed.gz | zgrep -v ^GL | grep -v ^NC | grep -v ^hs | sed 's/^/chr/' | gsort /dev/stdin $genome | bgzip -c > $repeats/LCR.bed.gz
 tabix -p bed -f $repeats/LCR.bed.gz
 
 

@@ -9,7 +9,7 @@ baseurl=http://downloads.sourceforge.net/project/adamajava/qsignature.tar.bz2
 mkdir -p variation
 cd variation
 wget --quiet -N -c $baseurl
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/GRCh37/GRCh37.genome
 tar -xjf qsignature.tar.bz2 qsignature_positions.txt
 rm qsignature.tar.bz2
 echo "##fileformat=VCFv4.1" > qsignature.vcf

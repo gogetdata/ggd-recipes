@@ -13,6 +13,6 @@ unzip MIG.zip
 rm MIG.zip
 file=MIG.bed
 
-sed 's/^chr//g' $file | gsort /dev/stdin https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/GRCh37/GRCh37.genome | bgzip -c > $file.gz
+sed 's/^chr//g' $file | gsort /dev/stdin https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/GRCh37/GRCh37.genome | bgzip -c > $file.gz
 tabix $file.gz
 rm $file

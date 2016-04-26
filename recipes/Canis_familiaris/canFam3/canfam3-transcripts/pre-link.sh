@@ -15,7 +15,7 @@ rm *.tar.xz
 cd rnaseq
 ls
 
-wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/dev/genomes/canFam3/canFam3.genome
+wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/canFam3/canFam3.genome
 for f in ./{tophat,}/*.g{f,t}f; do
 	echo $f
     gsort $f canFam3.genome | bgzip -c > $f.gz
