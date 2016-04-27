@@ -41,7 +41,7 @@ tabix cpg.bed.gz
 
 ```
 
-A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort)
+A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort`)
 that will sort according the a genome file.
 
 `ggd` requires that the chromosomes be ordered as specified in the genome file and that files are bgzipped
@@ -71,7 +71,7 @@ along with `htslib` which provides tabix and bgzip (any software in bioconda can
 as a dependency). We can also depend on other ggd recipes.
 The species and genome-build arguments must be available in the master branch of `ggd`.
 
-After this, we have a recipe. To run the same data quality tests (see below) as `travis-ci` will
+After this, we have a recipe. To run the same data quality tests (see below) as `travis-ci`
 when you make a PR, run:
 
 ```
