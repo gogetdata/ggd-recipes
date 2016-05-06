@@ -1,0 +1,30 @@
+about:
+  summary: "Simple reoeats track from UCSC.\n                         name=sequence\
+    \                         score=alignment score\n                         col\
+    \ 7 = period\n                         col 8 = copy_num"
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  number: 0
+extra:
+  authors: bsp
+  extra-files: []
+  genome-build: hg19
+  keywords:
+  - simrep
+  - region
+  species: Homo_sapiens
+package:
+  name: hg19-simplerepeats
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
