@@ -1,5 +1,5 @@
 about:
-  summary: RepeatMasker from UCSC
+  summary: RepeatMasker track from UCSC.                         name=family_class_name                         score=milliDic+milliDel+milliIns
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
