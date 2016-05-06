@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
-CONDA_ROOT=/Users/arq5x/miniconda2
+CONDA_ROOT=$(conda info --root)
 
 pushd `dirname $0` > /dev/null
 HERE=`pwd`
