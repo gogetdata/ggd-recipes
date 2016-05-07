@@ -18,6 +18,12 @@ You can use the recipes from this repo using the [ggd-alpha channel](https://ana
 conda install -c ggd-alpha hg19-dbsnp
 ```
 
+**NOTE**: many recipes will depend on software in [bioconda](https://github.com/bioconda/bioconda-recipes) so please use: 
+
+```
+conda config --add channels bioconda
+```
+
 ## QuickStart
 
 to build a recipe. First make a bash script. Here's an example that gets cpg-island for hg19.
@@ -35,7 +41,7 @@ tabix cpg.bed.gz
 
 ```
 
-A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort)
+A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort`)
 that will sort according the a genome file.
 
 `ggd` requires that the chromosomes be ordered as specified in the genome file and that files are bgzipped
@@ -44,7 +50,11 @@ and tabix where possible.
 Now, we use the ggd command-line tool to turn this into a proper recipe:
 
 ```
+conda config --add channels bioconda
+
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
+conda install -y conda-build
+
 ggd from-bash --species Homo_sapiens --genome-build hg19 \
               --authors bsp --version 1 \
               --dependency htslib --dependency gsort \
@@ -61,7 +71,7 @@ along with `htslib` which provides tabix and bgzip (any software in bioconda can
 as a dependency). We can also depend on other ggd recipes.
 The species and genome-build arguments must be available in the master branch of `ggd`.
 
-After this, we have a recipe. To run the same data quality tests (see below) as `travis-ci` will
+After this, we have a recipe. To run the same data quality tests (see below) as `travis-ci`
 when you make a PR, run:
 
 ```
