@@ -1,0 +1,32 @@
+about:
+  summary: >Simple repeats track from UCSC.
+            name=sequence
+            score=alignment score
+            col 7 = period
+            col 8 = copy_num
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  number: 0
+extra:
+  authors: arq
+  extra-files: []
+  genome-build: hg38
+  keywords:
+  - simrep
+  - region
+  species: Homo_sapiens
+package:
+  name: hg38-simplerepeats
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
