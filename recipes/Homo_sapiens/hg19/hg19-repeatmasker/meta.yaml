@@ -1,0 +1,28 @@
+about:
+  summary: RepeatMasker track from UCSC.                         name=family_class_name                         score=milliDic+milliDel+milliIns
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  number: 0
+extra:
+  authors: bsp
+  extra-files: []
+  genome-build: hg19
+  keywords:
+  - rmsk
+  - region
+  species: Homo_sapiens
+package:
+  name: hg19-repeatmasker
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
