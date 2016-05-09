@@ -7,6 +7,6 @@ mkdir -p $PREFIX/share/ggd/Homo_sapiens/hg38/ && cd $PREFIX/share/ggd/Homo_sapie
 
 url=https://s3.amazonaws.com/biodata/genomes/hg38-hisat2-12-07-2015.tar.xz
 wget -qO- $url > hg38-hisat2-tar.xz
-tar xvf hg38-hisat2-tar.xz
+tar xJvf hg38-hisat2-tar.xz
 rm hg38-hisat2-tar.xz
 
