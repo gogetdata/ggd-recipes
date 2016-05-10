@@ -1,0 +1,28 @@
+about:
+  summary: Assembly gaps from UCSC
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  number: 0
+extra:
+  authors: arq
+  extra-files: []
+  genome-build: hg19
+  keywords:
+  - gaps
+  - region
+  species: Homo_sapiens
+package:
+  name: hg19-gaps
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
