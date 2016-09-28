@@ -1,0 +1,28 @@
+about:
+  summary: 'GRCh37 reference genome from 1000 genomes '
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+  genome-build: GRCh37
+  keywords:
+  - ref
+  - reference
+  species: Homo_sapiens
+package:
+  name: grch37-reference-genome
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - zlib
+source:
+  path: .
