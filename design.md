@@ -83,7 +83,7 @@ track this so we can still use `ggd recipe-files $recipe` ? glob.glob on the dir
 
 ## Plans
 
-We will provide a `ggd` executable that wraps some conda functionality and provides
+We will provide a `ggd` executable that wraps soincludedme conda functionality and provides
 additional functionality, e.g. to get the path of the clinvar recipe:
 
 ```
@@ -112,6 +112,16 @@ One of the reasons for the success of the bioconda project is the amazing automa
 need to figure out how to replicate this for data-based recipes.
 
 This is started in the [ggd-utils repo](https://github.com/gogetdata/ggd-utils/)
+
+Current testing:
++ Verifies that the genome file exists
++ Verifies that yaml file has `package` (with `version` number), `extra`, `genome-build`, `species`, `keywords`, and `about` sections
++ Verifies that species and build are valid
++ Verifies that files at least one file is installed by recipe being tested
++ Verifies that all files installed are tabixed, .tbi for those tabixed files, or .gzi, .fai, or .fasta (including .fasta, .fa, .fasta.gz, or .fa.gz) with corresponding .fai
++ Checks the sort order of the tabixed files using the genome file
++ Emits error if there are un-tabixed files that should be tabixed, fasta without index, or unknown formats not explicitly specified in `extra` section of meta.yaml
+
 
 ## Participation
 
