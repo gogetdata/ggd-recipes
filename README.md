@@ -7,8 +7,7 @@ Go Get Data: "Making data great again"
 `ggd-recipes` houses conda recipes for genomic data. The automated tests ensure data quality and fidelity to
 the specified genome and build. See below for specific checks that are implemented.
 
-
-Please see the design.md document in this directory
+Also see the design.md document in this directory
 
 For any comments / issues or to be added to the project, open an issue or email bpederse@gmail.com
 
