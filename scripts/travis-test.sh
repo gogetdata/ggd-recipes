@@ -4,12 +4,14 @@ TMPDIR=${TMPDIR:-/tmp/}
 
 set -eo pipefail -o nounset
 
-
 export PATH=/anaconda/bin:$PATH
 #check-sort-order --help
 conda install htslib gsort
 #gsort --help
 
+echo "############################################################"
+echo "Checked 1"
+echo "############################################################"
 
 
 CONDA_ROOT=$(conda info --root)
@@ -19,11 +21,21 @@ CHECK_DIR=$TMPDIR/builds.$$/
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
 
+
+echo "############################################################"
+echo "Checked 2"
+echo "############################################################"
+
 ## cleanup
 rmbuild() {
 	rm -rf $CHECK_DIR
 }
 trap rmbuild EXIT
+
+
+echo "############################################################"
+echo "Checked 3"
+echo "############################################################"
 
 conda-build-all \
 	--inspect-channels=ggd-alpha \
