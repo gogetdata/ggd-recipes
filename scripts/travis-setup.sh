@@ -38,7 +38,7 @@ echo "########################################################"
 
 
 
-cat /anaconda/bin/conda-build-all/conda_interface.py
+cat /anaconda/lib/python2.7/site-packages/conda_build_all/conda_interface.py
 
 
 
