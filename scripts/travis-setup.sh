@@ -15,6 +15,10 @@ else
 	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-darwin_amd64
 fi
 
+echo "########################################################"
+conda --version ## Get conda version 
+echo "########################################################"
+
 chmod +x /anaconda/bin/check-sort-order
 mkdir -p /anaconda/conda-bld/{linux,osx}-64
 export PATH=/anaconda/bin:$PATH
@@ -27,4 +31,7 @@ conda install -y conda-build anaconda-client
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
 conda install -y "gsort>=0.0.2" samtools htslib zlib
 conda info -a #for debugging
+
+echo "########################################################"
 conda --version ## Get conda version 
+echo "########################################################"
