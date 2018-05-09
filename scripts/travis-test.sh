@@ -25,6 +25,8 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
+conda --version ## Get conda version 
+
 conda-build-all \
 	--inspect-channels=ggd-alpha \
 	--artefact-directory $CHECK_DIR \
