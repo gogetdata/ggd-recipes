@@ -15,14 +15,14 @@ else
 	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-darwin_amd64
 fi
 
-echo "########################################################"
-conda --version ## Get conda version 
-echo "########################################################"
 
 chmod +x /anaconda/bin/check-sort-order
 mkdir -p /anaconda/conda-bld/{linux,osx}-64
 export PATH=/anaconda/bin:$PATH
 conda install -y conda-build
+echo "########################################################"
+conda --version ## Get conda version 
+echo "########################################################"
 #conda update -y conda ## Remove update, latest conda version not implemented in conda-build-all
 conda config --add channels bioconda
 conda config --add channels conda-forge
