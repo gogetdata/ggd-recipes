@@ -35,3 +35,8 @@ conda info -a #for debugging
 echo "########################################################"
 conda --version ## Get conda version 
 echo "########################################################"
+
+echo "\n\n\n"
+cat /anaconda/bin/conda-build-all
+echo "\n\n\n"
+
