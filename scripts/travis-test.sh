@@ -25,10 +25,11 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-conda-build-all \
-	--inspect-channels=ggd-alpha \
-	--artefact-directory $CHECK_DIR \
-	recipes/
+conda build recipes/Homo_sapiens/hg19/hg19-1000g_snps
+#conda-build-all \
+#	--inspect-channels=ggd-alpha \
+#	--artefact-directory $CHECK_DIR \
+#	recipes/
 
 echo "############################################################"
 echo "############################################################"
