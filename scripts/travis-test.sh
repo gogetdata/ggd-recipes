@@ -25,7 +25,12 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-conda build recipes/Homo_sapiens/hg19/hg19-1000g_snps
+conda commands available from other packages:
+for recipe in recipes/*/*/
+do
+    conda build $recipe
+done
+
 #conda-build-all \
 #	--inspect-channels=ggd-alpha \
 #	--artefact-directory $CHECK_DIR \
