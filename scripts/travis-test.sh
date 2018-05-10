@@ -25,7 +25,7 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-conda commands available from other packages:
+#conda commands available from other packages:
 for recipe in recipes/*/*/
 do
     conda build $recipe
