@@ -25,7 +25,7 @@ conda config --add channels conda-forge
 
 ## Install bioconda-utils (https://github.com/bioconda/bioconda-recipes/blob/master/.circleci/setup.sh)
 #conda install -y git pip --file https://github.com/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements.txt
-while read requirement; do conda install --yes $requirement; done < https://github.com/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements.txt
+while read requirement; do conda install --yes $requirement; done < git+https://github.com/bioconda/bioconda-utils/blob/master/bioconda_utils/bioconda_utils-requirements.txt
 pip install git+https://github.com/bioconda/bioconda-utils.git
 
 conda install -y conda-build anaconda-client
