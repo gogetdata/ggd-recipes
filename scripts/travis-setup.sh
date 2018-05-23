@@ -9,7 +9,7 @@ if [[ $TRAVIS_OS_NAME = "linux" ]]; then
 	sudo chown -R $USER /anaconda/
 	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-linux_amd64
 else
-	curl -O https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
+	curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 	sudo bash Miniconda3-latest-MacOSX-x86_64.sh -b -p /anaconda/
 	sudo chown -R $USER /anaconda/
 	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-darwin_amd64
