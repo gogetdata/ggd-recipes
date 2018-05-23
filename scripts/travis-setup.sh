@@ -22,7 +22,11 @@ conda install -y conda-build
 conda update -y conda
 conda config --add channels bioconda
 conda config --add channels conda-forge
-conda install -y bioconda-utils 
+
+## Install bioconda-utils (https://github.com/bioconda/bioconda-recipes/blob/master/.circleci/setup.sh)
+conda install -y git pip --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
+pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+
 conda install -y conda-build anaconda-client
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
 conda install -y "gsort>=0.0.2" samtools htslib zlib
