@@ -25,7 +25,7 @@ conda config --add channels conda-forge
 
 ## Install bioconda-utils (https://github.com/bioconda/bioconda-recipes/blob/master/.circleci/setup.sh)
 conda install -y git pip --file https://raw.githubusercontent.com/bioconda/bioconda-utils/cb3-migration/bioconda_utils/bioconda_utils-requirements.txt
-pip install git+https://github.com/bioconda/bioconda-utils/tree/cb3-migration
+pip install git+https://github.com/bioconda/bioconda-utils.git
 
 conda install -y conda-build anaconda-client
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
