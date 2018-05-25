@@ -25,6 +25,7 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
+bioconda-utils build -h
 
 bioconda-utils build recipes/
 
