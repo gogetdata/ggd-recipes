@@ -4,13 +4,15 @@ set -exo pipefail
 
 # NOTE: much of this is taken from bioconda.
 if [[ $TRAVIS_OS_NAME = "linux" ]]; then
-	curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-	sudo bash Miniconda3-latest-Linux-x86_64.sh -b -p /anaconda/
+	#curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	curl -O https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh
+	sudo bash Miniconda3-4.3.31-Linux-x86_64.sh -b -p /anaconda/
 	sudo chown -R $USER /anaconda/
 	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-linux_amd64
 else
-	curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-	sudo bash Miniconda3-latest-MacOSX-x86_64.sh -b -p /anaconda/
+	#curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+	curl -O https://repo.continuum.io/miniconda/Miniconda3-4.3.31-MacOSX-x86_64.sh
+	sudo bash Miniconda3-4.3.31-MacOSX-x86_64.sh -b -p /anaconda/
 	sudo chown -R $USER /anaconda/
 	curl -Lo /anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-darwin_amd64
 fi
