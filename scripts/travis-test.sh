@@ -69,4 +69,4 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	fi
 	set -o nounset
 
-done
+done 
