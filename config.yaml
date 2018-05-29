@@ -1,14 +1,5 @@
 ## Modified from bioconda-recipes (https://github.com/bioconda/bioconda-recipes/blob/master/config.yml) and (https://github.com/bioconda/bioconda-recipes/blob/master/scripts/env_matrix.yml)
-env_matrix:
-  CONDA_PY:
-    - 27
-    - 35
-    - 36
-  CONDA_HTSLIB: "1.7"
-  CONDA_ZLIB: "1.2.11"
-  CONDA_BZIP2: "1.0"
-  CONDA_XZ: "5.2"
-  CONDA_BAMTOOLS: "2.4.1"
+env_matrix: "scripts/env_matrix.yaml"
  
 
 ## No current blacklist 
