@@ -25,16 +25,8 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-#conda commands available from other packages:
-for recipe in recipes/*/*/
-do
-    conda build $recipe
-done
-
-#conda-build-all \
-#	--inspect-channels=ggd-alpha \
-#	--artefact-directory $CHECK_DIR \
-#	recipes/
+## Test recipes using bioconda-utils (modified from https://github.com/bioconda/bioconda-recipes/blob/master/scripts/travis-run.sh)
+bioconda-utils build recipes/ config.yaml
 
 echo "############################################################"
 echo "############################################################"
