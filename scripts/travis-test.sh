@@ -26,7 +26,7 @@ rmbuild() {
 trap rmbuild EXIT
 
 ## Test recipes using bioconda-utils (modified from https://github.com/bioconda/bioconda-recipes/blob/master/scripts/travis-run.sh)
-bioconda-utils build recipes/ config.yaml --loglevel debug
+bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml --loglevel debug
 
 echo "############################################################"
 echo "############################################################"
