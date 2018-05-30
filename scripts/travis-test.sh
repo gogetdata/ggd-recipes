@@ -29,14 +29,14 @@ trap rmbuild EXIT
 ## bioconda-utils build (biconda-utils/utils.py get_recipes only supports two levels of nesting. !!Checking if the bicondoa team can change this!!)
 ##	Therefore, in order to test all recieps we have to run each species/build seperately 
 # Homo-sapien
-bioconda-utils build recipes/Homo_sapiens/GRCH37/ config.yaml --loglevel debug
-bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml --loglevel debug
-bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml --loglevel error
-bioconda-utils /recipes/Homo_sapiens/hg38/ config.yaml --loglevel debug
+bioconda-utils build recipes/Homo_sapiens/GRCH37/ config.yaml --loglevel info
+bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml --loglevel info
+bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml --loglevel info
+bioconda-utils /recipes/Homo_sapiens/hg38/ config.yaml --loglevel info
 # Mus_musculus
-bioconda-utils recipes/Mus_musculus/mm10/ config.yaml --loglevel debug
+bioconda-utils recipes/Mus_musculus/mm10/ config.yaml --loglevel info
 # Canis_familiaris
-bioconda-utils recipes/Canis_familiaris/canFam3/ config.yaml --loglevel debug 
+bioconda-utils recipes/Canis_familiaris/canFam3/ config.yaml --loglevel info 
 
 
 
