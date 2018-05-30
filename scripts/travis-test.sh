@@ -36,7 +36,7 @@ bioconda-utils /recipes/Homo_sapiens/hg38/ config.yaml --loglevel debug
 # Mus_musculus
 bioconda-utils recipes/Mus_musculus/mm10/ config.yaml --loglevel debug
 # Canis_familiaris
-bioconda-utils recipes/Canis_familiaris/canFam3/ config.yaml --loglevel debug
+bioconda-utils recipes/Canis_familiaris/canFam3/ config.yaml --loglevel debug 
 
 
 
