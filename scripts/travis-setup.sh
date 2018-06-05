@@ -24,7 +24,7 @@ conda install -y --no-update-dependencies conda-build
 # conda update -y conda
 conda config --add channels bioconda
 conda config --add channels conda-forge
-conda install -y conda-build-all --channel conda-forge
-conda install -y conda-build anaconda-client
+conda install -y --no-update-dependencies conda-build-all --channel conda-forge
+conda install -y --no-update-dependencies conda-build anaconda-client
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
-conda install -y "gsort>=0.0.2" samtools htslib zlib
+conda install -y --no-update-dependencies "gsort>=0.0.2" samtools htslib zlib
