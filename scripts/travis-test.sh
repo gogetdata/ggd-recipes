@@ -31,8 +31,8 @@ trap rmbuild EXIT
 # Homo-sapien
 #bioconda-utils build recipes/Homo_sapiens/GRCH37/ config.yaml --loglevel info
 #bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml #--loglevel info
-bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml #--loglevel info
-#bioconda-utils /recipes/Homo_sapiens/hg38/ config.yaml --loglevel info
+#bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml #--loglevel info
+bioconda-utils /recipes/Homo_sapiens/hg38/ config.yaml #--loglevel info
 # Mus_musculus
 #bioconda-utils recipes/Mus_musculus/mm10/ config.yaml --loglevel info
 # Canis_familiaris
