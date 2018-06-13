@@ -9,3 +9,4 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.tx
 
 tabix gaps.bed.gz
 
+df -h ## Check disc space
