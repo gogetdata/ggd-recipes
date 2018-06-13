@@ -8,5 +8,3 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.tx
     | bgzip -c > gaps.bed.gz
 
 tabix gaps.bed.gz
-
-df -h ## Check disc space
