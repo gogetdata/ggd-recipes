@@ -19,6 +19,9 @@ CHECK_DIR=$TMPDIR/builds.$$/
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
 
+echo $CHECK_DIR
+
+
 ## cleanup
 rmbuild() {
 	rm -rf $CHECK_DIR
@@ -48,6 +51,8 @@ echo "############################################################"
 
 ### Check every recipe
 for bz2 in $CHECK_DIR/*.bz2; do
+	echo $basename
+	echo $bz2
 	echo "############################################################"
 	echo "############################################################"
 	echo "Checking recipe" $(basename $bz2)
