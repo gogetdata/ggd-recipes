@@ -50,6 +50,7 @@ echo "############################################################"
 echo "############################################################"
 
 ### Check every recipe
+echo $CHECK_DIR
 for bz2 in $CHECK_DIR/*.bz2; do
 	#echo $basename
 	echo $bz2
