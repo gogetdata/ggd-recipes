@@ -7,21 +7,14 @@ pushd `dirname $0` > /dev/null
 HERE=`pwd`
 popd > /dev/null
 
-mkdir -p $CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome
-export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome
+export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+mkdir -p $RECIPE_DIR
 
 recipe_env_name="ggd_grch37-reference-genome"
 recipe_env_name="$(echo "$recipe_env_name" | sed 's/-/_/g')"
 
-conda_info=$(conda info --envs)
-while IFS=$'\n' read -ra conda_info; do
-    for line in "${conda_info[@]}"; do
-        if grep -q "*" <<<$line; then
-            IFS=' ' read -r -a parsed_stuff <<< "$line"
-            env_dir="${parsed_stuff[2]}"
-        fi
-    done
-done <<< "$conda_info"
+
+env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
 
 
 activate_dir="$env_dir/etc/conda/activate.d"
