@@ -1,21 +1,17 @@
 #!/bin/bash
 
-TMPDIR=${TMPDIR:-/tmp/}
-
 set -eo pipefail -o nounset
 
 
 export PATH=/anaconda/bin:$PATH
-#check-sort-order --help
 conda install htslib gsort
-#gsort --help
-
 
 
 CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
 
-CHECK_DIR=$TMPDIR/builds.$$/
+## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
+CHECK_DIR=$CONDA_ROOT/conda-bld/*
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
 
@@ -25,10 +21,8 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-conda-build-all \
-	--inspect-channels=ggd-alpha \
-	--artefact-directory $CHECK_DIR \
-	recipes/
+## Build/filter all recipes using bioconda-utils build
+bioconda-utils build recipes/ config.yaml
 
 echo "############################################################"
 echo "############################################################"
