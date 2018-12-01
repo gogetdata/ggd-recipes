@@ -1,0 +1,57 @@
+# Circle CI Yaml
+## Docs: https://circleci.com/docs/2.0/configuration-reference/
+
+version: 2
+
+variables:
+    setup: &setup
+        run:
+            name: Setup ggd dependencies
+            command: .circleci/setup.sh
+    run: &run
+        run:
+            name: Filtering (and building) ggd-recipes
+            command: .circleci/run-test.sh 
+            no_output_timeout: 1200
+    macos: &macos
+        macos:
+            xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
+    linux: &linux
+        machine: true ## Using a dedicated Linux VM image (https://circleci.com/docs/2.0/executor-types/)
+
+
+
+jobs:
+    test-linux:
+        <<: *linux
+        steps:
+            - checkout 
+            - *setup
+            - *run
+    test-macos:
+        <<: *macos
+        steps:
+            - checkout 
+            - *setup
+            - *run
+
+
+workflows:
+    version: 2
+    build-n-filter-ggd-recipes:
+        jobs:
+            - test-linux
+            - test-macos
+    ggd-recipes-nightly-build:
+        triggers: 
+            - schedule:
+                cron: "0 3 * * *"    ##  ~ 9PM MST, 3AM UTC  
+                filters:
+                    branches:
+                        only:
+                            - master
+        jobs:
+            - test-linux:
+                context: ggd-dev
+            - test-macos:
+                context: ggd-dev
