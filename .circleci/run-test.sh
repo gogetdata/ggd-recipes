@@ -17,7 +17,7 @@ mkdir -p $CHECK_DIR
 
 ## cleanup
 rmbuild() {
-	rm -rf $CHECK_DIR
+    rm -rf $CHECK_DIR
 }
 trap rmbuild EXIT
 
@@ -29,90 +29,99 @@ echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
 echo -e "############################################################\n"
 
+recipe_uploaded=false
 cached=false
 cached_recipes_path=""
 for bz2 in $CHECK_DIR/*.bz2; do
-	if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
+    if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
         continue
     fi
-	if [[ "$(basename $bz2)" == "*.bz2" ]]; then
-		continue
-	fi
+    if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+        continue
+    fi
 
-	echo "############################################################"
-	echo "-> Checking recipe" $(basename $bz2)
-	echo "############################################################"
-	ggd check-recipe $bz2
-	
-	## Upload
-	set +o nounset
+    echo "############################################################"
+    echo "-> Checking recipe" $(basename $bz2)
+    echo "############################################################"
+    ggd check-recipe $bz2
+    
+    ## Upload
+    set +o nounset
 
     ## If on branch master, and there is no pull requests
-	if [[ "$CIRCLE_BRANCH" == "master" && -z "$CIRCLE_PULL_REQUEST" ]] ; then
-		if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
-			echo -e "\n-> WARNING:"
-			echo '-> $ANACONDA_GGD_TOKEN not set'
-		else
-			anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+    if [[ "$CIRCLE_BRANCH" == "master" && -z "$CIRCLE_PULL_REQUEST" ]] ; then
+        if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
+            echo -e "\n-> WARNING:"
+            echo '-> $ANACONDA_GGD_TOKEN not set'
+        else
+            anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+            recipe_uploaded=true
             echo -e "\n-> Successfully Uploaded\n" 
-			cache_pkg=true
 
-			if [[ "$cache_pkg" == true ]]; then
-				echo "############################################################"
-				echo "-> Caching recipe on aws" $(basename $bz2)
-				echo "############################################################"
-				## FIX THIS BEFORE PUSH AND COMMIT
-				files_path=`(python .circleci/get_tarbz2_file_path.py -t $bz2 -cr $CONDA_ROOT)` 
-				cached_recipes_path=`(python .circleci/aws_upload.py -ak $AWS_ACCESS_KEY_ID -sak $AWS_SECRET_ACCESS_KEY -p $files_path -t $bz2 | tail -n 1)` 
-				cached=true
-				echo -e "\n-> Successfully cached\n"  
-			fi
-		fi
+            ## Set for all uploaded packages. Use a condition to restrict which packages are cached and which ones are not
+            cache_pkg=true
+
+            if [[ "$cache_pkg" == true ]]; then
+                echo "############################################################"
+                echo "-> Caching recipe on aws" $(basename $bz2)
+                echo "############################################################"
+                ## FIX THIS BEFORE PUSH AND COMMIT
+                files_path=`(python .circleci/get_tarbz2_file_path.py -t $bz2 -cr $CONDA_ROOT)` 
+                cached_recipes_path=`(python .circleci/aws_upload.py -ak $AWS_ACCESS_KEY_ID -sak $AWS_SECRET_ACCESS_KEY -p $files_path -t $bz2 | tail -n 1)` 
+                cached=true
+                echo -e "\n-> Successfully cached\n"  
+            fi
+        fi
     else 
         echo -e "\n-> DONE"
-	fi
-	set -o nounset
+    fi
+    set -o nounset
 done
 
 if [[ "$cached" == true ]] ; then
-	## Clean up build dir
-	rm $CHECK_DIR/*.bz2
-	## build the new pacakges
-	echo -e "\n-> cached dirs:\n"
-	echo "$cached_recipes_path"
-	bioconda-utils build $cached_recipes_path config.yaml
-	## run recipe check and upload
-	for bz2 in $CHECK_DIR/*.bz2; do
-		if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
-			continue
-		fi
-		if [[ "$(basename $bz2)" == "*.bz2" ]]; then
-			continue
-		fi
+    ## Clean up build dir
+    rm $CHECK_DIR/*.bz2
+    ## build the new pacakges
+    echo -e "\n-> cached dirs:\n"
+    echo "$cached_recipes_path"
+    bioconda-utils build $cached_recipes_path config.yaml
+    ## run recipe check and upload
+    for bz2 in $CHECK_DIR/*.bz2; do
+        if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
+            continue
+        fi
+        if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+            continue
+        fi
 
-		echo "############################################################"
-		echo "-> Checking recipe" $(basename $bz2)
-		echo "############################################################"
-		ggd check-recipe $bz2
-	
-		## Upload
-		set +o nounset
+        echo "############################################################"
+        echo "-> Checking recipe" $(basename $bz2)
+        echo "############################################################"
+        ggd check-recipe $bz2
+    
+        ## Upload
+        set +o nounset
 
-		echo $CIRCLE_BRANCH
-		echo $CIRCLE_PULL_REQUEST
+        echo $CIRCLE_BRANCH
+        echo $CIRCLE_PULL_REQUEST
 
-		## If on branch master, and there is no pull requests
-		if [[ "$CIRCLE_BRANCH" == "master" && -z "$CIRCLE_PULL_REQUEST" ]] ; then
-			if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
-				echo -e "\n-> WARNING:"
-				echo '-> $ANACONDA_GGD_TOKEN not set'
+        ## If on branch master, and there is no pull requests
+        if [[ "$CIRCLE_BRANCH" == "master" && -z "$CIRCLE_PULL_REQUEST" ]] ; then
+            if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
+                echo -e "\n-> WARNING:"
+                echo '-> $ANACONDA_GGD_TOKEN not set'
 
-			else
-				anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
-				echo -e "\n-> Successfully Uploaded\n" 
-			fi
-		fi
-	done
-	# update channeldata index	
-	python .circleci/index_ggd_channel.py -t "/tmp"
+            else
+                anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+                echo -e "\n-> Successfully Uploaded\n" 
+            fi
+        fi
+    done
 fi
+
+
+if [[ "$recipe_uploaded" == true ]] ; then
+    # update channeldata index    
+    python .circleci/index_ggd_channel.py -t "/tmp"
+fi
+    
