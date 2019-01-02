@@ -5,7 +5,7 @@ env_matrix: "scripts/env_matrix.yaml"
 ## No current blacklist 
   
 channels:
-  - ggd-dev
+  - ggd-genomics
   - bioconda
   - conda-forge
   - defaults
