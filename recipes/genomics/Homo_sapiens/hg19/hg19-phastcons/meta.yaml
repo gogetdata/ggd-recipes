@@ -1,0 +1,28 @@
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - phastCons
+  - conservation
+  summary: phastCons scores for MSA of 99 genomes to hg19
+  tags:
+    data-version: 09-Feb-2014
+    ggd-channel: genomics
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - hg19.100way.phastCons.bw
+package:
+  name: hg19-phastcons
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
