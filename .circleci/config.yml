@@ -12,7 +12,7 @@ variables:
         run:
             name: Filtering (and building) ggd-recipes
             command: .circleci/run-test.sh 
-            no_output_timeout: 1200
+            no_output_timeout: 9900
     macos: &macos
         macos:
             xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
@@ -34,6 +34,25 @@ jobs:
             - checkout 
             - *setup
             - *run
+    master-test-linux:
+        <<: *linux
+        steps:
+            - checkout 
+            - add_ssh_keys:
+                fingerprints:
+                    - "56:02:2b:9a:bd:bd:5e:4c:d4:b8:64:5c:04:ef:36:d4"
+            - *setup
+            - *run
+    master-test-macos:
+        <<: *macos
+        steps:
+            - checkout 
+            - add_ssh_keys:
+                fingerprints:
+                    - "56:02:2b:9a:bd:bd:5e:4c:d4:b8:64:5c:04:ef:36:d4"
+            - *setup
+            - *run
+        
 
 
 workflows:
@@ -45,13 +64,13 @@ workflows:
     ggd-recipes-nightly-build:
         triggers: 
             - schedule:
-                cron: "0 3 * * *"    ##  ~ 9PM MST, 3AM UTC  
+                cron: "0 3 * * *"    ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
                 filters:
                     branches:
                         only:
                             - master
         jobs:
-            - test-linux:
-                context: ggd-dev
-            - test-macos:
-                context: ggd-dev
+            - master-test-linux:
+                context: ggd-genomics
+            - master-test-macos:
+                context: ggd-genomics
