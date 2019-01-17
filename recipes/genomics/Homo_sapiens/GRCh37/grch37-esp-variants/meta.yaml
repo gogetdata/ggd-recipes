@@ -1,0 +1,36 @@
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - ESP
+  summary: 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)'
+  tags:
+    data-version: ESP6500SI-V2
+    ggd-channel: genomics
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-esp-variants
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - perl
+  - vt
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - perl
+  - vt
+  - zlib
+source:
+  path: .
