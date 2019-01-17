@@ -64,7 +64,7 @@ def upload_to_aws(client, ggd_recipe_path, s3_bucket):
 	ggd_paths = set()
 	for root, dirs, files in os.walk(ggd_recipe_path):
 		ggd_paths.add(root.split("/share/ggd/")[1]) ## The directory path
-		files.sort()
+		#files.sort()
 		for name in files:
 			key_name_path=os.path.join(root,name).split("/share/ggd/")[1], # set the directory path
 			print("\n-> Uploading: %s to aws S3" %(os.path.join(root,name)))
