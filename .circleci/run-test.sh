@@ -6,6 +6,11 @@ set -eo pipefail -o nounset
 export PATH=/anaconda/bin:$PATH
 conda install htslib gsort
 
+echo -e  "\n############################################################"
+echo "-> Finding conda_build_config"
+echo `which bioconda-utils`
+echo -e "############################################################\n"
+
 
 CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
