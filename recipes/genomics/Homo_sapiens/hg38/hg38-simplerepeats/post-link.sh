@@ -5,7 +5,7 @@ export CONDA_ROOT=$(conda info --root)
 
 PKG_DIR=`find "$CONDA_ROOT/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION-.*$PKG_BUILDNUM$\|$PKG_VERSION\_.*$PKG_BUILDNUM$"`
 
-export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1
+export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/hg38/hg38-simplerepeats/1
 
 if [ -d $RECIPE_DIR ]; then
     rm -r $RECIPE_DIR
@@ -13,7 +13,7 @@ fi
 
 mkdir -p $RECIPE_DIR
 
-recipe_env_name="ggd_grch37-esp-variants"
+recipe_env_name="ggd_hg38-simplerepeats"
 recipe_env_name="$(echo "$recipe_env_name" | sed 's/-/_/g')"
 
 env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
