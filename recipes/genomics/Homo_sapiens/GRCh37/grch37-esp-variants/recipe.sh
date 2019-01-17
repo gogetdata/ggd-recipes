@@ -27,6 +27,10 @@ tabix temp.gz
 
 # decompose with vt
 vt decompose -s temp.gz -o dec_temp.vcf
+echo `head dec_temp.vcf`
+echo `$reference_fasta`
+echo `head $reference_fasta`
+echo `df`
 vt normalize dec_temp.vcf -r $reference_fasta -o dec_norm_temp.vcf
 perl -pe 's/\([EA_|T|AA_]\)AC,Number=R,Type=Integer/\1AC,Number=R,Type=String/' dec_norm_temp.vcf > processed_temp.vcf
 bgzip -c processed_temp.vcf > ESP6500SI.all.snps_indels.tidy.vcf.gz
