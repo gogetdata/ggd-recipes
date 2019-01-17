@@ -26,9 +26,7 @@ zless ESP6500SI.all.snps_indels.vcf.gz | python sanitize-esp.py | bgzip -c > tem
 tabix temp.gz
 
 # decompose with vt
-vt decompose -s temp.gz | vt normalize -r $reference_fasta - \
-    | perl -pe 's/\([EA_|T|AA_]\)AC,Number=R,Type=Integer/\1AC,Number=R,Type=String/' \
-    | bgzip -c > ESP6500SI.all.snps_indels.tidy.vcf.gz
+vt decompose -s temp.gz | vt normalize -r $reference_fasta - | perl -pe 's/\([EA_|T|AA_]\)AC,Number=R,Type=Integer/\1AC,Number=R,Type=String/' | bgzip -c > ESP6500SI.all.snps_indels.tidy.vcf.gz
 
 tabix ESP6500SI.all.snps_indels.tidy.vcf.gz
 
