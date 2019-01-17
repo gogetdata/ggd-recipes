@@ -9,6 +9,7 @@ conda install htslib gsort
 echo -e  "\n############################################################"
 echo "-> Finding conda_build_config"
 echo `which bioconda-utils`
+echo `ls /home/circleci/project/anaconda/`
 echo -e "############################################################\n"
 
 
