@@ -64,18 +64,16 @@ def upload_to_aws(client, ggd_recipe_path, s3_bucket):
 	ggd_paths = set()
 	for root, dirs, files in os.walk(ggd_recipe_path):
 		ggd_paths.add(root.split("/share/ggd/")[1]) ## The directory path
-		#files.sort()
+		files.sort()
 		for name in files:
 			key_name_path=os.path.join(root,name).split("/share/ggd/")[1], # set the directory path
 			print("\n-> Uploading: %s to aws S3" %(os.path.join(root,name)))
-			'''
 			client.upload_file(
 				Filename=os.path.join(root,name),
 				Bucket=s3_bucket,
 				Key=key_name_path[0],
 				ExtraArgs={'ACL': 'public-read'} ## set public read access
 				)
-				'''
 			url = '{}/{}/{}'.format(client.meta.endpoint_url, s3_bucket, key_name_path[0])
 			pkg_url_list.append(url)
 			print("\n-> The file '%s' was uploaded to the aws s3 %s bucket. The url for the file is: %s" %(name,s3_bucket,url))
