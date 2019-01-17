@@ -64,7 +64,7 @@ workflows:
     ggd-recipes-nightly-build:
         triggers: 
             - schedule:
-                cron: "0 19 * * *"    ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
+                cron: "18 19 * * *"    ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
                 filters:
                     branches:
                         only:
