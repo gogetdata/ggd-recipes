@@ -68,7 +68,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     cur=`pwd`
     CONDA_ROOT=$(conda info --root)
     cd $CONDA_ROOT
-    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
+#    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
+    touch conda_build_config.yaml
     cd $cur
 
 
