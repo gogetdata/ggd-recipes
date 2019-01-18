@@ -42,7 +42,6 @@ bgzip -c processed_temp.vcf > ESP6500SI.all.snps_indels.tidy.vcf.gz
 
 tabix ESP6500SI.all.snps_indels.tidy.vcf.gz
 
-
 # 2nd clean up environment
 rm temp.gz
 rm temp.gz.tbi
