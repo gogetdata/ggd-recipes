@@ -56,8 +56,11 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     ## Install ggd-cli
     #pip install -U git+git://github.com/gogetdata/ggd-cli.git
     #pip install -U git+git://github.com/gogetdata/ggd-cli.git@mikec-update # Temp use mikec-update branch
-	conda install -y --file https://raw.githubusercontent.com/mikecormier/ggd-cli/master/requirements.txt
-    pip install -U git+git://github.com/mikecormier/ggd-cli # Temp use mikecormier ggd-cli 
+	#conda install -y --file https://raw.githubusercontent.com/mikecormier/ggd-cli/master/requirements.txt
+    #pip install -U git+git://github.com/mikecormier/ggd-cli # Temp use mikecormier ggd-cli 
+    conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
+    pip install -U git+git://github.com/gogetdata/ggd-cli 
+
 
 
     # step 5: cleanup
@@ -68,8 +71,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     cur=`pwd`
     CONDA_ROOT=$(conda info --root)
     cd $CONDA_ROOT
-#    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
-    touch conda_build_config.yaml
+    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
+    #touch conda_build_config.yaml
     cd $cur
 
 
