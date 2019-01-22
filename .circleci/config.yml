@@ -1,0 +1,78 @@
+# Circle CI Yaml
+## Docs: https://circleci.com/docs/2.0/configuration-reference/
+
+version: 2
+
+variables:
+    setup: &setup
+        run:
+            shell: /bin/bash
+            name: Setup ggd dependencies
+            command: .circleci/setup.sh
+    run: &run
+        run:
+            shell: /bin/bash
+            name: Filtering (and building) ggd-recipes
+            command: .circleci/run-test.sh 
+            no_output_timeout: 9900
+    macos: &macos
+        macos:
+            xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
+    linux: &linux
+        machine: true ## Using a dedicated Linux VM image (https://circleci.com/docs/2.0/executor-types/)
+
+
+
+jobs:
+    test-linux:
+        <<: *linux
+        steps:
+            - checkout 
+            - *setup
+            - *run
+    test-macos:
+        <<: *macos
+        steps:
+            - checkout 
+            - *setup
+            - *run
+    master-test-linux:
+        <<: *linux
+        steps:
+            - checkout 
+            - add_ssh_keys:
+                fingerprints:
+                    - "56:02:2b:9a:bd:bd:5e:4c:d4:b8:64:5c:04:ef:36:d4"
+            - *setup
+            - *run
+    master-test-macos:
+        <<: *macos
+        steps:
+            - checkout 
+            - add_ssh_keys:
+                fingerprints:
+                    - "56:02:2b:9a:bd:bd:5e:4c:d4:b8:64:5c:04:ef:36:d4"
+            - *setup
+            - *run
+        
+
+
+workflows:
+    version: 2
+    build-n-filter-ggd-recipes:
+        jobs:
+            - test-linux
+            - test-macos
+    ggd-recipes-nightly-build:
+        triggers: 
+            - schedule:
+                cron: "0 3 * * *"    ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
+                filters:
+                    branches:
+                        only:
+                            - master
+        jobs:
+            - master-test-linux:
+                context: ggd-genomics
+            - master-test-macos:
+                context: ggd-genomics
