@@ -49,7 +49,7 @@ Example:
     #   (See ggd search)
     #******************************
 
-    $ ggd search reference genome
+    $ ggd search -t reference genome
 
       grch37-reference-genome
        Summary: GRCh37 reference genome from 1000 genomes
