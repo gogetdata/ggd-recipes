@@ -125,7 +125,7 @@ and install available processed genomic data packages using the ggd tool.
 
 .. code-block:: bash
 
-    $ ggd search -t Homo_sapiens reference genome
+    $ ggd search -t reference genome
 
       grch37-reference-genome
        Summary: GRCh37 reference genome from 1000 genomes
