@@ -43,8 +43,8 @@ For example, if the data was located in the 'proteomics' channel, you would use:
 The :code:`-v` flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
 a specific genomic data package you would run :code:`ggd install <package> -v 2`. This flag is not required.
 
-Example
--------
+Examples
+--------
 
 1. Failed install example:
 ++++++++++++++++++++++++++
