@@ -52,7 +52,7 @@ Example
 -------
 Some examples of using the `ggd search` tool:
 
-1. Simple Example with one search term:
+1. Simple example with one search term:
 +++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
@@ -70,12 +70,10 @@ Some examples of using the `ggd search` tool:
            ggd install grch37-reference-genomet
 
       grch38-reference-genome
-     .
-     .
-     .
 
-2. Simple Example with two search term:
-+++++++++++++++++++++++++++++++++++++++
+
+2. Simple example with two search terms:
+++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
@@ -101,12 +99,10 @@ Some examples of using the `ggd search` tool:
 
        To install run:
            ggd install hg19-repeatmasker
-     .
-     .
-     .
 
-3. Example using the -g, -s, and -k flags to filter the results:
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+3. Example using ``-g``, ``-s``, and ``-k`` flags to filter the results:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
