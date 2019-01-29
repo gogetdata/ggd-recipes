@@ -50,8 +50,8 @@ Using GGD
 1. Install conda
 ----------------
 ggd requires the conda package management system be installed on your system. Loading conda from a module
-is not sufficient [as data packages are stored in conda root (verify)]. Please install Anaconda or Miniconda onto your system.
-The best way to install it is with the `Miniconda <http://conda.pydata.org/miniconda.html>`_
+is not sufficient as data packages are stored in conda root. Please install Anaconda or Miniconda onto your system.
+The best way to install is with the `Miniconda <http://conda.pydata.org/miniconda.html>`_
 package. The Python 3 version is recommended.
 
 2. Configure the conda channels
@@ -114,7 +114,7 @@ documentation pages.
 ggd Use Case
 ============
 
-Lets say you you need to align some sequence(s) to the human reference genome for an analysis you are doing.
+You need to align some sequence(s) to the human reference genome for a given analysis.
 You will need to find and download the correct reference genome from one of the sites that hosts it and make sure it is
 the correct genome build. You will then need to sort and index the reference genome before you can use it.
 
