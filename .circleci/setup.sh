@@ -77,7 +77,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
 
     # Add local channel as highest priority
-    conda index $WORKSPACE/anaconda/conda-bld/linux-64 $WORKSPACE/anaconda/conda-bld/osx-64 $WORKSPACE/anaconda/conda-bld/noarch
+    #conda index $WORKSPACE/anaconda/conda-bld/linux-64 $WORKSPACE/anaconda/conda-bld/osx-64 $WORKSPACE/anaconda/conda-bld/noarch
+    conda index $WORKSPACE/anaconda/conda-bld/
     conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
 fi
 
