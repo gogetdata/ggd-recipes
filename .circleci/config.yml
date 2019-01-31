@@ -49,9 +49,6 @@ jobs:
     <<: *macos
     steps:
       - checkout 
-      - add_ssh_keys:
-          fingerprints:
-            - "56:02:2b:9a:bd:bd:5e:4c:d4:b8:64:5c:04:ef:36:d4"
       - *setup
       - *run
         
@@ -75,4 +72,5 @@ workflows:
       - master-test-linux:
           context: ggd-genomics
       - master-test-macos:
-          context: ggd-genomics
+
+
