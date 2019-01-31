@@ -3,18 +3,19 @@
 ggd show-env
 ============
 
-ggd show-env is a tool used to show the ggd associated variables created during package installation 
-for the current conda enviroment. 
+ggd show-env is a tool used to show the ggd associated variables created during package installation
+for the current conda environment.
+
 During installation, ggd will place the processed files in a specific location on your system. To access
-these files ggd creates enviroment variables for a specific conda enviroment. These variables contain the 
+these files ggd creates environment variables for a specific conda environment. These variables contain the
 directory path to the processed files. You can use :code:`ggd list-files` to find the file paths for a ggd data
-package, however, these enviroment variables provide quick access to the processed files without having to know 
+package, however, these environment variables provide quick access to the processed files without having to know
 the file paths.
 
 
 Using ggd show-env
 ------------------
-You can use ggd show-env to get a list of ggd data package enviroment variables. 
+You can use ggd show-env to get a list of ggd data package enviroment variables.
 Running :code:`ggd show-env -h` will give you the following message:
 
 .. code-block:: bash
@@ -26,12 +27,12 @@ Running :code:`ggd show-env -h` will give you the following message:
         -p PATTERN, --pattern PATTERN
                               regular expression pattern to match the name of the variable desired
 
-There are no required arguemnts for using :code:`ggd show-env`, however, you can refine the results using 
-the :code:`-p` flag. 
-    
+There are no required arguments for using :code:`ggd show-env`, however, you can refine the results using
+the :code:`-p` flag.
 
-Example
--------
+
+Examples
+--------
 
 1. Using ggd show-env
 +++++++++++++++++++++
@@ -76,5 +77,3 @@ Example
       .
 
       *****************************
-
-
