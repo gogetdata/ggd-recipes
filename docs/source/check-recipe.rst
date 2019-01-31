@@ -11,6 +11,7 @@ then be called to test that newly built ggd recipe.
 For more information about using the ggd workflow to contribute to ggd see :ref:`contribute <make-data-packages>`.
 
 
+
 Using ggd check-recipe
 ----------------------
 Checking a newly built ggd recipe is easy using the :code:`ggd check-recipe` tool.
@@ -110,4 +111,3 @@ Example
             ****************************
 
     * If the recipe fails, a message will be displayed stating that it failed and (hopefully) why it failed.
-
