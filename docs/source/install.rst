@@ -9,7 +9,7 @@ a proper install. If the package fails to install for some reason it will clean 
     .. note::
 
         Running :code:`conda install <package>` will work, however, it will only install the package and will not
-        provide file and system management. Please use :code:`ggd install <package>` when installing a ggd data package.
+        provide file and system management. **Please use** :code:`ggd install <package>` **when installing a ggd data package**.
 
 
 Using ggd install
@@ -17,31 +17,39 @@ Using ggd install
 Use :code:`ggd install` to install a data package hosted by ggd.
 Running :code:`ggd install -h` will give you the following message:
 
-.. code-block:: bash
+Install arguments:
 
-    positional arguments:
-        name                  the name of the recipe to install
+-h, --help                      show this help message and exit
 
-    optional arguments:
-        -h, --help            show this help message and exit
-        -c {genomics}, --channel {genomics}
-                              The ggd channel the desired recipe is stored in.(Default = genomics)
-        -v VERSION, --version VERSION
-                              A specific ggd package version to install. If the -v
-                              flag is not used the latest version will be installed.
+/name                           (Positional) the name of the recipe to install.
+                                ('/' indicates a placeholder and is not part of the argument name)
 
-The :code:`name` represents the name of the ggd package to download and is required. If the name
-provided is not in the ggd channel it will not be downloaded, and the user will be informed.
+-c, --channel                   (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)
 
-The :code:`-c` flag represents the ggd channel. The default channel is *genomics*. If the data package
-you want to install is in a different ggd channel you will need to supply the channel name using this flag.
+-v VERSION, --version VERSION   (Optional) A specific ggd package version to install. If the -v
+                                flag is not used the latest version will be installed.
 
-For example, if the data was located in the 'proteomics' channel, you would use::
+
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
+
+Required arguments:
+
+* *name:* The :code:`name` represents the name of the ggd package to download and is required. If the name
+  provided is not in the ggd channel it will not be downloaded, and the user will be informed.
+
+Optional arguments:
+
+* *-c:* The :code:`-c` flag represents the ggd channel. The default channel is *genomics*. If the data package
+  you want to install is in a different ggd channel you will need to supply the channel name using this flag.
+
+  For example, if the data was located in the 'proteomics' channel, you would use::
 
     ggd install <package> -c proteomics
 
-The :code:`-v` flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
-a specific genomic data package you would run :code:`ggd install <package> -v 2`. This flag is not required.
+* *-v:* The :code:`-v` flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
+  a specific genomic data package you would run :code:`ggd install <package> -v 2`. This flag is not required.
+
 
 Examples
 --------

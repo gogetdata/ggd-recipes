@@ -17,13 +17,15 @@ Using ggd check-recipe
 Checking a newly built ggd recipe is easy using the :code:`ggd check-recipe` tool.
 Running :code:`ggd check-recipe -h` will give you the following help message:
 
-.. code-block:: sh
+check-recipe arguments: 
 
-    positional arguments:
-        recipe_path  path to recipe directory (can also be path to the .bz2)
+-h, --help      show this help message and exit
 
-    optional arguments:
-        -h, --help   show this help message and exit
+/recipe_path    (Positional) Path to recipe directory (can also be path to the .bz2)
+                ('/' indicates a placeholder and is not part of the argument name)
+
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
 
 The only required argument is the :code:`recipe_path` and refers to the directory you would like ``ggd check-recipe``
 to check. When using :ref:`ggd from-bash <ggd-from-bash>` to create a ggd recipe, from-bash will

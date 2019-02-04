@@ -1,14 +1,3 @@
-about:
-  identifiers:
-    genome-build: hg19
-    species: Homo_sapiens
-  keywords:
-  - gaps
-  - region
-  summary: Assembly gaps from USCS
-  tags:
-    data-version: 27-Apr-2009
-    ggd-channel: genomics
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
@@ -31,3 +20,14 @@ requirements:
   - zlib
 source:
   path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - gaps
+  - region
+  summary: Assembly gaps from USCS
+  tags:
+    data-version: 27-Apr-2009
+    ggd-channel: genomics

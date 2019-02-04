@@ -18,30 +18,39 @@ and process the data.
 
 Running :code:`ggd pkg-info -h` will give you the following help message:
 
-.. code-block:: bash
+pkg-info arguments:
 
-    positional arguments:
-        name                  the name of the recipe to get info about
+-h, --help              show this help message and exit
 
-    optional arguments:
-        -h, --help            show this help message and exit
-        -c {genomics}, --channel {genomics}
-                              The ggd channel of the recipe to list info about (default: genomics)
-        -av, --all_versions   (Optional) When the flag is set, list all ggd versions of a
-                              ggd-recipe for a specific ggd-channel. (NOTE: -av flag does not
-                              accept arguments)
-        -sr, --show_recipe    (Optional) When the flag is set, the recipe will be printed to the
-                              stdout. This will provide info on where the data is hosted and how
-                              it was processed. (NOTE: -sr flag does not accept arguments)
+/name                   (Positional) The name of the recipe to get info about.
+                        ('/' indicates a placeholder and is not part of the argument name) 
 
-Parameters:
+-c, --channel           (Optional) The ggd channel of the recipe to list info about (default: genomics)
 
-* name: The :code:`name` argument represents the name of the ggd data package for which to retrieve info.
+-av, --all_versions     (Optional) When the flag is set, list all ggd versions of a
+                        ggd-recipe for a specific ggd-channel. (NOTE: -av flag does not
+                        accept arguments)
+
+-sr, --show_recipe      (Optional) When the flag is set, the recipe will be printed to the
+                        stdout. This will provide info on where the data is hosted and how
+                        it was processed. (NOTE: -sr flag does not accept arguments)
+
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
+
+Required arguments:
+
+* *name:* The :code:`name` argument represents the name of the ggd data package for which to retrieve info.
   No flag is required for this argument, just supply the name.
-* -c: The :code:`-c` flag represents the ggd channel the package came from. The default is genomics.
-* -av: The :code:`-av` flag is used to list *all available* versions of the ggd package. Not all versions
+
+Optional arguments:
+
+* *-c:* The :code:`-c` flag represents the ggd channel the package came from. The default is genomics.
+
+* *-av:* The :code:`-av` flag is used to list *all available* versions of the ggd package. Not all versions
   will be installed on your system. This flag only needs to be set and will not accept additional arguments.
-* -sr: The :code:`-sr` flag is used to *show the recipe* for the data package. Showing the recipe will allow
+
+* *-sr:* The :code:`-sr` flag is used to *show the recipe* for the data package. Showing the recipe will allow
   the user to identify where the data was originally downloaded, how it was processed, and other information
   about the data being used.
 

@@ -17,7 +17,7 @@ data package name and version.
 ggd consists of:
 ++++++++++++++++
 
-- a `repository of recipes <https://github.com/gogetdata/ggd-recipes>`_ hosted on Github
+- a `repository of data recipes <https://github.com/gogetdata/ggd-recipes>`_ hosted on Github
 - a `command line interface (cli) <https://github.com/gogetdata/ggd-cli>`_ to communicate with the ggd system
 - a continually growing list of genomic recipes to provide quick and easy access to processed genomic data
   using the ggd cli tool
@@ -30,7 +30,8 @@ on your system, and give you ready-to-use data files. For additional information
 
 .. image:: ggd-Figure1.png
 
-=======
+========
+
 Example:
 ++++++++
 
