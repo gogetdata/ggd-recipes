@@ -61,14 +61,18 @@ for bz2 in $CHECK_DIR/*.bz2; do
             cache_pkg=true
 
             if [[ "$cache_pkg" == true ]]; then
-                echo "############################################################"
-                echo "-> Caching recipe on aws" $(basename $bz2)
-                echo "############################################################"
-                ## FIX THIS BEFORE PUSH AND COMMIT
-                files_path=`(python .circleci/get_tarbz2_file_path.py -t $bz2 -cr $CONDA_ROOT)` 
-                cached_recipes_path=`(python .circleci/aws_upload.py -ak $AWS_ACCESS_KEY_ID -sak $AWS_SECRET_ACCESS_KEY -p $files_path -t $bz2 | tail -n 1)` 
-                cached=true
-                echo -e "\n-> Successfully cached\n"  
+                if [[ "$OSTYPE" == linux* ]]; then ##Only cache the linux version
+                    echo "############################################################"
+                    echo "-> Caching recipe on aws" $(basename $bz2)
+                    echo "############################################################"
+                    ## FIX THIS BEFORE PUSH AND COMMIT
+                    files_path=`(python .circleci/get_tarbz2_file_path.py -t $bz2 -cr $CONDA_ROOT)` 
+                    cached_recipes_path=`(python .circleci/aws_upload.py -ak $AWS_ACCESS_KEY_ID -sak $AWS_SECRET_ACCESS_KEY -p $files_path -t $bz2 | tail -n 1)` 
+                    cached=true
+                    echo -e "\n-> Successfully cached\n"  
+                else
+                    echo -e "\n-> OSType is not linux. Data Package will not be cached\n"
+                fi
             fi
         fi
     else 
