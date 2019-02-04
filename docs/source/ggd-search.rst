@@ -48,6 +48,27 @@ Search arguments:
 
 Any combination of search flags can be used to search for a package with the exception of the -t flag, which is required.
 
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
+
+Required arguments:
+
+* *-t:* The :code:`-t` flag represents the "terms" to search for. At least one search term is required, but multiple can be provided 
+
+Optional arguments:
+
+* *-g:* The :code:`-g` flag is used to filter the search results on a specific "genome build". This flag is not required, however, if 
+  provided the resulting search will be filtered to only include data packages with that genome build.
+* *-s:* The :code:`-s` flag is used to filter the search results on a specific "species". Only data packages for that specific species 
+  will be displayed.
+* *-k:* The :code:`-k` flag is used to filter the search results based on keywords assigned to a pacakge. 
+* *-m:* The :code:`-m` flag represents the "match" score to use for searcing. A fuzzy word match is used to identify similar packages
+  to the terms search for, and the match score defines which packages will be displayed based on a cutoff. A default match score
+  cutoff is provided, but this flag can be used to provide more strict or more lenient search results.
+* *-c:* The :code:`-c` flag is used to set the ggd channel to search in. The ggd-genomics channel is set by default.
+
+
+
 Example
 -------
 Some examples of using the `ggd search` tool:

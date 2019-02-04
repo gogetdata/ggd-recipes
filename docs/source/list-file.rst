@@ -20,39 +20,47 @@ Using ggd list-files
 Use :code:`ggd list-files` to list the files associated with a previously installed ggd package.
 Running :code:`ggd list-files -h` will give you the following message:
 
-.. code-block:: bash
+list-files arguments: 
 
-    positional arguments:
-        name                  pattern to match recipe name(s). Ex:
-                              `ggd list-files "hg19-hello*" -s "Homo_sapiens" -g "hg19" -p "out*"`
+-h, --help                                      show this help message and exit
 
-    optional arguments:
-        -h, --help            show this help message and exit
-        -c {genomics}, --channel {genomics}
-                              The ggd channel of the recipe to find. (Default = genomics)
-        -s {Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus}, --species {Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus}
-                              (Optional) species recipe is for. Use '*' for any species
-        -g GENOME_BUILD, --genome-build GENOME_BUILD
-                              (Optional) genome build the recipe is for. Use '*' for any
-                              genome build.
-        -v VERSION, --version VERSION
-                              (Optional) pattern to match the version of the file desired.
-                              Use '*' for any version.
-        -p PATTERN, --pattern PATTERN
-                              (Optional) pattern to match the name of the file desired. To
-                              list all files for a ggd package, do not use the -p option.
+/name                                           (Positional) Pattern to match recipe name(s). Ex:
+                                                `ggd list-files "hg19-hello*" -s "Homo_sapiens" -g "hg19" -p "out*"`
+                                                ('/' indicates a placeholder and is not part of the argument name)
 
-Flag Descriptions:
+-c , --channel                                  (Optional) The ggd channel of the recipe to find. (Default = genomics)
 
-* The :code:`name` field is required and represents the ggd data package name for which to list files.
+-s, --species                                   (Optional) species recipe is for. Use '*' for any species
 
-* Optional flags for filtering:
+-g GENOME_BUILD, --genome-build GENOME_BUILD    (Optional) genome build the recipe is for. Use '*' for any
+                                                genome build.
 
-    * -c: The :code:`-c` flag is used to set the ggd channel (default: genomics).
-    * -s: The :code:`-s` flag represents the species of the ggd data package and filters files based on species.
-    * -g: The :code:`-g` flag represents the genome-build of the ggd data package and filters the list to the specified build.
-    * -v: The :code:`-v` flag represents the ggd data package version. This flag helps to refine the package to a specific version.
-    * -p: The :code:`-p` flag is used to list files that have a specific pattern, such as '\*.fai' or '\*.bam'.
+-v VERSION, --version VERSION                   (Optional) pattern to match the version of the file desired.
+                                                Use '*' for any version.
+
+-p PATTERN, --pattern PATTERN                   (Optional) pattern to match the name of the file desired. To
+                                                list all files for a ggd package, do not use the -p option.
+
+
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
+
+Required arguments: 
+
+* *name:* The :code:`name` field is required and represents the ggd data package name for which to list files.
+
+Optional arguments for filtering:
+
+* *-c:* The :code:`-c` flag is used to set the ggd channel (default: genomics).
+
+* *-s:* The :code:`-s` flag represents the species of the ggd data package and filters files based on species.
+
+* *-g:* The :code:`-g` flag represents the genome-build of the ggd data package and filters the list to the specified build.
+
+* *-v:* The :code:`-v` flag represents the ggd data package version. This flag helps to refine the package to a specific version.
+
+* *-p:* The :code:`-p` flag is used to list files that have a specific pattern, such as '\*.fai' or '\*.bam'.
+
 
 The **name** field is the only required parameter for :code:`ggd list-files`, however, the other flags are provided to help reduce the
 search space and refine the final file list.

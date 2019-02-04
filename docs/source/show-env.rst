@@ -18,14 +18,15 @@ Using ggd show-env
 You can use ggd show-env to get a list of ggd data package enviroment variables.
 Running :code:`ggd show-env -h` will give you the following message:
 
-.. code-block:: bash
+show-env arguments:
 
-    usage: ggd show-env [-h] [-p PATTERN]
+-h, --help                      show this help message and exit
 
-    optional arguments:
-        -h, --help            show this help message and exit
-        -p PATTERN, --pattern PATTERN
-                              regular expression pattern to match the name of the variable desired
+-p PATTERN, --pattern PATTERN   (Optional) Regular expression pattern to match the name of the variable desired
+
+
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
 
 There are no required arguments for using :code:`ggd show-env`, however, you can refine the results using
 the :code:`-p` flag.

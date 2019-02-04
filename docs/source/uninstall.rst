@@ -9,7 +9,7 @@ data package along with removal of additional files created during installation.
     .. note::
 
         Running :code:`conda uninstall <package>` will work, however, it will only uninstall the package and will not
-        provide file and system management. Please use :code:`ggd uninstall <package>` when uninstalling a ggd data package.
+        provide file and system management. **Please use** :code:`ggd uninstall <package>` **when uninstalling a ggd data package**.
 
 
 Using ggd uninstall
@@ -17,23 +17,31 @@ Using ggd uninstall
 Use :code:`ggd uninstall` to uninstall a ggd data package previously installed using  :code:`ggd install`.
 Running :code:`ggd uninstall -h` will give you the following message:
 
-.. code-block:: bash
+Uninstall arguments: 
 
-    positional arguments:
-        name                  the name of the recipe to install
+-h, --help      show this help message and exit
 
-    optional arguments:
-        -h, --help            show this help message and exit
-        -c {genomics}, --channel {genomics}
-                              The ggd channel the desired recipe is stored in.(Default = genomics)
+/name           (Positional) The name of the recipe to uninstall.
+                ('/' indicates a placeholder and is not part of the argument name)
 
-The :code:`name` is the name of the ggd data package to uninstall.
+-c, --channel   (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)
 
-The :code:`-c` flag represents the ggd channel. The default channel is *genomics*. If the data package you want to uninstall
-is in a different ggd channel you will need to supply the channel name using this flag. For example, if your data package was
-in the 'proteomics' channel, you would use::
+
+Additional argument explanation: 
+++++++++++++++++++++++++++++++++
+
+Required argumnets: 
+
+* *name:* The :code:`name` is the name of the ggd data package to uninstall.
+
+Optional arguments: 
+
+* *-c:* The :code:`-c` flag represents the ggd channel. The default channel is *genomics*. If the data package you want to uninstall
+  is in a different ggd channel you will need to supply the channel name using this flag. For example, if your data package was
+  in the 'proteomics' channel, you would use::
 
     ggd uninstall <package> -c proteomics
+
 
 Examples
 --------
