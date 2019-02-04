@@ -72,5 +72,6 @@ workflows:
       - master-test-linux:
           context: ggd-genomics
       - master-test-macos:
+          context: ggd-genomics
 
 
