@@ -28,7 +28,7 @@ list-files arguments:
                                                 `ggd list-files "hg19-hello*" -s "Homo_sapiens" -g "hg19" -p "out*"`
                                                 ('/' indicates a placeholder and is not part of the argument name)
 
--c , --channel                                  (Optional) The ggd channel of the recipe to find. (Default = genomics)
+-c, --channel                                  (Optional) The ggd channel of the recipe to find. (Default = genomics)
 
 -s, --species                                   (Optional) species recipe is for. Use '*' for any species
 
