@@ -40,12 +40,12 @@ args = parser.parse_args()
 # Returns:
 # 1) The aws boto3 client
 def create_boto3_client(accesskey, secretaccesskey):
-	client = boto3.client('s3',
-		aws_access_key_id=accesskey,
-		aws_secret_access_key=secretaccesskey
-		#region_name=args.region ## Not specifying a region. (Bucket wasn't created with a specific region, therefore, the endpoint url will be inacurate if using a region
-		)
-	return(client)
+    client = boto3.client('s3',
+        aws_access_key_id=accesskey,
+        aws_secret_access_key=secretaccesskey
+        #region_name=args.region ## Not specifying a region. (Bucket wasn't created with a specific region, therefore, the endpoint url will be inacurate if using a region
+        )
+    return(client)
 
 
 # upload_to_aws
@@ -60,24 +60,24 @@ def create_boto3_client(accesskey, secretaccesskey):
 # 1) A list of the urls to access the uploaded files
 # 2) A set of ggd_paths where the files were stored
 def upload_to_aws(client, ggd_recipe_path, s3_bucket):
-	pkg_url_list = []
-	ggd_paths = set()
-	for root, dirs, files in os.walk(ggd_recipe_path):
-		ggd_paths.add(root.split("/share/ggd/")[1]) ## The directory path
-		files.sort()
-		for name in files:
-			key_name_path=os.path.join(root,name).split("/share/ggd/")[1], # set the directory path
-			print("\n-> Uploading: %s to aws S3" %(os.path.join(root,name)))
-			client.upload_file(
-				Filename=os.path.join(root,name),
-				Bucket=s3_bucket,
-				Key=key_name_path[0],
-				ExtraArgs={'ACL': 'public-read'} ## set public read access
-				)
-			url = '{}/{}/{}'.format(client.meta.endpoint_url, s3_bucket, key_name_path[0])
-			pkg_url_list.append(url)
-			print("\n-> The file '%s' was uploaded to the aws s3 %s bucket. The url for the file is: %s" %(name,s3_bucket,url))
-	return(pkg_url_list, ggd_paths)
+    pkg_url_list = []
+    ggd_paths = set()
+    for root, dirs, files in os.walk(ggd_recipe_path):
+        ggd_paths.add(root.split("/share/ggd/")[1]) ## The directory path
+        files.sort()
+        for name in files:
+            key_name_path=os.path.join(root,name).split("/share/ggd/")[1], # set the directory path
+            print("\n-> Uploading: %s to aws S3" %(os.path.join(root,name)))
+            client.upload_file(
+                Filename=os.path.join(root,name),
+                Bucket=s3_bucket,
+                Key=key_name_path[0],
+                ExtraArgs={'ACL': 'public-read'} ## set public read access
+                )
+            url = '{}/{}/{}'.format(client.meta.endpoint_url, s3_bucket, key_name_path[0])
+            pkg_url_list.append(url)
+            print("\n-> The file '%s' was uploaded to the aws s3 %s bucket. The url for the file is: %s" %(name,s3_bucket,url))
+    return(pkg_url_list, ggd_paths)
 
 
 # update_meta_yaml
@@ -91,17 +91,20 @@ def upload_to_aws(client, ggd_recipe_path, s3_bucket):
 # ----------
 # 1) tarball_info_object: A tarInfo object from the tarball package. The object represents the meta.yaml file
 #                         for the recipe. File comes from a .tar.bz2 file created using conda build <pkg> 
-#						  (meta.yaml file location = info/recipe/meta.yaml.template)
+#                          (meta.yaml file location = info/recipe/meta.yaml.template)
 # Returns:
 # 1) A dictionary representing the updated build number meta.yaml file
 def update_meta_yaml(tarball_info_object):
-	yaml_dict = yaml.load(tarball_info_object)
-	if "cached" in yaml_dict["about"]["tags"]:
-		yaml_dict["about"]["tags"]["cached"].append("uploaded_to_aws") 
-	else:
-		yaml_dict["about"]["tags"]["cached"] = ["uploaded_to_aws"]
-	yaml_dict["build"]["number"] += 1
-	return(yaml_dict)
+    yaml_dict = yaml.load(tarball_info_object)
+    if "cached" in yaml_dict["about"]["tags"]:
+        yaml_dict["about"]["tags"]["cached"].append("uploaded_to_aws") 
+    else:
+        yaml_dict["about"]["tags"]["cached"] = ["uploaded_to_aws"]
+    yaml_dict["build"]["number"] += 1
+    ## Remove dependencies 
+    yaml_dict["requirements"]["build"] = []
+    yaml_dict["requirements"]["run"] = []
+    return(yaml_dict)
 
 
 # copy_file_from_tarInfo_Object
@@ -115,10 +118,10 @@ def update_meta_yaml(tarball_info_object):
 # Returns:
 # 1) A string representing the copied file
 def copy_file_from_tarInfo_Object(tarball_info_object):
-	file_str = ""
-	for line in tarball_info_object:
-		file_str += line.decode("utf-8")
-	return(file_str)
+    file_str = ""
+    for line in tarball_info_object:
+        file_str += line.decode("utf-8")
+    return(file_str)
 
 
 # make_postlink_str
@@ -140,8 +143,8 @@ def copy_file_from_tarInfo_Object(tarball_info_object):
 # Returns:
 # 1) A string representing the new postlink.sh script 
 def make_postlink_str(ggd_file_paths, species_name, recipe_name, genome_build, recipe_version):
-	postlink_str = ""
-	postlink_str += """#!/bin/bash
+    postlink_str = ""
+    postlink_str += """#!/bin/bash
 set -eo pipefail -o nounset
 
 export CONDA_ROOT=$(conda info --root)
@@ -161,12 +164,12 @@ mkdir -p $RECIPE_DIR
            build=genome_build,
            version=recipe_version)
 
-	for dir_name in ggd_file_paths:
-		path = "$CONDA_ROOT/share/ggd/" + dir_name
-		postlink_str += "mkdir -p {dir_path}\n".format(dir_path = path)
+    for dir_name in ggd_file_paths:
+        path = "$CONDA_ROOT/share/ggd/" + dir_name
+        postlink_str += "mkdir -p {dir_path}\n".format(dir_path = path)
 
-	
-	postlink_str += """
+    
+    postlink_str += """
 recipe_env_name="ggd_{name}"
 recipe_env_name="$(echo "$recipe_env_name" | sed 's/-/_/g')"
 
@@ -189,8 +192,8 @@ echo 'Recipe successfully built!'
            name=recipe_name,
            build=genome_build,
            version=recipe_version)
-	
-	return(postlink_str)
+    
+    return(postlink_str)
 
 
 # create_cache_recipe
@@ -206,20 +209,21 @@ echo 'Recipe successfully built!'
 # Returns:
 # 1) A string representing the new cache_recipe.sh script
 def create_cache_recipe(s3_urls, s3_bucket_name):
-	cache_recipe_str = """#! /bin/sh
+    cache_recipe_str = """#! /bin/sh
 set -eo pipefail -o nounset
 CONDA_ROOT=$(conda info --root)
 
 """
-	for url in s3_urls:
-		filepath = url.split("/{bucket}/".format(bucket = s3_bucket_name))[1]
-		filename = filepath.split("/")[-1]
-		filepath = "/".join(filepath.split("/")[0:-1])
-		cache_recipe_str += "cd $CONDA_ROOT/share/ggd/{file_path}/\n".format(file_path = filepath)
-		cache_recipe_str += "curl {new_url} -o {file_name}\n".format(new_url=url, file_name=filename)
-	
-	return(cache_recipe_str)
-		
+    for url in s3_urls:
+        filepath = url.split("/{bucket}/".format(bucket = s3_bucket_name))[1]
+        filename = filepath.split("/")[-1]
+        filepath = "/".join(filepath.split("/")[0:-1])
+        cache_recipe_str += "cd $CONDA_ROOT/share/ggd/{file_path}/\n".format(file_path = filepath)
+        cache_recipe_str += "curl {new_url} -o {file_name}\n".format(new_url=url, file_name=filename)
+        #cache_recipe_str += "wget {new_url}\n".format(new_url=url)
+    
+    return(cache_recipe_str)
+        
 
 # write_file
 # ==========
@@ -231,14 +235,14 @@ CONDA_ROOT=$(conda info --root)
 # 2) file_name: The name of the file
 # 3) file_str: The string contaning file contents 
 def write_file(file_path,file_name,file_str):
-	if not os.path.isdir(file_path):
-		print("\n-> Making a new directory: %s" %(file_path)) 
-		os.makedirs(file_path)
-		
-	print("\n-> Writing '%s' to '%s'" %(file_name, file_path))
-	with open(os.path.join(file_path, file_name), "w") as newFile:
-		for line in file_str:
-			newFile.write(line)
+    if not os.path.isdir(file_path):
+        print("\n-> Making a new directory: %s" %(file_path)) 
+        os.makedirs(file_path)
+        
+    print("\n-> Writing '%s' to '%s'" %(file_name, file_path))
+    with open(os.path.join(file_path, file_name), "w") as newFile:
+        for line in file_str:
+            newFile.write(line)
 
 
 # write_yaml
@@ -251,14 +255,14 @@ def write_file(file_path,file_name,file_str):
 # 2) file_name: The name of the file
 # 3) yaml_dict: The dictionary that contains the yaml file 
 def write_yaml(file_path, file_name, yaml_dict):
-	if not os.path.isdir(file_path):
-		print("\n-> Making a new directory: %s" %(file_path)) 
-		os.makedirs(file_path)
-		
-	print("\n-> Writing '%s' to '%s'" %(file_name, file_path))
-	with open(os.path.join(file_path, file_name), "w") as newFile:
-		newFile.write(yaml.dump(yaml_dict, default_flow_style=False))
-	
+    if not os.path.isdir(file_path):
+        print("\n-> Making a new directory: %s" %(file_path)) 
+        os.makedirs(file_path)
+        
+    print("\n-> Writing '%s' to '%s'" %(file_name, file_path))
+    with open(os.path.join(file_path, file_name), "w") as newFile:
+        newFile.write(yaml.dump(yaml_dict, default_flow_style=False))
+    
 
 #---------------------------------------------------------------------------------------------------------------
 ## Main
@@ -278,7 +282,7 @@ pkg_genome_build = pkg_level_info[1]
 pkg_name = pkg_level_info[2]
 pkg_version = pkg_level_info[3]
 print("\n-> Updating the pkg to use aws S3 \n-> Pkg info:\n\tSpecies: %s \n\tGenome_build: %s \
-	\n\tPkg name: %s \n\tPkg Version: %s" %(pkg_species, pkg_genome_build, pkg_name, pkg_version))
+    \n\tPkg name: %s \n\tPkg Version: %s" %(pkg_species, pkg_genome_build, pkg_name, pkg_version))
 
 ## Create new file path
 cwd = os.getcwd()
@@ -287,19 +291,19 @@ new_file_path = os.path.join(new_dir_path, pkg_name)
 
 ## Open the .tar.bz2 file for the ggd recipe created from conda build <pkg>
 with tarfile.open(args.tarfile, "r:bz2") as tarball_file:
-	## Copy package meta.yaml and add 1 to the build number 
-	#meta_yaml_str = update_meta_yaml(tarball_file.extractfile(tarball_file.getmember("info/recipe/meta.yaml.template")))
-	meta_yaml_dict = update_meta_yaml(tarball_file.extractfile(tarball_file.getmember("info/recipe/meta.yaml.template")))
-	write_yaml(new_file_path,"meta.yaml",meta_yaml_dict)
-	## Copy package recipe.sh file
-	recipe_str = copy_file_from_tarInfo_Object(tarball_file.extractfile(tarball_file.getmember("info/recipe/recipe.sh")))
-	write_file(new_file_path,"recipe.sh",recipe_str)
-	## Make new post-link.sh script
-	new_postlink_str = make_postlink_str(ggd_paths, pkg_species, pkg_name, pkg_genome_build, pkg_version)
-	write_file(new_file_path,"post-link.sh",new_postlink_str)
-	## Make a new recipe.sh script to download files from aws S3 bucket 
-	cache_recipe = create_cache_recipe(pkg_urls, args.name)
-	write_file(new_file_path,"cache_recipe.sh",cache_recipe)
+    ## Copy package meta.yaml and add 1 to the build number 
+    #meta_yaml_str = update_meta_yaml(tarball_file.extractfile(tarball_file.getmember("info/recipe/meta.yaml.template")))
+    meta_yaml_dict = update_meta_yaml(tarball_file.extractfile(tarball_file.getmember("info/recipe/meta.yaml.template")))
+    write_yaml(new_file_path,"meta.yaml",meta_yaml_dict)
+    ## Copy package recipe.sh file
+    recipe_str = copy_file_from_tarInfo_Object(tarball_file.extractfile(tarball_file.getmember("info/recipe/recipe.sh")))
+    write_file(new_file_path,"recipe.sh",recipe_str)
+    ## Make new post-link.sh script
+    new_postlink_str = make_postlink_str(ggd_paths, pkg_species, pkg_name, pkg_genome_build, pkg_version)
+    write_file(new_file_path,"post-link.sh",new_postlink_str)
+    ## Make a new recipe.sh script to download files from aws S3 bucket 
+    cache_recipe = create_cache_recipe(pkg_urls, args.name)
+    write_file(new_file_path,"cache_recipe.sh",cache_recipe)
 
 print("\n-> Pkg files uploaded to the aws S3 %s bucket. \n-> A new pkg has been created for installing the pkg using the S3 bucket.")
 print("\n-> DONE!")
