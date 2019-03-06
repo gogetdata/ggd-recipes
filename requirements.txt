@@ -1,6 +1,6 @@
 anaconda-client=1.6.*
 conda>=4.6.7
-conda-build=3.16.2
+conda-build>=3.17.8
 jinja2=2.10.*
 jsonschema=2.6.*
 requests>=2.20.*
