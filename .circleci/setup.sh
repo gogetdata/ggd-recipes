@@ -53,7 +53,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda install -y --file .circleci/requirements_bioconda_utils.txt
     pip install git+https://github.com/bioconda/bioconda-utils.git
     ## Install ggd-cli
-    conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
+    #conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
     pip install -U git+git://github.com/gogetdata/ggd-cli 
 
 
