@@ -28,9 +28,6 @@ jobs:
     <<: *linux
     steps:
       - checkout 
-      - add_ssh_keys:
-          fingerprints:
-            - "41:a1:20:62:42:25:d4:41:c1:4b:2e:1c:fb:69:b4:9f"
       - *setup
       - *run
   test-macos:
@@ -66,7 +63,7 @@ workflows:
   ggd-recipes-nightly-build:
     triggers: 
       - schedule:
-          cron: "52 16 * * *"    ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
+          cron: "0 3 * * *"    ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
           filters:
             branches:
               only:
