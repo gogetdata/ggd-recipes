@@ -128,3 +128,4 @@ if [[ "$recipe_uploaded" == true ]] ; then
     python .circleci/index_ggd_channel.py -t "/tmp"
 fi
     
+python .circleci/index_ggd_channel.py -t "/tmp"
