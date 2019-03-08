@@ -3,6 +3,8 @@
 Setting up with Github
 ======================
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 A github account is required in order to contribute a data package to ggd. If you do not have a
 github account it is easy to create one. (Note: Your github account does not need to be connected
 to ggd in order to work)

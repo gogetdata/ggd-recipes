@@ -3,6 +3,8 @@
 ggd list-files
 ==============
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 ggd list-files is used to list the files associated with a ggd data package that has been installed on your system
 using :code:`ggd install`.
 

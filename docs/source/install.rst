@@ -3,6 +3,8 @@
 ggd install
 ===========
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 ggd install is used to install a ggd package from the Anaconda cloud. ggd install determines your file system and ensures
 a proper install. If the package fails to install for some reason it will clean up the failed install.
 
@@ -49,6 +51,14 @@ Optional arguments:
 
 * *-v:* The :code:`-v` flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
   a specific genomic data package you would run :code:`ggd install <package> -v 2`. This flag is not required.
+
+
+    .. note::
+    
+        Durring the installation you will see a multiple progress spinners. The time it takes to install the data pacakge 
+        is dependent on how big the data package is being installed. When you see: **Executing Transaction |-** you are 
+        in the final stages of installation, however, this stage takes the longest. Please be patient as the package is 
+        being installed, processed, and curated. 
 
 
 Examples
