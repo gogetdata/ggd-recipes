@@ -3,6 +3,8 @@
 ggd uninstall
 =============
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 ggd uninstall is used to uninstall a ggd package from your local machine. It ensures a correct uninstall of the
 data package along with removal of additional files created during installation.
 

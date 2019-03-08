@@ -3,6 +3,8 @@
 Contribute
 ==========
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 Similar to **Conda** and **Bioconda**, ggd encourages and relies on community contributions. Our vision is that
 ggd will become a widely used data management system in genomics and other research fields. ggd will help reduce
 the time it takes to find, extract, and process the necessary data for any analysis and support research

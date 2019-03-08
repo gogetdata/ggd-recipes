@@ -3,6 +3,8 @@
 ggd show-env
 ============
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 ggd show-env is a tool used to show the ggd associated variables created during package installation
 for the current conda environment.
 

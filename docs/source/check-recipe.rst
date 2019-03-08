@@ -3,13 +3,14 @@
 ggd check-recipe
 ================
 
-ggd check-recipe is used to check a ggd recipe built by running :ref:`ggd from-bash <ggd-from-bash>`. :code:`ggd from-bash`
+[:ref:`Click here to return to the home page <home-page>`]
+
+ggd check-recipe is used to check a ggd recipe built by running :ref:`ggd make-recipe <ggd-make-recipe>`. :code:`ggd make-recipe`
 takes a bash script used to download and process data and turns it into a ggd data recipe. :code:`ggd check-recipe` should
 then be called to test that newly built ggd recipe.
 
 :code:`ggd check-recipe` is a part of the tool set used to create and contribute data packages to the ggd data repository.
 For more information about using the ggd workflow to contribute to ggd see :ref:`contribute <make-data-packages>`.
-
 
 
 Using ggd check-recipe
@@ -28,19 +29,19 @@ Additional argument explanation:
 ++++++++++++++++++++++++++++++++
 
 The only required argument is the :code:`recipe_path` and refers to the directory you would like ``ggd check-recipe``
-to check. When using :ref:`ggd from-bash <ggd-from-bash>` to create a ggd recipe, from-bash will
+to check. When using :ref:`ggd make-recipe <ggd-make-recipe>` to create a ggd recipe, make-recipe will
 create a new directory with three new files. The recipe_path should be the path to the new directory created
-from using `ggd from-bash`.
+from using `ggd make-recipe`.
 
 Running :code:`ggd check-recipe <recipe-path>` will build, install, and check the recipe to ensure the recipe works correctly.
 
 Example
 -------
 
-1. An example of creating a ggd recipe from ``ggd from-bash`` and using ``ggd check-recipe`` to check the recipe
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. An example of creating a ggd recipe from ``ggd make-recipe`` and using ``ggd check-recipe`` to check the recipe
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    * get_data.sh (A bash script used to create a recipe with :code:`ggd from-bash`)
+    * get_data.sh (A bash script used to create a recipe with :code:`ggd make-recipe`)
 
     ::
 
@@ -49,9 +50,9 @@ Example
         wget --quiet --no-check-certificate \
             http://hgdownload.cse.ucsc.edu/goldenpath/hg19/phastCons100way/hg19.100way.phastCons.bw
 
-    * Using :code:`ggd from-bash` to create a ggd recipe::
+    * Using :code:`ggd make-recipe` to create a ggd recipe::
 
-        $ ggd from-bash -s Homo_sapiens -g hg19 \
+        $ ggd make-recipe -s Homo_sapiens -g hg19 \
             --author mjc --ggd_version 1 \
             --data_version 09-Feb-2014 \
             --summary 'phastCons scores for MSA of 99 genomes to hg19' \

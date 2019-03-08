@@ -3,6 +3,8 @@
 Contributing a ggd recipe
 =========================
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 The following steps outline how to create, check, and add a ggd data recipe.
 
 1. Update local forked repo
@@ -76,14 +78,14 @@ Example:
     Assuming your bash script created in step 2 is called *hg19_data_recipe.sh*, run the following command to turn
     it into a ggd recipe::
 
-        $ ggd from-bash -s Homo_sapiens -g hg19 --author mjc \
+        $ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc \
             --ggd_version 1 --data_version 27-Apr-2009 \
             --summary 'Assembly gaps from USCS' \
             -k gaps -k region gaps hg19_data_recipe.sh
 
-    The :code:`ggd from-bash` tool transforms the bash script you created into a data recipe. Running the above code will create
+    The :code:`ggd make-recipe` tool transforms the bash script you created into a data recipe. Running the above code will create
     a data recipe called *hg19-gaps*, which will be a directory and will contain three files. For more information on the
-    :code:`ggd from-bash` command see :ref:`from-bash <ggd-from-bash>`.
+    :code:`ggd make-recipe` command see :ref:`make-recipe <ggd-make-recipe>`.
 
 4. Build, install, and check the data recipe
 --------------------------------------------

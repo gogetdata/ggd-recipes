@@ -1,9 +1,11 @@
-.. _ggd-from-bash:
+.. _ggd-make-recipe:
 
-ggd from-bash
-=============
+ggd make-recipe
+===============
 
-ggd from-bash is used to create a ggd data recipe from a bash script which contains the information on
+[:ref:`Click here to return to the home page <home-page>`]
+
+ggd make-recipe is used to create a ggd data recipe from a bash script which contains the information on
 extracting and processing the data.
 
 * **recipe**: A data recipe is directory containing a set of files that contain information about the recipe.
@@ -14,21 +16,22 @@ extracting and processing the data.
 * **package**: A data package is created from building the ggd data recipe. It is a bgzipped tar file that contains
   the built data recipe and additional metadata information for conda system handling.
 
-:code:`ggd from-bash` takes a bash script created by you and turns it into a data recipe. This data recipe will then be
+:code:`ggd make-recipe` takes a bash script created by you and turns it into a data recipe. This data recipe will then be
 turned into a data package using :ref:`ggd check-recipe <ggd-check-recipe>`. Finally, the new data package will
 be added to the ggd repo and ggd conda channel through a continuous integration system. For more details see
 the :ref:`contribute <make-data-packages>` documentation.
 
 The first step in this process is to create a bash script with instructions on downloading and data processing,
-then using :code:`ggd from-bash` to create a ggd data recipe.
+then using :code:`ggd make-recipe` to create a ggd data recipe.
 
 
-Using ggd from-bash
--------------------
-Creating a ggd recipe is easy using the :code:`ggd from-bash` tool.
-Running :code:`ggd from-bash -h` will give you the following help message:
+Using ggd make-recipe
+---------------------
 
-from-bash arguments: 
+Creating a ggd recipe is easy using the :code:`ggd make-recipe` tool.
+Running :code:`ggd make-recipe -h` will give you the following help message:
+
+make-recipe arguments: 
 
 -h, --help                                      show this help message and exit
 
@@ -128,11 +131,11 @@ get_data.sh:
 
     tabix gaps.bed.gz
 
-ggd from-bash
+ggd make-recipe
 
 .. code-block:: bash
 
-    $ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps get_data.sh
+    $ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps get_data.sh
 
 This code will create a new ggd recipe:
 
@@ -192,11 +195,11 @@ get_data.sh
     rm sanitize-esp.py
 
 
-ggd from-bash
+ggd make-recipe
 
 .. code-block:: bash
 
-    $ ggd from-bash -s Homo_sapiens -g GRCh37 --author mjc --ggd_version 1 --data_version ESP6500SI-V2 --summary 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)' -k ESP esp-variants get_data.sh
+    $ ggd make-recipe -s Homo_sapiens -g GRCh37 --author mjc --ggd_version 1 --data_version ESP6500SI-V2 --summary 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)' -k ESP esp-variants get_data.sh
 
 This code will create a new ggd recipe:
 

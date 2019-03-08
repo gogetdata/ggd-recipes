@@ -3,6 +3,8 @@
 ggd search
 ==========
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 ggd search is used to search for a data package stored within the ggd system. It is dependent on the ggd channel
 provided.
 

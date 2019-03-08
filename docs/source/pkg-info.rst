@@ -3,6 +3,8 @@
 ggd pkg-info
 ============
 
+[:ref:`Click here to return to the home page <home-page>`]
+
 ggd pkg-info is used to get package information for a specific ggd data package installed on your system.
 
 Using ggd pkg-info
