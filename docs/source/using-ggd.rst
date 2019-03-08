@@ -5,7 +5,7 @@ Using GGD
 
 [:ref:`Click here to return to the home page <home-page>`]
 
-**For a breif introduction to how ggd works and to start using ggd see:** :ref:`GGD Quick Start <quick-start>`
+**For a brief introduction to how ggd works and to start using ggd see:** :ref:`GGD Quick Start <quick-start>`
 
 1. Install conda
 ----------------
