@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch38-reference-genome
+  name: grch37-reference-genome-ensembl
   version: '1'
 requirements:
   build:
@@ -20,15 +20,15 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh38
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
   - ref
   - reference
-  - genome
   - Ensembl
-  summary: The GRCh38 reference genome from Ensembl. Release 95. Primary Assembly
+  - Release75
+  summary: The GRCh37 reference genome from Ensembl. Release 75. Primary Assembly
     file
   tags:
-    data-version: Release-95
+    data-version: Release-75
     ggd-channel: genomics
