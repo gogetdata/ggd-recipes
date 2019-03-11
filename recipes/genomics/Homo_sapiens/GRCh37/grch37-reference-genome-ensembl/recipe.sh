@@ -8,4 +8,4 @@ wget --quiet ftp://ftp.ensembl.org/pub/release-75/fasta/homo_sapiens/dna/Homo_sa
 gzip -fd Homo_sapiens.GRCh37.75.dna.primary_assembly.fa.gz
 
 ## Index the reference genome using samtools
-samtools faidx Homo_sapiens.GRCh37.75.dna.primary_assembly
+samtools faidx Homo_sapiens.GRCh37.75.dna.primary_assembly.fa
