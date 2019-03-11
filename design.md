@@ -1,8 +1,6 @@
 ## ggd design
 
-ggd is in *very* early stages, but we've made good progress in short time, including
-several changes to `conda`, `conda-build`, and `anaconda-client` that facilitate use
-on large datasets such as we see in genomics.
+ggd is continually being devloped, with quick progress. We have helped to improve `conda`, `conda-build`, and `anaconda-client` through multiple changes to help facilitate use on large datasets such as we see in genomics.
 
 ### Overview
 
@@ -13,30 +11,34 @@ For example, to normalize a VCF using [vt](https://github.com/atks/vt) we have a
 dependency on the `vt` software as well as the reference genome. These dependencies
 can be specified clearly in `conda`.
 
+A through documentation for ggd is provided at [ggd docs](https://gogetdata.github.io/index.html). 
+
+
 ### History
 
-Originally ggd managed it's own installs. After realizing the problem of software and data dependencies
-and the overlap with conda (and after seeing the success of the [bioconda project](https://bioconda.github.io/)
-we have decided to use conda.
+Originally ggd managed it's own installs. After realizing the problem of software and data dependencies and the overlap with conda (and after seeing the success of the [bioconda project](https://bioconda.github.io/) ) we have decided to use conda for dependency handling, version tracking, and to create a stable source of reproduability.
 
 To bootstrap this, we have automated the conversion of the `ggd` recipies in [bcbio](https://github.com/chapmanb/cloudbiolinux/tree/master/ggd-recipes) to the conda format.
 
 ## Schema
 
-Recipes will use the conda `pre-link.sh` script instead of the build. This means that the "binary" hosted on anaconda.org will
-include the commands to create the data from it's original source. This is a convention, for resources that are less convenient to
-acquire, we can have `built` packges.
+Recipes will use the conda `post-link.sh` script instead of the build. This means that the "binary" hosted on anaconda.org will include the commands to create the data from it's original source. This is a convention, for resources that are less convenient to acquire, we can have `built` packges.
 
 The directory structure will be:
 
-	`$PREFIX/$species/$build/$recipe/`
+	`$PREFIX/$species/$build/$recipe/$version`
 
-where $PREFIX is populated by `conda` species will be like `Homo_sapiens` or `Mus_musculus`
-build will be `grch37` or `mm10` (must be lower-case) and recipe will be `$build-$name`, .e.g.
-`hg19-clinvar`
+where:
+- $PREFIX is populated by `conda`
+- $species will be `Homo_sapiens`, `Mus_musculus`, or any other species
+- $build will be `grch37` or `mm10`, for example, ** but must be lower-case** 
+- $recipe will be the name of the ggd data recipe `$build-$name`, .e.g. `hg19-clinvar`
+- $version will be the designated version for the ggd recipe
 
-The recipe must specify the $species and $build under extra/genome-build and extra/species respectively.
-A fasta and genome-file must be present for those.
+A meta.yaml file should contain the information for this data recipe, with exception for the $PREFIX. 
+- With a section/key name `about` in the meta.yaml file, the $species and $build should be within the `identifiers` subkey. That is: `[about][identifiers][species]` for $species, and  `[about][identifiers][genome-build]` for $build.
+- The $recipe representing the name of the data recipe, and the $version representing the ggd data package versoin, should be in the meta.yaml file under the `package` key. That is: `[pacakge][name]` for $recipe, and `[package][version]` for $version.
+
 
 ## Chromosome Naming
 
@@ -78,7 +80,7 @@ Should we enforce bwa and bowtie(2) indexing of of fasta?
 
 ## Subdirectories
 
-a pre-link.sh script may (in practice) create any sub-directories. How can we
+a post-link.sh script may (in practice) create any sub-directories. How can we
 track this so we can still use `ggd recipe-files $recipe` ? glob.glob on the directory?
 
 ## Plans
