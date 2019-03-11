@@ -1,0 +1,34 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-reference-genome-ensembl
+  version: '1'
+requirements:
+  build:
+  - samtools
+  - zlib
+  run:
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - ref
+  - reference
+  - Ensembl
+  - Release75
+  summary: The GRCh37 reference genome from Ensembl. Release 75. Primary Assembly
+    file
+  tags:
+    data-version: Release-75
+    ggd-channel: genomics

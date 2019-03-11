@@ -1,0 +1,34 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-reference-genome-ensembl
+  version: '1'
+requirements:
+  build:
+  - samtools
+  - zlib
+  run:
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - ref
+  - reference
+  - genome
+  - Ensembl
+  summary: The GRCh38 reference genome from Ensembl. Release 95. Primary Assembly
+    file
+  tags:
+    data-version: Release-95
+    ggd-channel: genomics
