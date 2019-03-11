@@ -97,7 +97,7 @@ and install available processed genomic data packages using the ggd tool.
        To install run:
            ggd install grch37-reference-genome
 
-      grch38-reference-genome
+      grch38-reference-genome-ensembl
        Summary: GRCh37 reference genome from Ensembl
        Species: Homo_sapiens
        Genome Build: GRCh38
@@ -105,7 +105,7 @@ and install available processed genomic data packages using the ggd tool.
        Data Version: Release-95
 
        To install run:
-           ggd install grch38-reference-genome
+           ggd install grch38-reference-genome-ensembl
 
       . . .
 
@@ -114,13 +114,13 @@ and install available processed genomic data packages using the ggd tool.
 
 .. code-block:: bash
 
-    $ ggd install grch38-reference-genome
+    $ ggd install grch38-reference-genome-ensembl
 
-      -> Looking for grch38-reference-genome in the 'ggd-genomics' channel
-      -> grch38-reference-genome exists in ggd-genomics
-      -> grch38-reference-genome is not installed on your system
-      -> grch38-reference-genome has not been installed by conda
-      -> Installing grch38-reference-genome
+      -> Looking for grch38-reference-genome-ensembl in the 'ggd-genomics' channel
+      -> grch38-reference-genome-ensembl exists in ggd-genomics
+      -> grch38-reference-genome-ensembl is not installed on your system
+      -> grch38-reference-genome-ensembl has not been installed by conda
+      -> Installing grch38-reference-genome-ensembl
 
       Solving environment:
 
@@ -129,21 +129,21 @@ and install available processed genomic data packages using the ggd tool.
        environment location: <conda root>
 
          added / updated specs:
-            - grch38-reference-genome
+            - grch38-reference-genome-ensembl
 
       The following packages will be downloaded:
 
-         package                    |            build
-         ---------------------------|-----------------
-         grch38-reference-genome    |                0           6 KB  ggd-genomics
+         package                            |            build
+         -----------------------------------|-----------------
+         grch38-reference-genome-ensembl    |                0           6 KB  ggd-genomics
 
       The following NEW packages will be INSTALLED:
 
-         grch38-reference-genome: 1-0 ggd-genomics
+         grch38-reference-genome-ensembl: 1-0 ggd-genomics
 
 
       Downloading and Extracting Packages
-      grch38-reference-genome          | 6 KB      | ##############################
+      grch38-reference-genome-ensembl          | 6 KB      | ##############################
       Preparing transaction: done
       Verifying transaction: done
       Executing transaction: done
@@ -158,13 +158,13 @@ and install available processed genomic data packages using the ggd tool.
     $ ggd show-env
     ***************************
     Active environment variables:
-    > $ggd_grch38_reference_genome
+    > $ggd_grch38_reference_genome-ensembl
     ***************************
 
-    $ ggd list-files grch38-reference-genome
+    $ ggd list-files grch38-reference-genome-ensembl
 
-    -> <conda root>/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa
-    -> <conda root>/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa.fai
+    -> <conda root>/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa
+    -> <conda root>/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa.fai
 
 
 4. Use the files

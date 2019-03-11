@@ -90,7 +90,7 @@ Some examples of using the `ggd search` tool:
        Data Version: phase2_reference
 
        To install run:
-           ggd install grch37-reference-genomet
+           ggd install grch37-reference-genome
 
       grch38-reference-genome
 
