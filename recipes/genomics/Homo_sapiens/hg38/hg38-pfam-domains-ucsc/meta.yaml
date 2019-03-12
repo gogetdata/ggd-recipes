@@ -1,0 +1,36 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-pfam-domains-ucsc
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - pfam
+  - domains
+  - protein
+  - protein-domains
+  - UCSC
+  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  tags:
+    data-version: 18-Nov-2018
+    ggd-channel: genomics
