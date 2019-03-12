@@ -1,0 +1,34 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-reference-genome-ucsc
+  version: '1'
+requirements:
+  build:
+  - samtools
+  - zlib
+  run:
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - ref
+  - reference
+  - genome
+  - UCSC
+  summary: The hg19 reference genome from UCSC. This version includes the latest patch,
+    patch 13. (http://hgdownload.soe.ucsc.edu/goldenPath/hg19/hg19Patch13/)
+  tags:
+    data-version: 25-May-2018
+    ggd-channel: genomics
