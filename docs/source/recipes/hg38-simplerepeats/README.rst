@@ -10,7 +10,7 @@ Simple repeats track from UCSC \| name\=sequence \| score\=alignment score \| co
 ================ ===========
 GGD Pacakge      hg38-simplerepeats 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1
+Pkg Version(s)   1-0, 1-1
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-simplerepeats
 Species          Homo_sapiens
 Genome Build     hg38

@@ -10,7 +10,7 @@ Assembly gaps from USCS
 ================ ===========
 GGD Pacakge      hg19-gaps 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1
+Pkg Version(s)   1-0, 1-1
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-gaps
 Species          Homo_sapiens
 Genome Build     hg19

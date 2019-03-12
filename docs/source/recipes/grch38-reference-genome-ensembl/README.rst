@@ -10,7 +10,7 @@ The GRCh38 reference genome from Ensembl. Release 95. Primary Assembly file
 ================ ===========
 GGD Pacakge      grch38-reference-genome-ensembl 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1
+Pkg Version(s)   1-0, 1-1
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl
 Species          Homo_sapiens
 Genome Build     GRCh38

@@ -1,7 +1,7 @@
 .. _recipes:
 
-Available packages
-==================
+Available data packages
+=======================
 
 .. toctree::
    :hidden:
@@ -16,15 +16,18 @@ Available packages
     <thead>
         <tr><th>Package</th><th>Version</th><th>Linux</th><th>OSX</th><th>NOARCH</th></tr>
     </thead>
-    <tbody><tr><td><a href="recipes/hg38-simplerepeats/README.html">hg38-simplerepeats</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/hg38-repeatmasker/README.html">hg38-repeatmasker</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/grch38-reference-genome-ensembl/README.html">grch38-reference-genome-ensembl</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/hg19-repeatmasker/README.html">hg19-repeatmasker</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/hg19-phastcons/README.html">hg19-phastcons</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/hg19-simplerepeats/README.html">hg19-simplerepeats</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/hg19-gaps/README.html">hg19-gaps</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/grch37-reference-genome-ensembl/README.html">grch37-reference-genome-ensembl</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
-    <tr><td><a href="recipes/grch37-reference-genome/README.html">grch37-reference-genome</a></td><td>1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tbody><tr><td><a href="recipes/hg38-simplerepeats/README.html">hg38-simplerepeats</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg38-reference-genome-ucsc/README.html">hg38-reference-genome-ucsc</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg38-repeatmasker/README.html">hg38-repeatmasker</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg38-cpg-islands/README.html">hg38-cpg-islands</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/grch38-reference-genome-ensembl/README.html">grch38-reference-genome-ensembl</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg19-repeatmasker/README.html">hg19-repeatmasker</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg19-cpg-islands/README.html">hg19-cpg-islands</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg19-phastcons/README.html">hg19-phastcons</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg19-simplerepeats/README.html">hg19-simplerepeats</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/hg19-gaps/README.html">hg19-gaps</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/grch37-reference-genome-ensembl/README.html">grch37-reference-genome-ensembl</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
+    <tr><td><a href="recipes/grch37-reference-genome/README.html">grch37-reference-genome</a></td><td>1-1</td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-dot-circle-o"></i></td><td><i class="fa fa-desktop"></i></td></tr>
     </tbody>
     <tfoot></tfoot>
     </table>

@@ -2,7 +2,6 @@ import os
 import os.path as op
 from collections import defaultdict
 from jinja2.sandbox import SandboxedEnvironment
-from bioconda_utils.utils import RepoData, load_config
 from sphinx.util import logging as sphinx_logging
 from sphinx.util import status_iterator
 from sphinx.util.parallel import ParallelTasks, parallel_available, make_chunks
@@ -10,6 +9,24 @@ from sphinx.util.rst import escape as rst_escape
 from sphinx.util.osutil import ensuredir
 from sphinx.jinja2glue import BuiltinTemplateLoader
 from distutils.version import LooseVersion
+from bioconda_utils.utils import RepoData, load_config
+from bioconda_utils.recipe import Recipe, RecipeError
+from typing import Any, Dict, List, Tuple, Optional
+from sphinx import addnodes
+from docutils import nodes
+from docutils.parsers import rst
+from docutils.statemachine import StringList
+from sphinx.domains import Domain, ObjType, Index
+from sphinx.directives import ObjectDescription
+from sphinx.environment import BuildEnvironment
+from sphinx.roles import XRefRole
+from sphinx.util.docfields import Field, GroupedField
+from sphinx.util.nodes import make_refnode
+from sphinx.util.rst import escape as rst_escape
+from sphinx.util.osutil import ensuredir
+from sphinx.util.docutils import SphinxDirective
+from sphinx.jinja2glue import BuiltinTemplateLoader
+from conda.exports import VersionOrder
 
 
 # Aquire a logger
@@ -183,10 +200,54 @@ def generate_readme(folder, repodata, renderer):
         logger.error("Failed to parse recipe {}".format(recipe))
         raise e
 
+    ## Get all versions and build numbers for data package
+    # Select meta yaml
+    meta_fname = op.join(RECIPE_DIR, folder, 'meta.yaml')
+    if not op.exists(meta_fname):
+        for item in os.listdir(op.join(RECIPE_DIR, folder)):
+            dname = op.join(RECIPE_DIR, folder, item)
+            if op.isdir(dname):
+                fname = op.join(dname, 'meta.yaml')
+                if op.exists(fname):
+                    meta_fname = fname
+                    break
+        else:
+            logger.error("No 'meta.yaml' found in %s", folder)
+            return []
+    meta_relpath = meta_fname[len(RECIPE_DIR)+1:]
+
+    # Read the meta.yaml file(s)
+    try:
+        recipe_object = Recipe.from_file(RECIPE_DIR, meta_fname)
+    except RecipeError as e:
+        logger.error("Unable to process %s: %s", meta_fname, e)
+        return []
+
+    # Format the README
+    for package in sorted(list(set(recipe_object.package_names))):
+        versions_in_channel = set(repodata.get_package_data(['version', 'build_number'],
+                                                            channels='ggd-genomics', name=package))
+        sorted_versions = sorted(versions_in_channel,
+                                 key=lambda x: (VersionOrder(x[0]), x[1]),
+                                 reverse=False)
+        if sorted_versions:
+            depends = [
+                depstring.split(' ', 1) if ' ' in depstring else (depstring, '')
+                for depstring in
+                repodata.get_package_data('depends', name=package,
+                                          version=sorted_versions[0][0],
+                                          build_number=sorted_versions[0][1],
+                )[0]
+            ]
+        else:
+            depends = []
+
+
+
+    # Format the README
     name = metadata.name()
     versions_in_channel = repodata.get_versions(name)
 
-    # Format the README
     template_options = {
         'name': name,
         'about': (metadata.get_section('about') or {}),
@@ -194,7 +255,7 @@ def generate_readme(folder, repodata, renderer):
         'genome_build': (metadata.get_section('about')["identifiers"]["genome-build"] if "genome-build" in metadata.get_section('about')["identifiers"] else {}),
         'ggd_channel': (metadata.get_section('about')["tags"]["ggd-channel"] if "ggd-channel" in metadata.get_section('about')["tags"] else "genomics"),
         'extra': (metadata.get_section('extra') or {}),
-        'versions': versions_in_channel,
+        'versions': ["-".join(str(w) for w in v) for v in sorted_versions],
         'gh_recipes': 'https://github.com/gogetdata/ggd-recipes/tree/master/recipes/',
         'recipe_path': op.dirname(op.relpath(metadata.meta_path, RECIPE_DIR)),
         'Package': '<a href="recipes/{0}/README.html">{0}</a>'.format(name)
@@ -206,6 +267,7 @@ def generate_readme(folder, repodata, renderer):
         template_options)
 
     recipes = []
+    latest_version = "-".join(str(w) for w in sorted_versions[-1])
     for version, version_info in sorted(versions_in_channel.items()):
         t = template_options.copy()
         if 'noarch' in version_info:
@@ -213,14 +275,16 @@ def generate_readme(folder, repodata, renderer):
                 'Linux': '<i class="fa fa-linux"></i>' if 'linux' in version_info else '<i class="fa fa-dot-circle-o"></i>',
                 'OSX': '<i class="fa fa-apple"></i>' if 'osx' in version_info else '<i class="fa fa-dot-circle-o"></i>',
                 'NOARCH': '<i class="fa fa-desktop"></i>' if 'noarch' in version_info else '',
-                'Version': version
+                'Version': latest_version ## The latest version
+                #'Version': version
             })
         else:
             t.update({
                 'Linux': '<i class="fa fa-linux"></i>' if 'linux' in version_info else '',
                 'OSX': '<i class="fa fa-apple"></i>' if 'osx' in version_info else '',
                 'NOARCH': '<i class="fa fa-desktop"></i>' if 'noarch' in version_info else '',
-                'Version': version
+                'Version': latest_version ## The latest version
+                #'Version': version
             })
         recipes.append(t)
     return recipes

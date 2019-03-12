@@ -10,7 +10,7 @@ The GRCh37 reference genome from Ensembl. Release 75. Primary Assembly file
 ================ ===========
 GGD Pacakge      grch37-reference-genome-ensembl 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1
+Pkg Version(s)   1-0, 1-1
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-ensembl
 Species          Homo_sapiens
 Genome Build     GRCh37

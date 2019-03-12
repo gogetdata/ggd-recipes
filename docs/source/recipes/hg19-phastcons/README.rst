@@ -10,7 +10,7 @@ phastCons scores for MSA of 99 genomes to hg19
 ================ ===========
 GGD Pacakge      hg19-phastcons 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1
+Pkg Version(s)   1-0, 1-1
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-phastcons
 Species          Homo_sapiens
 Genome Build     hg19
