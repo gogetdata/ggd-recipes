@@ -122,9 +122,15 @@ if [[ "$cached" == true ]] ; then
     done
 fi
 
-
 if [[ "$recipe_uploaded" == true ]] ; then
     # update channeldata index    
     python .circleci/index_ggd_channel.py -t "/tmp"
-fi
+
+    ## Update Available Packages in ggd docs
+   # cd docs/ 
+   # make html 
     
+
+fi
+
+

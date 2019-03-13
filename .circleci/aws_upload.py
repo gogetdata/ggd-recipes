@@ -151,7 +151,16 @@ export CONDA_ROOT=$(conda info --root)
 
 PKG_DIR=`find "$CONDA_ROOT/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION-.*$PKG_BUILDNUM$\|$PKG_VERSION\_.*$PKG_BUILDNUM$"`
 
-export RECIPE_DIR=$CONDA_ROOT/share/ggd/{species}/{build}/{name}/{version}
+if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
+    env_dir=$CONDA_ROOT
+    export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+elif [[ $(conda info --envs | grep "*" | grep -o "\/.*") == "base" ]]; then
+    env_dir=$CONDA_ROOT
+    export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+else
+    env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
+    export RECIPE_DIR=$env_dir/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+fi
 
 if [ -d $RECIPE_DIR ]; then
     rm -r $RECIPE_DIR
@@ -172,12 +181,6 @@ mkdir -p $RECIPE_DIR
     postlink_str += """
 recipe_env_name="ggd_{name}"
 recipe_env_name="$(echo "$recipe_env_name" | sed 's/-/_/g')"
-
-env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
-
-if [[ -z $env_dir ]]; then 
-    env_dir=$CONDA_ROOT
-fi
 
 activate_dir="$env_dir/etc/conda/activate.d"
 deactivate_dir="$env_dir/etc/conda/deactivate.d"
