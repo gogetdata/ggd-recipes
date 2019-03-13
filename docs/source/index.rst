@@ -13,10 +13,12 @@ Go Get Data (ggd) is a data management system that provides access to data packa
 ggd hosts data packages that contain information on how to extract and process scientific data, providing access
 to a growing number of scientific datasets without the hassle of finding, downloading, and processing them
 yourself. ggd leverages the `conda <http://conda.pydata.org/docs/intro.html>`_ package management system
-and the infrastructure of `Bioconda <https://bioconda.github.io/index.html>`_ to provide a stable source
-of datasets and ease annotation reproducibility. Using the ggd data management system allows any user to quickly
-access a desired dataset(s), and provides a platform upon which to cite data access and use by way of the ggd
-data package name and version.
+and the infrastructure of `Bioconda <https://bioconda.github.io/index.html>`_ to provide a fast and easy way 
+retreive processed annotations and datasets, and provides a stable source of reproducibility. Using the ggd data management 
+system allows any user to quickly access a desired dataset(s), and provides a platform upon which to cite data access 
+and use by way of the ggd data package name and version.
+
+.. image:: GGD-framework.png
 
 ggd consists of:
 ++++++++++++++++
