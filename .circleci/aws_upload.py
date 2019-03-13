@@ -175,6 +175,10 @@ recipe_env_name="$(echo "$recipe_env_name" | sed 's/-/_/g')"
 
 env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
 
+if [[ -z $env_dir ]]; then 
+    env_dir=$CONDA_ROOT
+fi
+
 activate_dir="$env_dir/etc/conda/activate.d"
 deactivate_dir="$env_dir/etc/conda/deactivate.d"
 
