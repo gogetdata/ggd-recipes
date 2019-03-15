@@ -1,20 +1,8 @@
-about:
-  identifiers:
-    genome-build: hg19
-    species: Homo_sapiens
-  keywords:
-  - simrep
-  - regions
-  summary: Simple repeats track from UCSC | name=sequence | score=alignment score
-    | col 7 = period | col 8 = copy_num
-  tags:
-    data-version: 27-Apr-2009
-    ggd-channel: genomics
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -32,3 +20,15 @@ requirements:
   - zlib
 source:
   path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - simrep
+  - regions
+  summary: Simple repeats track from UCSC | name=sequence | score=alignment score
+    | col 7 = period | col 8 = copy_num
+  tags:
+    data-version: 27-Apr-2009
+    ggd-channel: genomics
