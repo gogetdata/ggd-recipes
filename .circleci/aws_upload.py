@@ -147,20 +147,23 @@ def make_postlink_str(ggd_file_paths, species_name, recipe_name, genome_build, r
     postlink_str += """#!/bin/bash
 set -eo pipefail -o nounset
 
-export CONDA_ROOT=$(conda info --root)
-
-PKG_DIR=`find "$CONDA_ROOT/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION-.*$PKG_BUILDNUM$\|$PKG_VERSION\_.*$PKG_BUILDNUM$"`
-
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
+    export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
-    export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+    export RECIPE_DIR=$CONDA_ROOT/share/ggd/{species}/{build}/{name}/{version}
 elif [[ $(conda info --envs | grep "*" | grep -o "\/.*") == "base" ]]; then
+    export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
-    export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+    export RECIPE_DIR=$CONDA_ROOT/share/ggd/{species}/{build}/{name}/{version}
 else
     env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
-    export RECIPE_DIR=$env_dir/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
+    export CONDA_ROOT=$env_dir
+    export RECIPE_DIR=$env_dir/share/ggd/{species}/{build}/{name}/{version}
 fi
+
+PKG_DIR=`find "$CONDA_ROOT/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" \
+    | grep -v ".tar.bz2" \
+    | grep -E "$PKG_VERSION-.*$PKG_BUILDNUM$|$PKG_VERSION\\_.*$PKG_BUILDNUM$"`
 
 if [ -d $RECIPE_DIR ]; then
     rm -r $RECIPE_DIR
@@ -190,7 +193,6 @@ mkdir -p $deactivate_dir
 
 echo "export $recipe_env_name=$RECIPE_DIR" >> $activate_dir/env_vars.sh
 echo "unset $recipe_env_name">> $deactivate_dir/env_vars.sh
-ggd show-env
 
 (cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/cache_recipe.sh)
 
@@ -218,7 +220,14 @@ echo 'Recipe successfully built!'
 def create_cache_recipe(s3_urls, s3_bucket_name):
     cache_recipe_str = """#! /bin/sh
 set -eo pipefail -o nounset
-CONDA_ROOT=$(conda info --root)
+
+if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
+    CONDA_ROOT=$(conda info --root)
+elif [[ $(conda info --envs | grep "*" | grep -o "\/.*") == "base" ]]; then
+    CONDA_ROOT=$(conda info --root)
+else
+    CONDA_ROOT=$(conda info --envs | grep "*" | grep -o "\/.*")
+fi
 
 """
     for url in s3_urls:
@@ -267,9 +276,13 @@ def write_yaml(file_path, file_name, yaml_dict):
         os.makedirs(file_path)
         
     print("\n-> Writing '%s' to '%s'" %(file_name, file_path))
-    with open(os.path.join(file_path, file_name), "w") as newFile:
-        newFile.write(yaml.dump(yaml_dict, default_flow_style=False))
-    
+    with open(os.path.join(file_path, file_name), "a") as newFile:
+        for key in sorted(yaml_dict.keys()):
+            if key != "about": ## Skip about key for now
+                newFile.write(yaml.dump({key:yaml_dict[key]}, default_flow_style=False))
+        ## Add in the "about" key 
+        newFile.write(yaml.dump({"about":yaml_dict["about"]}, default_flow_style=False))
+
 
 #---------------------------------------------------------------------------------------------------------------
 ## Main
