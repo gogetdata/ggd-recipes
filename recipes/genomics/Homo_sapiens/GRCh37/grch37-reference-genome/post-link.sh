@@ -1,20 +1,21 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
-export CONDA_ROOT=$(conda info --root)
-
-PKG_DIR=`find "$CONDA_ROOT/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION-.*$PKG_BUILDNUM$\|$PKG_VERSION\_.*$PKG_BUILDNUM$"`
-
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
+    export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
     export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
 elif [[ $(conda info --envs | grep "*" | grep -o "\/.*") == "base" ]]; then
+    export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
     export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
 else
     env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
+    export CONDA_ROOT=$env_dir
     export RECIPE_DIR=$env_dir/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1
 fi
+
+PKG_DIR=`find "$CONDA_ROOT/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION.*$PKG_BUILDNUM$"`
 
 if [ -d $RECIPE_DIR ]; then
     rm -r $RECIPE_DIR
@@ -33,7 +34,6 @@ mkdir -p $deactivate_dir
 
 echo "export $recipe_env_name=$RECIPE_DIR" >> $activate_dir/env_vars.sh
 echo "unset $recipe_env_name">> $deactivate_dir/env_vars.sh
-ggd show-env
 
 (cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/recipe.sh)
 
