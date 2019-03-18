@@ -134,6 +134,40 @@ def get_pkg_file_names(header, conda_channel, page_num):
     file_str_list = [file_str for file_str in soup.find_all("label", class_="inline fileLabel")]
     return(file_str_list)
         
+# get_latest_package
+# ==================
+# This method is used to get the latest package from a list of anaconda packages. It will take a list of tuples, and from 
+#  that list will identify the package with the highest version and build number. It will then return the tuple related
+#  to "latest" package:
+# Each tuple in the input list of tuples is constructed as such: [0] = file_url, [1] = anaconda_path, [2] = tar_file, [3] = platform
+#
+# Parameters:
+# -----------
+# 1) pkg_list: A list of tuples, where each tuple holds information for an anaconda package.
+# 
+# Returns:
+# +++++++
+# 1) The tuple with the latest package
+def get_latest_package(pkg_list):
+    tar_file_list = [x[2] for x in pkg_list]
+    
+    max_version = 0
+    max_build = 0
+    index = 0
+    for i,tar_file in enumerate(tar_file_list):
+        file_name = tar_file.split(".tar.bz2")[0]
+        version = file_name.split("-")[-2]
+        build = file_name.split("-")[-1].split("_")[-1]
+        ## Check if version and build are greater
+        if int(version) > max_version:
+            max_version = int(version)
+            build = int(build)
+            index = i
+        elif int(version) == max_version and int(build) > max_build:
+            max_version = int(version)
+            max_build = int(build)
+
+    return(pkg_list[index])
     
 
 #------------------------------------------------------------------------------------------------------------
@@ -160,7 +194,6 @@ while end == False:
         pkg_name_list.extend(new_pkg_list)
         previous_list = new_pkg_list
 
-
 ## Get the file names and urls for each pkg in the ggd-<channel>
 pkg_file_list = [] ## List of tuples, where eacht tuple containes info about a pkg_file. # each  tuple = ([0] = anaconda url, [1] = anaconda_path, [2] = tar.bz2 file name [3] = platform) 
 for pkg in pkg_name_list:
@@ -173,7 +206,8 @@ for pkg in pkg_name_list:
         if new_pkg_file_list == previous_pkg_files: ## If no change from previous page, stop
             break
         else:
-            pkg_file_list.extend(new_pkg_file_list)
+            latest_package = [get_latest_package(new_pkg_file_list)]
+            pkg_file_list.extend(latest_package)
             previous_pkg_files = new_pkg_file_list
 
 ## Make a temp build dir to store the downloaded files 
