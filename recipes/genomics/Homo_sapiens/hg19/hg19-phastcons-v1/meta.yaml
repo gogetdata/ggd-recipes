@@ -6,7 +6,7 @@ build:
 extra:
   authors: mjc
   extra-files:
-  - hg19.100way.phastCons.bw
+  - hg19-phastcons-v1.bw
 package:
   name: hg19-phastcons-v1
   version: '1'
