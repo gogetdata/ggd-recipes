@@ -2,12 +2,12 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-simplerepeats
+  name: hg19-pfam-domains-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -25,10 +25,12 @@ about:
     genome-build: hg19
     species: Homo_sapiens
   keywords:
-  - simrep
-  - regions
-  summary: Simple repeats track from UCSC | name=sequence | score=alignment score
-    | col 7 = period | col 8 = copy_num
+  - pfam
+  - domains
+  - protein
+  - protein-domains
+  - UCSC
+  summary: Pfam domain annotation in bed12 format. (From UCSC)
   tags:
-    data-version: 27-Apr-2009
+    data-version: 16-Apr-2017
     ggd-channel: genomics

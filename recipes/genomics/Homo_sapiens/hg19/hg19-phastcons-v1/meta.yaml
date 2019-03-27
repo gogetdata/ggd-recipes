@@ -2,22 +2,17 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
-  extra-files: []
+  extra-files:
+  - hg19.100way.phastCons.bw
 package:
-  name: hg19-cpg-islands
+  name: hg19-phastcons-v1
   version: '1'
 requirements:
-  build:
-  - gsort
-  - htslib
-  - zlib
-  run:
-  - gsort
-  - htslib
-  - zlib
+  build: []
+  run: []
 source:
   path: .
 about:
@@ -25,9 +20,9 @@ about:
     genome-build: hg19
     species: Homo_sapiens
   keywords:
-  - CpG
-  - region
-  summary: cpg islands from UCSC
+  - phastCons
+  - conservation
+  summary: phastCons scores for MSA of 99 genomes to hg19
   tags:
-    data-version: 27-Apr-2009
+    data-version: 09-Feb-2014
     ggd-channel: genomics

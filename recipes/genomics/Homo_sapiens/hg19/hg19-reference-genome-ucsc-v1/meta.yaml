@@ -2,21 +2,19 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-gaps
+  name: hg19-reference-genome-ucsc-v1
   version: '1'
 requirements:
   build:
-  - gsort
-  - htslib
+  - samtools
   - zlib
   run:
-  - gsort
-  - htslib
+  - samtools
   - zlib
 source:
   path: .
@@ -25,9 +23,12 @@ about:
     genome-build: hg19
     species: Homo_sapiens
   keywords:
-  - gaps
-  - region
-  summary: Assembly gaps from USCS
+  - ref
+  - reference
+  - genome
+  - UCSC
+  summary: The hg19 reference genome from UCSC. This version includes the latest patch,
+    patch 13. (http://hgdownload.soe.ucsc.edu/goldenPath/hg19/hg19Patch13/)
   tags:
-    data-version: 27-Apr-2009
+    data-version: 25-May-2018
     ggd-channel: genomics
