@@ -2,21 +2,19 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg38-simplerepeats
+  name: hg38-reference-genome-ucsc-v1
   version: '1'
 requirements:
   build:
-  - gsort
-  - htslib
+  - samtools
   - zlib
   run:
-  - gsort
-  - htslib
+  - samtools
   - zlib
 source:
   path: .
@@ -25,10 +23,12 @@ about:
     genome-build: hg38
     species: Homo_sapiens
   keywords:
-  - simrep
-  - regions
-  summary: Simple repeats track from UCSC | name=sequence | score=alignment score
-    | col 7 = period | col 8 = copy_num
+  - ref
+  - reference
+  - genome
+  - UCSC
+  summary: The hg38 reference genome from UCSC. This version includes the latest patch,
+    patch 12. (url:http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/p12/)
   tags:
-    data-version: 06-Mar-2014
+    data-version: 10-Aug-2018
     ggd-channel: genomics

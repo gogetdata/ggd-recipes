@@ -2,19 +2,21 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg38-reference-genome-ucsc
+  name: hg38-pfam-domains-ucsc-v1
   version: '1'
 requirements:
   build:
-  - samtools
+  - gsort
+  - htslib
   - zlib
   run:
-  - samtools
+  - gsort
+  - htslib
   - zlib
 source:
   path: .
@@ -23,12 +25,12 @@ about:
     genome-build: hg38
     species: Homo_sapiens
   keywords:
-  - ref
-  - reference
-  - genome
+  - pfam
+  - domains
+  - protein
+  - protein-domains
   - UCSC
-  summary: The hg38 reference genome from UCSC. This version includes the latest patch,
-    patch 12. (url:http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/p12/)
+  summary: Pfam domain annotation in bed12 format. (From UCSC)
   tags:
-    data-version: 10-Aug-2018
+    data-version: 18-Nov-2018
     ggd-channel: genomics
