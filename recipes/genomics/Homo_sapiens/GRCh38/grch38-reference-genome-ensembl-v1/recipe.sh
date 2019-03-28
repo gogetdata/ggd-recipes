@@ -8,7 +8,7 @@ wget --quiet ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sa
 gzip -fd Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 
 ## Rename fasta file
-mv Homo_sapiens.GRCh38.dna.primary_assembly.fa > GRCh38.primary_assembly.fa 
+mv Homo_sapiens.GRCh38.dna.primary_assembly.fa GRCh38.primary_assembly.fa 
 
 ## Index the reference genome using samtools
 samtools faidx GRCh38.primary_assembly.fa
