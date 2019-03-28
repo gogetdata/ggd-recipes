@@ -2,12 +2,12 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-reference-genome
+  name: grch37-reference-genome-v1
   version: '1'
 requirements:
   build:
