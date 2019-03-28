@@ -7,5 +7,8 @@ wget --quiet ftp://ftp.ensembl.org/pub/release-75/fasta/homo_sapiens/dna/Homo_sa
 ## Unzip the file using GNU zip. (All files are compacted with GNU Zip for storage efficiency.) (ftp://ftp.ensembl.org/pub/release-75/fasta/homo_sapiens/dna/README)
 gzip -fd Homo_sapiens.GRCh37.75.dna.primary_assembly.fa.gz
 
+## Change the name of the fasta file
+mv Homo_sapiens.GRCh37.75.dna.primary_assembly.fa GRCh37.primary_assembly.fa 
+
 ## Index the reference genome using samtools
-samtools faidx Homo_sapiens.GRCh37.75.dna.primary_assembly.fa
+samtools faidx GRCh37.primary_assembly.fa

@@ -7,18 +7,18 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-esp-variants
+  name: grch37-esp-variants-v1
   version: '1'
 requirements:
   build:
-  - grch37-reference-genome
+  - grch37-reference-genome-v1
   - gsort
   - htslib
   - perl
   - vt
   - zlib
   run:
-  - grch37-reference-genome
+  - grch37-reference-genome-v1
   - gsort
   - htslib
   - perl

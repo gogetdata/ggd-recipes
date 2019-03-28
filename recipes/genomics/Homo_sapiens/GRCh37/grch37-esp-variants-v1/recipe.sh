@@ -16,7 +16,7 @@ gsort temp.vcf https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/ge
 tabix -p vcf ESP6500SI.all.snps_indels.vcf.gz
 
 # get handle for reference file
-reference_fasta="$(ggd list-files 'grch37-reference-genome' -s 'Homo_sapiens' -g 'GRCh37' -p 'hs37d5.fa')"
+reference_fasta="$(ggd list-files 'grch37-reference-genome-v1' -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-reference-genome-v1.fa')"
 
 # get the santizer script
 wget --quiet https://raw.githubusercontent.com/arq5x/gemini/master/gemini/annotation_provenance/sanitize-esp.py
@@ -24,8 +24,6 @@ wget --quiet https://raw.githubusercontent.com/arq5x/gemini/master/gemini/annota
 # sanitize
 zless ESP6500SI.all.snps_indels.vcf.gz | python sanitize-esp.py | bgzip -c > temp.gz
 tabix temp.gz
-
-# 1st clean up environment
 
 # decompose with vt
 vt decompose -s temp.gz \
@@ -35,7 +33,7 @@ vt decompose -s temp.gz \
 
 tabix ESP6500SI.all.snps_indels.tidy.vcf.gz
 
-# 2nd clean up environment
+# clean up environment
 rm ESP6500SI-V2-SSA137.GRCh38-liftover.snps_indels.vcf.tar.gz
 rm ESP6500SI-V2-SSA137.GRCh38-liftover.chr*.snps_indels.vcf
 rm ESP6500SI.all.snps_indels.vcf.gz.tbi
