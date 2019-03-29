@@ -27,8 +27,7 @@ about:
   - reference
   - genome
   - UCSC
-  summary: The hg19 reference genome from UCSC. This version includes the latest patch,
-    patch 13. (http://hgdownload.soe.ucsc.edu/goldenPath/hg19/hg19Patch13/)
+  summary: The hg19 reference genome from UCSC. (http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/)
   tags:
-    data-version: 25-May-2018
+    data-version: 21-Aug-2018
     ggd-channel: genomics
