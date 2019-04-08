@@ -60,15 +60,29 @@ The following will outline steps used to create the hg19-gaps ggd data recipe:
             | gsort /dev/stdin $genome \
             | bgzip -c > gaps.bed.gz
 
-        tabix gaps.bed.g
+        tabix gaps.bed.gz
+
+* In this data processing script please change the resulting data file names to be short and include all necessary
+  genomic file extentions. (See the NOTE bellow) 
 
 You should run the script to make sure it works and that the processed files are what you expect them to be.
+
+
+    .. note::
+
+       The final data file names will be changed to reflect the new ggd recipe name. To keep the data file name as 
+       short as possible please rename data files to include only a short name and the genomic file extensions. The name
+       will be replaced with the ggd recipe name, and the genomic file extention will be kept. For example, in the 
+       hg19-gaps example above *gaps.bed.gz* and the tabix companion *gaps.bed.gz.tbi* will be renmaed to *hg19-gaps.bed.gz*
+       and *hg19-gaps.bed.gz.tbi*. Because of the complexities with genomic file extentions all extentions will be retained
+       and only the beginning name before the first . will be replaced with the recipe name. 
+
 
 3. Create a ggd recipe using the ggd cli
 ----------------------------------------
 The ggd command line interface (cli) contains tools to create and test a data recipe.
 
-If it has not been installed, install the ggd cli following the steps outline in :ref:`Using GGD <using-ggd>`.
+If it has not been installed, install the ggd cli following the steps outlined in :ref:`Using GGD <using-ggd>`.
 
 With the ggd cli installed you can now transform your bash script into a ggd recipe.
 
