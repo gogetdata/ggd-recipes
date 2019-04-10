@@ -1,5 +1,5 @@
-Go Get Data: "Making data great again"
-======================================
+Go Get Data: "Easily Managing Your Genomic Data"
+================================================
 
 [![CircleCI](https://circleci.com/gh/gogetdata/ggd-recipes/tree/master.svg?style=shield)](https://circleci.com/gh/gogetdata/ggd-recipes/tree/master)
 
