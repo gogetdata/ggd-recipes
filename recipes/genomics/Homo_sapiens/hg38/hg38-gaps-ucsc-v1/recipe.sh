@@ -6,6 +6,6 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/gap.tx
     | gzip -dc \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tsize\ttype\tstrand"} {print $2,$3,$4,$7,$8,"+"}' \
     | gsort /dev/stdin $genome \
-    | bgzip -c > gaps.bed.gz
+    | bgzip -c > hg38-gaps-ucsc-v1.bed.gz
 
-tabix gaps.bed.gz
+tabix hg38-gaps-ucsc-v1.bed.gz

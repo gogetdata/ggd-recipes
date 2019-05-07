@@ -5,7 +5,7 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/rmsk.t
     | gzip -dc \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tfamily_class_name\tdiv+del+ins\tstrand"} {print $6,$7,$8,$12"_"$13"_"$11,$3+$4+$5,$10}' \
     | gsort /dev/stdin $genome \
-    | bgzip -c > rmsk.bed.gz
+    | bgzip -c > hg38-repeatmasker-ucsc-v1.bed.gz
 
-tabix rmsk.bed.gz
+tabix hg38-repeatmasker-ucsc-v1.bed.gz
 

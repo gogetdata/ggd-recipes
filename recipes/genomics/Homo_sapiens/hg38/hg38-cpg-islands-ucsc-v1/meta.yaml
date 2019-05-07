@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg38-simplerepeats-v1
+  name: hg38-cpg-islands-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -25,10 +25,10 @@ about:
     genome-build: hg38
     species: Homo_sapiens
   keywords:
-  - simrep
-  - regions
-  summary: Simple repeats track from UCSC | name=sequence | score=alignment score
-    | col 7 = period | col 8 = copy_num
+  - CpG
+  - region
+  - bed-file
+  summary: hg38 cpg islands from UCSC in bed format
   tags:
-    data-version: 06-Mar-2014
+    data-version: 11-Mar-2019
     ggd-channel: genomics

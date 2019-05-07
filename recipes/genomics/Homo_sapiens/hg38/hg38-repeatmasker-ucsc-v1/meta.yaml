@@ -7,27 +7,28 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-reference-genome-v1
+  name: hg38-repeatmasker-ucsc-v1
   version: '1'
 requirements:
   build:
+  - gsort
   - htslib
-  - samtools
   - zlib
   run:
+  - gsort
   - htslib
-  - samtools
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
-  - ref
-  - reference
-  summary: GRCh37 reference genome from 1000 genomes
+  - rmsk
+  - region
+  - bed-file
+  summary: RepeatMasker track from UCSC in bed format
   tags:
-    data-version: phase2_reference
+    data-version: 06-Mar-2014
     ggd-channel: genomics

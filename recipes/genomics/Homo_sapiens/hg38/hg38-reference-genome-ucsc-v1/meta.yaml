@@ -27,6 +27,7 @@ about:
   - reference
   - genome
   - UCSC
+  - fasta-file
   summary: The hg38 reference genome from UCSC. This version includes the latest patch,
     patch 12. (url:http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/p12/)
   tags:

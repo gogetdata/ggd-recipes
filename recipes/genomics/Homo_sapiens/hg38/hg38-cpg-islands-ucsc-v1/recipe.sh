@@ -9,7 +9,7 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIsl
     | gzip -dc \
     | cut -f 2-5 \
     | gsort /dev/stdin $genome \
-    | bgzip -c > cpg.bed.gz
+    | bgzip -c > hg38-cpg-islands-ucsc-v1.bed.gz
 
 ## Tabix the processesed cpg file
-tabix cpg.bed.gz
+tabix hg38-cpg-islands-ucsc-v1.bed.gz

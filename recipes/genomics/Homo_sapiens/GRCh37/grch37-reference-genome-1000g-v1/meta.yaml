@@ -7,27 +7,28 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg38-cpg-islands-v1
+  name: grch37-reference-genome-1000g-v1
   version: '1'
 requirements:
   build:
-  - gsort
   - htslib
+  - samtools
   - zlib
   run:
-  - gsort
   - htslib
+  - samtools
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: hg38
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
-  - CpG
-  - region
-  summary: hg38 cpg islands from UCSC
+  - ref
+  - reference
+  - fasta-file
+  summary: GRCh37 reference genome from 1000 genomes
   tags:
-    data-version: 11-Mar-2019
+    data-version: phase2_reference
     ggd-channel: genomics
