@@ -8,8 +8,7 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/ucscGe
     | cut -f 2- \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tname\tsocre\tstrand\tthickStart\tthickEnd\treserved\tblockCount\tblockSizes\tchromStarts"} {print $0}' \
     | gsort /dev/stdin $genome \
-    | bgzip -c > pfam.bed12.bed.gz
+    | bgzip -c > hg19-pfam-domains-ucsc-v1.bed12.bed.gz
 
 ## index the bed file using tabix
-tabix pfam.bed12.bed.gz
-
+tabix hg19-pfam-domains-ucsc-v1.bed12.bed.gz

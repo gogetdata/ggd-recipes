@@ -30,6 +30,7 @@ about:
   - protein
   - protein-domains
   - UCSC
+  - bed-file
   summary: Pfam domain annotation in bed12 format. (From UCSC)
   tags:
     data-version: 16-Apr-2017

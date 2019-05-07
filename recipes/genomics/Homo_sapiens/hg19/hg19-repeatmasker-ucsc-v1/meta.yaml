@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-repeatmasker-v1
+  name: hg19-repeatmasker-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -27,7 +27,8 @@ about:
   keywords:
   - rmsk
   - region
-  summary: RepeatMasker track from UCSC
+  - bed-file
+  summary: RepeatMasker track from UCSC in bed format
   tags:
     data-version: 27-Apr-2009
     ggd-channel: genomics

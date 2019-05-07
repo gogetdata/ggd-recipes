@@ -7,4 +7,4 @@ wget --quiet -O grch37-reference-genome-1000g-v1.fa.gz http://ftp.1000genomes.eb
 bgzip -fd grch37-reference-genome-1000g-v1.fa.gz
 
 # index the reference
-samtools grch37-reference-genome-1000g-v1.fa.gz
+samtools grch37-reference-genome-1000g-v1.fa

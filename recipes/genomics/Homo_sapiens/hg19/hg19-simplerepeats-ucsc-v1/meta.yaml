@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-simplerepeats-v1
+  name: hg19-simplerepeats-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -27,6 +27,7 @@ about:
   keywords:
   - simrep
   - regions
+  - bed-file
   summary: Simple repeats track from UCSC | name=sequence | score=alignment score
     | col 7 = period | col 8 = copy_num
   tags:

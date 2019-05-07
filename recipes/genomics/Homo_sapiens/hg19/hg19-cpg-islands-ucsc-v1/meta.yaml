@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-cpg-islands-v1
+  name: hg19-cpg-islands-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -27,7 +27,8 @@ about:
   keywords:
   - CpG
   - region
-  summary: cpg islands from UCSC
+  - bed-file
+  summary: cpg islands from UCSC in bed format
   tags:
     data-version: 27-Apr-2009
     ggd-channel: genomics

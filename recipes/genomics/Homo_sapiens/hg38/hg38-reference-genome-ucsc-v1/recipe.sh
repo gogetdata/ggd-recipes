@@ -7,4 +7,4 @@ wget --quiet -O hg38-reference-genome-ucsc-v1.fa.gz  http://hgdownload.soe.ucsc.
 gzip -fd hg38-reference-genome-ucsc-v1.fa.gz
 
 ## Index the fasta file using samtools 
-samtools faidx hg38-reference-genome-ucsc-v1.fa.gz
+samtools faidx hg38-reference-genome-ucsc-v1.fa
