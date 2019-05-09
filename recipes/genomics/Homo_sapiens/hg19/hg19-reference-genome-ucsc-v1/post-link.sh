@@ -31,7 +31,10 @@ cd $RECIPE_DIR
 for f in *; do
     ext="${f#*.}"
     filename="{f%%.*}"
-    (mv $f "hg19-reference-genome-ucsc-v1.$ext")
+    if [[ ! -f "hg19-reference-genome-ucsc-v1.$ext" ]]  
+    then
+        (mv $f "hg19-reference-genome-ucsc-v1.$ext")
+    fi  
 done
 
 ## Add environment variables 
