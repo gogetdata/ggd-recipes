@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-pfam-domains-ucsc-v1
+  name: hg19-simplerepeats-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -25,13 +25,11 @@ about:
     genome-build: hg19
     species: Homo_sapiens
   keywords:
-  - pfam
-  - domains
-  - protein
-  - protein-domains
-  - UCSC
+  - simrep
+  - regions
   - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  summary: Simple repeats track from UCSC | name=sequence | score=alignment score
+    | col 7 = period | col 8 = copy_num
   tags:
-    data-version: 16-Apr-2017
+    data-version: 27-Apr-2009
     ggd-channel: genomics

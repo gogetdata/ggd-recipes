@@ -27,6 +27,7 @@ about:
   - reference
   - genome
   - UCSC
+  - fasta-file
   summary: The hg19 reference genome from UCSC. (http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/)
   tags:
     data-version: 21-Aug-2018

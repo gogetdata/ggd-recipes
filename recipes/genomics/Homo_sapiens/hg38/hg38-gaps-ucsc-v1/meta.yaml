@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-pfam-domains-ucsc-v1
+  name: hg38-gaps-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -22,16 +22,13 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
-  - pfam
-  - domains
-  - protein
-  - protein-domains
-  - UCSC
+  - gaps
+  - region
   - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  summary: hg38 Assembly gaps from UCSC in bed format
   tags:
-    data-version: 16-Apr-2017
+    data-version: 11-Mar-2019
     ggd-channel: genomics

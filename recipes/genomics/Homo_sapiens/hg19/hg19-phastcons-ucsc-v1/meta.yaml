@@ -5,19 +5,14 @@ build:
   number: 0
 extra:
   authors: mjc
-  extra-files: []
+  extra-files:
+  - hg19-phastcons-ucsc-v1.bw
 package:
-  name: hg19-pfam-domains-ucsc-v1
+  name: hg19-phastcons-ucsc-v1
   version: '1'
 requirements:
-  build:
-  - gsort
-  - htslib
-  - zlib
-  run:
-  - gsort
-  - htslib
-  - zlib
+  build: []
+  run: []
 source:
   path: .
 about:
@@ -25,13 +20,10 @@ about:
     genome-build: hg19
     species: Homo_sapiens
   keywords:
-  - pfam
-  - domains
-  - protein
-  - protein-domains
-  - UCSC
-  - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  - phastCons
+  - conservation
+  - bigWig-file
+  summary: phastCons scores for MSA of 99 genomes to hg19
   tags:
-    data-version: 16-Apr-2017
+    data-version: 09-Feb-2014
     ggd-channel: genomics

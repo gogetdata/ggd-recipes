@@ -7,31 +7,28 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-pfam-domains-ucsc-v1
+  name: grch37-reference-genome-1000g-v1
   version: '1'
 requirements:
   build:
-  - gsort
   - htslib
+  - samtools
   - zlib
   run:
-  - gsort
   - htslib
+  - samtools
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
-  - pfam
-  - domains
-  - protein
-  - protein-domains
-  - UCSC
-  - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  - ref
+  - reference
+  - fasta-file
+  summary: GRCh37 reference genome from 1000 genomes
   tags:
-    data-version: 16-Apr-2017
+    data-version: phase2_reference
     ggd-channel: genomics
