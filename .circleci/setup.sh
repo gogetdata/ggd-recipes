@@ -28,9 +28,9 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-$tag-x86_64.sh
     sudo bash Miniconda3-latest-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
-    curl -Lo $WORKSPACE/anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-$tag2\_amd64
+    #curl -Lo $WORKSPACE/anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-$tag2\_amd64
 
-    chmod +x $WORKSPACE/anaconda/bin/check-sort-order
+    #chmod +x $WORKSPACE/anaconda/bin/check-sort-order
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
 
 
