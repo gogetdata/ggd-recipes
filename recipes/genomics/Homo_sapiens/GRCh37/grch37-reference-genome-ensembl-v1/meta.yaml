@@ -26,6 +26,7 @@ about:
   - ref
   - reference
   - Ensembl
+  - fasta-file
   - Release75
   summary: The GRCh37 reference genome from Ensembl. Release 75. Primary Assembly
     file

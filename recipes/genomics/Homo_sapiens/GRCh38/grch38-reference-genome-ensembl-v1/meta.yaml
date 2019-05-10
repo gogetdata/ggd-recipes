@@ -27,6 +27,7 @@ about:
   - reference
   - genome
   - Ensembl
+  - fasta-file
   summary: The GRCh38 reference genome from Ensembl. Release 95. Primary Assembly
     file
   tags:
