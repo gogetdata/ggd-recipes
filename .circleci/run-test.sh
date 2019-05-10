@@ -84,7 +84,8 @@ done
 if [[ "$cached" == true ]] ; then
     ## Clean up build dir
     rm $CHECK_DIR/*.bz2
-    bash setup.sh
+    pwd
+    bash .circleci/setup.sh
     export PATH=/anaconda/bin:$PATH
 
     CONDA_ROOT=$(conda info --root)
