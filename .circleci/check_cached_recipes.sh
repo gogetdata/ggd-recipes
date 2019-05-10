@@ -11,6 +11,7 @@ rm $CHECK_DIR/*.bz2
 echo -e "\n-> cached dirs:\n"
 echo "$cached_recipes_path"
 bioconda-utils build $cached_recipes_path config.yaml
+conda info
 ## run recipe check and upload
 for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
