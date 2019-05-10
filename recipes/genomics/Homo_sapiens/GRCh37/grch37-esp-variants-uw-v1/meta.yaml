@@ -11,14 +11,14 @@ package:
   version: '1'
 requirements:
   build:
-  - grch37-reference-genome-ucsc-v1
+  - grch37-reference-genome-1000g-v1
   - gsort
   - htslib
   - perl
   - vt
   - zlib
   run:
-  - grch37-reference-genome-ucsc-v1
+  - grch37-reference-genome-1000g-v1
   - gsort
   - htslib
   - perl
