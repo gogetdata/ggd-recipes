@@ -1,4 +1,7 @@
 ## Clean up build dir
+CHECK_DIR=$1
+cached_recipes_path=$2
+
 rm $CHECK_DIR/*.bz2
 ## build the new pacakges
 echo -e "\n-> cached dirs:\n"
