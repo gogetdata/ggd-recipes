@@ -82,7 +82,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 done
 
 if [[ "$cached" == true ]] ; then
-    bash .circleci/check_cached_recipes.sh
+    bash .circleci/check_cached_recipes.sh $CHECK_DIR $cached_recipes_path 
 fi
 
 if [[ "$recipe_uploaded" == true ]] ; then
