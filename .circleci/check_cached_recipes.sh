@@ -12,6 +12,8 @@ echo -e "\n-> cached dirs:\n"
 echo "$cached_recipes_path"
 bioconda-utils build $cached_recipes_path config.yaml
 
+ls /home/circleci/project/anaconda
+ls /home/circleci/project/anaconda/bin
 ## run recipe check and upload
 for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
@@ -35,6 +37,8 @@ for bz2 in $CHECK_DIR/*.bz2; do
             echo -e "\n-> WARNING:"
             echo '-> $ANACONDA_GGD_TOKEN not set'
         else
+            ls /home/circleci/project/anaconda
+            ls /home/circleci/project/anaconda/bin
             conda info
             anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
             echo -e "\n-> Successfully Uploaded\n" 
