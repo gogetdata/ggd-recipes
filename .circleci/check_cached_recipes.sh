@@ -1,6 +1,7 @@
 ## Clean up build dir
 CHECK_DIR=$1
 cached_recipes_path=$2
+export PATH=/anaconda/bin:$PATH
 
 which check-sort-order
 which anaconda
