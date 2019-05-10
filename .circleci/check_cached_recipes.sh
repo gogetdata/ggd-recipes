@@ -2,6 +2,9 @@
 CHECK_DIR=$1
 cached_recipes_path=$2
 
+which check-sort-order
+which anaconda
+
 rm $CHECK_DIR/*.bz2
 ## build the new pacakges
 echo -e "\n-> cached dirs:\n"
