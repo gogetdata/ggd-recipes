@@ -180,8 +180,40 @@ mkdir -p $RECIPE_DIR
 
     
     postlink_str += """
-recipe_env_name="ggd_{name}"
-recipe_env_name="$(echo "$recipe_env_name" | sed 's/-/_/g')"
+(cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/cache_recipe.sh)
+
+## Iterate over new files and replace file name with data package name and data version  
+for f in *; do
+    ext="${ext_string}"
+    filename="{filename_string}"
+    if [[ ! -f "{name}.$ext" ]]  
+    then
+        (mv $f "{name}.$ext")
+    fi  
+done
+
+## Add environment variables 
+#### File
+if [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 1 ]] ## If only one file
+then
+    recipe_env_file_name="ggd_{name}_file"
+    recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g')"
+    file_path="$(find $RECIPE_DIR -type f -maxdepth 1)"
+
+elif [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 2 ]] ## If two files
+then
+    indexed_file=`find $RECIPE_DIR -type f \( -name "*.tbi" -or -name "*.fai" -or -name "*.bai" -or -name "*.crai" -or -name "*.gzi" \) 
+    if [[ ! -z "$indexed_file" ]] ## If index file exists
+    then
+        recipe_env_file_name="ggd_{name}_file"
+        recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g')"
+        file_path="$(echo $indexed_file | sed 's/\.[^.]*$//')" ## remove index extension
+    fi
+fi 
+
+#### Dir
+recipe_env_dir_name="ggd_{name}_dir"
+recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g')"
 
 activate_dir="$env_dir/etc/conda/activate.d"
 deactivate_dir="$env_dir/etc/conda/deactivate.d"
@@ -189,17 +221,26 @@ deactivate_dir="$env_dir/etc/conda/deactivate.d"
 mkdir -p $activate_dir
 mkdir -p $deactivate_dir
 
-echo "export $recipe_env_name=$RECIPE_DIR" >> $activate_dir/env_vars.sh
-echo "unset $recipe_env_name">> $deactivate_dir/env_vars.sh
+echo "export $recipe_env_dir_name=$RECIPE_DIR" >> $activate_dir/env_vars.sh
+echo "unset $recipe_env_dir_name">> $deactivate_dir/env_vars.sh
 
-(cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/cache_recipe.sh)
+#### File
+    ## If the file env variable exists, set the env file var
+if [[ ! -z "${file_env_var}" ]] 
+then
+    echo "export $recipe_env_file_name=$file_path" >> $activate_dir/env_vars.sh
+    echo "unset $recipe_env_file_name">> $deactivate_dir/env_vars.sh
+fi
 
 echo 'Recipe successfully built!'
 """.format(species=species_name,
            name=recipe_name,
            build=genome_build,
-           version=recipe_version)
-    
+           version=recipe_version,
+           ext_string="{f#*.}", ## Bash get extention. (.bed, .bed.gz, etc.) 
+           filename_string="{f%%.*}",
+           file_env_var="{recipe_env_file_name:-}")
+
     return(postlink_str)
 
 
