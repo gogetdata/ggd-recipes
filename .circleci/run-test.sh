@@ -84,6 +84,13 @@ done
 if [[ "$cached" == true ]] ; then
     ## Clean up build dir
     rm $CHECK_DIR/*.bz2
+    bash setup.sh
+    export PATH=/anaconda/bin:$PATH
+
+    CONDA_ROOT=$(conda info --root)
+
+    CHECK_DIR=$CONDA_ROOT/conda-bld/*
+
     ## build the new pacakges
     echo -e "\n-> cached dirs:\n"
     echo "$cached_recipes_path"
