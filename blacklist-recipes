@@ -1,22 +1,26 @@
 ## Blacklisted Recipes 
 
+## Grch37
 recipes/genomics/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1
-recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1	
-recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-ensembl-v1
+#recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1	
+#recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-ensembl-v1
 
-recipes/genomics/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1
+## Grch38
+#recipes/genomics/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1
 
-recipes/genomics/Homo_sapiens/hg19/hg19-cpg-islands-ucsc-v1
-recipes/genomics/Homo_sapiens/hg19/hg19-pfam-domains-ucsc-v1
-recipes/genomics/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1
-recipes/genomics/Homo_sapiens/hg19/hg19-reference-genome-ucsc-v1
-recipes/genomics/Homo_sapiens/hg19/hg19-repeatmasker-ucsc-v1
-recipes/genomics/Homo_sapiens/hg19/hg19-simplerepeats-ucsc-v1
+## hg19
+#recipes/genomics/Homo_sapiens/hg19/hg19-cpg-islands-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg19/hg19-gaps-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg19/hg19-pfam-domains-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg19/hg19-reference-genome-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg19/hg19-repeatmasker-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg19/hg19-simplerepeats-ucsc-v1
 
-
-recipes/genomics/Homo_sapiens/hg38/hg38-cpg-islands-ucsc-v1
-recipes/genomics/Homo_sapiens/hg38/hg38-gaps-ucsc-v1
-recipes/genomics/Homo_sapiens/hg38/hg38-pfam-domains-ucsc-v1
-recipes/genomics/Homo_sapiens/hg38/hg38-reference-genome-ucsc-v1	
-recipes/genomics/Homo_sapiens/hg38/hg38-repeatmasker-ucsc-v1
-recipes/genomics/Homo_sapiens/hg38/hg38-simplerepeats-ucsc-v1
+## hg38
+#recipes/genomics/Homo_sapiens/hg38/hg38-cpg-islands-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg38/hg38-gaps-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg38/hg38-pfam-domains-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg38/hg38-reference-genome-ucsc-v1	
+#recipes/genomics/Homo_sapiens/hg38/hg38-repeatmasker-ucsc-v1
+#recipes/genomics/Homo_sapiens/hg38/hg38-simplerepeats-ucsc-v1
