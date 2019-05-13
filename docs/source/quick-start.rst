@@ -77,7 +77,7 @@ the ggd search tool, you can use the following command to install the package.
 
 .. code-block:: bash
 
-   $ ggd install grch38-reference-genome
+   $ ggd install grch38-reference-genome-ensembl-v1
 
 If you look at the output from running `ggd install` you will see the system directory path to where the installed data packages
 are stored, as well as an environmnet variable that can be used to access the data files.
@@ -95,14 +95,26 @@ use the following command:
 If the environment variables are inactive, the output will tell you how to activate them. Once active, the environment variable 
 can be used to access the data packages install by ggd. 
 
-For example, if you installed the GRCh38 reference genome from Ensembl, you would get an environmnet variable like: 
-:code:`ggd_grch38_reference_genome`. You can use this environment variable to acces your data.
+For most data packages two environment variables will be created. 
+* An environment variable that points to the directory path where the installed data is stored
+* An environment variable that poinst to the main installed file to use. 
+
+
+For example, if you installed the GRCh38 reference genome from Ensembl, you would get two environmnet variable like: 
+:code:`ggd_grch38_reference_genome_ensembl_v1_dir` and :code:`ggd_grch38_reference_genome_ensembl_v1_file`. 
+You can use these environment variable to acces your data.
 
 To see the files for this ggd installed package you can use the following command: 
 
 .. code-block:: bash
 
-   $ ls $ggd_grch38_reference_genome
+   $ ls $ggd_grch38_reference_genome_ensemble_v1_dir
+
+To use the main file env var (Example showed is using an installed ref fasta to align reads):
+
+.. code-block:: bash
+
+     bwa mem $ggd_grch38_reference_genome_ensemble_v1_file reads.fq > aln.sam
 
 To move to the directory where the files are stored you can use the following command:
 
@@ -112,7 +124,7 @@ To move to the directory where the files are stored you can use the following co
 
 .. note::
     
-    If you remove the files from this directory ggd will no longer be able to provide file handeling, version tracking, and 
+    If you remove the files from this directory ggd will no longer be able to provide file and dependency handeling, version tracking, and 
     other functions. If you need to move these files please make a copy and move the copy.
 
 5) Using the data pacakges
@@ -121,6 +133,8 @@ To move to the directory where the files are stored you can use the following co
 Now that you have downloaded the desired data packages you can use them for all of your experiements and analyses. ggd offers mutliple
 functions in order to locate the data files installed by ggd, get the data package information, etc. For more information see 
 :ref:`Using GGD <using-ggd>`. 
+
+For additional information and examples on using installed data packages see :ref:`Using installed data <using-installed-data>`. 
 
 
 6) Additional Info

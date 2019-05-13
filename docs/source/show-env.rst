@@ -9,10 +9,13 @@ ggd show-env is a tool used to show the ggd associated variables created during 
 for the current conda environment.
 
 During installation, ggd will place the processed files in a specific location on your system. To access
-these files ggd creates environment variables for a specific conda environment. These variables contain the
-directory path to the processed files. You can use :code:`ggd list-files` to find the file paths for a ggd data
+these files ggd creates upt to two environment variables for each data package within a specific conda environment. 
+These variables contain the either the directory path to the processed files or the file path to the main data file. 
+You can use :code:`ggd list-files` or :code:`ggd pkg-info` to find additional file paths for a ggd data
 package, however, these environment variables provide quick access to the processed files without having to know
 the file paths.
+
+For details on using these environment variables in your analysis scripts see: :ref:`Using installed data <using-installed-data>`.
 
 
 Using ggd show-env
@@ -33,6 +36,12 @@ Additional argument explanation:
 There are no required arguments for using :code:`ggd show-env`, however, you can refine the results using
 the :code:`-p` flag.
 
+.. note:: 
+
+   Environemnt variables ending with `_dir` point to the directory path of the installed data package.
+   
+   Environment variables ending with `_file` point to the main file from the installed data package. 
+
 
 Examples
 --------
@@ -47,14 +56,22 @@ Examples
       *****************************
 
       Active environment variables:
-      > $ggd_hg19_repeatmasker
-      > $ggd_grch37_esp_variants
-      > $ggd_hg38_repeatmasker
-      > $ggd_grch37_reference_genome
-      > $ggd_hg19_phastcons
-      > $ggd_hg19_gaps
-      > $ggd_hg38_simplerepeats
-      > $ggd_hg19_simplerepeats
+      > $ggd_hg19_repeatmasker_ucsc_v1_dir
+      > $ggd_hg19_repeatmasker_ucsc_v1_file
+      > $ggd_grch37_esp_variants_ensembl_v1_dir
+      > $ggd_grch37_esp_variants_ensembl_v1_file
+      > $ggd_hg38_repeatmasker_ucsc_v1_dir
+      > $ggd_hg38_repeatmasker_ucsc_v1_file
+      > $ggd_grch37_reference_genome_ensembl_v1_dir
+      > $ggd_grch37_reference_genome_ensembl_v1_file
+      > $ggd_hg19_phastcons_ucsc_v1_dir
+      > $ggd_hg19_phastcons_ucsc_v1_file
+      > $ggd_hg19_gaps_ucsc_v1_dir
+      > $ggd_hg19_gaps_ucsc_v1_file
+      > $ggd_hg38_simplerepeats_ucsc_v1_dir
+      > $ggd_hg38_simplerepeats_ucsc_v1_file
+      > $ggd_hg19_simplerepeats_ucsc_v1_dir
+      > $ggd_hg19_simplerepeats_ucsc_v1_file
       .
       .
       .
@@ -71,10 +88,14 @@ Examples
       *****************************
 
       Active environment variables:
-      > $ggd_hg19_phastcons
-      > $ggd_hg19_gaps
-      > $ggd_hg19_repeatmasker
-      > $ggd_hg19_simplerepeats
+      > $ggd_hg19_phastcons_ucsc_v1_dir
+      > $ggd_hg19_phastcons_ucsc_v1_file
+      > $ggd_hg19_gaps_ucsc_v1_dir
+      > $ggd_hg19_gaps_ucsc_v1_file
+      > $ggd_hg19_repeatmasker_ucsc_v1_dir
+      > $ggd_hg19_repeatmasker_ucsc_v1_file
+      > $ggd_hg19_simplerepeats_ucsc_v1_dir
+      > $ggd_hg19_simplerepeats_ucsc_v1_file
       .
       .
       .

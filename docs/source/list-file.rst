@@ -75,24 +75,24 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd list-files grch37-reference-genome
+    $ ggd list-files grch37-reference-genome-1000g-v1
 
-      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa.fai
-      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
+      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1/1/hs37d5.fa.fai
+      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1/1/hs37d5.fa
 
 2. Example using the ``-s``, ``-g``, and ``-p`` flags to find the gzipped vcf files for a given ggd data package
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
-    $ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz
+    $ ggd list-files grch37-esp-variants-uw-v1 -s Homo_sapiens -g GRCh37 -p *.vcf.gz
 
-     <conda root>/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz
+     <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1/1/grch37-esp-variants-uw-v1.vcf.gz
 
 
-    $ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
+    $ ggd list-files grch37-esp-variants-uw-v1 -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
 
-     <conda root>/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
+     <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
 
 
 .. note::

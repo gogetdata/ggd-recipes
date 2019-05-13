@@ -48,6 +48,7 @@ Example
         #!/bin/sh
         set -eo pipefail -o nounset
         wget --quiet --no-check-certificate \
+            -O hg19-phastcons-ucsc-v1.bw \
             http://hgdownload.cse.ucsc.edu/goldenpath/hg19/phastCons100way/hg19.100way.phastCons.bw
 
     * Using :code:`ggd make-recipe` to create a ggd recipe::
@@ -56,58 +57,58 @@ Example
             --author mjc --ggd_version 1 \
             --data_version 09-Feb-2014 \
             --summary 'phastCons scores for MSA of 99 genomes to hg19' \
-            -e hg19.100way.phastCons.bw -k phastCons \
-            -k conservation get_data.sh
+            -e hg19-phastcons-ucsc-v1.bw -k phastCons \
+            -k conservation phastcons-ucsc get_data.sh
 
-    * A new directory called **hg19-phastcons** is now present in the current working directory
-        * The **hg19-phastcons** directory contains three files: **meta.yaml**, **post-link.sh**, and **recipe.sh**
-        * Lets say the path to **hg19-phastcons** is ``/user/home/hg19-phastcons/``
+    * A new directory called **hg19-phastcons-ucsc-v1** is now present in the current working directory
+        * The **hg19-phastcons-ucsc-v1** directory contains three files: **meta.yaml**, **post-link.sh**, and **recipe.sh**
+        * Lets say the path to **hg19-phastcons-ucsc-v1** is ``/user/home/hg19-phastcons-ucsc-v1/``
 
-    * Using :code:`ggd check-recipe` we will build, install, and test the new **hg19-phastcons** recipe::
+    * Using :code:`ggd check-recipe` we will build, install, and test the new **hg19-phastcons-ucsc-v1** recipe::
 
-        $ ggd check-recipe /user/home/hg19-phastcons/
+        $ ggd check-recipe /user/home/hg19-phastcons-ucsc-v1/
 
           No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
           WARNING:conda_build.metadata:No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
           INFO:conda_build.variants:Adding in variants from internal_defaults
-          INFO:conda_build.metadata:Attempting to finalize metadata for hg19-phastcons
-          INFO:conda_build.build:Packaging hg19-phastcons
-          INFO:conda_build.build:Packaging hg19-phastcons-1-0
-          No files or script found for output hg19-phastcons
-          WARNING:conda_build.build:No files or script found for output hg19-phastcons
-          /TMP/hg19-phastcons-1-0.tar.bz2: C1115 Found invalid license "None" in info/index.json
-          /TMP/hg19-phastcons-1-0.tar.bz2: C1134 Found pre/post link file "bin/.hg19-phastcons-post-link.sh" in archive
+          INFO:conda_build.metadata:Attempting to finalize metadata for hg19-phastcons-ucsc-v1
+          INFO:conda_build.build:Packaging hg19-phastcons-ucsc-v1
+          INFO:conda_build.build:Packaging hg19-phastcons-ucsc-v1-1-0
+          No files or script found for output hg19-phastcons-ucsc-v1
+          WARNING:conda_build.build:No files or script found for output hg19-phastcons-ucsc-v1
+          /TMP/hg19-phastcons-ucsc-v1-1-0.tar.bz2: C1115 Found invalid license "None" in info/index.json
+          /TMP/hg19-phastcons-ucsc-v1-1-0.tar.bz2: C1134 Found pre/post link file "bin/.hg19-phastcons-ucsc-v1-post-link.sh" in archive
           INFO:conda_build.variants:Adding in variants from /TMP/info/recipe/conda_build_config.yaml
           Solving environment: done
 
           ## Package Plan ##
 
-           environment location: /scratch/ucgd/lustre/work/u1138933/anaconda2
+           environment location: <conda root>
 
              added / updated specs:
-                 - hg19-phastcons
+                 - hg19-phastcons-ucsc-v1
 
 
           The following packages will be downloaded:
 
           package                    |            build
           ---------------------------|-----------------
-          hg19-phastcons-1           |                0           5 KB  local
+          hg19-phastcons-ucsc-v1-1           |                0           5 KB  local
 
           The following NEW packages will be INSTALLED:
 
-            hg19-phastcons: 1-0 local
+            hg19-phastcons-ucsc-v1: 1-0 local
 
 
           Downloading and Extracting Packages
-          hg19-phastcons-1     | 5 KB      | ############################ | 100%
+          hg19-phastcons-ucsc-v1-1     | 5 KB      | ############################ | 100%
           Preparing transaction: done
           Verifying transaction: done
           Executing transaction: done
           modified files:
-          :: /<conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+          :: /<conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1/hg19-phastcons-ucsc-v1.bw
 
-          checking /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+          checking <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1/hg19-phastcons-ucsc-v1.bw
 
             ****************************
             * Successful recipe check! *

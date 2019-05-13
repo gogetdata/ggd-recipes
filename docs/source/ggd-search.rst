@@ -82,7 +82,7 @@ Some examples of using the `ggd search` tool:
 
     $ ggd search -t reference
 
-      grch37-reference-genome
+      grch37-reference-genome-1000g-v1
        Summary: GRCh37 reference genome from 1000 genomes
        Species: Homo_sapiens
        Genome Build: GRCh37
@@ -90,9 +90,9 @@ Some examples of using the `ggd search` tool:
        Data Version: phase2_reference
 
        To install run:
-           ggd install grch37-reference-genome
+           ggd install grch37-reference-genome-1000g-v1
 
-      grch38-reference-genome
+      grch38-reference-genome-ensembl-v1
 
 
 2. Simple example with two search terms:
@@ -102,7 +102,7 @@ Some examples of using the `ggd search` tool:
 
     $ ggd search -t repeat masker
 
-      hg38-repeatmasker
+      hg38-repeatmasker-ucsc-v1
        Summary: RepeatMasker track from UCSC
        Species: Homo_sapiens
        Genome Build: hg38
@@ -110,10 +110,10 @@ Some examples of using the `ggd search` tool:
        Data Version: 06-Mar-2014
 
        To install run:
-           ggd install hg38-repeatmasker
+           ggd install hg38-repeatmasker-ucsc-v1
 
 
-      hg19-repeatmasker
+      hg19-repeatmasker-ucsc-v1
        Summary: RepeatMasker track from UCSC
        Species: Homo_sapiens
        Genome Build: hg19
@@ -121,7 +121,7 @@ Some examples of using the `ggd search` tool:
        Data Version: 27-Apr-2009
 
        To install run:
-           ggd install hg19-repeatmasker
+           ggd install hg19-repeatmasker-ucsc-v1
 
 
 3. Example using ``-g``, ``-s``, and ``-k`` flags to filter the results:
@@ -131,7 +131,7 @@ Some examples of using the `ggd search` tool:
 
     $ ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref
 
-      grch37-reference-genome
+      grch37-reference-genome-1000g-v1
        Summary: GRCh37 reference genome from 1000 genomes
        Species: Homo_sapiens
        Genome Build: GRCh37
@@ -139,4 +139,4 @@ Some examples of using the `ggd search` tool:
        Data Version: phase2_reference
 
        To install run:
-           ggd install grch37-reference-genome
+           ggd install grch37-reference-genome-1000g-v1

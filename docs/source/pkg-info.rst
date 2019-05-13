@@ -67,9 +67,9 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd pkg-info hg19-phastcons
+    $ ggd pkg-info hg19-phastcons-ucsc-v1
 
-      GGD-Recipe: hg19-phastcons
+      GGD-Recipe: hg19-phastcons-ucsc-v1
       GGD-Channel: genomics
       Summary: phastCons scores for MSA of 99 genomes to hg19
       Pkg Version: 1
@@ -80,17 +80,17 @@ Examples
       Data Version: 09-Feb-2014
       Build Requirements: []
       Run Requirements: []
-      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1
-      Pkg Files: <conda root>/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1
+      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1/hg19.100way.phastCons.bw
 
 2. Example listing pkg info and all available versions:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
-    $ ggd pkg-info hg19-phastcons -av
+    $ ggd pkg-info hg19-phastcons-ucsc-v1 -av
 
-      GGD-Recipe: hg19-phastcons
+      GGD-Recipe: hg19-phastcons-ucsc-v1
       GGD-Channel: genomics
       Summary: phastCons scores for MSA of 99 genomes to hg19
       Pkg Version: 1
@@ -101,28 +101,28 @@ Examples
       Data Version: 09-Feb-2014
       Build Requirements: []
       Run Requirements: []
-      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1
-      Pkg Files: <conda root>/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1
+      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1/hg19.100way.phastCons.bw
 
 
-      Listing all ggd-recipe version for the hg19-phastcons recipe in the ggd-genomics channel
+      Listing all ggd-recipe version for the hg19-phastcons-ucsc-v1 recipe in the ggd-genomics channel
 
         Loading channels: ...working... done
-        - # Name               Version      Build  Channel
-        - hg19-phastcons             1          0  ggd-genomics
-        - hg19-phastcons             1          1  ggd-genomics
-        - hg19-phastcons             1          2  ggd-genomics
-        - hg19-phastcons             2          0  ggd-genomics
-        - hg19-phastcons             3          0  ggd-genomics
+        - # Name                       Version      Build  Channel
+        - hg19-phastcons-ucsc-v1             1          0  ggd-genomics
+        - hg19-phastcons-ucsc-v1             1          1  ggd-genomics
+        - hg19-phastcons-uscs-v1             1          2  ggd-genomics
+        - hg19-phastcons-uscs-v1             2          0  ggd-genomics
+        - hg19-phastcons-ucsc-v1             3          0  ggd-genomics
 
 3. Example listing pkg info and recipe:
 +++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
-    $ ggd pkg-info hg19-repeatmasker -sr
+    $ ggd pkg-info hg19-repeatmasker-ucsc-v1 -sr
 
-      GGD-Recipe: hg19-repeatmasker
+      GGD-Recipe: hg19-repeatmasker-ucsc-v1
       GGD-Channel: genomics
       Summary: RepeatMasker track from UCSC
       Pkg Version: 1
@@ -133,11 +133,11 @@ Examples
       Data Version: 27-Apr-2009
       Build Requirements: ['gsort', 'htslib', 'zlib']
       Run Requirements: ['gsort', 'htslib', 'zlib']
-      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1
-      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1/rmsk.bed.gz, /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1/rmsk.bed.gz.tbi
+      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker-uscs-v1/1
+      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker-ucsc-v1/1/rmsk.bed.gz, <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker-ucsc-v1/1/rmsk.bed.gz.tbi
 
 
-      hg19-repeatmasker recipe file:
+      hg19-repeatmasker-ucsc-v1 recipe file:
       *****************************************************************
       * #!/bin/sh
       * set -eo pipefail -o nounset
@@ -146,9 +146,9 @@ Examples
       * | gzip -dc \
       * | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tfamily_class_name\tdiv+del+ins\tstrand"} {print $6,$7,$8,$12"_"$13"_"$11,$3+$4+$5,$10}' \
       * | gsort /dev/stdin $genome \
-      * | bgzip -c > rmsk.bed.gz
+      * | bgzip -c > hg19-repeatmasker-ucsc-v1.bed.gz
       *
-      * tabix rmsk.bed.gz
+      * tabix hg19-repeatmasker-ucsc-v1.bed.gz
       *
       *****************************************************************
       NOTE: The recipe provided above outlines where the data was accessed and how it was processed

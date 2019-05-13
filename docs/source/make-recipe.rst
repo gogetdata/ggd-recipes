@@ -93,7 +93,7 @@ Required arguments:
 * *-k:* The :code:`-k` flag is used to declare keywords associated with the data and recipe. If there are multiple keywords, the `-k` flag
   should be used for each keywords. (Example: -k ref -k reference)
 
-* *name:* :code:`name` represents the name of the recipe.
+* *name:* :code:`name` represents the name of the recipe. (Please provide a identifiable name with the data provider. Exaple: gaps-ucsc)
 
 * *script:* :code:`script` represents the bash script containing the information on data extraction and processing.
 
@@ -112,6 +112,26 @@ Optional arguments:
   true you will need to set :code:`-p` to "none". The system you are using, linux or macOS will take then take the place of noarch.
 
 
+Data recipe standards
+---------------------
+1) The name of the data recipe should be short, simple, but identifiable and unique. It should also include the data provide for where the data is coming from.
+   For example, if you are creating a recipe that access the gaps track from UCSC you would provide the name `gaps-ucsc` for the name parameter when running
+   `ggd make-recipes`. The final recipe name will contain the genome build, the user given name, and the version. (`hg19-gaps-ucsc-v1`)
+
+2) The data should be named after the recipe name. Please make sure all data that is produced by the recipe prior to the file extensions is named after the recipe name. 
+
+3) ggd will provide some QC for vcf, bed, bam, gtf, gff, and fa files. (These files will need to have an associated index with them) If the data recipe created does not 
+   contain one of these file formats you will need to add the file name to the meta data using the `-e` flag when running `ggd make-recipe`.
+
+4) Data files should be labeld and sorted consistenly accross different genome builds. The data sorting standard for ggd data recipes is regulated by a tool called `gsort`.
+   Please us `gsort` whenever you need to sort genomic data files. (`gsort` can be installed with conda.) The associated genome files used with gsort can be found at 
+   `ggd-recipes/genomes <https://github.com/gogetdata/ggd-recipes/tree/master/genomes>`_. If the desired genome file for a specific genome build is not avaiable raise an 
+   issue on at `ggd-recipes::issues <https://github.com/gogetdata/ggd-recipes/issues>`_ and someone from the ggd team will help. 
+   ggd also uses `check-sort-order` for additional QC of the data. If you are unsure about the sort order of your data please 
+   test it with `check-sort-order`
+
+
+
 Examples
 --------
 
@@ -127,19 +147,19 @@ get_data.sh:
         | gzip -dc \
         | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tsize\ttype\tstrand"} {print $2,$3,$4,$7,$8,"+"}' \
         | gsort /dev/stdin $genome \
-        | bgzip -c > gaps.bed.gz
+        | bgzip -c > hg19-gaps-ucsc-v1.bed.gz
 
-    tabix gaps.bed.gz
+    tabix hg19-gaps-ucsc-v1.bed.gz
 
 ggd make-recipe
 
 .. code-block:: bash
 
-    $ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps get_data.sh
+    $ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps-ucsc get_data.sh
 
 This code will create a new ggd recipe:
 
-    * Directory Name: **hg19-gaps**
+    * Directory Name: **hg19-gaps-ucsc-v1**
     * Files: **meta.yaml**, **post-link.sh**, and **recipe.sh**
 
 2. A more complex ggd recipe
@@ -165,7 +185,7 @@ get_data.sh
     tabix -p vcf ESP6500SI.all.snps_indels.vcf.gz
 
     # get handle for reference file
-    reference_fasta="$(ggd list-files 'grch37-reference-genome' -s 'Homo_sapiens' -g 'GRCh37' -p 'hs37d5.fa')"
+    reference_fasta="$(ggd list-files 'grch37-reference-genome-1000g-v1' -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-reference-genomie-1000g-v1.fa')"
 
     # get the santizer script
     wget --quiet https://raw.githubusercontent.com/arq5x/gemini/00cd627497bc9ede6851eae2640bdaff9f4edfa3/gemini/annotation_provenance/sanit
@@ -177,9 +197,9 @@ get_data.sh
     # decompose with vt
     vt decompose -s temp.gz | vt normalize -r $reference_fasta - \
         | perl -pe 's/\([EA_|T|AA_]\)AC,Number=R,Type=Integer/\1AC,Number=R,Type=String/' \
-        | bgzip -c > ESP6500SI.all.snps_indels.tidy.vcf.gz
+        | bgzip -c > grch37-esp-variants-uw-v1.vcf.gz
 
-    tabix ESP6500SI.all.snps_indels.tidy.vcf.gz
+    tabix grch37-esp-variants-uw-v1.vcf.gz 
 
     # clean up environment
     rm ESP6500SI-V2-SSA137.GRCh38-liftover.snps_indels.vcf.tar.gz
@@ -199,9 +219,9 @@ ggd make-recipe
 
 .. code-block:: bash
 
-    $ ggd make-recipe -s Homo_sapiens -g GRCh37 --author mjc --ggd_version 1 --data_version ESP6500SI-V2 --summary 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)' -k ESP esp-variants get_data.sh
+    $ ggd make-recipe -s Homo_sapiens -g GRCh37 --author mjc --ggd_version 1 --data_version ESP6500SI-V2 --summary 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)' -k ESP esp-variants-uw get_data.sh
 
 This code will create a new ggd recipe:
 
-    * Directory Name: **grch37-esp-variants**
+    * Directory Name: **grch37-esp-variants-uw-v1**
     * Files: **meta.yaml**, **post-link.sh**, **recipe.sh**

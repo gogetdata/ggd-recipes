@@ -59,25 +59,37 @@ Example:
 
     $ ggd search -t reference genome
 
-      grch37-reference-genome
-       Summary: GRCh37 reference genome from 1000 genomes
-       Species: Homo_sapiens
-       Genome Build: GRCh37
-       Keywords: ref, reference
-       Data Version: phase2_reference
+     grch37-reference-genome-1000g-v1
+        Summary: GRCh37 reference genome from 1000 genomes
+        Species: Homo_sapiens
+        Genome Build: GRCh37
+        Keywords: ref, reference, fasta-file
+        Data Version: phase2_reference
 
-       To install run:
-           ggd install grch37-reference-genome
-    
-      grch38-reference-genome-ensembl
-       Summary: GRCh37 reference genome from Ensembl
-       Species: Homo_sapiens
-       Genome Build: GRCh38
-       Keywords: ref, reference
-       Data Version: Release-95
+        To install run:
+            ggd install grch37-reference-genome-1000g-v1
 
-       To install run:
-           ggd install grch38-reference-genome-ensembl
+
+     grch37-reference-genome-ensembl-v1
+        Summary: The GRCh37 reference genome from Ensembl. Release 75. Primary Assembly file
+        Species: Homo_sapiens
+        Genome Build: GRCh37
+        Keywords: ref, reference, Ensembl, Release75
+        Data Version: Release-75
+
+        To install run:
+            ggd install grch37-reference-genome-ensembl-v1
+
+
+     grch38-reference-genome-ensembl-v1
+        Summary: The GRCh38 reference genome from Ensembl. Release 95. Primary Assembly file
+        Species: Homo_sapiens
+        Genome Build: GRCh38
+        Keywords: ref, reference, genome, Ensembl
+        Data Version: Release-95
+
+        To install run:
+            ggd install grch38-reference-genome-ensembl-v1
     
       . . . 
 
@@ -86,18 +98,18 @@ Example:
     #   (See ggd install)
     #******************************
 
-    $ ggd install grch38-reference-genome-ensembl
+    $ ggd install grch38-reference-genome-ensembl-v1
 
 
-      Looking for grch38-reference-genome-ensembl in the 'ggd-genomics' channel
+      Looking for grch38-reference-genome-ensembl-v1 in the 'ggd-genomics' channel
     
-      grch38-reference-genome-ensembl exists in ggd-genomics
+      grch38-reference-genome-ensembl-v1 exists in ggd-genomics
     
-      grch38-reference-genome-ensembl is not installed on your system
+      grch38-reference-genome-ensembl-v1 is not installed on your system
     
-      grch38-reference-genome-ensembl has not been installed by conda
+      grch38-reference-genome-ensembl-v1 has not been installed by conda
     
-      Installing grch38-reference-genome-ensembl
+      Installing grch38-reference-genome-ensembl-v1
       Solving environment:
      
        ## Package Plan ##
@@ -105,14 +117,14 @@ Example:
        environment location: <conda root>
     
          added / updated specs: 
-            - grch38-reference-genome-ensembl
+            - grch38-reference-genome-ensembl-v1
     
     
       The following packages will be downloaded:
     
          package                            |            build
         ------------------------------------|-----------------
-         grch38-reference-genome-ensembl    |                0           6 KB  ggd-genomics
+         grch38-reference-genome-ensembl-v1 |                0           6 KB  ggd-genomics
      
       The following NEW packages will be INSTALLED:
     
@@ -120,7 +132,7 @@ Example:
     
     
       Downloading and Extracting Packages
-      grch38-reference-genome-ensembl          | 6 KB      | ###########################################################################################
+      grch38-reference-genome-ensembl-v1       | 6 KB      | ###########################################################################################
       Preparing transaction: done
       Verifying transaction: done
       Executing transaction: done
@@ -137,17 +149,21 @@ Example:
 
         ***************************
         Active environment variables:
-        > $ggd_grch38_reference_genome-ensembl
+        > $ggd_grch38_reference_genome-ensembl_v1_dir
+        > $ggd_grch38_reference_genome-ensembl_v1_file
         ***************************
 
-    $ ggd list-files grch38-reference-genome-ensembl
+    $ ggd list-files grch38-reference-genome-ensembl-v1
 
-      <conda root>/ share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa
-      <conda root>/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa.fai
+      <conda root>/ share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-ensembl-v1/1/grch38.fa
+      <conda root>/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-ensembl-v1/1/grch38.fa.fai
 
 
     #******************************
     #4. Use files  
+    #    To use the downloaded data packages you can use the full file path from running `ggd list-files` 
+    #    or the environment variables created during installation
+    #   For more info see the `Using installed data` tab.
     #******************************
 
 

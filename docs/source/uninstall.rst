@@ -74,13 +74,13 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd uninstall hg19-gaps
+    $ ggd uninstall hg19-gaps-ucsc-v1
 
-      Checking for installation of hg19-gaps
+      Checking for installation of hg19-gaps-ucsc-v1
 
-      hg19-gaps is installed by conda on your system
+      hg19-gaps-ucsc-v1 is installed by conda on your system
 
-      Uninstalling hg19-gaps
+      Uninstalling hg19-gaps-ucsc-v1
       Solving environment: done
 
       ## Package Plan ##
@@ -88,19 +88,19 @@ Examples
       environment location: <conda root>
 
       removed specs:
-        - hg19-gaps
+        - hg19-gaps-ucsc-v1
 
 
       The following packages will be REMOVED:
 
-        hg19-gaps: 1-0 ggd-genomics
+        hg19-gaps-ucsc-v1: 1-0 ggd-genomics
 
       Preparing transaction: done
       Verifying transaction: done
       Executing transaction: done
 
-      Removing hg19-gaps version 1 file(s) from ggd recipe storage
+      Removing hg19-gaps-ucsc-v1 version 1 file(s) from ggd recipe storage
 
-      Deleting 2 items of hg19-gaps version 1 from your conda root
+      Deleting 2 items of hg19-gaps-ucsc-v1 version 1 from your conda root
 
       DONE

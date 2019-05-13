@@ -82,17 +82,17 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd install hg19-gaps
+    $ ggd install hg19-gaps-ucsc-v1
 
-      Looking for hg19-gaps in the 'ggd-genomics' channel
+      Looking for hg19-gaps-ucsc-v1 in the 'ggd-genomics' channel
 
-      hg19-gaps exists in ggd-genomics
+      hg19-gaps-ucsc-v1 exists in ggd-genomics
 
-      hg19-gaps is not installed on your system
+      hg19-gaps-ucsc-b1 is not installed on your system
 
-      hg19-gaps has not been installed by conda
+      hg19-gaps-ucsc-v1 has not been installed by conda
 
-      Installing hg19-gaps
+      Installing hg19-gaps-uscs-v1
       Solving environment:
 
        ## Package Plan ##
@@ -100,22 +100,22 @@ Examples
        environment location: <conda root>
 
          added / updated specs:
-            - hg19-gaps
+            - hg19-gaps-ucsc-b1
 
 
       The following packages will be downloaded:
 
          package                    |     build
          ---------------------------|----------
-         hg19-gaps-1                |         0      6 KB  ggd-genomics
+         hg19-gaps-uscs-v1          |         0      6 KB  ggd-genomics
 
       The following NEW packages will be INSTALLED:
 
-         hg19-gaps: 1-0 ggd-genomics
+         hg19-gaps-ucsc-v1: 1-0 ggd-genomics
 
 
       Downloading and Extracting Packages
-      hg19-gaps-1          | 6 KB      | ####################### | 100%
+      hg19-gaps-ucsc-v1          | 6 KB      | ####################### | 100%
       Preparing transaction: done
       Verifying transaction: done
       Executing transaction: done
