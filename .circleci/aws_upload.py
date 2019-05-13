@@ -169,18 +169,9 @@ fi
 
 mkdir -p $RECIPE_DIR
 
-""".format(species=species_name,
-           name=recipe_name,
-           build=genome_build,
-           version=recipe_version)
-
-    for dir_name in ggd_file_paths:
-        path = "$CONDA_ROOT/share/ggd/" + dir_name
-        postlink_str += "mkdir -p {dir_path}\n".format(dir_path = path)
-
-    
-    postlink_str += """
 (cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/cache_recipe.sh)
+
+cd $RECIPE_DIR
 
 ## Iterate over new files and replace file name with data package name and data version  
 for f in *; do
