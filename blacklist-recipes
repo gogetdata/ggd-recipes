@@ -1,7 +1,7 @@
 ## Blacklisted Recipes 
 
 ## Grch37
-recipes/genomics/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1
+#recipes/genomics/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1
 #recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1	
 #recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome-ensembl-v1
 
