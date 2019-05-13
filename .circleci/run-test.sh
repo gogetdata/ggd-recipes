@@ -82,18 +82,47 @@ for bz2 in $CHECK_DIR/*.bz2; do
 done
 
 if [[ "$cached" == true ]] ; then
-    bash .circleci/check_cached_recipes.sh "$CHECK_DIR" "$cached_recipes_path" 
+
+    rm $CHECK_DIR/*.bz2
+
+    ## build the new pacakges
+    bioconda-utils build $cached_recipes_path config.yaml
+
+    ## run recipe check and upload
+    for bz2 in $CHECK_DIR/*.bz2; do
+        if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
+            continue
+        fi  
+        if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+            continue
+        fi  
+
+        echo "############################################################"
+        echo "-> Checking recipe" $(basename $bz2)
+        echo "############################################################"
+        ggd check-recipe $bz2
+
+        ## Upload
+        set +o nounset
+
+        ## If on branch master, and there is no pull requests
+        if [[ "$CIRCLE_BRANCH" == "master" && -z "$CIRCLE_PULL_REQUEST" ]] ; then
+            if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
+                echo -e "\n-> WARNING:"
+                echo '-> $ANACONDA_GGD_TOKEN not set'
+            else
+                anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+                echo -e "\n-> Successfully Uploaded\n" 
+            fi  
+        fi  
+    done
 fi
 
 if [[ "$recipe_uploaded" == true ]] ; then
     # update channeldata index    
     python .circleci/index_ggd_channel.py -t "/tmp"
 
-    ## Update Available Packages in ggd docs
-   # cd docs/ 
-   # make html 
-    
-
+    ##TODO: Update Available Packages in ggd docs
 fi
 
 
