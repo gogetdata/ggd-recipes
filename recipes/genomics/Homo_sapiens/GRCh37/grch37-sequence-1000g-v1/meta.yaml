@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-seqeunce-1000g-v1
+  name: grch37-sequence-1000g-v1
   version: '1'
 requirements:
   build:
@@ -25,10 +25,10 @@ about:
     genome-build: GRCh37
     species: Homo_sapiens
   keywords:
-  - seqeunce
+  - sequence
   - 1000g
   - fasta-file
-  summary: The fasta seqeunce from 1000g
+  summary: The fasta sequence from 1000g
   tags:
     data-version: 37 - 7/11/11
     ggd-channel: genomics
