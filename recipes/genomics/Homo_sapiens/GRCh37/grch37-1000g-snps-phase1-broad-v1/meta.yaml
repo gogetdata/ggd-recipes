@@ -1,0 +1,36 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-1000g-snps-phase1-broad-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - high-confidence
+  - snps
+  - 1000G
+  - broad-insitute
+  - vcf-file
+  summary: The 1000G high confidence snps from phase 1 in vcf format
+  tags:
+    data-version: phase1 - 12/7/13
+    ggd-channel: genomics
