@@ -1,0 +1,36 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-1000g-omni-snps-broad-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - omni
+  - snps
+  - 1000G
+  - broad-institute
+  - vcf-file
+  summary: The 1000G omni snps vcf file
+  tags:
+    data-version: 2.5 - 12/7/13
+    ggd-channel: genomics
