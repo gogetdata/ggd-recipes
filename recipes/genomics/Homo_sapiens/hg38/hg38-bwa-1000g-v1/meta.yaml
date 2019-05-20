@@ -1,0 +1,35 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - hg38-bwa-1000g-v1.fa.bwt
+  - hg38-bwa-1000g-v1.fa.amb
+  - hg38-bwa-1000g-v1.fa.ann
+  - hg38-bwa-1000g-v1.fa.pac
+  - hg38-bwa-1000g-v1.fa.sa
+  - hg38-bwa-1000g-v1.fa.alt
+package:
+  name: hg38-bwa-1000g-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - bwa
+  - bwa-index
+  - 1000g
+  - alignment-index
+  summary: pre-built bwa indicies from 1000g hg38/GRCh38 distribution
+  tags:
+    data-version: 1000g - 3/8/15
+    ggd-channel: genomics
