@@ -1,0 +1,36 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-1000g-omni-snps-broad-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - omni
+  - snps
+  - 1000G
+  - broad-institute
+  - vcf-fil
+  summary: The 1000G omni snps vcf file hosted on the broad's ftp site
+  tags:
+    data-version: 2.5 - 12/7/13
+    ggd-channel: genomics
