@@ -1,0 +1,34 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-dbsnp-138-broad-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - dpsnps
+  - broad-institute
+  - vcf-file
+  summary: The dbsnp version 138 vcf file (hosted on the broad's ftp site)
+  tags:
+    data-version: 138 - 12/7/13
+    ggd-channel: genomics
