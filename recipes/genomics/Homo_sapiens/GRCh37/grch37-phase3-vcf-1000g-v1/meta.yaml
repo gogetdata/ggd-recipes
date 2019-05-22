@@ -1,0 +1,41 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-phase3-vcf-1000g-v1
+  version: '1'
+requirements:
+  build:
+  - grch37-sequence-1000g-v1
+  - gsort
+  - htslib
+  - vt
+  - zlib
+  run:
+  - grch37-sequence-1000g-v1
+  - gsort
+  - htslib
+  - vt
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - 1000g-variants
+  - 1000g
+  - wgs
+  - sites
+  - vcf-file
+  summary: The phase3 1000g vcf file distrubted on 05/02/2013 in vcf format (decomposed
+    and normalized)
+  tags:
+    data-version: phase3 - 20130502 - 8/17/15
+    ggd-channel: genomics
