@@ -37,8 +37,8 @@ jobs:
     steps:
       - checkout 
       - add_ssh_keys:
-        fingerprints:
-          - "41:a1:20:62:42:25:d4:41:c1:4b:2e:1c:fb:69:b4:9f"
+          fingerprints:
+            - "41:a1:20:62:42:25:d4:41:c1:4b:2e:1c:fb:69:b4:9f"
       - *setup
       - *run
   master-test-macos:
