@@ -2,7 +2,6 @@
 
 set -eo pipefail -o nounset
 
-
 export PATH=/anaconda/bin:$PATH
 
 CONDA_ROOT=$(conda info --root)
@@ -123,5 +122,4 @@ if [[ "$recipe_uploaded" == true ]] ; then
 
     ##TODO: Update Available Packages in ggd docs
 fi
-
 
