@@ -65,8 +65,8 @@ workflows:
                 - master
     jobs:
       - master-test-linux:
-        context: ggd-genomics
+          context: ggd-genomics
       - master-test-macos:
-        context: ggd-genomics
+          context: ggd-genomics
 
 
