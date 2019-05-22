@@ -1,3 +1,6 @@
+# Circle CI Yaml
+## Docs: https://circleci.com/docs/2.0/configuration-reference/
+
 version: 2
 
 variables:
@@ -14,9 +17,9 @@ variables:
       no_output_timeout: 9900
   macos: &macos
     macos:
-      xcode: "9.4.1"
+      xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
   linux: &linux
-    machine: true
+    machine: true ## Using a dedicated Linux VM image (https://circleci.com/docs/2.0/executor-types/)
 
 
 jobs:
@@ -58,7 +61,7 @@ workflows:
   ggd-recipes-nightly-build:
     triggers: 
       - schedule:
-          cron: "28 18 * * *"
+          cron: "3 0 * * *" ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
           filters:
             branches:
               only:

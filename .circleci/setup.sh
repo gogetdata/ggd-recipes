@@ -13,6 +13,7 @@ source $BASH_ENV
 if [[ ! -d $WORKSPACE/anaconda ]]; then
     mkdir -p $WORKSPACE
 
+
     # step 1: download and install anaconda
     if [[ $OSTYPE == darwin* ]]; then
         tag="MacOSX"
@@ -28,9 +29,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-$tag-x86_64.sh
     sudo bash Miniconda3-latest-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
-    #curl -Lo $WORKSPACE/anaconda/bin/check-sort-order https://github.com/gogetdata/ggd-utils/releases/download/v0.0.3/check-sort-order-$tag2\_amd64
 
-    #chmod +x $WORKSPACE/anaconda/bin/check-sort-order
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
 
 
@@ -46,20 +45,13 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
 
     # step 4: install requirments from git repos
-    ## Install bioconda-utils (https://github.com/bioconda/bioconda-recipes/blob/master/.circleci/setup.sh)
-        # conda install -y -c bioconda -c conda-forge bioconda-utils
-        ### Using master branch from git repo
-        #conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/master/bioconda_utils/bioconda_utils-requirements.txt
+    ## Install bioconda-utils
     curl -s https://raw.githubusercontent.com/bioconda/bioconda-common/master/common.sh > .circleci/bioconda-common.sh
     source .circleci/bioconda-common.sh
     conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
-    #conda install -y --file .circleci/requirements_bioconda_utils.txt
-    #pip install git+https://github.com/bioconda/bioconda-utils.git
     ## Install ggd-cli
-    #conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
     pip install -U git+git://github.com/gogetdata/ggd-cli 
-
 
 
     # step 5: cleanup
