@@ -50,8 +50,12 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
         # conda install -y -c bioconda -c conda-forge bioconda-utils
         ### Using master branch from git repo
         #conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/master/bioconda_utils/bioconda_utils-requirements.txt
-    conda install -y --file .circleci/requirements_bioconda_utils.txt
-    pip install git+https://github.com/bioconda/bioconda-utils.git
+    curl -s https://raw.githubusercontent.com/bioconda/bioconda-common/master/common.sh > .circleci/bioconda-common.sh
+    source .circleci/bioconda-common.sh
+    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
+    pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+    #conda install -y --file .circleci/requirements_bioconda_utils.txt
+    #pip install git+https://github.com/bioconda/bioconda-utils.git
     ## Install ggd-cli
     #conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
     pip install -U git+git://github.com/gogetdata/ggd-cli 
