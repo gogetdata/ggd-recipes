@@ -12,7 +12,7 @@ colorlog=3.1.*
 pip=10.0.*
 git=2.14.*
 gitpython=2.1.*
-gsort>=0.0.2
+gsort>=0.0.6
 samtools
 htslib
 zlib

@@ -58,7 +58,7 @@ workflows:
   ggd-recipes-nightly-build:
     triggers: 
       - schedule:
-          cron: "22 18 * * *"
+          cron: "28 18 * * *"
           filters:
             branches:
               only:
