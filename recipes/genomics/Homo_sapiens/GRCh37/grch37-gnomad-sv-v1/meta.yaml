@@ -7,7 +7,7 @@ extra:
   authors: u1072557
   extra-files: []
 package:
-  name: grch37-gnomd_sv-v1
+  name: grch37-gnomad-sv-v1
   version: '1'
 requirements:
   build:
