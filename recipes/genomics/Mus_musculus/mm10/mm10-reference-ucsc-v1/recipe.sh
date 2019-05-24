@@ -12,12 +12,12 @@ then
 else
     url="http://hgdownload.cse.ucsc.edu/admin/exe/macOSX.x86_64/twoBitToFa";
 fi
-echo "$url"
+
 wget -q "$url"
 chmod +x twoBitToFa
 
 #convert 2bit to fa and index
-twoBitToFa mm10.2bit mm10-reference-genome-ucsc-v1.fa
+./twoBitToFa mm10.2bit mm10-reference-genome-ucsc-v1.fa
 samtools faidx mm10-reference-genome-ucsc-v1.fa
 
 #clean up
