@@ -1,0 +1,31 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: u1072557
+  extra-files: []
+package:
+  name: mm10-reference-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - samtools
+  run:
+  - samtools
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: mm10
+    species: Mus_musculus
+  keywords:
+  - reference
+  - ucsc
+  - mouse
+  - mm10
+  summary: Reference genome for mouse from UCSC
+  tags:
+    data-version: 07-Feb-2012
+    ggd-channel: genomics
