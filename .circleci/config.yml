@@ -14,7 +14,7 @@ variables:
       shell: /bin/bash
       name: Filtering (and building) ggd-recipes
       command: .circleci/run-test.sh
-      no_output_timeout: 9900
+      no_output_timeout: 7h
   macos: &macos
     macos:
       xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
