@@ -1,0 +1,39 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-segmental-dups-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - superdups
+  - segdups
+  - seg
+  - dups
+  - duplications
+  - UCSC
+  - bed-file
+  summary: The hg19 segmental duplications (SuperDups) File from UCSC. That is, duplications
+    of at least 1kb total sequence of non-repeatmasker sequence in bed format
+  tags:
+    data-version: 25-Oct-2011
+    ggd-channel: genomics
