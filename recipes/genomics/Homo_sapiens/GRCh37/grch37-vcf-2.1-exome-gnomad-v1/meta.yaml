@@ -11,9 +11,11 @@ package:
   version: '1'
 requirements:
   build:
+  - bcftools
   - htslib
   - zlib
   run:
+  - bcftools
   - htslib
   - zlib
 source:
