@@ -12,10 +12,12 @@ package:
 requirements:
   build:
   - bcftools
+  - openssl
   - htslib
   - zlib
   run:
   - bcftools
+  - openssl
   - htslib
   - zlib
 source:
