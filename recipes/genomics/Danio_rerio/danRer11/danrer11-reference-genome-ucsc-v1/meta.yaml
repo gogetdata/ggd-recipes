@@ -1,0 +1,33 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: danrer11-reference-genome-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - samtools
+  run:
+  - samtools
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: danRer11
+    species: Danio_rerio
+  keywords:
+  - ref
+  - reference
+  - zebrafish
+  - genome
+  - UCSC
+  - fasta-file
+  summary: The danRer11 reference genome from UCSC
+  tags:
+    data-version: 6/6/17
+    ggd-channel: genomics
