@@ -1,0 +1,39 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-vcf-2.1-exome-gnomad-v1
+  version: '1'
+requirements:
+  build:
+  - openssl
+  - bcftools
+  - htslib
+  - zlib
+  run:
+  - openssl
+  - bcftools
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - gnomAD
+  - genome-aggregation-database
+  - Exome
+  - vcf-file
+  summary: The gnomAD whole exome vcf file. Version 2.1.1 released on March 6, 2019.
+    VCF file includes all non-neuro, non-cancer, controls-only, and non-TOPMed samples.
+    (https://gnomad.broadinstitute.org/downloads)
+  tags:
+    data-version: 2.1.1
+    ggd-channel: genomics
