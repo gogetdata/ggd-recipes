@@ -27,22 +27,12 @@ mkdir -p $RECIPE_DIR
 
 cd $RECIPE_DIR
 
-## Iterate over new files and replace file name with data package name and data version  
-for f in *; do
-    ext="${f#*.}"
-    filename="{f%%.*}"
-    if [[ ! -f "grch37-vcf-2.1-exome-gnomad-v1.$ext" ]]  
-    then
-        (mv $f "grch37-vcf-2.1-exome-gnomad-v1.$ext")
-    fi  
-done
-
 ## Add environment variables 
 #### File
 if [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 1 ]] ## If only one file
 then
     recipe_env_file_name="ggd_grch37-vcf-2.1-exome-gnomad-v1_file"
-    recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g')"
+    recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g' | sed 's/\./_/g')"
     file_path="$(find $RECIPE_DIR -type f -maxdepth 1)"
 
 elif [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 2 ]] ## If two files
@@ -51,14 +41,14 @@ then
     if [[ ! -z "$indexed_file" ]] ## If index file exists
     then
         recipe_env_file_name="ggd_grch37-vcf-2.1-exome-gnomad-v1_file"
-        recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g')"
+        recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g' | sed 's/\./_/g')"
         file_path="$(echo $indexed_file | sed 's/\.[^.]*$//')" ## remove index extension
     fi
 fi 
 
 #### Dir
 recipe_env_dir_name="ggd_grch37-vcf-2.1-exome-gnomad-v1_dir"
-recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g')"
+recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g' | sed 's/\./_/g')"
 
 activate_dir="$env_dir/etc/conda/activate.d"
 deactivate_dir="$env_dir/etc/conda/deactivate.d"

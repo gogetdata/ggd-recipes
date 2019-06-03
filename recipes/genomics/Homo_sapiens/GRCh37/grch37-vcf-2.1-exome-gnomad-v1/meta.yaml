@@ -11,13 +11,13 @@ package:
   version: '1'
 requirements:
   build:
-  - bcftools
   - openssl
+  - bcftools
   - htslib
   - zlib
   run:
-  - bcftools
   - openssl
+  - bcftools
   - htslib
   - zlib
 source:
