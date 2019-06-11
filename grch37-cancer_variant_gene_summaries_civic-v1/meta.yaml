@@ -1,0 +1,35 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: tnicholas
+  extra-files: []
+package:
+  name: grch37-cancer_variant_gene_summaries_civic-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - civic
+  - CIViC
+  - cancer
+  - bed
+  summary: Summaries from CIViC gene, variant, and clinical evidences files
+  tags:
+    data-version: nightly_download_10_6_2019
+    ggd-channel: genomics
