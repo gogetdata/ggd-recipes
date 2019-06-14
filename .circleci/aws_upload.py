@@ -188,7 +188,7 @@ done
 if [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 1 ]] ## If only one file
 then
     recipe_env_file_name="ggd_{name}_file"
-    recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g')"
+    recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g' | sed 's/\./_/g')"
     file_path="$(find $RECIPE_DIR -type f -maxdepth 1)"
 
 elif [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 2 ]] ## If two files
@@ -197,14 +197,14 @@ then
     if [[ ! -z "$indexed_file" ]] ## If index file exists
     then
         recipe_env_file_name="ggd_{name}_file"
-        recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g')"
+        recipe_env_file_name="$(echo "$recipe_env_file_name" | sed 's/-/_/g' | sed 's/\./_/g')"
         file_path="$(echo $indexed_file | sed 's/\.[^.]*$//')" ## remove index extension
     fi
 fi 
 
 #### Dir
 recipe_env_dir_name="ggd_{name}_dir"
-recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g')"
+recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g' | sed 's/\./_/g')"
 
 activate_dir="$env_dir/etc/conda/activate.d"
 deactivate_dir="$env_dir/etc/conda/deactivate.d"
@@ -349,6 +349,6 @@ with tarfile.open(args.tarfile, "r:bz2") as tarball_file:
     cache_recipe = create_cache_recipe(pkg_urls, args.name)
     write_file(new_file_path,"cache_recipe.sh",cache_recipe)
 
-print("\n-> Pkg files uploaded to the aws S3 %s bucket. \n-> A new pkg has been created for installing the pkg using the S3 bucket.")
+print("\n-> Pkg files uploaded to the aws S3 %s bucket. \n-> A new pkg has been created for installing the pkg using the S3 bucket." %args.name)
 print("\n-> DONE!")
 print("Path to updated recipe:\n%s" %new_dir_path)
