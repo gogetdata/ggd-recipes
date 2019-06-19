@@ -35,5 +35,5 @@ about:
     zebrafish protein-coding and non-protein-coding genes from RefSeq. (RefSeq: NCBI
     RNA reference sequence collection) (UCSC GTF format info: https://genome.ucsc.edu/FAQ/FAQformat.html#format3)'
   tags:
-    data-version: Sept-2014
+    data-version: 21-May-2019
     ggd-channel: genomics
