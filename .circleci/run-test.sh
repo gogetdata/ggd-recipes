@@ -72,6 +72,12 @@ for bz2 in $CHECK_DIR/*.bz2; do
                     echo -e "\n-> OSType is not linux. Data Package will not be cached\n"
                 fi
             fi
+            ##Uninstall local built package
+            local_file=$(basename $bz2)
+            file_no_ext="${local_file%%.*}"
+            file_no_build="${file_no_ext%-*}"
+            recipe_name="${file_no_build%-*}"
+            conda uninstall $recipe_name
         fi
     else 
         echo -e "\n-> DONE"
