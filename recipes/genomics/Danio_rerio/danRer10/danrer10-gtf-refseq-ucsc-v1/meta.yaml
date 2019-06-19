@@ -26,8 +26,8 @@ about:
     species: Danio_rerio
   keywords:
   - GTF
-  - ReFSeq
-  - potein-coding
+  - RefSeq
+  - protein-coding
   - non-protein-coding
   - refGene
   - UCSC

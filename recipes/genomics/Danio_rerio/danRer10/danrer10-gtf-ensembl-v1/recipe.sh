@@ -2,6 +2,8 @@
 set -eo pipefail -o nounset
 #!/bin/sh
 set -eo pipefail -o nounset
+#!/bin/sh
+set -eo pipefail -o nounset
 
 
 ## Get the ggd genome file

@@ -2,6 +2,8 @@
 set -eo pipefail -o nounset
 #!/bin/sh
 set -eo pipefail -o nounset
+#!/bin/sh
+set -eo pipefail -o nounset
 
 ##Convert a UCSC table to a gtf file using "genePredToGTF"
 ### http://genomewiki.ucsc.edu/index.php/Genes_in_gtf_or_gff_format

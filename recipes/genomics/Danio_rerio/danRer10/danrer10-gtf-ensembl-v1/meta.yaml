@@ -26,8 +26,10 @@ about:
     species: Danio_rerio
   keywords:
   - gtf
+  - gtf-file
+  - ensembl
   summary: The GRCz10 gtf file from ensembl remapped to danRer10 (Any unmapped entries
-are removed from the file)
+    are removed from the file)
   tags:
     data-version: '91'
     ggd-channel: genomics
