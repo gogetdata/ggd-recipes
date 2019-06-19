@@ -1,0 +1,39 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: yliu
+  extra-files: []
+package:
+  name: danrer10-gtf-refseq-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: danRer10
+    species: Danio_rerio
+  keywords:
+  - GTF
+  - RefSeq
+  - protein-coding
+  - non-protein-coding
+  - refGene
+  - UCSC
+  summary: 'The UCSC RefSeq gene track converted into GTF format containing known
+    zebrafish protein-coding and non-protein-coding genes from RefSeq. (RefSeq: NCBI
+    RNA reference sequence collection) (UCSC GTF format info: https://genome.ucsc.edu/FAQ/FAQformat.html#format3)'
+  tags:
+    data-version: 21-May-2019
+    ggd-channel: genomics

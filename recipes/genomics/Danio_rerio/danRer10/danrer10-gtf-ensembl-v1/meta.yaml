@@ -1,0 +1,35 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: yliu
+  extra-files: []
+package:
+  name: danrer10-gtf-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: danRer10
+    species: Danio_rerio
+  keywords:
+  - gtf
+  - gtf-file
+  - ensembl
+  summary: The GRCz10 gtf file from ensembl remapped to danRer10 (Any unmapped entries
+    are removed from the file)
+  tags:
+    data-version: '91'
+    ggd-channel: genomics
