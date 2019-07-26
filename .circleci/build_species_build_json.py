@@ -97,21 +97,47 @@ Repo.clone_from(METADATA_GITHUB_URL,metadata_repo_dir)
 os.chdir(metadata_repo_dir)
 Repo(metadata_repo_dir).remotes.origin.pull()
 repo = Repo(metadata_repo_dir)
-dest = os.path.join(metadata_repo_dir,"species_and_build")
-shutil.copy(species_file_path, dest)
-shutil.copy(build_file_path, dest)
 
-## Add, commit, and push to ggd-metadata repo
+## Check if species and builds are different 
+species_json_dict = {}
+with open(os.path.join(metadata_repo_dir,"species_and_build","species_to_build.json"), "r") as sj:
+    species_json_dict = json.load(sj)
+
+build_json_dict = {}
+with open(os.path.join(metadata_repo_dir,"species_and_build","build_to_species.json"), "r") as bj:
+    build_json_dict = json.load(bj)
+
+dest = os.path.join(metadata_repo_dir,"species_and_build")
+
+### Add, commit, and push to ggd-metadata repo
 sp.check_call(["git", "config", "user.email", "CIRCLECI@circleci.com"])
 sp.check_call(["git", "config", "user.name", "CIRCLECI"])
-repo.git.add("species_and_build/species_to_build.json")
-repo.git.add("species_and_build/build_to_species.json")
-from datetime import datetime
-date_time = datetime.today().isoformat()
-repo.git.commit("-m", "Update species_to_build.json and build_to_species.json files. ({date})".format(date=date_time))
-repo.git.push()
 
-print("\n-> Successfuly pushed new species and build json files to ggd-metadata repo")
+commit = False
+if sorted(species_json_dict.keys()) != sorted(species_dict.keys()):
+    shutil.copy(species_file_path, dest)
+    repo.git.add("species_and_build/species_to_build.json")
+    commit = True
+    print("\n-> Add an updated species json file to ggd-metadata")
+
+else:
+    print("\n-> No change in species. The species json file will remain the same") 
+
+if sorted(build_json_dict.keys()) != sorted(build_dict.keys())
+    shutil.copy(build_file_path, dest)
+    repo.git.add("species_and_build/build_to_species.json")
+    commit = True
+    print("\n-> Add an updated geonme build json file to ggd-metadata")
+
+else:
+    print("\n-> No change in genome builds. The build json file will remain the same") 
+
+if commit:
+    from datetime import datetime
+    date_time = datetime.today().isoformat()
+    repo.git.commit("-m", "Update species_to_build.json and build_to_species.json files. ({date})".format(date=date_time))
+    repo.git.push()
+    print("\n-> Successfuly pushed new species and/or build json file(s) to ggd-metadata repo")
 
 ## Retrun to cwd
 os.chdir(cwd)
