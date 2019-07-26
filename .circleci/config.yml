@@ -15,6 +15,11 @@ variables:
       name: Filtering (and building) ggd-recipes
       command: .circleci/run-test.sh
       no_output_timeout: 7h
+  update_species_and_build: &update_S_B
+    run:
+      shell: /bin/bash
+      name: Update species and build json files
+      command: python .cirlceci/build_species_build_json.py -rp $(pwd) -t "/tmp" 
   macos: &macos
     macos:
       xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
@@ -44,6 +49,7 @@ jobs:
             - "41:a1:20:62:42:25:d4:41:c1:4b:2e:1c:fb:69:b4:9f"
       - *setup
       - *run
+      - *update_S_B
   master-test-macos:
     <<: *macos
     steps:
@@ -61,7 +67,7 @@ workflows:
   ggd-recipes-nightly-build:
     triggers: 
       - schedule:
-          cron: "08 20 * * *" ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
+          cron: "18 45 * * *" ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
           filters:
             branches:
               only:
