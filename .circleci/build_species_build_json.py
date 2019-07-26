@@ -123,7 +123,7 @@ if sorted(species_json_dict.keys()) != sorted(species_dict.keys()):
 else:
     print("\n-> No change in species. The species json file will remain the same") 
 
-if sorted(build_json_dict.keys()) != sorted(build_dict.keys())
+if sorted(build_json_dict.keys()) != sorted(build_dict.keys()):
     shutil.copy(build_file_path, dest)
     repo.git.add("species_and_build/build_to_species.json")
     commit = True
