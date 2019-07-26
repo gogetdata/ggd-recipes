@@ -267,3 +267,6 @@ repo.git.commit("-m", "New conda index for the ggd-{channel} channel. ({date})".
 repo.git.push()
 
 print("\n-> Successfully pushed new channeldata.json file to the ggd-metadata repo")
+
+## Return to cwd:
+os.chdir(cwd)
