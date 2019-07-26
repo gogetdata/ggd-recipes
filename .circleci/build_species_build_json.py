@@ -94,7 +94,7 @@ if not os.path.isdir(metadata_repo_dir):
 
 Repo.clone_from(METADATA_GITHUB_URL,metadata_repo_dir)
 os.chdir(metadata_repo_dir)
-Repo(tmp_repo_dir).remotes.origin.pull()
+Repo(metadata_repo_dir).remotes.origin.pull()
 repo = Repo(metadata_repo_dir)
 dest = os.path.join(metadata_repo_dir,"species_and_build")
 shutil.copy(species_file_path, dest)
