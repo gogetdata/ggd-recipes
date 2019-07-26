@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-pfam-domains-ucsc-v1
+  name: grch37-pfam-domains-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -22,7 +22,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
   - pfam
@@ -32,7 +32,8 @@ about:
   - UCSC
   - bed
   - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  summary: Pfam domain annotation in bed12 format. (From UCSC) Remapped from hg19
+    to GRCh37 (unmapped regions removed)
   tags:
     data-provider: UCSC
     data-version: 16-Apr-2017
