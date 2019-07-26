@@ -89,7 +89,7 @@ cwd = os.getcwd()
 
 ## Make metadata_repo_dir
 metadata_repo_dir = os.path.join(args.tmp_dir,"ggd-metadata")
-if not os.path.isidr(metadata_repo_dir):
+if not os.path.isdir(metadata_repo_dir):
     os.makedirs(metadata_repo_dir)
 
 Repo.clone_from(METADATA_GITHUB_URL,metadata_repo_dir)
