@@ -98,7 +98,7 @@ Repo(metadata_repo_dir).remotes.origin.pull()
 repo = Repo(metadata_repo_dir)
 dest = os.path.join(metadata_repo_dir,"species_and_build")
 shutil.copy(species_file_path, dest)
-shuilt.copy(build_file_path, dest)
+shutil.copy(build_file_path, dest)
 
 ## Add, commit, and push to ggd-metadata repo
 sp.check_call(["git", "config", "user.email", "CIRCLECI@circleci.com"])
