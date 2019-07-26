@@ -19,7 +19,9 @@ variables:
     run:
       shell: /bin/bash
       name: Update species and build json files
-      command: python .cirlceci/build_species_build_json.py -rp $(pwd) -t "/tmp" 
+      command: |
+        pwd 
+        python .cirlceci/build_species_build_json.py -rp $(pwd) -t "/tmp" 
   macos: &macos
     macos:
       xcode: "9.4.1" ## Using a macOS VM image (https://circleci.com/docs/2.0/executor-types/)
@@ -67,7 +69,7 @@ workflows:
   ggd-recipes-nightly-build:
     triggers: 
       - schedule:
-          cron: "48 18 * * *" ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
+          cron: "54 18 * * *" ## "0 3 * * *" = ~ 9PM MST, 3AM UTC  
           filters:
             branches:
               only:
