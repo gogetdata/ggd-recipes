@@ -146,7 +146,7 @@ if sorted(build_json_dict.keys()) != sorted(build_dict.keys()):
 else:
     print("\n-> No change in genome builds. The build json file will remain the same") 
 
-if sorted(channels["channels"] != sorted(ggd_channels["channels"]):
+if sorted(channels["channels"]) != sorted(ggd_channels["channels"]):
     shutil.copy(ggd_channels_path, dest)
     repo.git.add("genome_metadata/build_to_species.json")
     commit = True
