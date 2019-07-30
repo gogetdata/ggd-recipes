@@ -5,6 +5,7 @@ from git import Repo
 import shutil
 import json
 import subprocess as sp
+from collections import OrderedDict
 
 
 #------------------------------------------------------------------------------------------------
@@ -21,6 +22,7 @@ args = parser.parse_args()
 # File paths
 #------------------------------------------------------------------------------------------------
 GENOME_DIR = os.path.join(args.repo_path,"genomes")
+RECIPE_DIR = os.path.join(args.repo_path,"recipes")
 METADATA_GITHUB_URL = "git@github.com:gogetdata/ggd-metadata.git"
 
 
@@ -69,21 +71,29 @@ for s in species_set:
     for b in genome_builds:
         build_dict[b] = s
 
+## Get ggd channels
+ggd_channels = {"channels":sorted(os.listdir(RECIPE_DIR))}
+
 ## Write json output
-tmp_dir = os.path.join(os.getcwd(),"species_and_genome_build/")
-print("\n-> Making a tmp directory to store species and genome build json files: %s" %tmp_dir)
+tmp_dir = os.path.join(os.getcwd(),"genome_metadata/")
+print("\n-> Making a tmp directory to store genome metadata json files: %s" %tmp_dir)
 if not os.path.exists(tmp_dir):
     os.makedirs(tmp_dir)
 
 print("\n\t-> Writing species_to_build.json")
 species_file_path = os.path.join(tmp_dir,"species_to_build.json")  
 with open(species_file_path, "w") as sf:
-    json.dump(species_dict,sf)
+    json.dump(sorted(species_dict.items(), key=lambda t: t[0]),sf)
 
 print("\n\t-> Writing build_to_species.json")
 build_file_path = os.path.join(tmp_dir,"build_to_species.json") 
 with open(build_file_path, "w") as gf:
-    json.dump(build_dict,gf)
+    json.dump(sorted(build_dict.items(), key=lambda t: t[0]),gf)
+
+print("\n\t-> Writing ggd_channels.json")
+ggd_channels_path = os.path.join(tmp_dir,"ggd_channels.json") 
+with open(ggd_channels_path, "w") as gc:
+    json.dump(ggd_channels,gc)
 
 ## Get current working dir
 cwd = os.getcwd()
@@ -98,16 +108,20 @@ os.chdir(metadata_repo_dir)
 Repo(metadata_repo_dir).remotes.origin.pull()
 repo = Repo(metadata_repo_dir)
 
-## Check if species and builds are different 
+## Check if species, builds, and channels are different 
+dest = os.path.join(metadata_repo_dir,"genome_metadata")
+
 species_json_dict = {}
-with open(os.path.join(metadata_repo_dir,"species_and_build","species_to_build.json"), "r") as sj:
+with open(os.path.join(dest,"species_to_build.json"), "r") as sj:
     species_json_dict = json.load(sj)
 
 build_json_dict = {}
-with open(os.path.join(metadata_repo_dir,"species_and_build","build_to_species.json"), "r") as bj:
+with open(os.path.join(dest,"build_to_species.json"), "r") as bj:
     build_json_dict = json.load(bj)
 
-dest = os.path.join(metadata_repo_dir,"species_and_build")
+channels = {}
+with open(os.path.join(dest,"ggd_channels.json"), "r") as gj:
+    channels = json.load(gj)
 
 ### Add, commit, and push to ggd-metadata repo
 sp.check_call(["git", "config", "user.email", "CIRCLECI@circleci.com"])
@@ -116,7 +130,7 @@ sp.check_call(["git", "config", "user.name", "CIRCLECI"])
 commit = False
 if sorted(species_json_dict.keys()) != sorted(species_dict.keys()):
     shutil.copy(species_file_path, dest)
-    repo.git.add("species_and_build/species_to_build.json")
+    repo.git.add("genome_metadata/species_to_build.json")
     commit = True
     print("\n-> Add an updated species json file to ggd-metadata")
 
@@ -125,12 +139,21 @@ else:
 
 if sorted(build_json_dict.keys()) != sorted(build_dict.keys()):
     shutil.copy(build_file_path, dest)
-    repo.git.add("species_and_build/build_to_species.json")
+    repo.git.add("genome_metadata/build_to_species.json")
     commit = True
     print("\n-> Add an updated geonme build json file to ggd-metadata")
 
 else:
     print("\n-> No change in genome builds. The build json file will remain the same") 
+
+if sorted(channels["channels"] != sorted(ggd_channels["channels"]):
+    shutil.copy(ggd_channels_path, dest)
+    repo.git.add("genome_metadata/build_to_species.json")
+    commit = True
+    print("\n-> Add an updated ggd_channels json file to ggd-metadata")
+else:
+    print("\n-> No change in ggd channels. The ggd channels json file will remain the same") 
+    
 
 if commit:
     from datetime import datetime
