@@ -40,7 +40,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
     echo "############################################################"
     echo "-> Checking recipe" $(basename $bz2)
     echo "############################################################"
-    ggd check-recipe -du $bz2
+    ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum 
     
     ## Upload
     set +o nounset
@@ -104,7 +104,7 @@ if [[ "$cached" == true ]] ; then
         echo "############################################################"
         echo "-> Checking recipe" $(basename $bz2)
         echo "############################################################"
-        ggd check-recipe -du $bz2
+        ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum  
 
         ## Upload
         set +o nounset
