@@ -95,7 +95,7 @@ def upload_to_aws(client, ggd_recipe_path, s3_bucket):
 # Returns:
 # 1) A dictionary representing the updated build number meta.yaml file
 def update_meta_yaml(tarball_info_object):
-    yaml_dict = yaml.load(tarball_info_object)
+    yaml_dict = yaml.safe_load(tarball_info_object)
     if "cached" in yaml_dict["about"]["tags"]:
         yaml_dict["about"]["tags"]["cached"].append("uploaded_to_aws") 
     else:
@@ -348,6 +348,9 @@ with tarfile.open(args.tarfile, "r:bz2") as tarball_file:
     ## Make a new recipe.sh script to download files from aws S3 bucket 
     cache_recipe = create_cache_recipe(pkg_urls, args.name)
     write_file(new_file_path,"cache_recipe.sh",cache_recipe)
+    ## Copy package checksums_file.txt file
+    checksum_str = copy_file_from_tarInfo_Object(tarball_file.extractfile(tarball_file.getmember("info/recipe/checksums_file.txt")))
+    write_file(new_file_path,"checksums_file.txt",checksum_str)
 
 print("\n-> Pkg files uploaded to the aws S3 %s bucket. \n-> A new pkg has been created for installing the pkg using the S3 bucket." %args.name)
 print("\n-> DONE!")
