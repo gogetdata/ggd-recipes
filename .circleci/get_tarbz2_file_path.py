@@ -21,7 +21,7 @@ args = p.parse_args()
 ## Get the path to the files created during package processing from the package yaml file in the .tar.bz2 file
 with tarfile.open(args.tarfile, "r:bz2") as tarball_file:
 	yamlFile = tarball_file.extractfile(tarball_file.getmember("info/recipe/meta.yaml.template"))
-	yaml_dict = yaml.load(yamlFile)
+	yaml_dict = yaml.safe_load(yamlFile)
 	species = yaml_dict["about"]["identifiers"]["species"]
 	genome_build = yaml_dict["about"]["identifiers"]["genome-build"] 
 	name = yaml_dict["package"]["name"]
