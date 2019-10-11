@@ -1,0 +1,2 @@
+grch37-constrained-coding-regions-quinlan-lab-v1.bed.gz.csi	6861a4d91e8ae5d90b16cc5a1245ad90
+grch37-constrained-coding-regions-quinlan-lab-v1.bed.gz	3ec17b48e80917f25c24f72facb8789a

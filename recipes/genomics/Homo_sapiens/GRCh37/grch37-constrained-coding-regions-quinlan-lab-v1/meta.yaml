@@ -1,0 +1,37 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: bsp
+  extra-files:
+  - grch37-constrained-coding-regions-quinlan-lab-v1.bed.gz
+package:
+  name: grch37-constrained-coding-regions-quinlan-lab-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  run:
+  - htslib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - constraint
+  - ccr
+  summary: 'constrained coding regions: https://www.nature.com/articles/s41588-018-0294-6'
+  tags:
+    data-provider: quinlan-lab
+    data-version: '20180420'
+    file-type:
+    - bed
+    final-files:
+    - grch37-constrained-coding-regions-quinlan-lab-v1.bed.gz
+    - grch37-constrained-coding-regions-quinlan-lab-v1.bed.gz.csi
+    genomic-coordinate-base: 0-based-exclusive
+    ggd-channel: genomics
