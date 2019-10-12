@@ -1,0 +1,55 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-heart-genes-sifrim-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - grch37-gtf-ensembl-v1
+  - gsort
+  - htslib
+  - pyexcel-xls
+  - wget
+  - zlib
+  run:
+  - bedtools
+  - grch37-gtf-ensembl-v1
+  - gsort
+  - htslib
+  - pyexcel-xls
+  - wget
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - heart
+  - heart-disease
+  - genes
+  - sifrim
+  - bed-file
+  - pathoscore
+  summary: 'Manually curated list of congenital heart disease (CHD) genes from Sifrim
+    et al.: www.nature.com/articles/ng.3627. Used Supplemental Table 20 here: https://media.nature.com/original/nature-assets/ng/journal/v48/n9/extref/ng.3627-S13.xlsx'
+  tags:
+    data-provider: sifrim
+    data-version: 01-Aug-2016
+    file-type:
+    - bed
+    final-files:
+    - grch37-heart-genes-sifrim-v1.complement.bed.gz
+    - grch37-heart-genes-sifrim-v1.complement.bed.gz.tbi
+    - grch37-heart-genes-sifrim-v1.bed.gz
+    - grch37-heart-genes-sifrim-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
