@@ -1,0 +1,60 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-eiee-genes-ostrander-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - grch37-gtf-ensembl-v1
+  - gsort
+  - htslib
+  - pyexcel-xls
+  - wget
+  - zlib
+  run:
+  - bedtools
+  - grch37-gtf-ensembl-v1
+  - gsort
+  - htslib
+  - pyexcel-xls
+  - wget
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - eiee
+  - early-infantile
+  - epileptic
+  - epilepsy
+  - encephalopathy
+  - ostrander
+  - bed-file
+  - genes
+  - pathoscore
+  summary: 'This is a set of genes from a recent paper on EIEE (Early Infantile Epileptic
+    Encephalopathy) a severe, fatal epileptic syndrome that occurs within the first
+    few months of life. The gene set is a compilation of gene sets from a few different
+    companies'' gene panels, as well as one from the U of Chicago. Paper at: https://www.nature.com/articles/s41525-018-0061-8'
+  tags:
+    data-provider: ostrander
+    data-version: 13-Aug-2018
+    file-type:
+    - bed
+    final-files:
+    - grch37-eiee-genes-ostrander-v1.complement.bed.gz
+    - grch37-eiee-genes-ostrander-v1.complement.bed.gz.tbi
+    - grch37-eiee-genes-ostrander-v1.bed.gz
+    - grch37-eiee-genes-ostrander-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
