@@ -1,0 +1,4 @@
+grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz.tbi	a1af82a5bd38aba358e0d5b4b5da23fb
+grch37-haploinsufficient-genes-clingen-v1.bed.gz	06ae080852bba845826989371d84a35f
+grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi	7b6b185176dac1201fc3f0761e40b91c
+grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz	a7c39147bae17e59886eccd6ee74cbf6
