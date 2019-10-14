@@ -51,10 +51,31 @@ with open(outfile, "w") as o:
 EOF
 python parse_gene.py berg_blekhman_ad.tsv coding_gene_file.bed unflattened_ad_genes.bed  
 
+
+cat << EOF > sort_columns.py
+"""
+sort the transcript id column
+sort and get a unique list of the gene column
+""" 
+import sys
+for line in sys.stdin.readlines():
+    line_list = line.strip().split("\t")
+    ## Sort column 4
+    line_list[3] = ",".join(sorted(line_list[3].strip().split(",")))
+    ## Sort column 5 and get a uniqe list
+    line_list[4] = ",".join(sorted(list(set(line_list[4].strip().split(",")))))
+
+    ## Print to stdout
+    print("\t".join(line_list))
+
+EOF
+
+
 ## Merge and sort ad genes with coordinates
 gsort unflattened_ad_genes.bed $genome \
-    | bedtools merge -i - -c 4,5 -o collapse  \
+    | bedtools merge -i - -c 4,5 -o collapse \
     | awk 'BEGIN { print "#chrom\tstart\tend\ttranscript_ids\tgenes" } {print $0}' \
+    | python sort_columns.py \
     | gsort /dev/stdin $genome \
     | bgzip -c > grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz 
 tabix grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz 
@@ -75,5 +96,6 @@ rm berg_blekhman_ad.tsv
 rm coding_gene_file.bed
 rm unflattened_ad_genes.bed
 rm parse_gene.py
+rm sort_columns.py
 
 

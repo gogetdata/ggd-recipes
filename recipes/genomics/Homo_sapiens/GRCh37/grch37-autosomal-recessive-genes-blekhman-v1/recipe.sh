@@ -2,7 +2,7 @@
 set -eo pipefail -o nounset
 
 
-wget --quiet -O berg_ad.tsv  https://raw.githubusercontent.com/macarthur-lab/gene_lists/master/lists/berg_ad.tsv
+wget --quiet -O blekhman_ar.tsv https://raw.githubusercontent.com/macarthur-lab/gene_lists/master/lists/blekhman_ar.tsv
 
 genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
 
@@ -18,7 +18,7 @@ zless $grch37_gtf \
     | sed 's/ /\t/g' > coding_gene_file.bed
 
 # matches gene names to bed coordinates
-#python parse_genes.py berg_ad.tsv coding_gene_file.bed unflattened_ad_genes.bed  
+#python parse_genes.py blekhman_ar.tsv coding_gene_file.bed unflattened_ad_genes.bed  
 
 cat << EOF > parse_gene.py
 
@@ -49,7 +49,7 @@ with open(outfile, "w") as o:
         o.write("".join(coor))
 
 EOF
-python parse_gene.py berg_ad.tsv coding_gene_file.bed unflattened_ad_genes.bed  
+python parse_gene.py blekhman_ar.tsv coding_gene_file.bed unflattened_ad_genes.bed  
 
 
 cat << EOF > sort_columns.py
@@ -77,22 +77,22 @@ gsort unflattened_ad_genes.bed $genome \
     | awk 'BEGIN { print "#chrom\tstart\tend\ttranscript_ids\tgenes" } {print $0}' \
     | python sort_columns.py \
     | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-autosomal-dominant-genes-berg-v1.bed.gz 
-tabix grch37-autosomal-dominant-genes-berg-v1.bed.gz
+    | bgzip -c > grch37-autosomal-recessive-genes-blekhman-v1.bed.gz 
+tabix grch37-autosomal-recessive-genes-blekhman-v1.bed.gz 
 
 wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
 
 ## Get ad gene complement coordinates 
-bedtools complement -i grch37-autosomal-dominant-genes-berg-v1.bed.gz -g GRCh37.genome \
+bedtools complement -i grch37-autosomal-recessive-genes-blekhman-v1.bed.gz -g GRCh37.genome \
     | gsort /dev/stdin $genome \
     | sed '1d' /dev/stdin \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' \
-    | bgzip -c > grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz 
-tabix grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz 
+    | bgzip -c > grch37-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz 
+tabix grch37-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz 
 
 
 rm GRCh37.genome
-rm berg_ad.tsv
+rm blekhman_ar.tsv
 rm coding_gene_file.bed
 rm unflattened_ad_genes.bed
 rm parse_gene.py

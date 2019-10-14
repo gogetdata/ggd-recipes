@@ -1,4 +1,4 @@
 grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz	5e2ba128f6f369d13507dba08ffac041
 grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi	e186fa26466844a4aa7cebbc71700701
-grch37-autosomal-dominant-genes-berg-v1.bed.gz	636d3e61facb78bcf367a20e563c55ee
-grch37-autosomal-dominant-genes-berg-v1.bed.gz.tbi	f1be05a5b25c2e9457fed95e27f1edc4
+grch37-autosomal-dominant-genes-berg-v1.bed.gz	b9435ffca4a940056e8482bba79c2899
+grch37-autosomal-dominant-genes-berg-v1.bed.gz.tbi	9df18517a426c0de62d56b62c3aa0fbc

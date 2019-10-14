@@ -30,20 +30,15 @@ recipe_uploaded=false
 cached=false
 cached_recipes_path=""
 
-ls $CHECK_DIR/*
-
 for bz2 in $CHECK_DIR/*.bz2; do
-    if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
-        continue
-    fi
-    if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+    if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
         continue
     fi
 
     echo "############################################################"
     echo "-> Checking recipe" $(basename $bz2)
     echo "############################################################"
-    ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum 
+    ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum  ## md5sum checksum will be tested
     
     ## Upload
     set +o nounset
@@ -80,7 +75,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
             file_no_ext="${local_file%%.*}"
             file_no_build="${file_no_ext%-*}"
             recipe_name="${file_no_build%-*}"
-            conda uninstall $recipe_name
+            conda uninstall $recipe_name -y
         fi
     else 
         echo -e "\n-> DONE"
@@ -97,17 +92,14 @@ if [[ "$cached" == true ]] ; then
 
     ## run recipe check and upload
     for bz2 in $CHECK_DIR/*.bz2; do
-        if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
+        if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
             continue
-        fi  
-        if [[ "$(basename $bz2)" == "*.bz2" ]]; then
-            continue
-        fi  
+        fi
 
         echo "############################################################"
         echo "-> Checking recipe" $(basename $bz2)
         echo "############################################################"
-        ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum  
+        ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum ## md5sum checksum will be tested  
 
         ## Upload
         set +o nounset
