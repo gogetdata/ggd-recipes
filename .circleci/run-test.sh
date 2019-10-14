@@ -29,6 +29,9 @@ echo -e "############################################################\n"
 recipe_uploaded=false
 cached=false
 cached_recipes_path=""
+
+ls $CHECK_DIR/*.bz2
+
 for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
         continue
