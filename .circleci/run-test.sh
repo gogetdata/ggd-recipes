@@ -30,7 +30,7 @@ recipe_uploaded=false
 cached=false
 cached_recipes_path=""
 
-ls $CHECK_DIR/*.bz2
+ls $CHECK_DIR/*
 
 for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
