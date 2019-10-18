@@ -236,7 +236,6 @@ print("\n-> Downloaded {filenum} files from https://anaconda.org/{channel}".form
 ## Index the .tar.bz2 files downloaded to the temp build dir using conda index
 print("\n-> Indexing .tar.bz2 files in order to create the 'channeldata.json' metadata file\n")
 sp.check_call(['conda', 'index', tmp_build_dir, '-n',  conda_channel])
-print(sp.check_output(["ls",tmp_build_dir]))
 print("\n\n-> The channeldata.json file is located at: %s" %tmp_build_dir) 
 
 ## Move metadata files to ggd-recipes/channeldata/
@@ -250,18 +249,15 @@ Repo(tmp_repo_dir).remotes.origin.pull()
 repo = Repo(tmp_repo_dir)
 channeldata_file = os.path.join(tmp_build_dir, "channeldata.json")
 index_file = os.path.join(tmp_build_dir, "index.html")
-rss_file = os.path.join(tmp_build_dir, "rss.xml")
 destination = os.path.join(tmp_repo_dir, "channeldata", args.conda_channel)
 shutil.copy(channeldata_file,destination)
 shutil.copy(index_file,destination)
-shutil.copy(rss_file,destination)
 
 ## Add, commit, and push to ggd-metadata repo
 sp.check_call(["git", "config", "user.email", "CIRCLECI@circleci.com"])
 sp.check_call(["git", "config", "user.name", "CIRCLECI"])
 repo.git.add("channeldata/"+args.conda_channel+"/channeldata.json")
 repo.git.add("channeldata/"+args.conda_channel+"/index.html")
-repo.git.add("channeldata/"+args.conda_channel+"/rss.xml")
 from datetime import datetime
 date_time = datetime.today().isoformat()
 repo.git.commit("-m", "New conda index for the ggd-{channel} channel. ({date})".format(channel=args.conda_channel, date=date_time))
