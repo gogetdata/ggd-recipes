@@ -34,6 +34,9 @@ for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
         continue
     fi
+    if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+        continue
+    fi  
 
     echo "############################################################"
     echo "-> Checking recipe" $(basename $bz2)
@@ -95,6 +98,9 @@ if [[ "$cached" == true ]] ; then
         if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
             continue
         fi
+        if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+            continue
+        fi  
 
         echo "############################################################"
         echo "-> Checking recipe" $(basename $bz2)

@@ -236,6 +236,7 @@ print("\n-> Downloaded {filenum} files from https://anaconda.org/{channel}".form
 ## Index the .tar.bz2 files downloaded to the temp build dir using conda index
 print("\n-> Indexing .tar.bz2 files in order to create the 'channeldata.json' metadata file\n")
 sp.check_call(['conda', 'index', tmp_build_dir, '-n',  conda_channel])
+print(sp.check_output(["ls",tmp_build_dir]))
 print("\n\n-> The channeldata.json file is located at: %s" %tmp_build_dir) 
 
 ## Move metadata files to ggd-recipes/channeldata/
