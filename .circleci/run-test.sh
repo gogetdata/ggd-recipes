@@ -100,7 +100,7 @@ if [[ "$cached" == true ]] ; then
         fi
         if [[ "$(basename $bz2)" == "*.bz2" ]]; then
             continue
-        fi  
+        fi
 
         echo "############################################################"
         echo "-> Checking recipe" $(basename $bz2)

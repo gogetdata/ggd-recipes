@@ -265,5 +265,12 @@ repo.git.push()
 
 print("\n-> Successfully pushed new channeldata.json file to the ggd-metadata repo")
 
+
+## Remove git rep
+import gc
+gc.collect()
+repo.git.clear_cache()
+shutil.rmtree(tmp_repo_dir)
+
 ## Return to cwd:
 os.chdir(cwd)
