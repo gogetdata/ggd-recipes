@@ -32,7 +32,7 @@ about:
   summary: Microsatellites from UCSC
   tags:
     data-provider: UCSC
-    data-version: 28-Nov-2010
+    data-version: 3-Aug-2015
     file-type:
     - bed
     final-files:
