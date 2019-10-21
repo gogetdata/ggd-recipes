@@ -15,6 +15,7 @@ requirements:
   - grch37-gtf-ensembl-v1
   - gsort
   - htslib
+  - pyexcel
   - pyexcel-xls
   - wget
   - zlib
@@ -23,6 +24,7 @@ requirements:
   - grch37-gtf-ensembl-v1
   - gsort
   - htslib
+  - pyexcel
   - pyexcel-xls
   - wget
   - zlib
