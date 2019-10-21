@@ -1,0 +1,43 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: arq5x
+  extra-files: []
+package:
+  name: grch37-cytobands-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - cytobands
+  - ideogram
+  - staining
+  - chromosome
+  - bands
+  summary: Cytobands from UCSC
+  tags:
+    data-provider: UCSC
+    data-version: 14-Jun-2009
+    file-type:
+    - bed
+    final-files:
+    - grch37-cytobands-ucsc-v1.bed.gz
+    - grch37-cytobands-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
