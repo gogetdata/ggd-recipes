@@ -1,0 +1,2 @@
+hg38-microsatellites-ucsc-v1.bed.gz	ffeaddb1113bd6515e22280f5a9017ac
+hg38-microsatellites-ucsc-v1.bed.gz.tbi	5e04311ca0cf2fd7481000c05233914b
