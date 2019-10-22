@@ -1,0 +1,2 @@
+hg38-cytobands-ucsc-v1.bed.gz	9d7813ffe9581c77a20dbd2fc71a3e24
+hg38-cytobands-ucsc-v1.bed.gz.tbi	779dcce09e5ef4639206740583cf42b5

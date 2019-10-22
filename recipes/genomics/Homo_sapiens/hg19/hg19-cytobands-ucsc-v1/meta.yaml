@@ -1,0 +1,43 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: arq5x
+  extra-files: []
+package:
+  name: hg19-cytobands-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - cytobands
+  - ideogram
+  - staining
+  - chromosome
+  - bands
+  summary: Cytobands from UCSC
+  tags:
+    data-provider: UCSC
+    data-version: 14-Jun-2009
+    file-type:
+    - bed
+    final-files:
+    - hg19-cytobands-ucsc-v1.bed.gz
+    - hg19-cytobands-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
