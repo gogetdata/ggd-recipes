@@ -34,32 +34,85 @@ python pyscript.py ejhg2008111x1.xl\s
 
 #######################################################################################################
 grch37_gtf="$(ggd get-files grch37-gtf-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-gtf-ensembl-v1.gtf.gz')"
-zgrep 'protein_coding\tstop_codon\|protein_coding\tCDS' $grch37_gtf \
-    | grep "^1\|^2\|^3\|^4\|^5\|^6\|^7\|^8\|^9\|^10\|^11\|^12\|^13\|^14\|^15\|^16\|^17\|^18\|^19\|^20\|^21\|^22\|^X\|^Y" \
-    | awk '{$4=$4-1; print $0}' OFS='\t' \
+zless $grch37_gtf \
+    | awk 'BEGIN { OFS="\t"} {if ( $3 == "CDS" || $3 == "stop_codon" ) print $0}' \
+    | awk 'BEGIN { OFS="\t"} {$4=$4-1; print $0}' \
     | cut -f 1,4,5,12,16 \
     | sed 's/\"//g' \
-    | sed 's/;//g' > Homo_sapiens37.bed
+    | sed 's/;//g' \
+    | sed 's/ /\t/g' > coding_gene_file.bed
 
+
+
+################################################################################################################
 # matches gene names to bed coordinates
-awk 'FNR==NR{genes[$1]; next} {for (gene in genes) if (gene == $5) print $0, genes[gene]}' FS='\t' OFS='\t' \
-    haploinsufficient.tsv Homo_sapiens37.bed | \
-    gsort /dev/stdin $genome_loc |\
-    cut -f -5 > unflattened_grch37-haploinsufficient-genes-clingen-v1.bed
+cat << EOF > parse_gene.py
 
+"""
+Get a list of genome coordinates for a list of ad genes
+"""
+import sys 
+
+ad_gene_file = sys.argv[1] ## A single column tsv file for ad genes
+coding_genes_file = sys.argv[2] ## A tsv file with 5 columns: 1: chrom, 2: start, 3: end, 4: transcript, 5: gene
+outfile = sys.argv[3] ## File to write to
+
+## Get a dict with keys = genes, values = empty []
+with open(ad_gene_file, "r") as ad: 
+    ad_gene_dict = {x.strip():[] for x in ad} 
+
+## Add entries from coding gene file to dict based on gene
+with open(coding_genes_file) as cg: 
+    for line in cg: 
+        line_list = line.strip().split("\t")
+        gene = line_list[4] 
+        if gene in ad_gene_dict:
+            ad_gene_dict[gene].append(line)
+
+## Write dict out
+with open(outfile, "w") as o:
+    for gene, coor in ad_gene_dict.items():
+        o.write("".join(coor))
+
+EOF
+python parse_gene.py haploinsufficient.tsv coding_gene_file.bed unflattened_grch37-haploinsufficient-genes-clingen-v1.bed
+
+
+################################################################################################################
+cat << EOF > sort_columns.py
+"""
+sort the transcript id column
+sort and get a unique list of the gene column
+""" 
+import sys
+for line in sys.stdin.readlines():
+    line_list = line.strip().split("\t")
+    ## Sort column 4
+    line_list[3] = ",".join(sorted(line_list[3].strip().split(",")))
+    ## Sort column 5 and get a uniqe list
+    line_list[4] = ",".join(sorted(list(set(line_list[4].strip().split(",")))))
+
+    ## Print to stdout
+    print("\t".join(line_list))
+
+EOF
+
+
+################################################################################################################
 # creates flattened representation of protein-coding exome covering AD genes
-bedtools merge -c 4,5 -o collapse,collapse -i unflattened_grch37-haploinsufficient-genes-clingen-v1.bed | \
-    gsort /dev/stdin $genome_loc | \
-    awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tgene-id\tgene-name"} {print $0}' |\
-    bgzip -c \
-    > grch37-haploinsufficient-genes-clingen-v1.bed.gz
+gsort unflattened_grch37-haploinsufficient-genes-clingen-v1.bed $genome \
+    | bedtools merge -c 4,5 -o collapse,collapse -i - \
+    | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tgene-id\tgene-name"} {print $0}' \
+    | python sort_columns.py \
+    | gsort /dev/stdin $genome \
+    | bgzip -c > grch37-haploinsufficient-genes-clingen-v1.bed.gz
 tabix -p bed grch37-haploinsufficient-genes-clingen-v1.bed.gz
 
-bedtools complement -i grch37-haploinsufficient-genes-clingen-v1.bed.gz -g $genome_loc | \
-    gsort /dev/stdin $genome_loc |\
-    sed '1d' |\
-    awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' |\
-    bgzip -c > grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
+bedtools complement -i grch37-haploinsufficient-genes-clingen-v1.bed.gz -g $genome_loc  \
+    | gsort /dev/stdin $genome \
+    | sed '1d' \
+    | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' \
+    | bgzip -c > grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
 tabix -p bed grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
 
 #cleanup
@@ -68,4 +121,6 @@ rm unflattened_grch37-haploinsufficient-genes-clingen-v1.bed
 rm $genome_loc
 rm ejhg2008111x1.xls
 rm pyscript.py
-rm Homo_sapiens37.bed
+rm parse_gene.py
+rm sort_columns.py
+rm coding_gene_file.bed

@@ -1,4 +1,4 @@
-grch37-haploinsufficient-genes-dang-v1.complement.bed.gz	ac8d94b7e041986166d4a337c41c7ba0
-grch37-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi	83f25c80cfa32ff595a70d166e48889b
-grch37-haploinsufficient-genes-dang-v1.bed.gz.tbi	3aac899cdf43fc94315c6521854036da
-grch37-haploinsufficient-genes-dang-v1.bed.gz	1b7e7a45f868dbad78f3c4db34fa1b6b
+grch37-haploinsufficient-genes-dang-v1.bed.gz.tbi	c7750d15563ebe38f779cf974bae6ae0
+grch37-haploinsufficient-genes-dang-v1.bed.gz	9286a211c005bd3d1c6ff9a139e93284
+grch37-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi	a70ae680cdca41b31e85211162b1c651
+grch37-haploinsufficient-genes-dang-v1.complement.bed.gz	fa108b9eed6f9b78e17a23be4e7de039

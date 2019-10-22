@@ -47,9 +47,9 @@ about:
     file-type:
     - bed
     final-files:
-    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
-    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz.tbi
     - grch37-haploinsufficient-genes-clingen-v1.bed.gz
     - grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi
+    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
+    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
