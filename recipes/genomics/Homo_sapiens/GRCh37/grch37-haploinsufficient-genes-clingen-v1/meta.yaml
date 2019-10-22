@@ -36,8 +36,9 @@ about:
   - clingen
   - bed-file
   - genes
+  - pathoscore
   summary: 'The ''clingen_hi_gene'' haploinsufficient gene set comes from ClinGen''s
-    Dosage Sensitivity Map and is curated by Daniel MacArthur''s lab. The genes used
+    Dosage Sensitivity Map and is curated by Daniel MacArthur's lab. The genes used
     are those that are haplosensitive and not triplosensitive, and are level 3 (the
     maximum level) dosage sensitive. Original work on this is part of the Cytogenomic
     Arrays Consortium. Paper at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5008023/'
