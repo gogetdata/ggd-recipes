@@ -7,7 +7,7 @@ extra:
   authors: arq5x
   extra-files: []
 package:
-  name: hg38-microsatellites-ucsc-v1
+  name: hg19-cytobands-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -22,21 +22,22 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg38
+    genome-build: hg19
     species: Homo_sapiens
   keywords:
-  - microsatellites
-  - microsats
-  - STR
-  - STRs
-  summary: Microsatellites from UCSC
+  - cytobands
+  - ideogram
+  - staining
+  - chromosome
+  - bands
+  summary: Cytobands from UCSC
   tags:
     data-provider: UCSC
-    data-version: 3-Aug-2015
+    data-version: 14-Jun-2009
     file-type:
     - bed
     final-files:
-    - hg38-microsatellites-ucsc-v1.bed.gz
-    - hg38-microsatellites-ucsc-v1.bed.gz.tbi
+    - hg19-cytobands-ucsc-v1.bed.gz
+    - hg19-cytobands-ucsc-v1.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
