@@ -29,7 +29,7 @@ about:
     data-provider: GGD
     data-version: 11-Oct-2019
     file-type:
-    - chromsizes
+    - txt
     final-files:
     - grch37-chromsizes-ggd-v1.txt
     genomic-coordinate-base: NA

@@ -1,0 +1,1 @@
+grch37-chromsizes-ggd-v1.txt	9035fb43d5341584a8b11fb70de3fae5
