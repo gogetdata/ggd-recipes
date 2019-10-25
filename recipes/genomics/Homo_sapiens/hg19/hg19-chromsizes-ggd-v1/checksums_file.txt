@@ -1,0 +1,1 @@
+hg19-chromsizes-ggd-v1.txt	2aed13a997b3cc454e16cc0bf67080cd

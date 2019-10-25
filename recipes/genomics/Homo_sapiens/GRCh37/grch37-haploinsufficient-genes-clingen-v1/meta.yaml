@@ -1,0 +1,56 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-haploinsufficient-genes-clingen-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - grch37-gtf-ensembl-v1
+  - gsort
+  - htslib
+  - wget
+  - zlib
+  run:
+  - bedtools
+  - grch37-gtf-ensembl-v1
+  - gsort
+  - htslib
+  - wget
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - haploinsufficient
+  - haploinsufficiency
+  - clingen
+  - bed-file
+  - genes
+  - pathoscore
+  summary: 'The ''clingen_hi_gene'' haploinsufficient gene set comes from ClinGen''s
+    Dosage Sensitivity Map and is curated by Daniel MacArthur''s lab. The genes used
+    are those that are haplosensitive and not triplosensitive, and are level 3 (the
+    maximum level) dosage sensitive. Original work on this is part of the Cytogenomic
+    Arrays Consortium. Paper at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5008023/'
+  tags:
+    data-provider: ClinGen
+    data-version: 01-Sept-2016
+    file-type:
+    - bed
+    final-files:
+    - grch37-haploinsufficient-genes-clingen-v1.bed.gz
+    - grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi
+    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
+    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

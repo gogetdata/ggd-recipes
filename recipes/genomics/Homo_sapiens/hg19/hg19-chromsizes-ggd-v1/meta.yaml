@@ -1,0 +1,36 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: arq5x
+  extra-files:
+  - hg19-chromsizes-ggd-v1.txt
+package:
+  name: hg19-chromsizes-ggd-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - genome
+  - chromosome
+  - lengths
+  - sizes
+  summary: Chromosome lengths for hg19
+  tags:
+    data-provider: GGD
+    data-version: 11-Oct-2019
+    file-type:
+    - chromsizes
+    final-files:
+    - hg19-chromsizes-ggd-v1.txt
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
