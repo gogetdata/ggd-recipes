@@ -43,15 +43,14 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda config --system --add channels conda-forge
     conda config --system --add channels ggd-genomics
 
-    
-    # step 3: install ggd requirements 
-    conda install -y --file requirements.txt 
-
-
-    # step 4: install requirments from git repos
+    # step 3: install requirments from git repos
     ## Install bioconda-utils
     conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+
+    # step 4: install ggd requirements 
+    conda install -y --file requirements.txt 
+
     ## Install ggd-cli
     #pip install -U git+git://github.com/gogetdata/ggd-cli 
 
