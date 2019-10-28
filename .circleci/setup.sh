@@ -43,12 +43,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda config --system --add channels conda-forge
     conda config --system --add channels ggd-genomics
 
-    # step 3: install requirments from git repos
-    ## Install bioconda-utils
-    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
-    pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
-
-    # step 4: install ggd requirements 
+    # step 3: install ggd requirements 
     conda install -y --file requirements.txt 
 
     ## Install ggd-cli
@@ -57,10 +52,14 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     ## Temporarily use the cli_update 
     pip install -U git+git://github.com/gogetdata/ggd-cli@cli_update 
 
+    # step 4: install requirments from git repos
+    ## Install bioconda-utils
+    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
+    pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+
 
     # step 5: cleanup
     conda clean -y --all
-
 
     # step 6: download conda_build_config.yaml from conda_forge and put into conda root (Required for using bioconda-utils build)
     cur=`pwd`
@@ -68,7 +67,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     cd $CONDA_ROOT
     curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
     cd $cur
-
 
     # step 7: set up local channels
     # Add local channel as highest priority

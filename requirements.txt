@@ -16,7 +16,7 @@ gsort>=0.0.6
 samtools
 htslib
 zlib
-python>=3.6
+python>=3.7
 pyyaml
 fuzzywuzzy
 python-levenshtein
