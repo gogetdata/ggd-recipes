@@ -56,8 +56,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     ## Install bioconda-utils
 
     ## Temporarily use an older version of bioconda utils
-    BIOCONDA_UTILS_TAG=v0.16.7
-    $WORKSPACE/anaconda/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
+    #BIOCONDA_UTILS_TAG=v0.16.7
+    $WORKSPACE/anaconda/bin/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     $WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
 
