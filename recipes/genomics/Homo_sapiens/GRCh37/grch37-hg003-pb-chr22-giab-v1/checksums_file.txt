@@ -1,0 +1,1 @@
+grch37-hg003-pb-chr22-giab-v1.fastq.gz	d53866ce637bb16ed7246320e4688c09
