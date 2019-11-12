@@ -1,0 +1,2 @@
+hg19-hg002-ont-chr22-giab-v1.bam.bai	0ff7eebcf8b76e773ad220356ddf8dbe
+hg19-hg002-ont-chr22-giab-v1.bam	e0b44e76b7b6d85ea5d0eb5e30a9ef6d
