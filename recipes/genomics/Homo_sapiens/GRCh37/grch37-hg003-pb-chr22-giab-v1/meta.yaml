@@ -5,20 +5,19 @@ build:
   number: 0
 extra:
   authors: jrb
-  extra-files:
-  - grch37-hg003-pb-chr22-giab-v1.fastq.gz
+  extra-files: []
 package:
   name: grch37-hg003-pb-chr22-giab-v1
   version: '1'
 requirements:
   build:
-  - bedtools
   - htslib
+  - samtools
   - wget
   - zlib
   run:
-  - bedtools
   - htslib
+  - samtools
   - wget
   - zlib
 source:
@@ -35,7 +34,7 @@ about:
   - giab
   - chr22
   - trio
-  summary: GiaB PacBio 70x sequencing for chromosome 22 in ashkenazi sample HG003
+  summary: GiaB PacBio 30x sequencing for chromosome 22 in ashkenazi sample HG003
   tags:
     data-provider: giab
     data-version: 11-18-15
@@ -43,5 +42,7 @@ about:
     - fastq
     final-files:
     - grch37-hg003-pb-chr22-giab-v1.fastq.gz
+    - grch37-hg003-pb-chr22-giab-v1.fastq.gz.fai
+    - grch37-hg003-pb-chr22-giab-v1.fastq.gz.gzi
     genomic-coordinate-base: NA
     ggd-channel: genomics

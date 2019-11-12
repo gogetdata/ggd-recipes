@@ -5,20 +5,19 @@ build:
   number: 0
 extra:
   authors: jrb
-  extra-files:
-  - grch37-hg002-pb-chr22-giab-v1.fastq.gz
+  extra-files: []
 package:
   name: grch37-hg002-pb-chr22-giab-v1
   version: '1'
 requirements:
   build:
-  - bedtools
   - htslib
+  - samtools
   - wget
   - zlib
   run:
-  - bedtools
   - htslib
+  - samtools
   - wget
   - zlib
 source:
@@ -43,5 +42,7 @@ about:
     - fastq
     final-files:
     - grch37-hg002-pb-chr22-giab-v1.fastq.gz
+    - grch37-hg002-pb-chr22-giab-v1.fastq.gz.fai
+    - grch37-hg002-pb-chr22-giab-v1.fastq.gz.gzi
     genomic-coordinate-base: NA
     ggd-channel: genomics

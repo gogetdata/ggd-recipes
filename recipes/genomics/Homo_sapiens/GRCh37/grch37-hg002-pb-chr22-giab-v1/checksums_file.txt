@@ -1,1 +1,3 @@
-grch37-hg002-pb-chr22-giab-v1.fastq.gz	616bc6f43efbd3e22e2fdd7516f2e14f
+grch37-hg002-pb-chr22-giab-v1.fastq.gz.fai	3ad131b74f2cde7ce19b573f2d94d13b
+grch37-hg002-pb-chr22-giab-v1.fastq.gz	bed78843ea3dde418b6c500a28e21967
+grch37-hg002-pb-chr22-giab-v1.fastq.gz.gzi	61fd583d88f8b8d12381178bcfbf4ac1
