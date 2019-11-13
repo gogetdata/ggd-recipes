@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-hg002-pb-chr22-giab-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - wget
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - wget
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - ashkenazi
+  - hg002
+  - pacbio
+  - pb
+  - giab
+  - chr22
+  - trio
+  summary: GiaB PacBio 70x sequencing for chromosome 22 in ashkenazi sample HG002
+  tags:
+    data-provider: giab
+    data-version: 11-18-15
+    file-type:
+    - fastq
+    final-files:
+    - grch37-hg002-pb-chr22-giab-v1.fastq.gz
+    - grch37-hg002-pb-chr22-giab-v1.fastq.gz.fai
+    - grch37-hg002-pb-chr22-giab-v1.fastq.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
