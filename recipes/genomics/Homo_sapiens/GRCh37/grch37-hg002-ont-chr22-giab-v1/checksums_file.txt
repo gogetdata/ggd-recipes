@@ -1,0 +1,2 @@
+grch37-hg002-ont-chr22-giab-v1.bam	e156c0ccace3047a9e301b45e6ae14b5
+grch37-hg002-ont-chr22-giab-v1.bam.bai	f60ab65bea748684064740e14e5431da

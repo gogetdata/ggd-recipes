@@ -6,19 +6,19 @@ build:
 extra:
   authors: jrb
   extra-files:
-  - hg19-hg002-ont-chr22-giab-v1.bam
-  - hg19-hg002-ont-chr22-giab-v1.bam.bai
+  - grch37-hg002-ont-chr22-giab-v1.bam
+  - grch37-hg002-ont-chr22-giab-v1.bam.bai
 package:
-  name: hg19-hg002-ont-chr22-giab-v1
+  name: grch37-hg002-ont-chr22-giab-v1
   version: '1'
 requirements:
   build:
-  - hg19-reference-genome-ucsc-v1
+  - grch37-reference-genome-ensembl-v1
   - minimap2
   - samtools
   - wget
   run:
-  - hg19-reference-genome-ucsc-v1
+  - grch37-reference-genome-ensembl-v1
   - minimap2
   - samtools
   - wget
@@ -26,7 +26,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
   - ashkenazi
@@ -37,14 +37,14 @@ about:
   - chr22
   - bam
   - alignments
-  summary: GiaB ONT sequencing for chromosome 22 in ashkenazi sample HG002
+  summary: GiaB ONT alignments for chromosome 22 in ashkenazi sample HG002
   tags:
     data-provider: giab
     data-version: 06-03-15
     file-type:
     - bam
     final-files:
-    - hg19-hg002-ont-chr22-giab-v1.bam
-    - hg19-hg002-ont-chr22-giab-v1.bam.bai
+    - grch37-hg002-ont-chr22-giab-v1.bam
+    - grch37-hg002-ont-chr22-giab-v1.bam.bai
     genomic-coordinate-base: NA
     ggd-channel: genomics
