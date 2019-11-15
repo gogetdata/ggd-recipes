@@ -1,0 +1,2 @@
+grch38-hg004-chr22-illumina-giab-v1.chr22.bam.bai	f7e31a0f1f4e4c94cb57d91db0f1a29f
+grch38-hg004-chr22-illumina-giab-v1.chr22.bam	c0888bbb87b8b40c8f47809e27a17057
