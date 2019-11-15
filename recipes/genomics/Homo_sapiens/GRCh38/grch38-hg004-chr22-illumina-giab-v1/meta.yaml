@@ -1,0 +1,44 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files:
+  - grch38-hg004-chr22-illumina-giab-v1.chr22.bam
+  - grch38-hg004-chr22-illumina-giab-v1.chr22.bam.bai
+package:
+  name: grch38-hg004-chr22-illumina-giab-v1
+  version: '1'
+requirements:
+  build:
+  - samtools
+  run:
+  - samtools
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - giab
+  - hg004
+  - ashkenazi
+  - trio
+  - illumina
+  - chr22
+  - examples
+  summary: Illumina paired-end sequencing alignments from HG004, downloaded from GIAB,
+    and subset to 30X for chr22. Usable as an example dataset
+  tags:
+    data-provider: GIAB
+    data-version: '7_27_15'
+    file-type:
+    - bam
+    final-files:
+    - grch38-hg004-chr22-illumina-giab-v1.chr22.bam
+    - grch38-hg004-chr22-illumina-giab-v1.chr22.bam.bai
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
