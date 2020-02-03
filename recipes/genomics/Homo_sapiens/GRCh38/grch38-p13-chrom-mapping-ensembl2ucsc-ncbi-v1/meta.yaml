@@ -27,10 +27,11 @@ about:
   - chrommapping
   - Ensembl2UCSC
   - scaffolding-ids
+  - GRCh38-to-hg19
   - txt
-  summary: A tab delimited file containing scaffolding ids that map between Ensembl(GenBank)
-    and UCSC. This is specific to patch 13 of the GRCh38 Human genome build. (1st
-    column = Ensembl ids, 2nd column = UCSC ids)
+  summary: A tab delimited file containing scaffolding ids that map between Ensembl(GenBank)(GRCh38)
+    and UCSC(hg19). This is specific to patch 13 of the GRCh38 Human genome build. (1st column = Ensembl
+    (GRCh38) ids, 2nd column = UCSC(hg19) ids)
   tags:
     data-provider: NCBI
     data-version: 14-March-2019-(patch13)
@@ -42,4 +43,5 @@ about:
     ggd-channel: genomics
 test:
   commands:
-    head "$(ggd get-files grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1 -p grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt)" 
+    echo "Head of grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt" 
+    head $CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1/grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt
