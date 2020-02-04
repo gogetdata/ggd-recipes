@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eo pipefail -o nounset
+#set -eo pipefail -o nounset
 
 # -------------------------------------------------------------------------------------------------------
 # header fields: 
