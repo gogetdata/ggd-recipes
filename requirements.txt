@@ -23,4 +23,5 @@ boto3
 check-sort-order
 pytest
 pytest-socket
+bioawk
 

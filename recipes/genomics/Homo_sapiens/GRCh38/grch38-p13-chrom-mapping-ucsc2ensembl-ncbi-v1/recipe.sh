@@ -15,25 +15,6 @@ set -eo pipefail -o nounset
 # Column 10: $UCSC_style_name  
 # -------------------------------------------------------------------------------------------------------
 
-## Install bioawk
-conda install -c bioconda -y bioawk --prefix $(conda info --root)
-
-echo "LIST"
-conda list
-
-echo "ENV"
-conda info --envs
-
-echo "BIOAWK?"
-echo $(which bioawk)
-
-echo "ROOT"
-echo $(conda info --root)
-
-echo "BIN"
-ls /home/circleci/project/anaconda/bin
-
-
 ## Get the report file from NCBI
 wget --quiet ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.28_GRCh38.p13/GCA_000001405.28_GRCh38.p13_assembly_report.txt
 
