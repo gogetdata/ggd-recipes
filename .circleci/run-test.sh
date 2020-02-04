@@ -2,6 +2,8 @@
 
 #set -eo pipefail -o nounset
 
+conda activate base 
+
 echo "Conda INFO"
 conda info
 echo "End Conda INFO" 

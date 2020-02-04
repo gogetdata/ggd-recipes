@@ -35,7 +35,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo chown -R $USER $WORKSPACE/anaconda/
 
     conda init bash
-    conda activate base
 
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
 
