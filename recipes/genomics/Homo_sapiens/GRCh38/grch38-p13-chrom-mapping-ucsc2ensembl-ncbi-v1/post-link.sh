@@ -1,15 +1,20 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
+echo "0" 
+
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
+    echo "0.1" 
     export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
     export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1
 elif [[ $(conda info --envs | grep "*" | grep -o "\/.*") == "base" ]]; then
+    echo "0.2" 
     export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
     export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1
 else
+    echo "0.3" 
     env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
     export CONDA_ROOT=$env_dir
     export RECIPE_DIR=$env_dir/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1
