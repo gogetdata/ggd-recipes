@@ -19,7 +19,7 @@ rmbuild() {
 trap rmbuild EXIT
 
 ## Build/filter all recipes using bioconda-utils build
-bioconda-utils build recipes/ config.yaml
+bioconda-utils build recipes/ config.yaml --loglevel debug
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
