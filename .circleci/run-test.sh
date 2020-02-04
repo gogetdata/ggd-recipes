@@ -28,6 +28,10 @@ trap rmbuild EXIT
 
 echo "Building"
 conda build --debug recipes/genomics/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/
+
+echo "BIOAWK?"
+which bioawk
+
 echo "Installing"
 conda install -v grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1
 
