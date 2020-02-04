@@ -15,6 +15,9 @@ set -eo pipefail -o nounset
 # Column 10: $UCSC_style_name  
 # -------------------------------------------------------------------------------------------------------
 
+## Install bioawk
+#conda install -c bioconad -y bioawk
+
 ## Get the report file from NCBI
 wget --quiet ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.28_GRCh38.p13/GCA_000001405.28_GRCh38.p13_assembly_report.txt
 
