@@ -20,6 +20,8 @@ conda install -c bioconda -y bioawk
 
 conda list
 
+echo $(which bioawk)
+
 ls /home/circleci/project/anaconda/bin
 
 
