@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eo pipefail -o nounset
+set -exo pipefail -o nounset
 
 echo "0"
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then

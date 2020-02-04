@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eo pipefail -o nounset
+set -exo pipefail -o nounset
 
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
     export CONDA_ROOT=$(conda info --root)
