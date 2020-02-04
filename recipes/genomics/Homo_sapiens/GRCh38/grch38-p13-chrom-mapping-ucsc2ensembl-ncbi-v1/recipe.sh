@@ -1,5 +1,5 @@
 #!/bin/sh
-#set -eo pipefail -o nounset
+set -eo pipefail -o nounset
 
 # -------------------------------------------------------------------------------------------------------
 # header fields: 
@@ -18,7 +18,7 @@
 ## Install bioawk
 conda install -c bioconda -y bioawk
 
-which bioawk
+ls /home/circleci/project/anaconda/bin
 
 
 ## Get the report file from NCBI
