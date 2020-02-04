@@ -1,32 +1,40 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
+echo "0"
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
+    echo "0.1"
     export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
     export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1
 elif [[ $(conda info --envs | grep "*" | grep -o "\/.*") == "base" ]]; then
+    echo "0.2"
     export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
     export RECIPE_DIR=$CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1
 else
+    echo "0.3"
     env_dir=$(conda info --envs | grep "*" | grep -o "\/.*")
     export CONDA_ROOT=$env_dir
     export RECIPE_DIR=$env_dir/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1
 fi
 
 
+echo "1"
 PKG_DIR=`find "$CONDA_SOURCE_PREFIX/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION.*$PKG_BUILDNUM$"`
 
 
+echo "2"
 if [ -d $RECIPE_DIR ]; then
     rm -r $RECIPE_DIR
 fi
 
 mkdir -p $RECIPE_DIR
 
+echo "3"
 (cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/recipe.sh)
 
+echo "4"
 cd $RECIPE_DIR
 
 ## Iterate over new files and replace file name with data package name and data version  
@@ -38,6 +46,7 @@ for f in *; do
         (mv $f "grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1.$ext")
     fi  
 done
+echo "5"
 
 ## Add environment variables 
 #### File
@@ -58,6 +67,7 @@ then
     fi
 fi 
 
+echo "6"
 #### Dir
 recipe_env_dir_name="ggd_grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1_dir"
 recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g' | sed 's/\./_/g')"
@@ -71,6 +81,7 @@ mkdir -p $deactivate_dir
 echo "export $recipe_env_dir_name=$RECIPE_DIR" >> $activate_dir/env_vars.sh
 echo "unset $recipe_env_dir_name">> $deactivate_dir/env_vars.sh
 
+echo "7"
 #### File
     ## If the file env variable exists, set the env file var
 if [[ ! -z "${recipe_env_file_name:-}" ]] 
@@ -78,5 +89,6 @@ then
     echo "export $recipe_env_file_name=$file_path" >> $activate_dir/env_vars.sh
     echo "unset $recipe_env_file_name">> $deactivate_dir/env_vars.sh
 fi
+echo "8"
     
 echo 'Recipe successfully built!'

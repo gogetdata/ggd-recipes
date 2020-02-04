@@ -18,8 +18,6 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-conda build recipes/genomics/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/ --debug
-
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build recipes/ config.yaml --loglevel debug
 

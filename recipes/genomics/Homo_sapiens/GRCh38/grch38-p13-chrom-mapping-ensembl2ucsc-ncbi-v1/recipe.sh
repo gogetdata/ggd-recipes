@@ -52,7 +52,7 @@ cat <(grep "^#" GCA_000001405.28_GRCh38.p13_assembly_report.txt | tail -n 1) <(g
 ## Save the report file with a header
 cat <(grep -E "^[1-9]+|^[X]|^[Y]|^(MT)" chrommapping.txt | sort -k1,1) \
     <(grep -E -v "^[1-9]+|^[X]|^[Y]|^(MT)" chrommapping.txt | sort -k2,2) \
-    | awk 'BEGIN {print "Ensembl_id\tUCSC_id"} {print $0}' \
+    | awk 'BEGIN {print "#Ensembl_id\tUCSC_id"} {print $0}' \
     | sed "s/\r//g" > grch38_chrom_mapping_ensembl2ucsc_ncbi.txt  
 
 ## Remove extra files

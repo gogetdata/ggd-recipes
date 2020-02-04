@@ -43,5 +43,5 @@ about:
     ggd-channel: genomics
 test:
   commands:
-    echo "Head of grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt" 
-    head $CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1/grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt
+    - echo "Head of grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt" 
+    - head $CONDA_ROOT/share/ggd/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1/1/grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1.txt
