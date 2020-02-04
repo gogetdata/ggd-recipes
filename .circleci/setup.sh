@@ -34,6 +34,9 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
 
+    conda init
+    conda activate base
+
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
 
 
@@ -76,8 +79,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda index $WORKSPACE/anaconda/conda-bld/
     conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
 fi
-
-conda init
 
 conda config --get
 
