@@ -16,7 +16,7 @@ set -eo pipefail -o nounset
 # -------------------------------------------------------------------------------------------------------
 
 ## Install bioawk
-conda install -c bioconda -y bioawk
+conda install -c bioconda -y bioawk --prefix $(conda info --root)
 
 echo "LIST"
 conda list
