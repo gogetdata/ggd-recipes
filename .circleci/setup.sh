@@ -77,6 +77,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
 fi
 
+conda init
+
 conda config --get
 
 ls $WORKSPACE/anaconda/conda-bld

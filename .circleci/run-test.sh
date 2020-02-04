@@ -10,10 +10,6 @@ echo "End Conda INFO"
 
 export PATH=/anaconda/bin:$PATH
 echo $PATH
-ls /anaconda/bin
-ls /home/circleci/project/anaconda/bin
-
-which bioawk
 
 CONDA_ROOT=$(conda info --root)
 export CONDA_SOURCE_PREFIX=$(conda info --root)
