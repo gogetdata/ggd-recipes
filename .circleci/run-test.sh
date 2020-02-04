@@ -5,7 +5,7 @@ set -eo pipefail -o nounset
 export PATH=/anaconda/bin:$PATH
 
 CONDA_ROOT=$(conda info --root)
-CONDA_SOURCE_PREFIX=$(conda info --root)
+export CONDA_SOURCE_PREFIX=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
