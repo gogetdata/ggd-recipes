@@ -2,6 +2,11 @@
 
 set -eo pipefail -o nounset
 
+echo "Conda INFO"
+conda info
+echo "End Conda INFO" 
+
+
 export PATH=/anaconda/bin:$PATH
 
 CONDA_ROOT=$(conda info --root)
