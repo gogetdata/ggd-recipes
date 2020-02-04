@@ -5,10 +5,12 @@ set -eo pipefail -o nounset
 echo "Conda INFO"
 conda info
 echo "End Conda INFO" 
-which bioawk
+
 
 
 export PATH=/anaconda/bin:$PATH
+echo $PATH
+which bioawk
 
 CONDA_ROOT=$(conda info --root)
 export CONDA_SOURCE_PREFIX=$(conda info --root)
