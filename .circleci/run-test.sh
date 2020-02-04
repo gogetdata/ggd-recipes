@@ -5,6 +5,7 @@ set -eo pipefail -o nounset
 echo "Conda INFO"
 conda info
 echo "End Conda INFO" 
+which bioawk
 
 
 export PATH=/anaconda/bin:$PATH
