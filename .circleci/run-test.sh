@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail -o nounset
+#set -eo pipefail -o nounset
 
 echo "Conda INFO"
 conda info
@@ -10,6 +10,9 @@ echo "End Conda INFO"
 
 export PATH=/anaconda/bin:$PATH
 echo $PATH
+ls /anaconda/bin
+ls /home/circleci/project/anaconda/bin
+
 which bioawk
 
 CONDA_ROOT=$(conda info --root)
