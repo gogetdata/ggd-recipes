@@ -21,6 +21,9 @@ conda install -c bioconda -y bioawk
 echo "LIST"
 conda list
 
+echo "ENV"
+conda info --envs
+
 echo "BIOAWK?"
 echo $(which bioawk)
 

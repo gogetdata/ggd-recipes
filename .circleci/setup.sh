@@ -34,7 +34,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
 
-    conda init
     conda activate base
 
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
