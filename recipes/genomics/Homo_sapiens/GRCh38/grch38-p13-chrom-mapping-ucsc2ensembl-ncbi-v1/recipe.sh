@@ -18,6 +18,8 @@ set -eo pipefail -o nounset
 ## Install bioawk
 conda install -c bioconda -y bioawk
 
+conda list
+
 ls /home/circleci/project/anaconda/bin
 
 
