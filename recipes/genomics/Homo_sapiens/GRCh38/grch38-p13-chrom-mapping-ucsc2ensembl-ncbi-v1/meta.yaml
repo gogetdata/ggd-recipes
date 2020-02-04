@@ -11,8 +11,6 @@ package:
   name: grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1
   version: '1'
 requirements:
-  host:
-  - bioawk
   build:
   - bioawk
   run:
