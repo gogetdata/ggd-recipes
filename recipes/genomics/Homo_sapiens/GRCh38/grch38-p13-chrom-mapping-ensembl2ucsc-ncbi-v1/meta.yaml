@@ -30,8 +30,8 @@ about:
   - GRCh38-to-hg19
   - txt
   summary: A tab delimited file containing scaffolding ids that map between Ensembl(GenBank)(GRCh38)
-    and UCSC(hg19). This is specific to patch 13 of the GRCh38 Human genome build. (1st column = Ensembl
-    (GRCh38) ids, 2nd column = UCSC(hg19) ids)
+    and UCSC(hg19). This is specific to patch 13 of the GRCh38 Human genome build.
+    (1st column = Ensembl (GRCh38) ids, 2nd column = UCSC(hg19) ids)
   tags:
     data-provider: NCBI
     data-version: 14-March-2019-(patch13)
