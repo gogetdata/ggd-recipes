@@ -18,27 +18,8 @@ trap rmbuild EXIT
 ## Export env variable for post-link
 export CONDA_SOURCE_PREFIX=$(conda info --root)
 
-#conda build \
-#    --override-channels \
-#    --no-anaconda-upload \
-#    -c ggd-genomics \
-#    -c bioconda \
-#    -c conda-forge \
-#    -c defaults \
-#    -e /home/circleci/project/anaconda/conda_build_config.yaml \
-#    -e /home/circleci/project/anaconda/lib/python3.7/site-packages/bioconda_utils/bioconda_utils-conda_build_config.yaml \
-#    recipes/genomics/Homo_sapiens/GRCh38/grch38-p13-chrom-mapping-ensembl2ucsc-ncbi-v1/
-#
-#cat $CONDA_ROOT/.messages.txt
-
-bioconda-utils build recipes/genomics/Homo_sapiens/GRCh38/ config.yaml --loglevel debug
-
-cat $CONDA_ROOT/.messages.txt
-
-exit 1
-
 ## Build/filter all recipes using bioconda-utils build
-bioconda-utils build recipes/ config.yaml --loglevel debug
+bioconda-utils build recipes/ config.yaml
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
