@@ -1,1 +1,0 @@
-grch38-p13-chrom-mapping-ucsc2ensembl-ncbi-v1.txt	db007c7bdc230a9ebab07a04a376b39d
