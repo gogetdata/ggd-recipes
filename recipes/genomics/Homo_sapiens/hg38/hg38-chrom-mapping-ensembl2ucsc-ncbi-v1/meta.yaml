@@ -29,6 +29,7 @@ about:
   - scaffolding-ids
   - txt
   - patch-13
+  - GRCh38-to-hg38
   summary: A tab delimited file containing scaffolding ids that maps GRCh38 Ensembl(GenBank)
     scaffoldings to hg39 UCSC scaffoldings. This is specific to patch 13 of the GRCh38
     Human genome build. (1st column = Ensembl ids, 2nd column = UCSC ids)

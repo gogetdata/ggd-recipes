@@ -6,9 +6,9 @@ build:
 extra:
   authors: mjc
   extra-files:
-  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
 package:
-  name: grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  name: grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
   version: '1'
 requirements:
   build:
@@ -19,7 +19,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh38
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
   - Chromosome-mapping
@@ -29,16 +29,16 @@ about:
   - scaffolding-ids
   - txt
   - patch-13
-  - hg38-to-GRCh38
-  summary: A tab delimited file containing scaffolding ids that map hg38 UCSC scaffoldings
-    to GRCh38 Ensembl(GenBank) scaffoldings. This is specific to patch 13 of the GRCh38
-    Human genome build. (1st column = UCSC ids, 2nd column = Ensembl ids)
+  - hg19-to-GRCh37
+  summary: A tab delimited file containing scaffolding ids that maps hg19 UCSC scafoldings
+    to GRCh37 Ensembl(GenBank) scaffoldings. This is specific to patch 13 of the GRCh37
+    Human genome build. (1st column = UCSC ids, 2nd column = Ensembl idss)
   tags:
     data-provider: NCBI
-    data-version: 14-March-2019-(patch13)
+    data-version: 13-October-2016-(patch13)
     file-type:
     - txt
     final-files:
-    - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
+    - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
     genomic-coordinate-base: NA
     ggd-channel: genomics
