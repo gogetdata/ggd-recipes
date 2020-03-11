@@ -17,7 +17,6 @@ source .circleci/bioconda-common.sh
 if [[ ! -d $WORKSPACE/anaconda ]]; then
     mkdir -p $WORKSPACE
 
-
     # step 1: download and install anaconda
     if [[ $OSTYPE == darwin* ]]; then
         tag="MacOSX"
@@ -35,7 +34,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo chown -R $USER $WORKSPACE/anaconda/
 
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
-
 
     # step 2: setup channels
     conda config --system --add channels defaults
@@ -59,7 +57,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #BIOCONDA_UTILS_TAG=v0.16.7
     $WORKSPACE/anaconda/bin/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     $WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
-
 
     # step 5: cleanup
     conda clean -y --all

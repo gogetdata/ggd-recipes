@@ -1,0 +1,44 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1.txt
+package:
+  name: hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  version: '1'
+requirements:
+  build:
+  - bioawk
+  run:
+  - bioawk
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Chromosome-mapping
+  - mapping
+  - chrommapping
+  - Ensembl2UCSC
+  - scaffolding-ids
+  - txt
+  - patch-13
+  - GRCh38-to-hg38
+  summary: A tab delimited file containing scaffolding ids that maps GRCh38 Ensembl(GenBank)
+    scaffoldings to hg39 UCSC scaffoldings. This is specific to patch 13 of the GRCh38
+    Human genome build. (1st column = Ensembl ids, 2nd column = UCSC ids)
+  tags:
+    data-provider: NCBI
+    data-version: 14-March-2019-(patch13)
+    file-type:
+    - txt
+    final-files:
+    - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1.txt
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
