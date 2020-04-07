@@ -1,5 +1,5 @@
 ## Modified from bioconda-recipes (https://github.com/bioconda/bioconda-recipes/blob/master/config.yml) and (https://github.com/bioconda/bioconda-recipes/blob/master/scripts/env_matrix.yml)
-env_matrix: "scripts/env_matrix.yaml"
+#env_matrix: "scripts/env_matrix.yaml"
 
 blacklists:
   - "blacklist-recipes"
