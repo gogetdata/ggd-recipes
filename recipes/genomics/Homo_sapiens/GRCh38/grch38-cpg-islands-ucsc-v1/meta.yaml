@@ -2,19 +2,21 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 1
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg38-cpg-islands-ucsc-v1
+  name: grch38-cpg-islands-ucsc-v1
   version: '1'
 requirements:
   build:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -22,7 +24,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg38
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - CpG
@@ -30,14 +32,15 @@ about:
   - bed-file
   - cpg-islands
   - islands
-  summary: hg38 cpg islands from UCSC in bed format
+  summary: cpg islands from UCSC in bed format. Remapped from UCSC hg38 to Ensembl
+    GRCh38. Scaffoldings that cannot remap are removed.
   tags:
     data-provider: UCSC
     data-version: 11-Mar-2019
     file-type:
     - bed
     final-files:
-    - hg38-cpg-islands-ucsc-v1.bed.gz
-    - hg38-cpg-islands-ucsc-v1.bed.gz.tbi
+    - grch38-cpg-islands-ucsc-v1.bed.gz
+    - grch38-cpg-islands-ucsc-v1.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
