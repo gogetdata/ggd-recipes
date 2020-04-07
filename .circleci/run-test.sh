@@ -19,6 +19,8 @@ trap rmbuild EXIT
 ## Set the CONDA_SOURCE_PREFIX env var 
 export CONDA_SOURCE_PREFIX=$(conda info --root)
 
+conda build --debug recipes/genomics/Homo_sapiens/GRCh38/grch38-cpg-islands-ucsc-v1
+
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build --loglevel debug recipes/ config.yaml
 
