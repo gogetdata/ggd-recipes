@@ -17,7 +17,7 @@ rmbuild() {
 trap rmbuild EXIT
 
 ## Set the CONDA_SOURCE_PREFIX env var 
-CONDA_SOURCE_PREFIX=$(conda info --root)
+export CONDA_SOURCE_PREFIX=$(conda info --root)
 
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build recipes/ config.yaml
