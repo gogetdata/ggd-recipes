@@ -20,7 +20,7 @@ trap rmbuild EXIT
 export CONDA_SOURCE_PREFIX=$(conda info --root)
 
 ## Build/filter all recipes using bioconda-utils build
-bioconda-utils build recipes/ config.yaml
+bioconda-utils build --loglevel debug recipes/ config.yaml
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
