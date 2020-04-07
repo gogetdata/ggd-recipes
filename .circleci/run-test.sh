@@ -2,6 +2,7 @@
 set -eo pipefail -o nounset
 
 CONDA_ROOT=$(conda info --root)
+
 rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
@@ -14,6 +15,9 @@ rmbuild() {
     rm -rf $CHECK_DIR
 }
 trap rmbuild EXIT
+
+## Set the CONDA_SOURCE_PREFIX env var 
+CONDA_SOURCE_PREFIX=$(conda info --root)
 
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build recipes/ config.yaml
