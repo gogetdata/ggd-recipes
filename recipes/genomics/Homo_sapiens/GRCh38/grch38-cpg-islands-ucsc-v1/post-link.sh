@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "CONDA SOURCE PREFIX:"
+echo $CONDA_SOURCE_PREFIX
+echo "--------------------"
 set -eo pipefail -o nounset
 
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
