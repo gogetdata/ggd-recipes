@@ -1,5 +1,4 @@
 #!/bin/bash
-## Much of this is taken from bioconda: https://github.com/bioconda/bioconda-utils/blob/master/.circleci/setup.sh
 
 set -exo pipefail 
 
