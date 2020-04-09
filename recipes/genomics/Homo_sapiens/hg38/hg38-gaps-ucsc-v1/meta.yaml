@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -26,9 +26,23 @@ about:
     species: Homo_sapiens
   keywords:
   - gaps
-  - region
-  - bed-file
-  summary: hg38 Assembly gaps from UCSC in bed format
+  - regions
+  - gap-locations
+  - Assembly-Gaps
+  - clone-gaps
+  - contig-gaps
+  - centromere-gaps
+  - telomere-gaps
+  - heterochromatin-gaps
+  - short-arm-gaps
+  summary: Assembly gaps from UCSC in bed fromat
   tags:
+    data-provider: UCSC
     data-version: 11-Mar-2019
+    file-type:
+    - bed
+    final-files:
+    - hg38-gaps-ucsc-v1.bed.gz
+    - hg38-gaps-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
