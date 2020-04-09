@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -28,7 +28,17 @@ about:
   - CpG
   - region
   - bed-file
-  summary: cpg islands from UCSC in bed format
+  - cpg-islands
+  - islands
+  summary: cpg islands from UCSC in bed format. Scaffoldings that are not contained
+    in the hg19.genome file are removed
   tags:
-    data-version: 27-Apr-2009
+    data-provider: UCSC
+    data-version: 22-Mar-2020
+    file-type:
+    - bed
+    final-files:
+    - hg19-cpg-islands-ucsc-v1.bed.gz
+    - hg19-cpg-islands-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
