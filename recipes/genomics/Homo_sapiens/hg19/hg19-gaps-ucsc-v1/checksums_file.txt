@@ -1,0 +1,2 @@
+hg19-gaps-ucsc-v1.bed.gz.tbi	ad0c55f3432e130310df8cf9310c4462
+hg19-gaps-ucsc-v1.bed.gz	bbd4424aa02d78662781163dfa95e371
