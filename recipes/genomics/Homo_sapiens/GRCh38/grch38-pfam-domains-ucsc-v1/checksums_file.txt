@@ -1,0 +1,2 @@
+grch38-pfam-domains-ucsc-v1.bed12.bed.gz.tbi	cd2656ac34dabe9e535fbc88a634068e
+grch38-pfam-domains-ucsc-v1.bed12.bed.gz	fcba9d6b2bfe80d840f49a657f6005ba

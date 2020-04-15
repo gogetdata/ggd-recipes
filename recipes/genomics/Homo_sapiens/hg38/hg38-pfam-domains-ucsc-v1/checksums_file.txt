@@ -1,0 +1,2 @@
+hg38-pfam-domains-ucsc-v1.bed12.bed.gz	aef9538b945bbcc4b0b872a402ad68cf
+hg38-pfam-domains-ucsc-v1.bed12.bed.gz.tbi	1c3efd2fa7a867cae3848ab4c86d165a
