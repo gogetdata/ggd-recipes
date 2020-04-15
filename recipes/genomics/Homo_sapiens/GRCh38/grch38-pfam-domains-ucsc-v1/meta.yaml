@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-pfam-domains-ucsc-v1
+  name: grch38-pfam-domains-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -22,7 +23,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - pfam
@@ -31,17 +32,18 @@ about:
   - protein-domains
   - UCSC
   summary: High quality, manually curated Pfam domain annotation in bed12 format from
-    UCSC
+    UCSC. Remapped from UCSC hg38 to Ensembl GRCh38. Scaffoldings that cannot remap
+    are removed
   tags:
     data-provider: UCSC
-    data-version: 16-Apr-2017
+    data-version: 13-Oct-2019
     file-type:
     - bed
     final-file-sizes:
-      hg19-pfam-domains-ucsc-v1.bed12.bed.gz: 1.41M
-      hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi: 143.50K
+      grch38-pfam-domains-ucsc-v1.bed12.bed.gz: 1.48M
+      grch38-pfam-domains-ucsc-v1.bed12.bed.gz.tbi: 155.90K
     final-files:
-    - hg19-pfam-domains-ucsc-v1.bed12.bed.gz
-    - hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi
+    - grch38-pfam-domains-ucsc-v1.bed12.bed.gz
+    - grch38-pfam-domains-ucsc-v1.bed12.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

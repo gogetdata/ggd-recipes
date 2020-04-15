@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -30,11 +31,19 @@ about:
   - protein
   - protein-domains
   - UCSC
-  - bed
-  - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC) Remapped from hg19
-    to GRCh37 (unmapped regions removed)
+  summary: High quality, manually curated Pfam domain annotation in bed12 format from
+    UCSC. Remapped from UCSC hg19 to Ensembl GRCh37. Any scaffoldings that are not
+    in the GRCh37.genome file or that cannot be remapped are removed
   tags:
     data-provider: UCSC
     data-version: 16-Apr-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-pfam-domains-ucsc-v1.bed12.bed.gz: 1.40M
+      grch37-pfam-domains-ucsc-v1.bed12.bed.gz.tbi: 142.89K
+    final-files:
+    - grch37-pfam-domains-ucsc-v1.bed12.bed.gz
+    - grch37-pfam-domains-ucsc-v1.bed12.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

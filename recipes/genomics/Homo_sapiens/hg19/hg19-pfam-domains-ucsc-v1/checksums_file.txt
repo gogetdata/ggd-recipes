@@ -1,0 +1,2 @@
+hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi	535199e503cbb516ae9112b2957140e2
+hg19-pfam-domains-ucsc-v1.bed12.bed.gz	8f6be0bef0a0025a78dbf3927b346afc
