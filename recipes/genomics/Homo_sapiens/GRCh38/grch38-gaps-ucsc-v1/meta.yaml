@@ -43,6 +43,9 @@ about:
     data-version: 11-Mar-2019
     file-type:
     - bed
+    final-file-sizes:
+      grch38-gaps-ucsc-v1.bed.gz: 9.15K
+      grch38-gaps-ucsc-v1.bed.gz.tbi: 10.59K
     final-files:
     - grch38-gaps-ucsc-v1.bed.gz
     - grch38-gaps-ucsc-v1.bed.gz.tbi

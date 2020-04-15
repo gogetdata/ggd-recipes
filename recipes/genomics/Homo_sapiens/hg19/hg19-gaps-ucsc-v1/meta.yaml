@@ -42,6 +42,9 @@ about:
     data-version: 22-Mar-2020
     file-type:
     - bed
+    final-file-sizes:
+      hg19-gaps-ucsc-v1.bed.gz: 5.16K
+      hg19-gaps-ucsc-v1.bed.gz.tbi: 8.22K
     final-files:
     - hg19-gaps-ucsc-v1.bed.gz
     - hg19-gaps-ucsc-v1.bed.gz.tbi
