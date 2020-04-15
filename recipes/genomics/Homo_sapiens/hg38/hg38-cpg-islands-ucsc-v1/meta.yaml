@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 4
 extra:
   authors: mjc
   extra-files: []
@@ -36,6 +36,9 @@ about:
     data-version: 11-Mar-2019
     file-type:
     - bed
+    final-file-sizes:
+      hg38-cpg-islands-ucsc-v1.bed.gz: 672.51K
+      hg38-cpg-islands-ucsc-v1.bed.gz.tbi: 202.68K
     final-files:
     - hg38-cpg-islands-ucsc-v1.bed.gz
     - hg38-cpg-islands-ucsc-v1.bed.gz.tbi
