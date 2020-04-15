@@ -35,7 +35,7 @@ about:
     Human genome build. (1st column = Ensembl ids, 2nd column = UCSC ids)
   tags:
     data-provider: NCBI
-    data-version: 13-October-2016-(patch13)
+    data-version: 12-October-2016-(patch13)
     file-type:
     - txt
     final-file-sizes:
