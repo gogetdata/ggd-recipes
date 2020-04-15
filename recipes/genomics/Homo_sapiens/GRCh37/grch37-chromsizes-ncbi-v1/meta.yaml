@@ -1,0 +1,40 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - grch37-chromsizes-ncbi-v1.genome
+package:
+  name: grch37-chromsizes-ncbi-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - genome
+  - chromosome
+  - lengths
+  - sizes
+  - chrom-lengths
+  summary: Chromosome lengths for the GRCh37 genome build from NCBI. (Used to create
+    the Go Get Data (GGD) GRCh37.genome file)
+  tags:
+    data-provider: NCBI
+    data-version: 13-October-2016-(patch13)
+    file-type:
+    - genome
+    final-file-sizes:
+      grch37-chromsizes-ncbi-v1.genome: 5.17K
+    final-files:
+    - grch37-chromsizes-ncbi-v1.genome
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
