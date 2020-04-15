@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files:
@@ -38,6 +38,8 @@ about:
     data-version: 13-October-2016-(patch13)
     file-type:
     - txt
+    final-file-sizes:
+      grch37-chrom-mapping-ucsc2ensembl-ncbi-v1.txt: 2.12K
     final-files:
     - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
     genomic-coordinate-base: NA
