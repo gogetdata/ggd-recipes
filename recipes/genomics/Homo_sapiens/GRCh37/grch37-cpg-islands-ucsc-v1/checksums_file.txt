@@ -1,2 +1,2 @@
-grch37-cpg-islands-ucsc-v1.bed.gz	e692ac898ff38c35ef7a788ddc8997be
-grch37-cpg-islands-ucsc-v1.bed.gz.tbi	cc2cf89d27707469f8778bcbf01dd574
+grch37-cpg-islands-ucsc-v1.bed.gz	557a08f9c72136449afa4ceca9c0db38
+grch37-cpg-islands-ucsc-v1.bed.gz.tbi	e8e43c06a9dc3c6773ae4fa021e09e7a
