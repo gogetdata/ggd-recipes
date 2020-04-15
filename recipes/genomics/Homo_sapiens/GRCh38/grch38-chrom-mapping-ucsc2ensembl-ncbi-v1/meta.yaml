@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files:
@@ -35,9 +35,11 @@ about:
     Human genome build. (1st column = UCSC ids, 2nd column = Ensembl ids)
   tags:
     data-provider: NCBI
-    data-version: 14-March-2019-(patch13)
+    data-version: 14-April-2020-(patch13)
     file-type:
     - txt
+    final-file-sizes:
+      grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt: 17.88K
     final-files:
     - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
     genomic-coordinate-base: NA

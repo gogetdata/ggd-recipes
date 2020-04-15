@@ -29,7 +29,7 @@ about:
     the Go Get Data (GGD) GRCh37.genome file)
   tags:
     data-provider: NCBI
-    data-version: 13-October-2016-(patch13)
+    data-version: 12-October-2016-(patch13)
     file-type:
     - genome
     final-file-sizes:

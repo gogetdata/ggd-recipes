@@ -29,7 +29,7 @@ about:
     the Go Get Data (GGD) GRCh38.genome file)
   tags:
     data-provider: NCBI
-    data-version: 14-March-2019-(patch13)
+    data-version: 14-April-2020-(patch13)
     file-type:
     - genome
     final-file-sizes:
