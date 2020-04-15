@@ -38,6 +38,8 @@ about:
     data-version: 14-March-2019-(patch13)
     file-type:
     - txt
+    final-file-sizes:
+      grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt: 17.88K
     final-files:
     - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
     genomic-coordinate-base: NA
