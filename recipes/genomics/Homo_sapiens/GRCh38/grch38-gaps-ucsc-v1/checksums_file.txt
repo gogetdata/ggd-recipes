@@ -1,2 +1,2 @@
-grch38-gaps-ucsc-v1.bed.gz.tbi	23a9f80e5e9c3b070e1c689ebcd2e110
-grch38-gaps-ucsc-v1.bed.gz	b75bce8e0322adedc913c7f5f333f187
+grch38-gaps-ucsc-v1.bed.gz.tbi	11b0ff8aabe58bec6e9a910f42a8bcc6
+grch38-gaps-ucsc-v1.bed.gz	cfdeb924753947ec26d4565aa851de5a
