@@ -1,1 +1,1 @@
-hg19-chromsizes-ggd-v1.txt	2aed13a997b3cc454e16cc0bf67080cd
+hg19-chromsizes-ggd-v1.txt	54416e6d1884e0178e5819fbd4f3a38f
