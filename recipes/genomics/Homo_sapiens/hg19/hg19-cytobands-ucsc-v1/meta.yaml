@@ -2,9 +2,9 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
-  authors: arq5x
+  authors: mjc
   extra-files: []
 package:
   name: hg19-cytobands-ucsc-v1
@@ -30,12 +30,16 @@ about:
   - staining
   - chromosome
   - bands
-  summary: Cytobands from UCSC
+  summary: Approximate locations of Chromosome Bands (cytoBands) located with Giemsa-stained
+    chromosomes from UCSC
   tags:
     data-provider: UCSC
     data-version: 14-Jun-2009
     file-type:
     - bed
+    final-file-sizes:
+      hg19-cytobands-ucsc-v1.bed.gz: 6.50K
+      hg19-cytobands-ucsc-v1.bed.gz.tbi: 7.18K
     final-files:
     - hg19-cytobands-ucsc-v1.bed.gz
     - hg19-cytobands-ucsc-v1.bed.gz.tbi

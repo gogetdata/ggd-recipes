@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-cytobands-ucsc-v1
+  name: grch38-cytobands-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -15,7 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
-  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -23,7 +23,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - cytobands
@@ -32,17 +32,17 @@ about:
   - chromosome
   - bands
   summary: Approximate locations of Chromosome Bands (cytoBands) located with Giemsa-stained
-    chromosomes from UCSC. Remapped from UCSC hg19 to Ensembl GRCh37.
+    chromosomes from UCSC. Remapped from UCSC hg38 to Ensembl GRCh38.
   tags:
     data-provider: UCSC
-    data-version: 14-Jun-2009
+    data-version: 11-Mar-2019
     file-type:
     - bed
     final-file-sizes:
-      grch37-cytobands-ucsc-v1.bed.gz: 6.40K
-      grch37-cytobands-ucsc-v1.bed.gz.tbi: 7.12K
+      grch38-cytobands-ucsc-v1.bed.gz: 10.27K
+      grch38-cytobands-ucsc-v1.bed.gz.tbi: 16.91K
     final-files:
-    - grch37-cytobands-ucsc-v1.bed.gz
-    - grch37-cytobands-ucsc-v1.bed.gz.tbi
+    - grch38-cytobands-ucsc-v1.bed.gz
+    - grch38-cytobands-ucsc-v1.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
