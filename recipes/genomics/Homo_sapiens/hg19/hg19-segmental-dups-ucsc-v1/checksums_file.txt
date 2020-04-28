@@ -1,0 +1,2 @@
+hg19-segmental-dups-ucsc-v1.bed.gz	a6da3a794aa8e8c20c9e35b06f826a61
+hg19-segmental-dups-ucsc-v1.bed.gz.tbi	34b670dd9343c14f26b1c22f307fb099

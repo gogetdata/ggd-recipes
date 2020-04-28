@@ -2,12 +2,12 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg38-segmental-dups-ucsc-v1
+  name: grch38-segmental-dups-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -22,7 +23,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg38
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - superdups
@@ -33,17 +34,18 @@ about:
   - UCSC
   - Segmental-Duplication
   summary: Segmental duplications (SuperDups) File from UCSC. That is, duplications
-    of at least 1kb total sequence of non-repeatmasker sequence in bed format.
+    of at least 1kb total sequence of non-repeatmasker sequence in bed format. Remapped
+    from UCSC hg38 to Ensembl GRCh38.
   tags:
     data-provider: UCSC
     data-version: 19-Oct-2014
     file-type:
     - bed
     final-file-sizes:
-      hg38-segmental-dups-ucsc-v1.bed.gz: 4.15M
-      hg38-segmental-dups-ucsc-v1.bed.gz.tbi: 79.57K
+      grch38-segmental-dups-ucsc-v1.bed.gz: 4.14M
+      grch38-segmental-dups-ucsc-v1.bed.gz.tbi: 79.50K
     final-files:
-    - hg38-segmental-dups-ucsc-v1.bed.gz
-    - hg38-segmental-dups-ucsc-v1.bed.gz.tbi
+    - grch38-segmental-dups-ucsc-v1.bed.gz
+    - grch38-segmental-dups-ucsc-v1.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
