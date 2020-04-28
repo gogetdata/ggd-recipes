@@ -1,0 +1,2 @@
+grch38-segmental-dups-ucsc-v1.bed.gz.tbi	1d090c8e76712341af7708ee47010310
+grch38-segmental-dups-ucsc-v1.bed.gz	8a0e223cc1803cbcd6bd9ad1968ff2f8

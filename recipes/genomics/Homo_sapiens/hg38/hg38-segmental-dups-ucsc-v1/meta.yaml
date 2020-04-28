@@ -31,9 +31,19 @@ about:
   - dups
   - duplications
   - UCSC
-  - bed-file
-  summary: The hg38 segmental duplications (SuperDups) file from UCSC. That is, duplications
-    of at least 1kb total sequence of non-repeatmasker sequence in bed format
+  - Segmental-Duplication
+  summary: Segmental duplications (SuperDups) File from UCSC. That is, duplications
+    of at least 1kb total sequence of non-repeatmasker sequence in bed format.
   tags:
+    data-provider: UCSC
     data-version: 19-Oct-2014
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-segmental-dups-ucsc-v1.bed.gz: 4.15M
+      hg38-segmental-dups-ucsc-v1.bed.gz.tbi: 79.57K
+    final-files:
+    - hg38-segmental-dups-ucsc-v1.bed.gz
+    - hg38-segmental-dups-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

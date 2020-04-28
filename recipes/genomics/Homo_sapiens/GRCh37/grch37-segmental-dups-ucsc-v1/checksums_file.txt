@@ -1,0 +1,2 @@
+grch37-segmental-dups-ucsc-v1.bed.gz	92eda9c03158515735ccdf56e4a05432
+grch37-segmental-dups-ucsc-v1.bed.gz.tbi	0aa86578c2be1f438ffbcafd168abaa3
