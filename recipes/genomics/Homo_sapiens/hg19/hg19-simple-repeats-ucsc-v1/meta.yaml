@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-simple-repeats-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - simrep
+  - simple-repeats
+  - repeats
+  - tandem-repeats
+  - simple-tandem-repeats
+  summary: Simple repeats track from UCSC. Simple tandem repeats and imperfect repeats
+    identified by the Tandem Repeats Finder (TRF) algorithm. Any scaffoldings not
+    in the hg19.genome file are removed from the final file
+  tags:
+    data-provider: UCSC
+    data-version: 22-Mar-2020
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-simple-repeats-ucsc-v1.bed.gz: 25.58M
+      hg19-simple-repeats-ucsc-v1.bed.gz.tbi: 1.35M
+    final-files:
+    - hg19-simple-repeats-ucsc-v1.bed.gz
+    - hg19-simple-repeats-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
