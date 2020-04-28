@@ -2,12 +2,12 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: hg19-repeatmasker-ucsc-v1
+  name: grch37-repeatmasker-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -22,7 +23,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
   - rmsk
@@ -37,17 +38,18 @@ about:
   - RNA-repeats
   summary: RepeatMasker track from UCSC in bed format. Interspersed repeats and low
     complexity sequences identified using the RepeatMasker program. Scaffoldings missing
-    from the GGD hg19.genome file are removed.
+    from the GGD hg19.genome file are removed. Remapped from UCSC hg19 to Ensembl
+    GRCh37
   tags:
     data-provider: UCSC
     data-version: 22-Mar-2020
     file-type:
     - bed
     final-file-sizes:
-      hg19-repeatmasker-ucsc-v1.bed.gz: 114.62M
-      hg19-repeatmasker-ucsc-v1.bed.gz.tbi: 526.98K
+      grch37-repeatmasker-ucsc-v1.bed.gz: 113.57M
+      grch37-repeatmasker-ucsc-v1.bed.gz.tbi: 525.84K
     final-files:
-    - hg19-repeatmasker-ucsc-v1.bed.gz
-    - hg19-repeatmasker-ucsc-v1.bed.gz.tbi
+    - grch37-repeatmasker-ucsc-v1.bed.gz
+    - grch37-repeatmasker-ucsc-v1.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

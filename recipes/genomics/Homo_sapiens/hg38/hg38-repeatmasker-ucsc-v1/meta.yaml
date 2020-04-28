@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -27,8 +27,26 @@ about:
   keywords:
   - rmsk
   - region
-  - bed-file
-  summary: RepeatMasker track from UCSC in bed format
+  - low-complexity-repeats
+  - SINE
+  - ALUs
+  - LINE
+  - LTR
+  - DNA-repeat-elements
+  - simple-repeats
+  - RNA-repeats
+  summary: RepeatMasker track from UCSC in bed format. Interspersed repeats and low
+    complexity sequences identified using the RepeatMasker program.
   tags:
-    data-version: 06-Mar-2014
+    data-provider: UCSC
+    data-version: 11-Mar-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-repeatmasker-ucsc-v1.bed.gz: 124.47M
+      hg38-repeatmasker-ucsc-v1.bed.gz.tbi: 561.26K
+    final-files:
+    - hg38-repeatmasker-ucsc-v1.bed.gz
+    - hg38-repeatmasker-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
