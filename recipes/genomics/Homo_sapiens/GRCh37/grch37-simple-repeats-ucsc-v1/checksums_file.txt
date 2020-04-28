@@ -1,0 +1,2 @@
+grch37-simple-repeats-ucsc-v1.bed.gz	cd351de7e0322ff07f8c473d5d540424
+grch37-simple-repeats-ucsc-v1.bed.gz.tbi	ab1a379956a6a7d4d57a8c62f57ba0b9

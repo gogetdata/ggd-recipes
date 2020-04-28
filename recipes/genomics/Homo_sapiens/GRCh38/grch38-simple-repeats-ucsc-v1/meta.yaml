@@ -1,0 +1,49 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-simple-repeats-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - simrep
+  - simple-repeats
+  - repeats
+  - tandem-repeats
+  - simple-tandem-repeats
+  summary: Simple repeats track from UCSC. Simple tandem repeats and imperfect repeats
+    identified by the Tandem Repeats Finder (TRF) algorithm. Remapped from UCSC hg38
+    to Ensembl GRCh38
+  tags:
+    data-provider: UCSC
+    data-version: 11-Mar-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-simple-repeats-ucsc-v1.bed.gz: 27.43M
+      grch38-simple-repeats-ucsc-v1.bed.gz.tbi: 1.40M
+    final-files:
+    - grch38-simple-repeats-ucsc-v1.bed.gz
+    - grch38-simple-repeats-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
