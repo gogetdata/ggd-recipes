@@ -82,7 +82,7 @@ ccr_df = pd.read_csv(ccr_file, sep="\t", dtype={"#chrom": str})
 line_holder = []
 
 
-print("\t".join(ccr_df.columns.to_list()))
+print("\t".join(ccr_df.columns))
 ## Iterate over ccr bed file, update start and end postiion with linftover coordinates, and update range coordinates 
 for index, row in ccr_df.iterrows():
 
