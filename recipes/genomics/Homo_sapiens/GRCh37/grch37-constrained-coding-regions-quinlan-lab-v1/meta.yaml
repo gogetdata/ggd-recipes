@@ -1,0 +1,53 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-constrained-coding-regions-quinlan-lab-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - constraint
+  - coding-constraint
+  - constrained-coding-regions
+  - ccr
+  summary: 'Constrained Coding Regions (CCRs): https://www.nature.com/articles/s41588-018-0294-6.
+    Regions of human specific coding constraint presumably under strong purifying
+    selection. Constraint is based on the lack of variation within the gnomAD dataset
+    calibrated by the size and CpG content of the region. Regional Constraint is broken
+    up into Autosomes and the X-Chromosome.'
+  tags:
+    data-provider: quinlan-lab
+    data-version: v2.2018-04-20
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-constrained-coding-regions-quinlan-lab-v1.X.bed.gz: 3.72M
+      grch37-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi: 14.87K
+      grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz: 154.44M
+      grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi: 412.79K
+    final-files:
+    - grch37-constrained-coding-regions-quinlan-lab-v1.X.bed.gz
+    - grch37-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi
+    - grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz
+    - grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
