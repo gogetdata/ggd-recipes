@@ -3,7 +3,10 @@ set -eo pipefail -o nounset
 
 ## Get the ggd genome file
 genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
+
+## Get the chromomsome mapping file
+chrom_mapping=$(ggd get-files hg38-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
 ## Get autosomes CCRs, sort them, bgzip file
 wget --quiet -O - https://s3.us-east-2.amazonaws.com/ccrs/ccrs/ccrs.autosomes.v2.20180420.bed.gz \
@@ -82,7 +85,7 @@ ccr_df = pd.read_csv(ccr_file, sep="\t", dtype={"#chrom": str})
 line_holder = []
 
 
-print("\t".join(ccr_df.columns))
+print("\t".join(ccr_df.columns.to_list()))
 ## Iterate over ccr bed file, update start and end postiion with linftover coordinates, and update range coordinates 
 for index, row in ccr_df.iterrows():
 
@@ -119,18 +122,20 @@ for index, row in ccr_df.iterrows():
 EOF
 
 ## Liftover the grch37 autosome ccr file to grch38
+## Remapped GRCh38 to hg38
 python coordinance_liftover.py grch37_to_grch38.autosome.liftover.out grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz \
-    | gsort /dev/stdin $genome2 \
-    | bgzip -c > grch38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz
+    | gsort --chromosomemappings $chrom_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz
 
-tabix --csi grch38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz
+tabix --csi hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz
 
 ## Liftover the grch37 X ccr file to grch38
+## Remapped GRCh38 to hg38
 python coordinance_liftover.py  grch37_to_grch38.X.liftover.out grch37-constrained-coding-regions-quinlan-lab-v1.X.bed.gz \
-    | gsort /dev/stdin $genome2 \
-    | bgzip -c > grch38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz
+    | gsort --chromosomemappings $chrom_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz
 
-tabix --csi grch38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz
+tabix --csi hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz
 
 ## Remove b37 files
 rm grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz

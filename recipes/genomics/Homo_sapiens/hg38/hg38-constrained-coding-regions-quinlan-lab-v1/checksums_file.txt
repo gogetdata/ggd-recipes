@@ -1,0 +1,4 @@
+hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz	7989a0ed2f9c6f889a81f6b4120a2cf2
+hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi	09755e5a5feb6f297970689f7300ae3a
+hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz	6e5fb060aaf1ec277fafa565603c2351
+hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi	0375c30acd125a43d2d686811c74d76c
