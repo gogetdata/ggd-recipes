@@ -82,6 +82,7 @@ ccr_df = pd.read_csv(ccr_file, sep="\t", dtype={"#chrom": str})
 line_holder = []
 
 
+print(ccr_df.head())
 print("\t".join(ccr_df.columns))
 ## Iterate over ccr bed file, update start and end postiion with linftover coordinates, and update range coordinates 
 for index, row in ccr_df.iterrows():
@@ -118,6 +119,8 @@ for index, row in ccr_df.iterrows():
 
 EOF
 
+ls 
+ls -lh
 ## Liftover the grch37 autosome ccr file to grch38
 python coordinance_liftover.py grch37_to_grch38.autosome.liftover.out grch37-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz \
     | gsort /dev/stdin $genome2 \
