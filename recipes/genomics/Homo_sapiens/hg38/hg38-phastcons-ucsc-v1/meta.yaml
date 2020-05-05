@@ -6,9 +6,9 @@ build:
 extra:
   authors: mjc
   extra-files:
-  - hg19-phastcons-ucsc-v1.bw
+  - hg38-phastcons-ucsc-v1.bw
 package:
-  name: hg19-phastcons-ucsc-v1
+  name: hg38-phastcons-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -25,7 +25,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
   - phastCons
@@ -39,18 +39,18 @@ about:
     sequences of 100 different species
   tags:
     data-provider: UCSC
-    data-version: 09-Feb-2014
+    data-version: 08-May-2015
     file-type:
     - bedGraph.gz
     - bedGraph.gz.tbi
     - bw
     final-file-sizes:
-      hg19-phastcons-ucsc-v1.bedGraph.gz: 11.75G
-      hg19-phastcons-ucsc-v1.bedGraph.gz.tbi: 2.08K
-      hg19-phastcons-ucsc-v1.bw: 5.78G
+      hg38-phastcons-ucsc-v1.bedGraph.gz: 11.97G
+      hg38-phastcons-ucsc-v1.bedGraph.gz.tbi: 7.28K
+      hg38-phastcons-ucsc-v1.bw: 5.89G
     final-files:
-    - hg19-phastcons-ucsc-v1.bedGraph.gz
-    - hg19-phastcons-ucsc-v1.bedGraph.gz.tbi
-    - hg19-phastcons-ucsc-v1.bw
+    - hg38-phastcons-ucsc-v1.bedGraph.gz
+    - hg38-phastcons-ucsc-v1.bedGraph.gz.tbi
+    - hg38-phastcons-ucsc-v1.bw
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

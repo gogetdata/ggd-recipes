@@ -6,9 +6,9 @@ build:
 extra:
   authors: mjc
   extra-files:
-  - hg19-phastcons-ucsc-v1.bw
+  - grch37-phastcons-ucsc-v1.bedGraph.bw
 package:
-  name: hg19-phastcons-ucsc-v1
+  name: grch37-phastcons-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -25,7 +25,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh37
     species: Homo_sapiens
   keywords:
   - phastCons
@@ -36,7 +36,7 @@ about:
   - bigwig
   - bedgraph
   summary: Conservation scores based on the phastcons HMM algorithm against multi-aligned
-    sequences of 100 different species
+    sequences of 100 different species. Remapped from UCSC hg19 to Ensembl GRCh37.
   tags:
     data-provider: UCSC
     data-version: 09-Feb-2014
@@ -45,12 +45,12 @@ about:
     - bedGraph.gz.tbi
     - bw
     final-file-sizes:
-      hg19-phastcons-ucsc-v1.bedGraph.gz: 11.75G
-      hg19-phastcons-ucsc-v1.bedGraph.gz.tbi: 2.08K
-      hg19-phastcons-ucsc-v1.bw: 5.78G
+      grch37-phastcons-ucsc-v1.bedGraph.bw: 13.41G
+      grch37-phastcons-ucsc-v1.bedGraph.gz: 11.65G
+      grch37-phastcons-ucsc-v1.bedGraph.gz.tbi: 1.93K
     final-files:
-    - hg19-phastcons-ucsc-v1.bedGraph.gz
-    - hg19-phastcons-ucsc-v1.bedGraph.gz.tbi
-    - hg19-phastcons-ucsc-v1.bw
+    - grch37-phastcons-ucsc-v1.bedGraph.bw
+    - grch37-phastcons-ucsc-v1.bedGraph.gz
+    - grch37-phastcons-ucsc-v1.bedGraph.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
