@@ -1,0 +1,2 @@
+hg19-evofold-ucsc-v1.bed.gz	53ad7b09cc80e6142cae31fcaa8744f4
+hg19-evofold-ucsc-v1.bed.gz.tbi	1d9435dc9644f65c3e67fa324b9a5188

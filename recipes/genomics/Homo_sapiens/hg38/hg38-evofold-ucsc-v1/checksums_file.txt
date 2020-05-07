@@ -1,0 +1,2 @@
+hg38-evofold-ucsc-v1.bed.gz.tbi	12dbc1ef6804f89083139aaebccdb11b
+hg38-evofold-ucsc-v1.bed.gz	d8c04843cd9fb45daba1d9f1f3da54d4
