@@ -1,0 +1,2 @@
+grch38-knowngene-gene-features-ucsc-v1.gtf.gz	edac5d3b97b2f7aa4103b4a50a0e3a4c
+grch38-knowngene-gene-features-ucsc-v1.gtf.gz.tbi	e93ea1919286917ce260d02c628187be
