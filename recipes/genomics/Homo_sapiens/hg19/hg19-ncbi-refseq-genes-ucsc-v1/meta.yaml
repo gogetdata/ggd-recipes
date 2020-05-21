@@ -1,0 +1,55 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-ncbi-refseq-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Genes
+  - Refseq
+  - NCBI-Refeq
+  - gene-info
+  - transcript-coordinates
+  - exon-coordinates
+  - cds-coordinates
+  - exon-count
+  - refseq-gene-id
+  - refseq-transcript-id
+  summary: NCBI Refseq Genes track from UCSC. Curated and predicated genes from Refseq.
+    Data include protein-coding and non-protein-coding genes. Gene info includes chromosome,
+    transcript coordinates, CDS coordinates, exon coordinates, exon count, strand,
+    gene and transcript ids, etc. Scaffoldings that are not contained in the hg19.genome
+    file are removed
+  tags:
+    data-provider: UCSC
+    data-version: 22-Mar-2020
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-ncbi-refseq-genes-ucsc-v1.bed.gz: 3.94M
+      hg19-ncbi-refseq-genes-ucsc-v1.bed.gz.tbi: 116.45K
+    final-files:
+    - hg19-ncbi-refseq-genes-ucsc-v1.bed.gz
+    - hg19-ncbi-refseq-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
