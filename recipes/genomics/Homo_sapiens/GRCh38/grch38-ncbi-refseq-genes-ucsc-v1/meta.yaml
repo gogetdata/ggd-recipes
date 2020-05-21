@@ -1,0 +1,55 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-ncbi-refseq-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - Genes
+  - Refseq
+  - NCBI-Refeq
+  - gene-info
+  - transcript-coordinates
+  - exon-coordinates
+  - cds-coordinates
+  - exon-count
+  - refseq-gene-id
+  - refseq-transcript-id
+  summary: NCBI Refseq Genes track from UCSC. Curated and predicated genes from Refseq.
+    Data include protein-coding and non-protein-coding genes. Gene info includes chromosome,
+    transcript coordinates, CDS coordinates, exon coordinates, exon count, strand,
+    gene and transcript ids, etc. Remapped from UCSC hg38 to Ensembl GRCh38
+  tags:
+    data-provider: UCSC
+    data-version: 09-Feb-2020
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-ncbi-refseq-genes-ucsc-v1.bed.gz: 6.96M
+      grch38-ncbi-refseq-genes-ucsc-v1.bed.gz.tbi: 163.48K
+    final-files:
+    - grch38-ncbi-refseq-genes-ucsc-v1.bed.gz
+    - grch38-ncbi-refseq-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,2 @@
+grch37-ncbi-refseq-gene-features-ucsc-v1.gtf.gz	f3b197fece919fb6e346d96e18d91c32
+grch37-ncbi-refseq-gene-features-ucsc-v1.gtf.gz.tbi	d096e468b46e5427dec40be5e7b73638
