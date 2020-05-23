@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-ccds-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Consensus-Coding-Sequence
+  - CCDS
+  - high-confident
+  - gene-annotations
+  - protein-coding
+  - CDS
+  - Genes
+  - CCDS-Project
+  - protein-coding-genes
+  summary: Consensus Coding Seqeunce (CCDS) high confidence gene annotation from UCSC.
+    The annotation here are  high quality manually curated protein-coding regions
+    from the Consensus CDS project.
+  tags:
+    data-provider: UCSC
+    data-version: 20-Oct-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-ccds-genes-ucsc-v1.bed.gz: 2.25M
+      hg19-ccds-genes-ucsc-v1.bed.gz.tbi: 90.02K
+    final-files:
+    - hg19-ccds-genes-ucsc-v1.bed.gz
+    - hg19-ccds-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

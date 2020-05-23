@@ -1,0 +1,53 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-ccds-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - Consensus-Coding-Sequence
+  - CCDS
+  - high-confident
+  - gene-annotations
+  - protein-coding
+  - CDS
+  - Genes
+  - CCDS-Project
+  - protein-coding-genes
+  summary: Consensus Coding Seqeunce (CCDS) high confidence gene annotation from UCSC.
+    The annotation here are  high quality manually curated protein-coding regions
+    from the Consensus CDS project. Remapped from UCSC hg19 to Ensembl GRCh37
+  tags:
+    data-provider: UCSC
+    data-version: 20-Oct-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-ccds-genes-ucsc-v1.bed.gz: 2.24M
+      grch37-ccds-genes-ucsc-v1.bed.gz.tbi: 89.74K
+    final-files:
+    - grch37-ccds-genes-ucsc-v1.bed.gz
+    - grch37-ccds-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
