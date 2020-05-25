@@ -1,0 +1,2 @@
+hg38-trna-genes-ucsc-v1.bed.gz.tbi	d65aed8d94d21cd7bb044240b7bb5a27
+hg38-trna-genes-ucsc-v1.bed.gz	7add0bfa8c85f911b342d36e8b084379
