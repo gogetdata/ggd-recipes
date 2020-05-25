@@ -1,0 +1,2 @@
+grch38-canonical-isoforms-ucsc-v1.bed.gz.tbi	4e7cc4619797ed154b1c7c6d53439084
+grch38-canonical-isoforms-ucsc-v1.bed.gz	5d9d903651c0d4e383fe851c955fd9d5

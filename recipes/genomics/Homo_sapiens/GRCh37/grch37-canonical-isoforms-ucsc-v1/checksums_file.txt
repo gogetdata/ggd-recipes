@@ -1,0 +1,2 @@
+grch37-canonical-isoforms-ucsc-v1.bed.gz	f31debcb0d9070bd03a9b0fd5e6343f6
+grch37-canonical-isoforms-ucsc-v1.bed.gz.tbi	498714a9a52029cd8441208819da4cd1

@@ -1,0 +1,47 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-canonical-isoforms-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg19-known-genes-ucsc-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Canonical
+  - Isofrom
+  - Canonical-Isoform
+  - KnownCanonical
+  summary: UCSC defined Canonical Isoform for each gene (or cluster). This tends to
+    be the longest isoform.
+  tags:
+    data-provider: UCSC
+    data-version: 30-Jun-2013
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-canonical-isoforms-ucsc-v1.bed.gz: 899.68K
+      hg19-canonical-isoforms-ucsc-v1.bed.gz.tbi: 105.74K
+    final-files:
+    - hg19-canonical-isoforms-ucsc-v1.bed.gz
+    - hg19-canonical-isoforms-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-exclusive
+    ggd-channel: genomics

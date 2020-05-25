@@ -1,0 +1,2 @@
+hg38-canonical-isoforms-ucsc-v1.bed.gz	0abb13795962c29c40cd22491d0b7348
+hg38-canonical-isoforms-ucsc-v1.bed.gz.tbi	2050e264e952b655dc570fec285a1fcb

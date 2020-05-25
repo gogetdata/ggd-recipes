@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-canonical-isoforms-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-known-genes-ucsc-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Canonical
+  - Isofrom
+  - Canonical-Isoform
+  - KnownCanonical
+  - APPRIS
+  - APPRIS-Principal-Transcript
+  - Canonical-Transcript
+  - Transcript
+  summary: The Canonical Isofrom for each gene (or cluster) from UCSC. The APPRIS
+    principal transcripts are used to define the canonical transcripts. If APPRIS
+    filtering results in no transcripts, the longest isofrom is selected.
+  tags:
+    data-provider: UCSC
+    data-version: 13-Oct-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-canonical-isoforms-ucsc-v1.bed.gz: 1.55M
+      hg38-canonical-isoforms-ucsc-v1.bed.gz.tbi: 201.44K
+    final-files:
+    - hg38-canonical-isoforms-ucsc-v1.bed.gz
+    - hg38-canonical-isoforms-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-exclusive
+    ggd-channel: genomics
