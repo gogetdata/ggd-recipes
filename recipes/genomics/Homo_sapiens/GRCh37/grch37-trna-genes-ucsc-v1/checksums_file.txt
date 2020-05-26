@@ -1,0 +1,2 @@
+grch37-trna-genes-ucsc-v1.bed.gz.tbi	d15d6ae5aff832f37b0538c73bce642a
+grch37-trna-genes-ucsc-v1.bed.gz	74295c5071eb2b8191bb1f2dc0f1220d
