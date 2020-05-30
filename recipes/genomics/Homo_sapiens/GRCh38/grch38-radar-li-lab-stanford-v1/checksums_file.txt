@@ -1,0 +1,2 @@
+grch38-radar-li-lab-stanford-v1.bed.gz.tbi	b0ef73948c616affe531a90dfdfdc6e2
+grch38-radar-li-lab-stanford-v1.bed.gz	155689ee906b335900d4ba9709ed8ce5

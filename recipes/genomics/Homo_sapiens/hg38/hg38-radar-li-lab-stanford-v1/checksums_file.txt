@@ -1,0 +1,2 @@
+hg38-radar-li-lab-stanford-v1.bed.gz.tbi	d4068f4d0de8af4e19fccb0385e88ce3
+hg38-radar-li-lab-stanford-v1.bed.gz	bcf66c35416340455f1ab725a25ebb0a
