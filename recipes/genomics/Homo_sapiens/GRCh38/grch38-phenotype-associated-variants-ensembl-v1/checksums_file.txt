@@ -1,0 +1,2 @@
+grch38-phenotype-associated-variants-ensembl-v1.vcf.gz.tbi	4344975e53bccc56352ca94122140112
+grch38-phenotype-associated-variants-ensembl-v1.vcf.gz	4992fccfb6797deb65b77029b0813975
