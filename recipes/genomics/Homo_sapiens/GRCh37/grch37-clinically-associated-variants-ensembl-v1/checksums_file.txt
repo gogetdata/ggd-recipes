@@ -1,0 +1,2 @@
+grch37-clinically-associated-variants-ensembl-v1.vcf.gz	df91a760b0d3b32a03685099d27a1126
+grch37-clinically-associated-variants-ensembl-v1.vcf.gz.tbi	0705c7ef7ffe6fbae86499cf1631c30b
