@@ -26,4 +26,5 @@ check-sort-order
 pytest
 pytest-socket
 bioawk
-
+pysam
+cyvcf2
