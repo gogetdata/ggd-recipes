@@ -1,2 +1,0 @@
-hg19-clinically-associated-variants-ensembl-v1.vcf.gz	2c8a06f37cd0675e3735b9deb8b6fd4f
-hg19-clinically-associated-variants-ensembl-v1.vcf.gz.tbi	f89f102d25435a0f03dd40b35f900614
