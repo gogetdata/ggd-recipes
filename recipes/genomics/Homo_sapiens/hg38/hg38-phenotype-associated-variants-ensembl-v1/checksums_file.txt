@@ -1,0 +1,2 @@
+hg38-phenotype-associated-variants-ensembl-v1.vcf.gz	d13ac475a16d29287818548b1d981a98
+hg38-phenotype-associated-variants-ensembl-v1.vcf.gz.tbi	893a00bd98c30ef363190f3ba4d5a3fb
