@@ -1,0 +1,57 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-somatic-variants-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - bcftools
+  - gsort
+  - htslib
+  - vt
+  - zlib
+  run:
+  - bcftools
+  - grch38-reference-genome-ensembl-v1
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - hg38-reference-genome-ucsc-v1
+  - htslib
+  - vt
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - genetic-varaition
+  - Somatic
+  - Somatic-Mutations
+  - somatic-variants
+  - VCF
+  - varaint-info
+  - Ensembl-variantion
+  summary: 'All known somatic mutations at the time of Ensembl release 99. Conseqeunces
+    for each variant are included in the annotation. Decomposed and Normalized. Remapped
+    from Ensembl GRCh38 to UCSC hg38. Ensembl variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html'
+  tags:
+    data-provider: Ensembl
+    data-version: release-99_11-7-19
+    file-type:
+    - vcf
+    final-file-sizes:
+      hg38-somatic-variants-ensembl-v1.vcf.gz: 285.83M
+      hg38-somatic-variants-ensembl-v1.vcf.gz.tbi: 1.06M
+    final-files:
+    - hg38-somatic-variants-ensembl-v1.vcf.gz
+    - hg38-somatic-variants-ensembl-v1.vcf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
