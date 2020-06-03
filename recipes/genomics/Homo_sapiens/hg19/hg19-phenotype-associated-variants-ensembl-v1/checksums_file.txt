@@ -1,2 +1,0 @@
-hg19-phenotype-associated-variants-ensembl-v1.vcf.gz	91a82f5cb52de6e1c71169116b161f08
-hg19-phenotype-associated-variants-ensembl-v1.vcf.gz.tbi	177974bdc185203f72baf90b536084cf

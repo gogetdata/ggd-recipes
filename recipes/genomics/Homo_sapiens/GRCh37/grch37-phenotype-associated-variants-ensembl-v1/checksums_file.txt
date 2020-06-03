@@ -1,2 +1,0 @@
-grch37-phenotype-associated-variants-ensembl-v1.vcf.gz	ac105357be8a15cca63de3229eb262d4
-grch37-phenotype-associated-variants-ensembl-v1.vcf.gz.tbi	5a77c24fb12d008928fcaf86c6fc4d22
