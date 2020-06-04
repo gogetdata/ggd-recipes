@@ -1,0 +1,2 @@
+hg38-missense-z-score-exac-v1.bed.gz.tbi	0fbcca6059880a512a7ec1df6af8d4f7
+hg38-missense-z-score-exac-v1.bed.gz	355830192c5d2afa871b380210cc9b29

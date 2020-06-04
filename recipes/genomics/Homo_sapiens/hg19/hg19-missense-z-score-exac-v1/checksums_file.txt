@@ -1,0 +1,2 @@
+hg19-missense-z-score-exac-v1.bed.gz.tbi	5f102d2ef46af2623d753654f8947f30
+hg19-missense-z-score-exac-v1.bed.gz	69256a4b6857c7610c0f23da6e92b7d5
