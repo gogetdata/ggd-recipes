@@ -1,0 +1,2 @@
+hg38-clinically-associated-variants-ensembl-v1.vcf.gz	4c3c05204282dc97f50939cca2026a62
+hg38-clinically-associated-variants-ensembl-v1.vcf.gz.tbi	283460e83c40968b227edec3195242a7
