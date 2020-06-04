@@ -44,8 +44,8 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      hg19-missense-z-score-exac-v1.bed.gz: 584.21K
-      hg19-missense-z-score-exac-v1.bed.gz.tbi: 72.52K
+      hg19-missense-z-score-exac-v1.bed.gz: 584.24K
+      hg19-missense-z-score-exac-v1.bed.gz.tbi: 72.48K
     final-files:
     - hg19-missense-z-score-exac-v1.bed.gz
     - hg19-missense-z-score-exac-v1.bed.gz.tbi
