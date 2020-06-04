@@ -1,0 +1,2 @@
+grch38-missense-z-score-exac-v1.bed.gz.tbi	56d61c862c7a3f8e927db7ad6205f079
+grch38-missense-z-score-exac-v1.bed.gz	54076ca01dfee163581ad6b973d69737
