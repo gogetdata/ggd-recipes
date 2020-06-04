@@ -1,0 +1,2 @@
+hg19-pli-scores-exac-v1.bed.gz.tbi	3770d8ca3b6c97b34454919ba6fd202c
+hg19-pli-scores-exac-v1.bed.gz	24745dd985cca999db6eeb47c6d1a009
