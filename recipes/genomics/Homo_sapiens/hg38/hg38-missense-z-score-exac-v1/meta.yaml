@@ -16,6 +16,7 @@ requirements:
   - zlib
   run:
   - gsort
+  - grch38-gene-features-ensembl-v1
   - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib

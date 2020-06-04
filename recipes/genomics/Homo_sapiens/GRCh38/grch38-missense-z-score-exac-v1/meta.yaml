@@ -16,6 +16,7 @@ requirements:
   - zlib
   run:
   - gsort
+  - grch38-gene-features-ensembl-v1
   - htslib
   - zlib
 source:
