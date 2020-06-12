@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-pli-scores-exac-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - pLI
+  - Probability-of-being-loss-of-function-intolerant
+  - Constraint
+  - LoF-Intolerance
+  - ExAC
+  - gene-constraint
+  summary: 'The probability of being loss-of-function intolerant (pLI) by gene scores
+    from ExAC. See paper at: https://www.nature.com/articles/nature19057.'
+  tags:
+    data-provider: ExAC
+    data-version: Aug-31-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-pli-scores-exac-v1.bed.gz: 585.71K
+      grch37-pli-scores-exac-v1.bed.gz.tbi: 72.39K
+    final-files:
+    - grch37-pli-scores-exac-v1.bed.gz
+    - grch37-pli-scores-exac-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
