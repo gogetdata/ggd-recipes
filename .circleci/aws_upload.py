@@ -254,14 +254,18 @@ set -eo pipefail -o nounset
 ## CONDA_ROOT was exported in post-link.sh and is available for use here. 
 
 """
+    filename_dict = dict()
     for url in s3_urls:
         filepath = url.split("/{bucket}/".format(bucket = s3_bucket_name))[1]
         filename = filepath.split("/")[-1]
         filepath = "/".join(filepath.split("/")[0:-1])
-        cache_recipe_str += "cd $CONDA_ROOT/share/ggd/{file_path}/\n".format(file_path = filepath)
-        cache_recipe_str += "curl {new_url} -o {file_name}\n".format(new_url=url, file_name=filename)
-        #cache_recipe_str += "wget {new_url}\n".format(new_url=url)
-    
+        filename_dict[filename] = ("cd $CONDA_ROOT/share/ggd/{file_path}/\n".format(file_path = filepath)
+                                  "curl {new_url} -o {file_name}\n".format(new_url=url, file_name=filename)) 
+                                   
+    ## Sort the file names to make index files be installed later
+    for filename in sorted(filename_dict.keys()):
+        cache_recipe_str += filename_dict[filename]
+        
     return(cache_recipe_str)
         
 
