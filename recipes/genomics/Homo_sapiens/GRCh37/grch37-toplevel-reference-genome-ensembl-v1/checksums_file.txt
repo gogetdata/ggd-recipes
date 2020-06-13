@@ -1,0 +1,3 @@
+grch37-toplevel-reference-genome-ensembl-v1.fa.gz.fai	14d63f98956d6de6494aeb31ce7376e7
+grch37-toplevel-reference-genome-ensembl-v1.fa.gz.gzi	b1e8b57c20fc3f55eefe7ef686ce1a69
+grch37-toplevel-reference-genome-ensembl-v1.fa.gz	77a7fab6aac2fc8fdd8b37b2f017b7a5

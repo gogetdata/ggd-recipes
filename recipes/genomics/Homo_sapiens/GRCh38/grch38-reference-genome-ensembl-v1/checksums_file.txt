@@ -1,0 +1,2 @@
+grch38-reference-genome-ensembl-v1.fa.fai	d527f3eb6b664020cf4d882b5820056f
+grch38-reference-genome-ensembl-v1.fa	9e6b9465dc708d92bf6d67e9c9fa9389
