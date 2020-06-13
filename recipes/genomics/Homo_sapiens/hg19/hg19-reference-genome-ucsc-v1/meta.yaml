@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -11,9 +11,11 @@ package:
   version: '1'
 requirements:
   build:
+  - htslib
   - samtools
   - zlib
   run:
+  - htslib
   - samtools
   - zlib
 source:
@@ -24,11 +26,24 @@ about:
     species: Homo_sapiens
   keywords:
   - ref
-  - reference
-  - genome
-  - UCSC
+  - reference-genome
   - fasta-file
-  summary: The hg19 reference genome from UCSC. (http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/)
+  - soft-masked
+  summary: The hg19 soft masked genomic DNA seqeunce reference genome from UCSC (patch
+    13). Repeats found by 'RepeatMasker' and 'Tandem Repeat Finder' are shown as lower
+    case. Non repeating seqeunce are shown as upper case.
   tags:
-    data-version: 21-Aug-2018
+    data-provider: UCSC
+    data-version: 17-Jan-2020
+    file-type:
+    - fa
+    final-file-sizes:
+      hg19-reference-genome-ucsc-v1.fa.gz: 997.23M
+      hg19-reference-genome-ucsc-v1.fa.gz.fai: 12.23K
+      hg19-reference-genome-ucsc-v1.fa.gz.gzi: 808.71K
+    final-files:
+    - hg19-reference-genome-ucsc-v1.fa.gz
+    - hg19-reference-genome-ucsc-v1.fa.gz.fai
+    - hg19-reference-genome-ucsc-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
     ggd-channel: genomics

@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -11,9 +11,11 @@ package:
   version: '1'
 requirements:
   build:
+  - htslib
   - samtools
   - zlib
   run:
+  - htslib
   - samtools
   - zlib
 source:
@@ -24,12 +26,24 @@ about:
     species: Homo_sapiens
   keywords:
   - ref
-  - reference
-  - genome
-  - UCSC
+  - reference-genome
   - fasta-file
-  summary: The hg38 reference genome from UCSC. This version includes the latest patch,
-    patch 12. (url:http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/p12/)
+  - soft-masked
+  summary: The hg38 soft masked genomic DNA seqeunce reference genome from UCSC (patch
+    12). Repeats found by 'RepeatMasker' and 'Tandem Repeat Finder' are shown as lower
+    case. Non repeating seqeunce are shown as upper case.
   tags:
+    data-provider: UCSC
     data-version: 10-Aug-2018
+    file-type:
+    - fa
+    final-file-sizes:
+      hg38-reference-genome-ucsc-v1.fa.gz: 1.02G
+      hg38-reference-genome-ucsc-v1.fa.gz.fai: 25.61K
+      hg38-reference-genome-ucsc-v1.fa.gz.gzi: 814.34K
+    final-files:
+    - hg38-reference-genome-ucsc-v1.fa.gz
+    - hg38-reference-genome-ucsc-v1.fa.gz.fai
+    - hg38-reference-genome-ucsc-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
     ggd-channel: genomics
