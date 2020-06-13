@@ -1,0 +1,3 @@
+grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai	91ca25b90ac5da6ddf740044c669248f
+grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi	cae299333062442da0423d1c82db0e46
+grch38-toplevel-reference-genome-ensembl-v1.fa.gz	d9aae3880b10a23e0f8dca0c215ab312

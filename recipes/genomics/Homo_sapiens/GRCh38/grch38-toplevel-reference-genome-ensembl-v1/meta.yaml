@@ -2,12 +2,12 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch38-reference-genome-ensembl-v1
+  name: grch38-toplevel-reference-genome-ensembl-v1
   version: '1'
 requirements:
   build:
@@ -23,7 +23,7 @@ about:
     genome-build: GRCh38
     species: Homo_sapiens
   keywords:
-  - Primary-Assembly
+  - Top-Level
   - Release-99
   - ref
   - reference
@@ -32,18 +32,21 @@ about:
   - Fasta-Seqeunce
   - fasta-file
   summary: The GRCh38 unmasked genomic DNA seqeunce reference genome from Ensembl-Release
-    99. Includes all sequence regions EXCLUDING haplotypes and patches. 'Primary Assembly
-    file'
+    99. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes,
+    regions not assembled into chromosomes, and N padded haplotype/patch regions.
+    'Top Level file'
   tags:
     data-provider: Ensembl
     data-version: release-99_11-18-19
     file-type:
     - fa
     final-file-sizes:
-      grch38-reference-genome-ensembl-v1.fa: 3.15G
-      grch38-reference-genome-ensembl-v1.fa.fai: 6.41K
+      grch38-toplevel-reference-genome-ensembl-v1.fa.gz: 1.29G
+      grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai: 27.85K
+      grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi: 15.74M
     final-files:
-    - grch38-reference-genome-ensembl-v1.fa
-    - grch38-reference-genome-ensembl-v1.fa.fai
+    - grch38-toplevel-reference-genome-ensembl-v1.fa.gz
+    - grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai
+    - grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi
     genomic-coordinate-base: NA
     ggd-channel: genomics
