@@ -1,0 +1,3 @@
+hg19-reference-genome-ucsc-v1.fa.gz	983c2aa7d7e172bc2474cf3c8936c328
+hg19-reference-genome-ucsc-v1.fa.gz.gzi	861d1b419df80711ee4b29730f963950
+hg19-reference-genome-ucsc-v1.fa.gz.fai	9f1cad591d6b711420821efd0f249173
