@@ -68,12 +68,12 @@ def upload_to_aws(client, ggd_recipe_path, s3_bucket):
         for name in files:
             key_name_path=os.path.join(root,name).split("/share/ggd/")[1], # set the directory path
             print("\n-> Uploading: %s to aws S3" %(os.path.join(root,name)))
-            client.upload_file(
-                Filename=os.path.join(root,name),
-                Bucket=s3_bucket,
-                Key=key_name_path[0],
-                ExtraArgs={'ACL': 'public-read'} ## set public read access
-                )
+#            client.upload_file(
+#                Filename=os.path.join(root,name),
+#                Bucket=s3_bucket,
+#                Key=key_name_path[0],
+#                ExtraArgs={'ACL': 'public-read'} ## set public read access
+#                )
             url = '{}/{}/{}'.format(client.meta.endpoint_url, s3_bucket, key_name_path[0])
             pkg_url_list.append(url)
             print("\n-> The file '%s' was uploaded to the aws s3 %s bucket. The url for the file is: %s" %(name,s3_bucket,url))
@@ -259,8 +259,8 @@ set -eo pipefail -o nounset
         filepath = url.split("/{bucket}/".format(bucket = s3_bucket_name))[1]
         filename = filepath.split("/")[-1]
         filepath = "/".join(filepath.split("/")[0:-1])
-        filename_dict[filename] = ("cd $CONDA_ROOT/share/ggd/{file_path}/\n".format(file_path = filepath)
-                                  "curl {new_url} -o {file_name}\n".format(new_url=url, file_name=filename)) 
+        filename_dict[filename] = ("cd $CONDA_ROOT/share/ggd/{file_path}/\n"
+                                   "curl {new_url} -o {file_name}\n").format(file_path = filepath, new_url=url, file_name=filename) 
                                    
     ## Sort the file names to make index files be installed later
     for filename in sorted(filename_dict.keys()):
