@@ -1,0 +1,4 @@
+hg19-autosomal-dominant-genes-berg-blekhman-v1.bed.gz.tbi	d07b6fc846236a0a412d8ac4ae602fec
+hg19-autosomal-dominant-genes-berg-blekhman-v1.bed.gz	a042136c3f7a8fee18ba56564fc65a66
+hg19-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz.tbi	a45045649034790d06a0a8aefe251c2c
+hg19-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz	1ab3db9419ce66e673cd8ba982e36f4e
