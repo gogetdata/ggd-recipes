@@ -1,0 +1,4 @@
+grch38-autosomal-dominant-genes-blekhman-v1.bed.gz.tbi	4605400b916c61b6a3781e1d1f597714
+grch38-autosomal-dominant-genes-blekhman-v1.bed.gz	4004c3353501b5bf709f19622f3a70d9
+grch38-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz	153d52325dba44be7778e0e1ff7a3ba8
+grch38-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz.tbi	2f3dd2973ddef6543cd42c655583569a
