@@ -2,11 +2,11 @@
 set -eo pipefail -o nounset
 
 
-wget --quiet -O berg_blekhman_ar.tsv https://raw.githubusercontent.com/macarthur-lab/gene_lists/master/lists/all_ar.tsv
+wget --quiet -O blekhman_ar.tsv https://raw.githubusercontent.com/macarthur-lab/gene_lists/master/lists/blekhman_ar.tsv
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
 
-grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
+grch38_gtf="$(ggd get-files grch38-gene-features-ensembl-v1 -p 'grch38-gene-features-ensembl-v1.gtf.gz')"
 
 cat << EOF > parse_gtf_by_gene.py
 
@@ -69,7 +69,7 @@ with open(outfile, "w") as o:
 EOF
 
 
-python parse_gtf_by_gene.py $grch37_gtf berg_blekhman_ar.tsv unflattened_ar_genes.bed  
+python parse_gtf_by_gene.py $grch38_gtf blekhman_ar.tsv unflattened_ar_genes.bed  
 
 
 cat << EOF > sort_columns.py
@@ -92,32 +92,30 @@ for line in sys.stdin.readlines():
 
 EOF
 
-
-## Merge and sort ar genes with coordinates
+## Merge and sort ad genes with coordinates
 gsort unflattened_ar_genes.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
     | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-autosomal-recessive-genes-berg-blekhman-v1.bed.gz 
-tabix grch37-autosomal-recessive-genes-berg-blekhman-v1.bed.gz 
+    | bgzip -c > grch38-autosomal-recessive-genes-blekhman-v1.bed.gz 
+tabix grch38-autosomal-recessive-genes-blekhman-v1.bed.gz 
 
-wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
+wget --quiet https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
 
-## Get ar gene complement coordinates 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-autosomal-recessive-genes-berg-blekhman-v1.bed.gz) -g /dev/stdin \
+## Get ad gene complement coordinates 
+sed "1d" GRCh38.genome \
+    | bedtools complement -i <(zgrep -v "#" grch38-autosomal-recessive-genes-blekhman-v1.bed.gz) -g /dev/stdin \
     | gsort /dev/stdin $genome \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' \
-    | bgzip -c > grch37-autosomal-recessive-genes-berg-blekhman-v1.compliment.bed.gz 
-tabix grch37-autosomal-recessive-genes-berg-blekhman-v1.compliment.bed.gz 
+    | bgzip -c > grch38-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz 
+tabix grch38-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz 
 
 
-rm GRCh37.genome
-rm berg_blekhman_ar.tsv
+rm GRCh38.genome
+rm blekhman_ar.tsv
 rm unflattened_ar_genes.bed
 rm parse_gtf_by_gene.py
 rm sort_columns.py
-
 
 
