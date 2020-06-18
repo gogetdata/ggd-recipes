@@ -1,0 +1,4 @@
+hg38-autosomal-recessive-genes-berg-v1.compliment.bed.gz.tbi	9d9404edb4cfecd5f3a0ea653b3a407b
+hg38-autosomal-recessive-genes-berg-v1.bed.gz.tbi	72e0851900880c3819529a3abf7ab787
+hg38-autosomal-recessive-genes-berg-v1.compliment.bed.gz	6a8a7904377b60ab083dbd9599379ee9
+hg38-autosomal-recessive-genes-berg-v1.bed.gz	115e19e58b8e6fac7a430862ea9d8c3c
