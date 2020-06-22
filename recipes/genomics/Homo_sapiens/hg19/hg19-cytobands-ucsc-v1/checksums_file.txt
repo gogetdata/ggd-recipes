@@ -1,2 +1,2 @@
-hg19-cytobands-ucsc-v1.bed.gz	ad1e918a32e9f4ab63c67b159cbe1869
-hg19-cytobands-ucsc-v1.bed.gz.tbi	729ee017af8367853e10c7b456bd41e9
+hg19-cytobands-ucsc-v1.bed.gz.tbi	4b83114cb80b5a0b3067c58ac0ec1b64
+hg19-cytobands-ucsc-v1.bed.gz	978abe395bcb52528531c10cc84a0d63

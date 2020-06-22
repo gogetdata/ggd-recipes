@@ -1,0 +1,2 @@
+grch37-pfam-domains-ucsc-v1.bed12.bed.gz.tbi	4a54666de49441901cc2d265fdab1af9
+grch37-pfam-domains-ucsc-v1.bed12.bed.gz	1c1f4080a97abb6c52c1f61d274d4df6

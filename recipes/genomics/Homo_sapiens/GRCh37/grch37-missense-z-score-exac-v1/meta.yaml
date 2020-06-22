@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-missense-z-score-exac-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - Constraint
+  - Missense-Z
+  - ExAC
+  - Z-score
+  - missense-variation
+  - gene-constraint
+  summary: 'Missense Z Score by gene. A constraint score based on missense variation,
+    from Samocha et al., Nature Genetics 2014. The score is derived by calculating
+    a null expectation of missense variation for each gene, and comparing it to what
+    is observed in ExAC, then stratifying each gene using a Z score distribution.
+    That paper is at: https://www.nature.com/articles/ng.3050'
+  tags:
+    data-provider: ExAC
+    data-version: Aug-31-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-missense-z-score-exac-v1.bed.gz: 577.64K
+      grch37-missense-z-score-exac-v1.bed.gz.tbi: 72.19K
+    final-files:
+    - grch37-missense-z-score-exac-v1.bed.gz
+    - grch37-missense-z-score-exac-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

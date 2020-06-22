@@ -1,0 +1,4 @@
+hg19-autosomal-dominant-genes-berg-v1.compliment.bed.gz	ffe23c2ba8b933d1c88c794a383c0df0
+hg19-autosomal-dominant-genes-berg-v1.bed.gz	49a297bd46310beba9bf5e5239928d61
+hg19-autosomal-dominant-genes-berg-v1.bed.gz.tbi	7ce1b4e8d9480fdd165d0c8c7cb6aff9
+hg19-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi	a05807b17761849f2038fc2fc07f8587

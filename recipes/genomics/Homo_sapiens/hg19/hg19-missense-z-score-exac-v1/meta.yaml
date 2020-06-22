@@ -1,0 +1,53 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-missense-z-score-exac-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Constraint
+  - Missense-Z
+  - ExAC
+  - Z-score
+  - missense-variation
+  - gene-constraint
+  summary: 'Missense Z Score by gene. A constraint score based on missense variation,
+    from Samocha et al., Nature Genetics 2014. The score is derived by calculating
+    a null expectation of missense variation for each gene, and comparing it to what
+    is observed in ExAC, then stratifying each gene using a Z score distribution.
+    That paper is at: https://www.nature.com/articles/ng.3050. Remapped from Ensembl
+    GRCh37 to UCSC hg19'
+  tags:
+    data-provider: ExAC
+    data-version: Aug-31-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-missense-z-score-exac-v1.bed.gz: 584.24K
+      hg19-missense-z-score-exac-v1.bed.gz.tbi: 72.48K
+    final-files:
+    - hg19-missense-z-score-exac-v1.bed.gz
+    - hg19-missense-z-score-exac-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

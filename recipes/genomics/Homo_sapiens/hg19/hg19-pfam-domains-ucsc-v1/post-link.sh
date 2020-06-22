@@ -15,9 +15,8 @@ else
     export RECIPE_DIR=$env_dir/share/ggd/Homo_sapiens/hg19/hg19-pfam-domains-ucsc-v1/1
 fi
 
-PKG_DIR=`find "$CONDA_SOURCE_PREFIX/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION.*$PKG_BUILDNUM$"`
 
-echo $PKG_DIR
+PKG_DIR=`find "$CONDA_SOURCE_PREFIX/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION.*$PKG_BUILDNUM$"`
 
 
 if [ -d $RECIPE_DIR ]; then

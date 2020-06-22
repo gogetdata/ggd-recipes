@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: arq5x
   extra-files:
@@ -27,9 +27,11 @@ about:
   summary: Chromosome lengths for hg19
   tags:
     data-provider: GGD
-    data-version: 11-Oct-2019
+    data-version: 16-Apirl-2020
     file-type:
-    - chromsizes
+    - txt
+    final-file-sizes:
+      hg19-chromsizes-ggd-v1.txt: 1.99K
     final-files:
     - hg19-chromsizes-ggd-v1.txt
     genomic-coordinate-base: NA

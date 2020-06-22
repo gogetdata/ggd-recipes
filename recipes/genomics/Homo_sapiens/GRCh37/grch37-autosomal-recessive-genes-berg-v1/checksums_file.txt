@@ -1,4 +1,4 @@
-grch37-autosomal-recessive-genes-berg-v1.compliment.bed.gz.tbi	c05e5bc14888c5bfe0d0897ac8208222
-grch37-autosomal-recessive-genes-berg-v1.bed.gz.tbi	1a405776e612ba3fbde43c246914df71
-grch37-autosomal-recessive-genes-berg-v1.bed.gz	db7c9b7a98a386089145745d9a689f89
-grch37-autosomal-recessive-genes-berg-v1.compliment.bed.gz	eb8ca66a7ccb0dd4fff9358547f5f246
+grch37-autosomal-recessive-genes-berg-v1.compliment.bed.gz.tbi	b151d259baed4e9814909cfaa04363f9
+grch37-autosomal-recessive-genes-berg-v1.bed.gz.tbi	2301f629e5a414ddba48f78e322616f4
+grch37-autosomal-recessive-genes-berg-v1.bed.gz	18ecf92b698ea5a87c365f24a0d3ea78
+grch37-autosomal-recessive-genes-berg-v1.compliment.bed.gz	7d5cd6f25084320c74aca66413e05058

@@ -1,0 +1,2 @@
+grch38-cytobands-ucsc-v1.bed.gz.tbi	d241209a8ab8c1248abbc7057bc1e224
+grch38-cytobands-ucsc-v1.bed.gz	174bac981a0c88a60b770f449c65f653

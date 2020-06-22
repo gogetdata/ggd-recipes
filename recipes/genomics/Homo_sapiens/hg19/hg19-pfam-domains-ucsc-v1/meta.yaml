@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -30,10 +30,18 @@ about:
   - protein
   - protein-domains
   - UCSC
-  - bed
-  - bed-file
-  summary: Pfam domain annotation in bed12 format. (From UCSC)
+  summary: High quality, manually curated Pfam domain annotation in bed12 format from
+    UCSC
   tags:
     data-provider: UCSC
     data-version: 16-Apr-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-pfam-domains-ucsc-v1.bed12.bed.gz: 1.41M
+      hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi: 143.50K
+    final-files:
+    - hg19-pfam-domains-ucsc-v1.bed12.bed.gz
+    - hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

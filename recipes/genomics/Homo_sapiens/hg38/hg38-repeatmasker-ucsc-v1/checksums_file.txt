@@ -1,0 +1,2 @@
+hg38-repeatmasker-ucsc-v1.bed.gz.tbi	c6bc46005e3c16c9063b9fcd7612cca6
+hg38-repeatmasker-ucsc-v1.bed.gz	da700fc216dab5c9b09ec912a9442ba2

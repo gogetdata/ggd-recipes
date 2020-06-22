@@ -1,0 +1,40 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - grch38-chromsizes-ncbi-v1.genome
+package:
+  name: grch38-chromsizes-ncbi-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - genome
+  - chromosome
+  - lengths
+  - sizes
+  - chrom-lengths
+  summary: Chromosome lengths for the GRCh38 genome build from NCBI. (Used to create
+    the Go Get Data (GGD) GRCh38.genome file)
+  tags:
+    data-provider: NCBI
+    data-version: 14-April-2020-(patch13)
+    file-type:
+    - genome
+    final-file-sizes:
+      grch38-chromsizes-ncbi-v1.genome: 11.14K
+    final-files:
+    - grch38-chromsizes-ncbi-v1.genome
+    genomic-coordinate-base: NA
+    ggd-channel: genomics

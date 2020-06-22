@@ -1,0 +1,2 @@
+grch37-pli-scores-exac-v1.bed.gz	ba19641e9e5f22a0afbeec5215d7e26c
+grch37-pli-scores-exac-v1.bed.gz.tbi	c04125030ef55b23d6ba3040b35c29da

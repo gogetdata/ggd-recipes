@@ -1,0 +1,2 @@
+hg38-refseq-gene-features-ucsc-v1.gtf.gz	8ba2e6b37fdeef46750adacf2c11e22c
+hg38-refseq-gene-features-ucsc-v1.gtf.gz.tbi	9fe3c95d37676c7f1e2545ce4faad035

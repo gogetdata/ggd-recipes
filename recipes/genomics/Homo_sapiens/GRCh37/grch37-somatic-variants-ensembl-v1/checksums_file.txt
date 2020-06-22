@@ -1,0 +1,2 @@
+grch37-somatic-variants-ensembl-v1.vcf.gz.tbi	0f018df80da07d868130d872c9ba92f1
+grch37-somatic-variants-ensembl-v1.vcf.gz	4c057f284d9283dc6316daf11c096460

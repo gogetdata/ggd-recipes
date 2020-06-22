@@ -12,13 +12,12 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
   - zlib
@@ -36,15 +35,20 @@ about:
   - AD
   - OMIM
   - gene_coordinates
-  - pathoscore
-  summary: Genomic coordinates, along with the compliment coordinance, from OMIM disease
-    genes (as of June 2011) deemed to follow autosomal dominant inheritance according
-    Berg et al, 2013 (https://www.ncbi.nlm.nih.gov/pubmed/22995991).
+  - CDS-regions
+  summary: 'CDS region genomic coordinates, along with the compliment coordinates,
+    for OMIM disease genes (as of June 2011) deemed to follow autosomal dominant inheritance.
+    (Assembled by Macarthur Lab). Berg et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991).'
   tags:
     data-provider: berg
     data-version: 1-15-2013
     file-type:
     - bed
+    final-file-sizes:
+      grch37-autosomal-dominant-genes-berg-v1.bed.gz: 119.97K
+      grch37-autosomal-dominant-genes-berg-v1.bed.gz.tbi: 27.12K
+      grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz: 73.13K
+      grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi: 20.39K
     final-files:
     - grch37-autosomal-dominant-genes-berg-v1.bed.gz
     - grch37-autosomal-dominant-genes-berg-v1.bed.gz.tbi

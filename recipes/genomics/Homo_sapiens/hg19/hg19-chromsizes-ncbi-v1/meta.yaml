@@ -1,0 +1,40 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - hg19-chromsizes-ncbi-v1.genome
+package:
+  name: hg19-chromsizes-ncbi-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - genome
+  - chromosome
+  - lengths
+  - sizes
+  - chrom-lengths
+  summary: Chromosome lengths for the hg19 genome build from NCBI. (Used to create
+    the Go Get Data (GGD) hg19.genome file)
+  tags:
+    data-provider: NCBI
+    data-version: 12-October-2016-(patch13)
+    file-type:
+    - genome
+    final-file-sizes:
+      hg19-chromsizes-ncbi-v1.genome: 1.99K
+    final-files:
+    - hg19-chromsizes-ncbi-v1.genome
+    genomic-coordinate-base: NA
+    ggd-channel: genomics

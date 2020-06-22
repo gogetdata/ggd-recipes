@@ -1,0 +1,2 @@
+hg38-knowngene-gene-features-ucsc-v1.gtf.gz	6079a13353ce6d740fdb19513e491017
+hg38-knowngene-gene-features-ucsc-v1.gtf.gz.tbi	3518f119a3534d9e005924149bad39db

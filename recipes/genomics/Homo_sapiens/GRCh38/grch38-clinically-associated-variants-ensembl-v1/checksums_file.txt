@@ -1,0 +1,2 @@
+grch38-clinically-associated-variants-ensembl-v1.vcf.gz	61521c93a9920cf0842a740aa80bb9a7
+grch38-clinically-associated-variants-ensembl-v1.vcf.gz.tbi	353a29155f8a23343ecb19d18a3e3291

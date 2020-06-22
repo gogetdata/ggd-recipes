@@ -12,13 +12,12 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
   - zlib
@@ -33,18 +32,23 @@ about:
   - autosomal-recessive
   - disease
   - Blekhman_et_al
-  - AD
+  - AR
   - OMIM
   - gene_coordinates
-  - pathoscore
-  summary: Genomic coordinates, along with the compliment coordinance, OMIM disease
-    genes deemed to follow autosomal recessive inheritance according to extensive
-    manual curation by Molly Przeworski's group.(https://www.ncbi.nlm.nih.gov/pubmed/18571414)
+  - CDS-regions
+  summary: CDS region genomic coordinates, along with the compliment coordinates,
+    for OMIM disease genes deemed  to follow autosomal recessive inheritance according
+    to extensive manual curation by Molly Przeworski's group.(https://www.ncbi.nlm.nih.gov/pubmed/18571414).
   tags:
     data-provider: blekhman
     data-version: 6-24-2008
     file-type:
     - bed
+    final-file-sizes:
+      grch37-autosomal-recessive-genes-blekhman-v1.bed.gz: 105.97K
+      grch37-autosomal-recessive-genes-blekhman-v1.bed.gz.tbi: 22.94K
+      grch37-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz: 67.13K
+      grch37-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz.tbi: 18.90K
     final-files:
     - grch37-autosomal-recessive-genes-blekhman-v1.bed.gz
     - grch37-autosomal-recessive-genes-blekhman-v1.bed.gz.tbi

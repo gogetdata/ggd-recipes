@@ -1,0 +1,4 @@
+hg19-autosomal-recessive-genes-berg-v1.bed.gz	f7c756a4d793c873cd4a83f3b6fa77d1
+hg19-autosomal-recessive-genes-berg-v1.compliment.bed.gz	50b43ea7d6159cf1b4d1cc02c3b077d4
+hg19-autosomal-recessive-genes-berg-v1.bed.gz.tbi	00bb7039c65674f34981dd961bf0e7f1
+hg19-autosomal-recessive-genes-berg-v1.compliment.bed.gz.tbi	b2ae664569bd18634a264a995055199a

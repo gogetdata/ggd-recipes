@@ -1,0 +1,3 @@
+hg38-reference-genome-ucsc-v1.fa.gz.fai	26a35832cebf711b4f13bed4b051c461
+hg38-reference-genome-ucsc-v1.fa.gz	410b281512dd3087ca8b6300ea251662
+hg38-reference-genome-ucsc-v1.fa.gz.gzi	d184a87976a784b122717cae13882825

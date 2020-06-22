@@ -1,0 +1,2 @@
+hg19-somatic-variants-ensembl-v1.vcf.gz.tbi	fb867687c2c581c447550ddb5a97de43
+hg19-somatic-variants-ensembl-v1.vcf.gz	9a71069175c4bcde15cac0bd07bd09ae

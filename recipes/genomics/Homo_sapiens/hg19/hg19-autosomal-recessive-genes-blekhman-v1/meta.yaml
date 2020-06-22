@@ -1,0 +1,59 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-autosomal-recessive-genes-blekhman-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - bedtools
+  - grch37-gene-features-ensembl-v1
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - genes
+  - autosomal-recessive
+  - disease
+  - Blekhman_et_al
+  - AR
+  - OMIM
+  - gene_coordinates
+  - CDS-regions
+  summary: CDS region genomic coordinates, along with the compliment coordinates,
+    for OMIM disease genes deemed  to follow autosomal recessive inheritance according
+    to extensive manual curation by Molly Przeworski's group.(https://www.ncbi.nlm.nih.gov/pubmed/18571414).
+  tags:
+    data-provider: blekhman
+    data-version: 6-24-2008
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-autosomal-recessive-genes-blekhman-v1.bed.gz: 106.21K
+      hg19-autosomal-recessive-genes-blekhman-v1.bed.gz.tbi: 22.97K
+      hg19-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz: 68.76K
+      hg19-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz.tbi: 15.38K
+    final-files:
+    - hg19-autosomal-recessive-genes-blekhman-v1.bed.gz
+    - hg19-autosomal-recessive-genes-blekhman-v1.bed.gz.tbi
+    - hg19-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz
+    - hg19-autosomal-recessive-genes-blekhman-v1.compliment.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,1 @@
+hg19-chrom-mapping-ensembl2ucsc-ncbi-v1.txt	a4c03a799dd59dd82a374caab4dd8a9b

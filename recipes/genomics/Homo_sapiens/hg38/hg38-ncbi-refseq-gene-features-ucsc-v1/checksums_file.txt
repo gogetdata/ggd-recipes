@@ -1,0 +1,2 @@
+hg38-ncbi-refseq-gene-features-ucsc-v1.gtf.gz	3271b812c3ba4192cf39c2b6bbe97765
+hg38-ncbi-refseq-gene-features-ucsc-v1.gtf.gz.tbi	8c2c0abe817f1d05b7122288976f2e29

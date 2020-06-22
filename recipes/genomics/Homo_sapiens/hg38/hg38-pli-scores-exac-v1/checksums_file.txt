@@ -1,0 +1,2 @@
+hg38-pli-scores-exac-v1.bed.gz	a6bc20ff476dc32efd73cee6b83ca20a
+hg38-pli-scores-exac-v1.bed.gz.tbi	c1a10e7eee8bd53500c630ecc6b83796

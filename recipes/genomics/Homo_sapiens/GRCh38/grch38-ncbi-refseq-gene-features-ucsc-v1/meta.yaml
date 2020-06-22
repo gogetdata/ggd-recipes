@@ -1,0 +1,49 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-ncbi-refseq-gene-features-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - GTF
+  - gene-feature-file
+  - NCBI-Refseq
+  - Refseq-All
+  summary: Gene features for all curated and predicted annotations from the NCBI Refseq
+    track from UCSC. (GTF). Refseq ALL. Human protein-coding and non-protein-coding
+    genes from NCBI RNA reference seqeunce collection. Remapped from UCSC hg38 to
+    Ensembl GRCh38
+  tags:
+    data-provider: UCSC
+    data-version: 10-Jan-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-ncbi-refseq-gene-features-ucsc-v1.gtf.gz: 34.53M
+      grch38-ncbi-refseq-gene-features-ucsc-v1.gtf.gz.tbi: 356.51K
+    final-files:
+    - grch38-ncbi-refseq-gene-features-ucsc-v1.gtf.gz
+    - grch38-ncbi-refseq-gene-features-ucsc-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

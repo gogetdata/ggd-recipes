@@ -1,1 +1,1 @@
-grch38-chromsizes-ggd-v1.txt	dcaf593a6f09b4bfe9c3f498b42d9586
+grch38-chromsizes-ggd-v1.txt	f23a6cecc9c07a19c7faff69b5bd6854

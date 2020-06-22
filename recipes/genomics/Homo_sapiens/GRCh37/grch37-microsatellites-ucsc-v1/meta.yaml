@@ -2,9 +2,9 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
-  authors: arq5x
+  authors: mjc
   extra-files: []
 package:
   name: grch37-microsatellites-ucsc-v1
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -29,12 +30,20 @@ about:
   - microsats
   - STR
   - STRs
-  summary: Microsatellites from UCSC
+  - short-tandem-repeat
+  - repeats
+  - repeat-regions
+  summary: Microsatellites from UCSC. Region which tend to be highly polymorphic and
+    with at least 15 di- or tri-nucletodie repeats. Remapped from UCSC hg19 to Ensembl
+    GRCh37
   tags:
     data-provider: UCSC
     data-version: 28-Nov-2010
     file-type:
     - bed
+    final-file-sizes:
+      grch37-microsatellites-ucsc-v1.bed.gz: 394.38K
+      grch37-microsatellites-ucsc-v1.bed.gz.tbi: 294.84K
     final-files:
     - grch37-microsatellites-ucsc-v1.bed.gz
     - grch37-microsatellites-ucsc-v1.bed.gz.tbi
