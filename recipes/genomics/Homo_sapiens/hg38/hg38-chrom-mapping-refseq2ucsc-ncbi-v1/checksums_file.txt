@@ -1,0 +1,1 @@
+hg38-chrom-mapping-refseq2ucsc-ncbi-v1.txt	a329481ff0ae59fa758127095b0dafca

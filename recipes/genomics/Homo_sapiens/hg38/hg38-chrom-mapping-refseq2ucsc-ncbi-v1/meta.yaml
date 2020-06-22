@@ -1,0 +1,45 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - hg38-chrom-mapping-refseq2ucsc-ncbi-v1.txt
+package:
+  name: hg38-chrom-mapping-refseq2ucsc-ncbi-v1
+  version: '1'
+requirements:
+  build:
+  - bioawk
+  run:
+  - bioawk
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Chromosome-mapping
+  - mapping
+  - chrommapping
+  - RefSeq2UCSC
+  - scaffolding-ids
+  - txt
+  - patch-13
+  summary: A tab delimited file containing scaffolding ids that map GRCh38 RefSeq
+    to hg38 UCSC scaffoldings. This is specific to patch 13 of the GRCh38 Human genome
+    build. (1st Column = RefSeq ids, 2nd Column = UCSC ids)
+  tags:
+    data-provider: NCBI
+    data-version: 14-April-2020-(patch13)
+    file-type:
+    - txt
+    final-file-sizes:
+      hg38-chrom-mapping-refseq2ucsc-ncbi-v1.txt: 19.51K
+    final-files:
+    - hg38-chrom-mapping-refseq2ucsc-ncbi-v1.txt
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
