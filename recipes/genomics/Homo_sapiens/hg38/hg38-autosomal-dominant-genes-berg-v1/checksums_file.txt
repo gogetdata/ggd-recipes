@@ -1,0 +1,4 @@
+hg38-autosomal-dominant-genes-berg-v1.compliment.bed.gz	f924f65aa817df924016f8341e4a4656
+hg38-autosomal-dominant-genes-berg-v1.bed.gz	839421f580a594d100bb33c2bc925f5a
+hg38-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi	9db197dfd6570b73ff134dad2da10f88
+hg38-autosomal-dominant-genes-berg-v1.bed.gz.tbi	7433d9b2f9681e0e0ba4367f3e7ccb72

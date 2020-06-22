@@ -1,0 +1,53 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-pli-scores-exac-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-gene-features-ensembl-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - pLI
+  - Probability-of-being-loss-of-function-intolerant
+  - Constraint
+  - LoF-Intolerance
+  - ExAC
+  - gene-constraint
+  summary: 'The probability of being loss-of-function intolerant (pLI) by gene scores
+    from ExAC. See paper at: https://www.nature.com/articles/nature19057. Pseudo-liftover:
+    Updated coordinates based on transcript ids that map between GRCh37 and GRCh38.
+    If unable to map transcript id, the gene symbol is mapped between GRCh37 and GRCh38.
+    If neither the transcript id or gene symbol map between the two builds the record
+    is removed.'
+  tags:
+    data-provider: ExAC
+    data-version: Aug-31-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-pli-scores-exac-v1.bed.gz: 532.16K
+      grch38-pli-scores-exac-v1.bed.gz.tbi: 64.42K
+    final-files:
+    - grch38-pli-scores-exac-v1.bed.gz
+    - grch38-pli-scores-exac-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

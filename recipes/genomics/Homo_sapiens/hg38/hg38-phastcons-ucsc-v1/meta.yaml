@@ -1,0 +1,56 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - hg38-phastcons-ucsc-v1.bw
+package:
+  name: hg38-phastcons-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - ucsc-bigwigtobedgraph
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - ucsc-bigwigtobedgraph
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - phastCons
+  - conservation
+  - phastCons-Hmm
+  - conservation-scores
+  - genome-conservation
+  - bigwig
+  - bedgraph
+  summary: Conservation scores based on the phastcons HMM algorithm against multi-aligned
+    sequences of 100 different species
+  tags:
+    data-provider: UCSC
+    data-version: 08-May-2015
+    file-type:
+    - bedGraph.gz
+    - bedGraph.gz.tbi
+    - bw
+    final-file-sizes:
+      hg38-phastcons-ucsc-v1.bedGraph.gz: 11.97G
+      hg38-phastcons-ucsc-v1.bedGraph.gz.tbi: 7.28K
+      hg38-phastcons-ucsc-v1.bw: 5.89G
+    final-files:
+    - hg38-phastcons-ucsc-v1.bedGraph.gz
+    - hg38-phastcons-ucsc-v1.bedGraph.gz.tbi
+    - hg38-phastcons-ucsc-v1.bw
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

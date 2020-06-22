@@ -1,0 +1,2 @@
+grch38-cpg-islands-ucsc-v1.bed.gz.tbi	d15f912033d16d7704b00cc8c7cd5aa1
+grch38-cpg-islands-ucsc-v1.bed.gz	d68652457ed3c6a7683971ce8605096c

@@ -1,0 +1,50 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-refseq-gene-features-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - RefSeq
+  - GTF
+  - protein-coding
+  - non-protein-coding
+  - refGene
+  - UCSC-Refseq
+  - Gene-Features
+  summary: 'The UCSC RefSeq gene track converted into GTF format containing known
+    human protein-coding and non-protein-coding genes from RefSeq. (RefSeq: NCBI RNA
+    reference sequence collection)'
+  tags:
+    data-provider: UCSC
+    data-version: 01-Mar-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg19-refseq-gene-features-ucsc-v1.gtf.gz: 14.41M
+      hg19-refseq-gene-features-ucsc-v1.gtf.gz.tbi: 291.55K
+    final-files:
+    - hg19-refseq-gene-features-ucsc-v1.gtf.gz
+    - hg19-refseq-gene-features-ucsc-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

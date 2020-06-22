@@ -1,0 +1,2 @@
+hg38-somatic-variants-ensembl-v1.vcf.gz	394c22f14a8798cf772ad7f109541602
+hg38-somatic-variants-ensembl-v1.vcf.gz.tbi	292a6ece5cf5482f622083ab041dafb7

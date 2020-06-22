@@ -1,0 +1,2 @@
+hg38-ccds-genes-ucsc-v1.bed.gz	63008afe6f6f32e8d78f162e69a61e18
+hg38-ccds-genes-ucsc-v1.bed.gz.tbi	9fc1f11ec9a4e6be3a65326dd1762fb8

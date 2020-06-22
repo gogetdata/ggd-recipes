@@ -1,0 +1,2 @@
+hg19-knowngene-gene-features-ucsc-v1.gtf.gz.tbi	83bec7dc7888cd4b2eb5bd67d7b944ee
+hg19-knowngene-gene-features-ucsc-v1.gtf.gz	c8da9cce3460f390b57d4ce0d42e8ceb

@@ -1,0 +1,2 @@
+hg19-radar-li-lab-stanford-v1.bed.gz.tbi	9cd8ae27a16782cad48b2c914e310271
+hg19-radar-li-lab-stanford-v1.bed.gz	f7f87b07be24df3e1b58d991a2dbfd4a

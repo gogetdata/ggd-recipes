@@ -1,0 +1,3 @@
+hg19-phastcons-ucsc-v1.bedGraph.gz.tbi	c34b693af30d8752e487edd0fa352f77
+hg19-phastcons-ucsc-v1.bedGraph.gz	32adf03519303a78216123ce8475d424
+hg19-phastcons-ucsc-v1.bw	8c71ae8562f5ece3f4ab7ffdb93df5b2

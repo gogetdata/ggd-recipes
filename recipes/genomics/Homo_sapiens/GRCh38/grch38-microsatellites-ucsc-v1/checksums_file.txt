@@ -1,0 +1,2 @@
+grch38-microsatellites-ucsc-v1.bed.gz.tbi	dc140be6d11df50aac0a391c0469b94e
+grch38-microsatellites-ucsc-v1.bed.gz	ad54d7315bc5025c49bbf9037a85cb0d

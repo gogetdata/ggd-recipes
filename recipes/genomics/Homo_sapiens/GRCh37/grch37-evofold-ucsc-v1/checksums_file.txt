@@ -1,0 +1,2 @@
+grch37-evofold-ucsc-v1.bed.gz	bc45651118f74422d99f654fbfaa0327
+grch37-evofold-ucsc-v1.bed.gz.tbi	14cb3096a1ee71898a0e5ccd8f44a283

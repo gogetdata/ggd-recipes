@@ -1,0 +1,3 @@
+grch37-phastcons-ucsc-v1.bedGraph.gz	b5051df5585106bf9af33cbe6972955f
+grch37-phastcons-ucsc-v1.bedGraph.bw	3ff7e077945ec742c1667fcf44baaa36
+grch37-phastcons-ucsc-v1.bedGraph.gz.tbi	6324bbfb3a36de2770077cd60fd7a384

@@ -1,0 +1,2 @@
+grch38-ncbi-refseq-genes-ucsc-v1.bed.gz	49fc917ce3010eba2e199c8433cad769
+grch38-ncbi-refseq-genes-ucsc-v1.bed.gz.tbi	6ea00405be9f636e15cc302bd7f6168b

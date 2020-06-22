@@ -1,0 +1,2 @@
+hg19-simple-repeats-ucsc-v1.bed.gz	56a7b0252caa4f18ed3f0681aa6f5c82
+hg19-simple-repeats-ucsc-v1.bed.gz.tbi	5d819116184566c656f43352aa32d8e1

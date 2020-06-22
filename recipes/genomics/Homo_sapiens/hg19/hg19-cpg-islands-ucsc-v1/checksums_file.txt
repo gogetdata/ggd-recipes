@@ -1,0 +1,2 @@
+hg19-cpg-islands-ucsc-v1.bed.gz.tbi	2f09c21be2575b7b3c701374b8a8298f
+hg19-cpg-islands-ucsc-v1.bed.gz	de00a96466422420d2c50431ebb494fe

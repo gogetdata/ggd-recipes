@@ -1,0 +1,4 @@
+grch38-autosomal-dominant-genes-berg-v1.bed.gz	e987cebafb74c46d03df2ab8160590a5
+grch38-autosomal-dominant-genes-berg-v1.compliment.bed.gz	cd58841ce523bd5c3c61ec449e7cff60
+grch38-autosomal-dominant-genes-berg-v1.bed.gz.tbi	5407e2a95c035de643ddf660e2b3b193
+grch38-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi	1b2980259a03b1e7a92f5b5d0d27e29e

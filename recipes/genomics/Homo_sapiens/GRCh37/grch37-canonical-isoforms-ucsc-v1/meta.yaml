@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-canonical-isoforms-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - hg19-known-genes-ucsc-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - Canonical
+  - Isofrom
+  - Canonical-Isoform
+  - KnownCanonical
+  summary: UCSC defined Canonical Isoform for each gene (or cluster). This tends to
+    be the longest isoform. Remapped from UCSC hg19 to Ensembl GRCh37
+  tags:
+    data-provider: UCSC
+    data-version: 30-Jun-2013
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-canonical-isoforms-ucsc-v1.bed.gz: 899.54K
+      grch37-canonical-isoforms-ucsc-v1.bed.gz.tbi: 104.85K
+    final-files:
+    - grch37-canonical-isoforms-ucsc-v1.bed.gz
+    - grch37-canonical-isoforms-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-exclusive
+    ggd-channel: genomics

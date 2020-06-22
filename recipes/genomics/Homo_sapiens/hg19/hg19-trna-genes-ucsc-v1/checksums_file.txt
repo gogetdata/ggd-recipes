@@ -1,0 +1,2 @@
+hg19-trna-genes-ucsc-v1.bed.gz.tbi	0f7da044d15b7a0671d2f99b5d99ffb6
+hg19-trna-genes-ucsc-v1.bed.gz	9234e225846c7eede54ab6850a55d4d6

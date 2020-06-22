@@ -1,0 +1,57 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-somatic-variants-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - bcftools
+  - gsort
+  - htslib
+  - vt
+  - zlib
+  run:
+  - bcftools
+  - grch37-reference-genome-ensembl-v1
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - hg19-reference-genome-ucsc-v1
+  - htslib
+  - vt
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - genetic-varaition
+  - Somatic
+  - Somatic-Mutations
+  - somatic-variants
+  - VCF
+  - varaint-info
+  - Ensembl-variantion
+  summary: 'All known somatic mutations at the time of Ensembl release 75. Conseqeunces
+    for each variant are included in the annotation. Decomposed and Normalized. Remapped
+    from Ensembl GRCh37 to UCSC hg19. Ensembl variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html'
+  tags:
+    data-provider: Ensembl
+    data-version: release-75_2-18-14
+    file-type:
+    - vcf
+    final-file-sizes:
+      hg19-somatic-variants-ensembl-v1.vcf.gz: 76.82M
+      hg19-somatic-variants-ensembl-v1.vcf.gz.tbi: 543.74K
+    final-files:
+    - hg19-somatic-variants-ensembl-v1.vcf.gz
+    - hg19-somatic-variants-ensembl-v1.vcf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-segmental-dups-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - superdups
+  - segdups
+  - seg
+  - dups
+  - duplications
+  - UCSC
+  - Segmental-Duplication
+  summary: Segmental duplications (SuperDups) File from UCSC. That is, duplications
+    of at least 1kb total sequence of non-repeatmasker sequence in bed format. Remapped
+    from UCSC hg19 to Ensembl GRCh37.
+  tags:
+    data-provider: UCSC
+    data-version: 25-Oct-2011
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-segmental-dups-ucsc-v1.bed.gz: 2.95M
+      grch37-segmental-dups-ucsc-v1.bed.gz.tbi: 77.48K
+    final-files:
+    - grch37-segmental-dups-ucsc-v1.bed.gz
+    - grch37-segmental-dups-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

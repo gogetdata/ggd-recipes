@@ -1,0 +1,2 @@
+grch38-structural-variants-ensembl-v1.vcf.gz	c9ac648f8b8e5ccf5859e6fe4310dd53
+grch38-structural-variants-ensembl-v1.vcf.gz.tbi	cf721b0511a635485279e2901c2c95a3

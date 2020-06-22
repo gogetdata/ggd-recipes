@@ -1,0 +1,67 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-constrained-coding-regions-quinlan-lab-v1
+  version: '1'
+requirements:
+  build:
+  - crossmap
+  - gsort
+  - htslib
+  - numpy
+  - pandas
+  - zlib
+  run:
+  - crossmap
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - numpy
+  - pandas
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - constraint
+  - coding-constraint
+  - constrained-coding-regions
+  - ccr
+  summary: '*LiftOver* Constrained Coding Regions (CCRs): https://www.nature.com/articles/s41588-018-0294-6.
+    Regions of human specific coding constraint presumably under strong purifying
+    selection. Constraint is based on the lack of variation within the gnomAD dataset
+    calibrated by the size and CpG content of the region. Regional Constraint is broken
+    up into Autosomes and the X-Chromosome. Chromosome coordinates and CCR regions
+    are lifted over from GRCh37 to GRCh38 using the Crossmap algorithm. Additionaly,
+    the chromsomes have been remapped from Ensembl GRCh38 to UCSC hg38. Any unmapped
+    regions are removed. Any region split into multiple regions are combined. (NOTE:
+    The genomic coordinates have been remapped, but there has been no QC on the CCR
+    percentiles preservation. It is yet to be determined if the CCR percentiles have
+    been completely preserved during the liftover, but it can be assumed they should
+    be similar based on the little to no change in region sizes.)'
+  tags:
+    data-provider: quinlan-lab
+    data-version: v2.2018-04-20
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz: 3.78M
+      hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi: 15.33K
+      hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz: 156.19M
+      hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi: 413.39K
+    final-files:
+    - hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz
+    - hg38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi
+    - hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz
+    - hg38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

@@ -12,13 +12,12 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
   - zlib
@@ -33,18 +32,23 @@ about:
   - autosomal-recessive
   - disease
   - Berg_et_al
-  - AD
+  - AR
   - OMIM
   - gene_coordinates
-  - pathoscore
-  summary: Genomic coordinates, along with the compliment coordinance, from OMIM disease
-    genes (as of June 2011) deemed to follow autosomal recessive inheritance according
-    Berg et al, 2013. (https://www.ncbi.nlm.nih.gov/pubmed/22995991)
+  - CDS-regions
+  summary: 'CDS region genomic coordinates, along with the compliment coordinates,
+    for OMIM disease genes (as of June 2011) deemed to follow autosomal recessive
+    inheritance. (Assembled by Macarthur Lab). Berg et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991).'
   tags:
     data-provider: berg
     data-version: 1-15-2013
     file-type:
     - bed
+    final-file-sizes:
+      grch37-autosomal-recessive-genes-berg-v1.bed.gz: 198.95K
+      grch37-autosomal-recessive-genes-berg-v1.bed.gz.tbi: 43.81K
+      grch37-autosomal-recessive-genes-berg-v1.compliment.bed.gz: 121.42K
+      grch37-autosomal-recessive-genes-berg-v1.compliment.bed.gz.tbi: 26.61K
     final-files:
     - grch37-autosomal-recessive-genes-berg-v1.bed.gz
     - grch37-autosomal-recessive-genes-berg-v1.bed.gz.tbi

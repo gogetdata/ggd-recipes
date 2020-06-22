@@ -11,8 +11,16 @@ package:
   name: hg19-phastcons-ucsc-v1
   version: '1'
 requirements:
-  build: []
-  run: []
+  build:
+  - gsort
+  - htslib
+  - ucsc-bigwigtobedgraph
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - ucsc-bigwigtobedgraph
+  - zlib
 source:
   path: .
 about:
@@ -22,8 +30,27 @@ about:
   keywords:
   - phastCons
   - conservation
-  - bigWig-file
-  summary: phastCons scores for MSA of 99 genomes to hg19
+  - phastCons-Hmm
+  - conservation-scores
+  - genome-conservation
+  - bigwig
+  - bedgraph
+  summary: Conservation scores based on the phastcons HMM algorithm against multi-aligned
+    sequences of 100 different species
   tags:
+    data-provider: UCSC
     data-version: 09-Feb-2014
+    file-type:
+    - bedGraph.gz
+    - bedGraph.gz.tbi
+    - bw
+    final-file-sizes:
+      hg19-phastcons-ucsc-v1.bedGraph.gz: 11.75G
+      hg19-phastcons-ucsc-v1.bedGraph.gz.tbi: 2.08K
+      hg19-phastcons-ucsc-v1.bw: 5.78G
+    final-files:
+    - hg19-phastcons-ucsc-v1.bedGraph.gz
+    - hg19-phastcons-ucsc-v1.bedGraph.gz.tbi
+    - hg19-phastcons-ucsc-v1.bw
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
