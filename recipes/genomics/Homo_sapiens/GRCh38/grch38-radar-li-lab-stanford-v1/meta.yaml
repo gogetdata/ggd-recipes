@@ -1,0 +1,55 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-radar-li-lab-stanford-v1
+  version: '1'
+requirements:
+  build:
+  - crossmap
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - crossmap
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - RNA-Editing
+  - A-to-I
+  - Adenosine-to-Inosine
+  - ADAR
+  - Guanosine
+  - RNA-Modification
+  - post-transcriptional-modification
+  - RADAR
+  summary: '**Liftover** Rigorously Annotated Database of A-to-I RNA Editing (RADAR).
+    A comprehensive collection of Adenosine (A) to Inosine (I) editing sites in human
+    transcripts, otherwise known as RNA editing sites. Paper: http://nar.oxfordjournals.org/content/42/D1/D109.
+    Liftover from hg19 to hg38. Remapped from UCSC hg38 to Ensembl GRCh38'
+  tags:
+    data-provider: Li-Lab-Stanford
+    data-version: v2_02-Feb-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-radar-li-lab-stanford-v1.bed.gz: 15.21M
+      grch38-radar-li-lab-stanford-v1.bed.gz.tbi: 794.56K
+    final-files:
+    - grch38-radar-li-lab-stanford-v1.bed.gz
+    - grch38-radar-li-lab-stanford-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

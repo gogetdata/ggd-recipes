@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-structural-variants-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - bcftools
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - bcftools
+  - grch37-reference-genome-ensembl-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - genetic-varaition
+  - SV
+  - structural-mutations
+  - structural-variants
+  - VCF
+  - varaint-info
+  - Ensembl-variantion
+  summary: 'All known structural mutations at the time of Ensembl release 75. Ensembl
+    variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html'
+  tags:
+    data-provider: Ensembl
+    data-version: release-75_2-9-14
+    file-type:
+    - vcf
+    final-file-sizes:
+      grch37-structural-variants-ensembl-v1.vcf.gz: 100.50M
+      grch37-structural-variants-ensembl-v1.vcf.gz.tbi: 307.73K
+    final-files:
+    - grch37-structural-variants-ensembl-v1.vcf.gz
+    - grch37-structural-variants-ensembl-v1.vcf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,2 @@
+grch38-trna-genes-ucsc-v1.bed.gz	7ddca757870824628c01b535595a9e12
+grch38-trna-genes-ucsc-v1.bed.gz.tbi	6967fec2f58a6e7ac3154156deecd5c2

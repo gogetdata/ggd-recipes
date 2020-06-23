@@ -1,0 +1,1 @@
+grch38-chrom-mapping-ucsc2refseq-ncbi-v1.txt	f3a81335ad48c91222e87482c0aca1fe

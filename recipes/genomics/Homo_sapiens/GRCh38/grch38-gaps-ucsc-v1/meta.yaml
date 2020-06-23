@@ -1,0 +1,53 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 2
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-gaps-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - gaps
+  - regions
+  - gap-locations
+  - Assembly-Gaps
+  - clone-gaps
+  - contig-gaps
+  - centromere-gaps
+  - telomere-gaps
+  - heterochromatin-gaps
+  - short-arm-gaps
+  summary: Assembly gaps from UCSC in bed fromat Remapped from UCSC hg38 to Ensembl
+    GRCh38. Scaffoldings that cannot remap are removed
+  tags:
+    data-provider: UCSC
+    data-version: 11-Mar-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-gaps-ucsc-v1.bed.gz: 9.15K
+      grch38-gaps-ucsc-v1.bed.gz.tbi: 10.59K
+    final-files:
+    - grch38-gaps-ucsc-v1.bed.gz
+    - grch38-gaps-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,2 @@
+hg19-repeatmasker-ucsc-v1.bed.gz	da7616375465c24bb972bc81b700a4a4
+hg19-repeatmasker-ucsc-v1.bed.gz.tbi	c9bdb5913745ab6354b85239c2461b78

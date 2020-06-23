@@ -12,13 +12,12 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
   - zlib
@@ -37,16 +36,21 @@ about:
   - AD
   - OMIM
   - gene_coordinates
-  - pathoscore
-  summary: 'Genomic coordinates, along with the compliment coordinance, for combined
-    set of OMIM disease genes deemed to follow autosomal dominant inheritance. Berg
-    et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991). Blekham et al, 2008:
-    (https://www.ncbi.nlm.nih.gov/pubmed/18571414)'
+  - CDS-regions
+  summary: 'CDS region genomic coordinates, along with the compliment coordinates,
+    for combined set of OMIM disease genes deemed to follow autosomal dominant inheritance.
+    (Assembled by Macarthur Lab). Gene sets from:  Berg et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991).
+    Blekham et al, 2008: (https://www.ncbi.nlm.nih.gov/pubmed/18571414)'
   tags:
     data-provider: berg-blekhman
     data-version: 1-15-2013_6-24-2008
     file-type:
     - bed
+    final-file-sizes:
+      grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz: 135.22K
+      grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz.tbi: 29.55K
+      grch37-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz: 83.03K
+      grch37-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz.tbi: 21.44K
     final-files:
     - grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz
     - grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz.tbi

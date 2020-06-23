@@ -1,0 +1,2 @@
+grch38-repeatmasker-ucsc-v1.bed.gz	e526160f69aaba6fbe6a19b8d54bac5d
+grch38-repeatmasker-ucsc-v1.bed.gz.tbi	7cb520fec5b67aca652221ea12ff9f16

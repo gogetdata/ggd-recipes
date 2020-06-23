@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-evofold-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - crossmap
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - crossmap
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - mRNA
+  - secondary-structure
+  - evofold
+  - UCSC
+  - conserved
+  - bed-file
+  summary: '*Liftover* The evolutionary conserved mRNA secondary structure predictions
+    hosted on UCSC. In bed format. Lifted over from UCSC hg19 to UCSC hg38. Remapped
+    from UCSC hg38 to Ensembl GRCh38'
+  tags:
+    data-provider: UCSC
+    data-version: 26-Dec-2010
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-evofold-ucsc-v1.bed.gz: 3.21M
+      grch38-evofold-ucsc-v1.bed.gz.tbi: 277.56K
+    final-files:
+    - grch38-evofold-ucsc-v1.bed.gz
+    - grch38-evofold-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,2 @@
+hg19-ccds-genes-ucsc-v1.bed.gz.tbi	f8d19507f95c7cf0efab7b95cfb47576
+hg19-ccds-genes-ucsc-v1.bed.gz	a380446ab6a5051373679a438afce9a7

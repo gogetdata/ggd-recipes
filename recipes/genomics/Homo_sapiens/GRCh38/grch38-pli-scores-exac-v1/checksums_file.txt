@@ -1,0 +1,2 @@
+grch38-pli-scores-exac-v1.bed.gz	205c3c6fa065bcac8031decf6110e616
+grch38-pli-scores-exac-v1.bed.gz.tbi	5a9eec030fe601e43b638b518ec4a063

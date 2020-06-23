@@ -1,0 +1,4 @@
+hg19-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi	809e27bd2dd0d485d3b67ca5358e62dc
+hg19-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz	800e9fd9f2380e05036de1b1c99f8b62
+hg19-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi	5c554520f7adb005a74d98ee3929c5f4
+hg19-constrained-coding-regions-quinlan-lab-v1.X.bed.gz	0ad8ee1c52123fe65834b9b79b145e3e

@@ -1,0 +1,2 @@
+grch37-germline-variants-ensembl-v1.vcf.gz.tbi	d5577de2b50cd6aa43c4db5721d76262
+grch37-germline-variants-ensembl-v1.vcf.gz	3b9b9d727350a607aafd05991b7e6b35

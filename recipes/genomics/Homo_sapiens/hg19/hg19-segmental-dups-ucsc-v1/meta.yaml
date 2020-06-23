@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -31,9 +31,19 @@ about:
   - dups
   - duplications
   - UCSC
-  - bed-file
+  - Segmental-Duplication
   summary: The hg19 segmental duplications (SuperDups) File from UCSC. That is, duplications
     of at least 1kb total sequence of non-repeatmasker sequence in bed format
   tags:
+    data-provider: UCSC
     data-version: 25-Oct-2011
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-segmental-dups-ucsc-v1.bed.gz: 2.96M
+      hg19-segmental-dups-ucsc-v1.bed.gz.tbi: 77.69K
+    final-files:
+    - hg19-segmental-dups-ucsc-v1.bed.gz
+    - hg19-segmental-dups-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

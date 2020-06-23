@@ -1,0 +1,2 @@
+grch37-knowngene-gene-features-ucsc-v1.gtf.gz	2b83c92e027cddf33f363b0551247641
+grch37-knowngene-gene-features-ucsc-v1.gtf.gz.tbi	40300e57dbb39e01d97c5a9e13370c29

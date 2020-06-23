@@ -1,0 +1,2 @@
+hg19-refseq-gene-features-ucsc-v1.gtf.gz	2ffc628c532db24a5c5bdb32c1139522
+hg19-refseq-gene-features-ucsc-v1.gtf.gz.tbi	0d85d1d7eddcba0870894fc779c36d87

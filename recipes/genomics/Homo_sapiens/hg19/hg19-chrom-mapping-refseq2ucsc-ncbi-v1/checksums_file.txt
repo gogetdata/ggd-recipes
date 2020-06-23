@@ -1,0 +1,1 @@
+hg19-chrom-mapping-refseq2ucsc-ncbi-v1.txt	0725e62e61f73bd291a49703dba2d504

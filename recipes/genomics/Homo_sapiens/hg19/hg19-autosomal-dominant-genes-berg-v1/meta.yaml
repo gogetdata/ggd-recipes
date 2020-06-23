@@ -1,0 +1,59 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-autosomal-dominant-genes-berg-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - bedtools
+  - grch37-gene-features-ensembl-v1
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - genes
+  - autosomal-dominant
+  - disease
+  - Berg_et_al
+  - AD
+  - OMIM
+  - gene_coordinates
+  - CDS-regions
+  summary: 'CDS region genomic coordinates, along with the compliment coordinates,
+    for OMIM disease genes (as of June 2011) deemed to follow autosomal dominant inheritance.
+    (Assembled by Macarthur Lab). Berg et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991).'
+  tags:
+    data-provider: berg
+    data-version: 1-15-2013
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-autosomal-dominant-genes-berg-v1.bed.gz: 120.38K
+      hg19-autosomal-dominant-genes-berg-v1.bed.gz.tbi: 27.11K
+      hg19-autosomal-dominant-genes-berg-v1.compliment.bed.gz: 75.11K
+      hg19-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi: 16.81K
+    final-files:
+    - hg19-autosomal-dominant-genes-berg-v1.bed.gz
+    - hg19-autosomal-dominant-genes-berg-v1.bed.gz.tbi
+    - hg19-autosomal-dominant-genes-berg-v1.compliment.bed.gz
+    - hg19-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

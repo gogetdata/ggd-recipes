@@ -1,0 +1,1 @@
+hg38-chromsizes-ncbi-v1.genome	8384823390fd881a7f15c8fc5a36782d

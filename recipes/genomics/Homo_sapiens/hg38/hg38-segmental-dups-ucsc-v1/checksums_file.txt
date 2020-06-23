@@ -1,0 +1,2 @@
+hg38-segmental-dups-ucsc-v1.bed.gz	934fdd98efc5c5449b7b6c1a1e013d3e
+hg38-segmental-dups-ucsc-v1.bed.gz.tbi	5a6107a874df2691ecad7f80a6d43a3f

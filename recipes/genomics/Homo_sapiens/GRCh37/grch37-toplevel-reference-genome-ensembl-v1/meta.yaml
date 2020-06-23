@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-toplevel-reference-genome-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - samtools
+  - zlib
+  run:
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - Top-Level
+  - Release-75
+  - ref
+  - reference
+  - Ensembl-ref
+  - DNA-Seqeunce
+  - Fasta-Seqeunce
+  - fasta-file
+  summary: The GRCh37 unmasked genomic DNA seqeunce reference genome from Ensembl-Release
+    75. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes,
+    regions not assembled into chromosomes, and N padded haplotype/patch regions.
+    'Top Level file'
+  tags:
+    data-provider: Ensembl
+    data-version: release-75_2-3-14
+    file-type:
+    - fa
+    final-file-sizes:
+      grch37-toplevel-reference-genome-ensembl-v1.fa.gz: 1.09G
+      grch37-toplevel-reference-genome-ensembl-v1.fa.gz.fai: 11.65K
+      grch37-toplevel-reference-genome-ensembl-v1.fa.gz.gzi: 7.98M
+    final-files:
+    - grch37-toplevel-reference-genome-ensembl-v1.fa.gz
+    - grch37-toplevel-reference-genome-ensembl-v1.fa.gz.fai
+    - grch37-toplevel-reference-genome-ensembl-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics

@@ -1,0 +1,58 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-autosomal-dominant-genes-blekhman-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - bedtools
+  - grch38-gene-features-ensembl-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - genes
+  - autosomal-dominant
+  - disease
+  - Blekhman_et_al
+  - AD
+  - OMIM
+  - gene_coordinates
+  - CDS-regions
+  summary: CDS region genomic coordinates, along with the compliment coordinates,
+    for OMIM disease genes deemed  to follow autosomal dominant inheritance according
+    to extensive manual curation by Molly Przeworski's group.(https://www.ncbi.nlm.nih.gov/pubmed/18571414).
+  tags:
+    data-provider: blekhman
+    data-version: 6-24-2008
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-autosomal-dominant-genes-blekhman-v1.bed.gz: 64.42K
+      grch38-autosomal-dominant-genes-blekhman-v1.bed.gz.tbi: 14.98K
+      grch38-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz: 41.05K
+      grch38-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz.tbi: 20.92K
+    final-files:
+    - grch38-autosomal-dominant-genes-blekhman-v1.bed.gz
+    - grch38-autosomal-dominant-genes-blekhman-v1.bed.gz.tbi
+    - grch38-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz
+    - grch38-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

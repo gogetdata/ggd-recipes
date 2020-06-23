@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 4
 extra:
   authors: mjc
   extra-files: []
@@ -34,5 +34,15 @@ about:
   summary: The evolutionary conserved mRNA secondary structure predictions hosted
     on UCSC. In bed format
   tags:
+    data-provider: UCSC
     data-version: 26-Dec-2010
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-evofold-ucsc-v1.bed.gz: 3.21M
+      hg19-evofold-ucsc-v1.bed.gz.tbi: 279.12K
+    final-files:
+    - hg19-evofold-ucsc-v1.bed.gz
+    - hg19-evofold-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

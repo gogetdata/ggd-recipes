@@ -2,9 +2,9 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
-  authors: arq5x
+  authors: mjc
   extra-files: []
 package:
   name: grch37-cytobands-ucsc-v1
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -30,12 +31,16 @@ about:
   - staining
   - chromosome
   - bands
-  summary: Cytobands from UCSC
+  summary: Approximate locations of Chromosome Bands (cytoBands) located with Giemsa-stained
+    chromosomes from UCSC. Remapped from UCSC hg19 to Ensembl GRCh37.
   tags:
     data-provider: UCSC
     data-version: 14-Jun-2009
     file-type:
     - bed
+    final-file-sizes:
+      grch37-cytobands-ucsc-v1.bed.gz: 6.40K
+      grch37-cytobands-ucsc-v1.bed.gz.tbi: 7.12K
     final-files:
     - grch37-cytobands-ucsc-v1.bed.gz
     - grch37-cytobands-ucsc-v1.bed.gz.tbi

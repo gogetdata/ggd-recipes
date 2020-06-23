@@ -1,0 +1,2 @@
+hg19-germline-variants-ensembl-v1.vcf.gz	71f04e3b38be15fa801f04e22421e926
+hg19-germline-variants-ensembl-v1.vcf.gz.tbi	1cff88253737dcc7c14f154c88b3fb55

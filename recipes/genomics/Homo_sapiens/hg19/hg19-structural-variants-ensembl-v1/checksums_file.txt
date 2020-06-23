@@ -1,0 +1,2 @@
+hg19-structural-variants-ensembl-v1.vcf.gz.tbi	02d4a2acbdca82eda0f82cc68bc61f70
+hg19-structural-variants-ensembl-v1.vcf.gz	e1198b70bf7f07f2a1f0e66e76d99791

@@ -1,0 +1,54 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-repeatmasker-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - rmsk
+  - region
+  - low-complexity-repeats
+  - SINE
+  - ALUs
+  - LINE
+  - LTR
+  - DNA-repeat-elements
+  - simple-repeats
+  - RNA-repeats
+  summary: RepeatMasker track from UCSC in bed format. Interspersed repeats and low
+    complexity sequences identified using the RepeatMasker program. Remapped from
+    UCSC hg38 to Ensembl GRCh38.
+  tags:
+    data-provider: UCSC
+    data-version: 11-Mar-2019
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-repeatmasker-ucsc-v1.bed.gz: 123.29M
+      grch38-repeatmasker-ucsc-v1.bed.gz.tbi: 560.21K
+    final-files:
+    - grch38-repeatmasker-ucsc-v1.bed.gz
+    - grch38-repeatmasker-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

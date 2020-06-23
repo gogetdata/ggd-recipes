@@ -1,0 +1,2 @@
+hg19-canonical-isoforms-ucsc-v1.bed.gz.tbi	dca691c7f8a3124e4d5d7c4672ee8d36
+hg19-canonical-isoforms-ucsc-v1.bed.gz	c3a1b0346ed20472a54055e2c1829739

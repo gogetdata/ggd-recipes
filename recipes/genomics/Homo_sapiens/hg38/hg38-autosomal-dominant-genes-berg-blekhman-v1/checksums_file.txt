@@ -1,0 +1,4 @@
+hg38-autosomal-dominant-genes-berg-blekhman-v1.bed.gz	391ef9c6cd86256f064d23a278a0b743
+hg38-autosomal-dominant-genes-berg-blekhman-v1.bed.gz.tbi	ee52cb7d9746f079c9ebd8a0b6845af3
+hg38-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz	a932954ab634b840f5e5b122f810a18c
+hg38-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz.tbi	67319e618b1225fd1ec54946b602553f

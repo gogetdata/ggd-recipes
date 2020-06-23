@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -23,13 +23,27 @@ about:
     genome-build: GRCh38
     species: Homo_sapiens
   keywords:
+  - Primary-Assembly
+  - Release-99
   - ref
   - reference
-  - genome
-  - Ensembl
+  - Ensembl-ref
+  - DNA-Seqeunce
+  - Fasta-Seqeunce
   - fasta-file
-  summary: The GRCh38 reference genome from Ensembl. Release 95. Primary Assembly
-    file
+  summary: The GRCh38 unmasked genomic DNA seqeunce reference genome from Ensembl-Release
+    99. Includes all sequence regions EXCLUDING haplotypes and patches. 'Primary Assembly
+    file'
   tags:
-    data-version: Release-95
+    data-provider: Ensembl
+    data-version: release-99_11-18-19
+    file-type:
+    - fa
+    final-file-sizes:
+      grch38-reference-genome-ensembl-v1.fa: 3.15G
+      grch38-reference-genome-ensembl-v1.fa.fai: 6.41K
+    final-files:
+    - grch38-reference-genome-ensembl-v1.fa
+    - grch38-reference-genome-ensembl-v1.fa.fai
+    genomic-coordinate-base: NA
     ggd-channel: genomics

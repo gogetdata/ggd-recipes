@@ -1,0 +1,49 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-trna-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - tRNA
+  - tRNA-predictions
+  - tRNA-Gene-Predictions
+  - tRNA-Genes
+  - tRNAscan-SE
+  - GtRNAdb
+  summary: tRNA gene predictions from tRNAscan-SE v1.23 hosted on UCSC. Remapped from
+    UCSC hg38 to Ensembl GRCh38
+  tags:
+    data-provider: UCSC
+    data-version: 01-Oct-2017
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-trna-genes-ucsc-v1.bed.gz: 15.46K
+      grch38-trna-genes-ucsc-v1.bed.gz.tbi: 8.64K
+    final-files:
+    - grch38-trna-genes-ucsc-v1.bed.gz
+    - grch38-trna-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

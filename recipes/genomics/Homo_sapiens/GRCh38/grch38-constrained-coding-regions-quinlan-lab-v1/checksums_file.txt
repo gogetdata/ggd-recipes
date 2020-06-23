@@ -1,0 +1,4 @@
+grch38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz	39349cc91a71529d9b56ce11175efbcd
+grch38-constrained-coding-regions-quinlan-lab-v1.X.bed.gz.csi	9e4a523a1799f9d9ef707111d90914e3
+grch38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz.csi	191122e5da9e94044019e2bf317ac33e
+grch38-constrained-coding-regions-quinlan-lab-v1.autosomes.bed.gz	4f01a8df525c00154b0fe6ce8e71b197

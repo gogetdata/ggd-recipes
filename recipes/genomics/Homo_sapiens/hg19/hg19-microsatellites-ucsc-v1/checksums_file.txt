@@ -1,2 +1,2 @@
-hg19-microsatellites-ucsc-v1.bed.gz.tbi	5ec20516a49e81d225cac7eb4ed55538
-hg19-microsatellites-ucsc-v1.bed.gz	c15bb5969540970fe7abbf5f58d9b0a0
+hg19-microsatellites-ucsc-v1.bed.gz.tbi	e50ef20b24fda36fdce58b29b8022272
+hg19-microsatellites-ucsc-v1.bed.gz	57e536c5914c486ce5069cd91f59a822

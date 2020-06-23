@@ -2,9 +2,9 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
-  authors: arq5x
+  authors: mjc
   extra-files: []
 package:
   name: hg38-microsatellites-ucsc-v1
@@ -29,12 +29,19 @@ about:
   - microsats
   - STR
   - STRs
-  summary: Microsatellites from UCSC
+  - short-tandem-repeat
+  - repeats
+  - repeat-regions
+  summary: Microsatellites from UCSC. Region which tend to be highly polymorphic and
+    with at least 15 di- or tri-nucletodie repeats
   tags:
     data-provider: UCSC
-    data-version: 3-Aug-2015
+    data-version: 23-Aug-2015
     file-type:
     - bed
+    final-file-sizes:
+      hg38-microsatellites-ucsc-v1.bed.gz: 410.67K
+      hg38-microsatellites-ucsc-v1.bed.gz.tbi: 306.17K
     final-files:
     - hg38-microsatellites-ucsc-v1.bed.gz
     - hg38-microsatellites-ucsc-v1.bed.gz.tbi

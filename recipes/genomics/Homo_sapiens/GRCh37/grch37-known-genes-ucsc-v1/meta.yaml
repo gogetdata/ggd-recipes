@@ -1,0 +1,50 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-known-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - KnownGenes
+  - gene-features
+  - UCSC-Genes
+  - protein-coding-genes
+  - non-coding-RNA-genes
+  summary: The 'KnownGene' track from UCSC. Comprsied of gene predictions based on
+    data from Refseq, GenBank, CCDS, RFam, and tRNA genes tracks. Includes protein-coding
+    genes and non-coding RNA genes. Gene symbols and gene descriptions have been added
+    to the dataset. Remapped from UCSC hg19 to Ensembl GRCh37
+  tags:
+    data-provider: UCSC
+    data-version: 30-Jun-2013
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-known-genes-ucsc-v1.bed.gz: 5.22M
+      grch37-known-genes-ucsc-v1.bed.gz.tbi: 129.95K
+    final-files:
+    - grch37-known-genes-ucsc-v1.bed.gz
+    - grch37-known-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

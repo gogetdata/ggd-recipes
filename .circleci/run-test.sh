@@ -1,10 +1,8 @@
 #!/bin/bash
-
 set -eo pipefail -o nounset
 
-export PATH=/anaconda/bin:$PATH
-
 CONDA_ROOT=$(conda info --root)
+
 rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
@@ -18,9 +16,11 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-## Build/filter all recipes using bioconda-utils build
-bioconda-utils build recipes/ config.yaml
+## Set the CONDA_SOURCE_PREFIX env var 
+export CONDA_SOURCE_PREFIX=$(conda info --root)
 
+## Build/filter all recipes using bioconda-utils build
+bioconda-utils build --loglevel debug recipes/ config.yaml
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"

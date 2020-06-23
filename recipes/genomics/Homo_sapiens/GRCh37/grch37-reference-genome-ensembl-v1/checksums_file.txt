@@ -1,0 +1,2 @@
+grch37-reference-genome-ensembl-v1.fa	2a60c281880fe5f2ca8df2956174108c
+grch37-reference-genome-ensembl-v1.fa.fai	15d081d2bdfe37d0fff6b753a4dcfef0

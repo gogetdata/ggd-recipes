@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 4
 extra:
   authors: mjc
   extra-files: []
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -27,13 +28,22 @@ about:
   keywords:
   - mRNA
   - secondary-structure
-  - conserved
   - evofold
   - UCSC
+  - conserved
   - bed-file
   summary: The evolutionary conserved mRNA secondary structure predictions hosted
-    on UCSC (Evofold). In bed format. (This file has been remapped from hg19 to GRCh37
-    with any unmappable contigs removed)
+    on UCSC. In bed format. Remapped from UCSC hg19 to Ensembl GRCh37
   tags:
+    data-provider: UCSC
     data-version: 26-Dec-2010
+    file-type:
+    - bed
+    final-file-sizes:
+      grch37-evofold-ucsc-v1.bed.gz: 3.20M
+      grch37-evofold-ucsc-v1.bed.gz.tbi: 279.01K
+    final-files:
+    - grch37-evofold-ucsc-v1.bed.gz
+    - grch37-evofold-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

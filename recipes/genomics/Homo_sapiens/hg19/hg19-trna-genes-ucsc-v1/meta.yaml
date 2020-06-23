@@ -1,0 +1,47 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-trna-genes-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - tRNA
+  - tRNA-predictions
+  - tRNA-Gene-Predictions
+  - tRNA-Genes
+  - tRNAscan-SE
+  - GtRNAdb
+  summary: tRNA gene predictions from tRNAscan-SE v1.23 hosted on UCSC.
+  tags:
+    data-provider: UCSC
+    data-version: 21-Dec-2015
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-trna-genes-ucsc-v1.bed.gz: 14.88K
+      hg19-trna-genes-ucsc-v1.bed.gz.tbi: 8.42K
+    final-files:
+    - hg19-trna-genes-ucsc-v1.bed.gz
+    - hg19-trna-genes-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

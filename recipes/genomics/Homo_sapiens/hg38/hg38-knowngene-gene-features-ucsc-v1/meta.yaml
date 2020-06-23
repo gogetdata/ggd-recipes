@@ -1,0 +1,57 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-knowngene-gene-features-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - KnownGenes
+  - gene-features
+  - UCSC-Genes
+  - feature-file
+  - gene-feature-file
+  - 5UTR
+  - 3UTR
+  - CDS
+  - exon
+  - start_codon
+  - stop_codon
+  - transcript
+  - GTF
+  - GENCODE-v32-genes
+  summary: Gene features from the 'KnownGene' track from UCSC. (GTF). Features include
+    5UTR, 3UTR, CDS, exon, start_codon, stop_codon, transcript. Features are comprised
+    of all gene models from GENCODE v32. IDs correspond to the UCSC knowGene IDs.
+  tags:
+    data-provider: UCSC
+    data-version: 10-Jan-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-knowngene-gene-features-ucsc-v1.gtf.gz: 35.47M
+      hg38-knowngene-gene-features-ucsc-v1.gtf.gz.tbi: 339.94K
+    final-files:
+    - hg38-knowngene-gene-features-ucsc-v1.gtf.gz
+    - hg38-knowngene-gene-features-ucsc-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

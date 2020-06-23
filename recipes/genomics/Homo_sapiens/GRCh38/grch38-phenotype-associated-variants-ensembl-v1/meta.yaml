@@ -1,0 +1,55 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-phenotype-associated-variants-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - bcftools
+  - gsort
+  - htslib
+  - vt
+  - zlib
+  run:
+  - bcftools
+  - grch38-reference-genome-ensembl-v1
+  - gsort
+  - htslib
+  - vt
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - genetic-varaition
+  - pheontype-associated
+  - Known-Phenotype
+  - Phenotype-Associated-Variants
+  - VCF
+  - varaint-info
+  - Ensembl-variantion
+  summary: 'All variants at the time of Ensembl release 99 that have a known phenotype
+    association. Decomposed and Normalized. Ensembl variant info page can be found
+    at: https://uswest.ensembl.org/info/genome/variation/index.html'
+  tags:
+    data-provider: Ensembl
+    data-version: release-99_11-7-19
+    file-type:
+    - vcf
+    final-file-sizes:
+      grch38-phenotype-associated-variants-ensembl-v1.vcf.gz: 10.49M
+      grch38-phenotype-associated-variants-ensembl-v1.vcf.gz.tbi: 195.40K
+    final-files:
+    - grch38-phenotype-associated-variants-ensembl-v1.vcf.gz
+    - grch38-phenotype-associated-variants-ensembl-v1.vcf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
