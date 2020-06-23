@@ -1,0 +1,42 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: hg19-gnomad-sv-gnomad-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - sv
+  - gnomAD
+  - structural-variants
+  - vcf-file
+  summary: SV callset 2.1 from gnomAD
+  tags:
+    data-provider: gnomad
+    data-version: 2.1.1
+    file-type:
+    - vcf
+    final-files:
+    - hg19-gnomad-sv-gnomad-v1.sites.vcf.gz
+    - hg19-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

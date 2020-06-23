@@ -1,0 +1,2 @@
+hg19-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi	20756693976eaa2118863af8d861247c
+hg19-gnomad-sv-gnomad-v1.sites.vcf.gz	7c272e0990303f1bc3f54a81388650a2
