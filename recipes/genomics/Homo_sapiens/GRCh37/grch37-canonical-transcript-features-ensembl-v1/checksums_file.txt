@@ -1,0 +1,2 @@
+grch37-canonical-transcript-features-ensembl-v1.gtf.gz	d3db693d7c7ae8858afb1709ce26cc52
+grch37-canonical-transcript-features-ensembl-v1.gtf.gz.tbi	14d9bd8b956f79531b33b2e73e5d29ab

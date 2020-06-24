@@ -1,0 +1,59 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-canonical-transcript-features-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Canonical
+  - Canonical-Transcripts
+  - Canonical-Isoforms
+  - Gene-Features
+  - GTF
+  - Ensembl-Gene-Set
+  - Annotated-Transcripts
+  summary: 'Gene features from Ensembl Release-100 for protein-coding canonical transcripts
+    based on the APPRIS transcript annotations. Features include gene, transcript,
+    CDS, five_prime_utr, three_prime_utr, exon, start_codon, and stop_codon for all
+    canonical transcripts. Canonical transcripts are determined based on APPRIS annotations.
+    In short, for all protein coding transcripts, transcripts are filtered based on
+    APPRIS isoform flags. If multiple transcripts of the same gene have equal flags,
+    the isoform with the most exons is chosen. If all transcritps for a gene annotated
+    by APPRIS are missing from the base gtf file no canonical transcript is chosen
+    and the gene is removed. APPRIS flag information can be found here: http://appris-tools.org/#/downloads
+    or here: https://uswest.ensembl.org/info/genome/genebuild/transcript_quality_tags.html.
+    Remapped from Ensembl GRCh38 to UCSC hg38'
+  tags:
+    data-provider: Ensembl
+    data-version: release-100_3-7-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-canonical-transcript-features-ensembl-v1.gtf.gz: 11.52M
+      hg38-canonical-transcript-features-ensembl-v1.gtf.gz.tbi: 256.40K
+    final-files:
+    - hg38-canonical-transcript-features-ensembl-v1.gtf.gz
+    - hg38-canonical-transcript-features-ensembl-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
