@@ -27,3 +27,4 @@ pytest-socket
 bioawk
 pysam
 cyvcf2
+pip
