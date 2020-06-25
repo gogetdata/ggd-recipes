@@ -48,7 +48,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
    
    #source activate base
 
-   eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
+    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 
     #$WORKSPACE/anaconda/bin/conda activate check-ggd-recipes
     source activate check-ggd-recipes
@@ -99,6 +99,10 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
     conda config --system --add channels file://$WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld
 fi
+
+conda info --envs
+ggd -h
+
 
 conda config --get
 
