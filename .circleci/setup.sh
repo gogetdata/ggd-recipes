@@ -33,7 +33,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
 
-    mkdir/home/circleci/.conda
+    mkdir -p /home/circleci/.conda
     sudo chown -R $USER /home/circleci/.conda
     touch /home/circleci/.conda/environments.txt
 
