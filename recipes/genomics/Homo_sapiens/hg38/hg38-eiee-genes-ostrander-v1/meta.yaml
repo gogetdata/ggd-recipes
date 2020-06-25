@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-eiee-genes-ostrander-v1
+  name: hg38-eiee-genes-ostrander-v1
   version: '1'
 requirements:
   build:
@@ -19,8 +19,9 @@ requirements:
   - zlib
   run:
   - bedtools
-  - grch37-gene-features-ensembl-v1
+  - grch38-gene-features-ensembl-v1
   - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - pyexcel
   - pyexcel-xls
@@ -29,7 +30,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
   - eiee
@@ -52,14 +53,14 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      grch37-eiee-genes-ostrander-v1.bed.gz: 48.52K
-      grch37-eiee-genes-ostrander-v1.bed.gz.tbi: 14.85K
-      grch37-eiee-genes-ostrander-v1.complement.bed.gz: 30.66K
-      grch37-eiee-genes-ostrander-v1.complement.bed.gz.tbi: 14.59K
+      hg38-eiee-genes-ostrander-v1.bed.gz: 61.34K
+      hg38-eiee-genes-ostrander-v1.bed.gz.tbi: 15.14K
+      hg38-eiee-genes-ostrander-v1.complement.bed.gz: 35.92K
+      hg38-eiee-genes-ostrander-v1.complement.bed.gz.tbi: 19.75K
     final-files:
-    - grch37-eiee-genes-ostrander-v1.bed.gz
-    - grch37-eiee-genes-ostrander-v1.bed.gz.tbi
-    - grch37-eiee-genes-ostrander-v1.complement.bed.gz
-    - grch37-eiee-genes-ostrander-v1.complement.bed.gz.tbi
+    - hg38-eiee-genes-ostrander-v1.bed.gz
+    - hg38-eiee-genes-ostrander-v1.bed.gz.tbi
+    - hg38-eiee-genes-ostrander-v1.complement.bed.gz
+    - hg38-eiee-genes-ostrander-v1.complement.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
