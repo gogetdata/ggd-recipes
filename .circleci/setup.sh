@@ -42,11 +42,11 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     source $BASH_ENV
 
-    $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3 pip -y
+    $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3 -y
 
     #source $WORKSPACE/anaconda/etc/profile.d/conda.sh
    
-   #source activate base
+    #source activate base
 
     eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 
