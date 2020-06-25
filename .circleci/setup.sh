@@ -6,6 +6,7 @@ WORKSPACE=$(pwd)
 
 # Set path
 echo "export PATH=$WORKSPACE/anaconda/bin:$PATH" >> $BASH_ENV
+echo "export PATH=$WORKSPACE/anaconda/envs/check-ggd-recipes/bin:$PATH" >> $BASH_ENV
 source $BASH_ENV
 
 ## Get bioconda version requirements
@@ -32,7 +33,12 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
 
-    mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
+    conda create --name check-ggd-recipes python=3
+
+    conda activate check-ggd-recipes
+
+    #mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
+    mkdir -p $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/$tag-64
 
     # step 2: setup channels
     conda config --system --add channels defaults
@@ -44,10 +50,10 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda install -y --file requirements.txt 
 
     ## Install ggd-cli
-    #pip install -U git+git://github.com/gogetdata/ggd-cli 
+    pip install -U git+git://github.com/gogetdata/ggd-cli 
 
     ## Temporarily use the cli_update 
-    pip install -U git+git://github.com/gogetdata/ggd-cli@test-without-conda 
+    #pip install -U git+git://github.com/gogetdata/ggd-cli@test-without-conda 
 
     # step 4: install requirments from git repos
     ## Install bioconda-utils
@@ -62,19 +68,24 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     # step 6: download conda_build_config.yaml from conda_forge and put into conda root (Required for using bioconda-utils build)
     cur=`pwd`
-    CONDA_ROOT=$(conda info --root)
+    #CONDA_ROOT=$(conda info --root)
+    CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes/"
+    ## Set the CONDA_SOURCE_PREFIX env var 
+    export CONDA_SOURCE_PREFIX="$(conda info --root)/envs/check-ggd-recipes/"
     cd $CONDA_ROOT
     curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
     cd $cur
 
     # step 7: set up local channels
     # Add local channel as highest priority
-    conda index $WORKSPACE/anaconda/conda-bld/
-    conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
+    #conda index $WORKSPACE/anaconda/conda-bld/
+    conda index $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/
+    #conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
+    conda config --system --add channels file://$WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld
 fi
 
 conda config --get
 
-ls $WORKSPACE/anaconda/conda-bld
-ls $WORKSPACE/anaconda/conda-bld/noarch
+#ls $WORKSPACE/anaconda/conda-bld
+#ls $WORKSPACE/anaconda/conda-bld/noarch
 

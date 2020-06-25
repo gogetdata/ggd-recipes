@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
-CONDA_ROOT=$(conda info --root)
+#CONDA_ROOT=$(conda info --root)
+#CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes/"
 
 rm -rf $CONDA_ROOT/conda-bld/*
 
@@ -17,7 +18,8 @@ rmbuild() {
 trap rmbuild EXIT
 
 ## Set the CONDA_SOURCE_PREFIX env var 
-export CONDA_SOURCE_PREFIX=$(conda info --root)
+#export CONDA_SOURCE_PREFIX=$(conda info --root)
+#export CONDA_SOURCE_PREFIX="$(conda info --root)/envs/check-ggd-recipes/"
 
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build --loglevel debug recipes/ config.yaml
