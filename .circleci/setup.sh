@@ -48,11 +48,11 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
    
    #source activate base
 
-   # eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
+   eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 
 
     #$WORKSPACE/anaconda/bin/conda activate check-ggd-recipes
-    source activate check-ggd-recipes
+    $WORKSPACE/anaconda/bin/condasource activate check-ggd-recipes
 
     #mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
     mkdir -p $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/$tag-64
