@@ -33,9 +33,9 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
 
-    mkdir $WORKSPACE/.conda/
-    sudo chown -R $USER $WORKSPACE/.conda/
-    touch $WORKSPACE/.conda/environments.txt
+    mkdir/home/circleci/.conda
+    sudo chown -R $USER /home/circleci/.conda
+    touch /home/circleci/.conda/environments.txt
 
 
     #$WORKSPACE/anaconda/bin/conda init bash
