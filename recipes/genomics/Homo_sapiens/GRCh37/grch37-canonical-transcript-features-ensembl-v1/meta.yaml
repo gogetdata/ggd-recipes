@@ -11,9 +11,7 @@ package:
   version: '1'
 requirements:
   build:
-  - gsort
   run:
-  - gsort
 source:
   path: .
 about:

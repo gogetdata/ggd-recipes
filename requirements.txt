@@ -13,6 +13,9 @@ gitpython>=3.0.8,3.0.*
 gitdb
 smmap
 samtools
+gsort>=0.1.4
+htslib
+zlib
 python>=3.7
 pyyaml
 fuzzywuzzy
