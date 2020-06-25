@@ -39,7 +39,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     #source $WORKSPACE/anaconda/etc/profile.d/conda.sh
 
-    eval "$(conda shell.bash hook)"
+    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 
     $WORKSPACE/anaconda/bin/conda activate check-ggd-recipes
 
