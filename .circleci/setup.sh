@@ -33,6 +33,10 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
 
+    $WORKSPACE/anaconda/bin/conda init bash
+
+    source activate base
+
     $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3
 
     $WORKSPACE/anaconda/bin/conda activate check-ggd-recipes
