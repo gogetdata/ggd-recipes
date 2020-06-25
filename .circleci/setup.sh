@@ -40,10 +40,9 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     $WORKSPACE/anaconda/bin/conda init bash
 
-    source ~/.bashrc
-    source ~/.bash_profile
+    source $BASH_ENV
 
-    $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3
+    $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3 -y
 
     #source $WORKSPACE/anaconda/etc/profile.d/conda.sh
    
