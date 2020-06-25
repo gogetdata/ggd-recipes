@@ -35,6 +35,9 @@ do
     echo $bz2
 done
 
+conda config --set unsatisfiable_hints True
+ 
+
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
 echo -e "############################################################\n"
