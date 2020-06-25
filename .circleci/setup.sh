@@ -38,7 +38,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     touch $WORKSPACE/.conda/environments.txt
 
 
-    $WORKSPACE/anaconda/bin/conda init bash
+    #$WORKSPACE/anaconda/bin/conda init bash
 
     source $BASH_ENV
 
