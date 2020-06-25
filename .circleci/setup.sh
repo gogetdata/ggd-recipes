@@ -44,10 +44,10 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda install -y --file requirements.txt 
 
     ## Install ggd-cli
-    pip install -U git+git://github.com/gogetdata/ggd-cli 
+    #pip install -U git+git://github.com/gogetdata/ggd-cli 
 
     ## Temporarily use the cli_update 
-    ## pip install -U git+git://github.com/gogetdata/ggd-cli@cli_update 
+    pip install -U git+git://github.com/gogetdata/ggd-cli@test-without-conda 
 
     # step 4: install requirments from git repos
     ## Install bioconda-utils

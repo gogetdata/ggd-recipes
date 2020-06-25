@@ -31,8 +31,6 @@ cached=false
 cached_recipes_path=""
 
 
-conda install gsort htslib zlib 
-
 for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
         continue
@@ -44,7 +42,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
     echo "############################################################"
     echo "-> Checking recipe" $(basename $bz2)
     echo "############################################################"
-    ggd check-recipe --debug -du $bz2 --dont-add-md5sum-for-checksum  ## md5sum checksum will be tested
+    ggd check-recipe -du $bz2 --dont-add-md5sum-for-checksum  ## md5sum checksum will be tested
     
     ## Upload
     set +o nounset
