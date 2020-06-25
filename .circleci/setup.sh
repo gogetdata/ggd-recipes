@@ -40,13 +40,16 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     $WORKSPACE/anaconda/bin/conda init bash
 
+    source ~/.bashrc
+    source ~/.bash_profile
+
     $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3
 
     #source $WORKSPACE/anaconda/etc/profile.d/conda.sh
    
-   source activate base
+   #source activate base
 
-    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
+   # eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 
 
     $WORKSPACE/anaconda/bin/conda activate check-ggd-recipes
