@@ -81,6 +81,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #$WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
     ls $WORKSPACE/anaconda/envs/check-ggd-recipes/bin
     $WORKSPACE/anaconda/envs/check-ggd-recipes/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+    ls $WORKSPACE/anaconda/envs/check-ggd-recipes/bin
 
     # step 5: cleanup
     conda clean -y --all
