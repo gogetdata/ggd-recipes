@@ -102,6 +102,9 @@ fi
 
 conda info --envs
 ggd -h
+biocodna-utils -h
+
+conda list
 
 
 conda config --get

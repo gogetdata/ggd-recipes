@@ -3,8 +3,6 @@ set -eo pipefail -o nounset
 
 
 conda info --envs
-conda activate check-ggd-recipes
-conda info --envs
 
 #CONDA_ROOT=$(conda info --root)
 CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes/"
