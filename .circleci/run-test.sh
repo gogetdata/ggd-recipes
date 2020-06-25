@@ -27,6 +27,14 @@ export CONDA_SOURCE_PREFIX="$(conda info --root)/envs/check-ggd-recipes/"
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build --loglevel debug recipes/ config.yaml
 
+ls $CONDA_ROOT/conda-bld/*
+ls $CHECK_DIR
+
+for bz2 in $CHECK_DIR/*.bz2;
+do
+    echo $bz2
+done
+
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
 echo -e "############################################################\n"
