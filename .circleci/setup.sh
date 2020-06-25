@@ -106,7 +106,7 @@ fi
 
 conda info --envs
 ggd -h
-biocodna-utils -h
+bioconda-utils -h
 
 conda list
 
