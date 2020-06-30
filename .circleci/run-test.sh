@@ -47,8 +47,8 @@ trap rmbuild EXIT
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build --loglevel debug recipes/ config.yaml
 
-ls $CONDA_ROOT/conda-bld/*
-ls $CHECK_DIR
+#ls $CONDA_ROOT/conda-bld/*
+#ls $CHECK_DIR
 
 for bz2 in $CHECK_DIR/*.bz2;
 do
