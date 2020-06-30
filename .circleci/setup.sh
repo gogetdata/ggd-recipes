@@ -115,6 +115,8 @@ fi
 
 bioconda-utils -h
 
+source deactivate
+
 conda config --get
 
 #ls $WORKSPACE/anaconda/conda-bld
