@@ -10,12 +10,16 @@ source activate bioconda
 CONDA_ROOT=$(conda info --root)
 #CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes"
 
+echo "CONDA ROOT = $CONDA_ROOT"
+
 rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
 CHECK_DIR=$CONDA_ROOT/conda-bld/*
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
+
+echo "CHECK DIR = $CHECK_DIR"
 
 ## cleanup
 rmbuild() {
@@ -57,6 +61,7 @@ conda info --envs
 source activate check-ggd-recipes
 
 for bz2 in $CHECK_DIR/*.bz2; do
+    echo $bz2
     if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
         continue
     fi
@@ -113,7 +118,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 done
 
 ## Change Environments
-source deacitvate 
+source deactivate 
 eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 source activate bioconda
 
