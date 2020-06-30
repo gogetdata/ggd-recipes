@@ -78,7 +78,8 @@ cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR
 
 source activate check-ggd-recipes
 
-for bz2 in $CHECK_DIR/*.bz2; do
+#for bz2 in $CHECK_DIR/*.bz2; do
+for bz2 in $GGD_CHECK_DIR/*/*.bz2; do
     echo $bz2
     if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
         continue
