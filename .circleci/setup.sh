@@ -44,7 +44,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     source $BASH_ENV
 
     $WORKSPACE/anaconda/bin/conda create --name check-ggd-recipes python=3 -y
-    $WORKSPACE/anaconda/bin/conda create --name bioconda python=3 -y
+
 
     #source $WORKSPACE/anaconda/etc/profile.d/conda.sh
    
@@ -81,6 +81,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #BIOCONDA_UTILS_TAG=v0.16.7
     #$WORKSPACE/anaconda/bin/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     source deactivate 
+    $WORKSPACE/anaconda/bin/conda create --name bioconda python=3 -y
     source activate bioconda
     conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     #$WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
