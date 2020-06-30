@@ -7,8 +7,9 @@ eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
 source activate bioconda
 
-CONDA_ROOT=$(conda info --root)
+#CONDA_ROOT=$(conda info --root)
 #CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes"
+CONDA_ROOT="$(conda info --root)/envs/bioconda"
 
 echo "CONDA ROOT = $CONDA_ROOT"
 
