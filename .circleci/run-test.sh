@@ -7,24 +7,36 @@ eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
 source activate bioconda
 
-#CONDA_ROOT=$(conda info --root)
+CONDA_ROOT=$(conda info --root)
 #CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes"
-CONDA_ROOT="$(conda info --root)/envs/bioconda"
+#CONDA_ROOT="$(conda info --root)/envs/bioconda"
 
 echo "CONDA ROOT = $CONDA_ROOT"
 
 rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
-CHECK_DIR=$CONDA_ROOT/conda-bld/*
-rm -rf $CHECK_DIR
-mkdir -p $CHECK_DIR
+BIOCONDA_CHECK_DIR="$CONDA_ROOT/envs/bioconda/conda-bld/*"
+GGD_CHECK_DIR="$CONDA_ROOT/envs/check-ggd-recipes/conda-bld/*"
+#rm -rf $CHECK_DIR
+#mkdir -p $CHECK_DIR
+#
+#echo "CHECK DIR = $CHECK_DIR"
+#
+### cleanup
+#rmbuild() {
+#    rm -rf $CHECK_DIR
+#}
+#trap rmbuild EXIT
 
-echo "CHECK DIR = $CHECK_DIR"
+rm -rf $BIOCONDA_CHECK_DIR
+mkdir -p $BIOCONDA_CHECK_DIR
+
+echo "CHECK DIR = $BIOCONDA_CHECK_DIR"
 
 ## cleanup
 rmbuild() {
-    rm -rf $CHECK_DIR
+    rm -rf $BIOCONDA_CHECK_DIR
 }
 trap rmbuild EXIT
 
@@ -61,6 +73,8 @@ eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
 
 ###cp -r $CHECK_DIR "$(conda info --root)/envs/check-ggd-recipes/conda-bld/*"
+
+cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR
 
 source activate check-ggd-recipes
 
