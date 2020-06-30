@@ -17,7 +17,7 @@ rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
 BIOCONDA_CHECK_DIR="$CONDA_ROOT/envs/bioconda/conda-bld/*"
-GGD_CHECK_DIR="$CONDA_ROOT/envs/check-ggd-recipes/conda-bld/*"
+GGD_CHECK_DIR="$CONDA_ROOT/envs/check-ggd-recipes/conda-bld"
 #rm -rf $CHECK_DIR
 #mkdir -p $CHECK_DIR
 #
@@ -74,7 +74,7 @@ conda info --envs
 
 ###cp -r $CHECK_DIR "$(conda info --root)/envs/check-ggd-recipes/conda-bld/*"
 
-cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR
+cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR/*
 
 source activate check-ggd-recipes
 
