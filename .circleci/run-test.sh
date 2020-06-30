@@ -59,6 +59,9 @@ cached_recipes_path=""
 source deactivate 
 eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
+
+###cp -r $CHECK_DIR "$(conda info --root)/envs/check-ggd-recipes/conda-bld/*"
+
 source activate check-ggd-recipes
 
 for bz2 in $CHECK_DIR/*.bz2; do
