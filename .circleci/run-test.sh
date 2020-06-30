@@ -2,6 +2,7 @@
 set -eo pipefail -o nounset
 
 
+eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
 source activate bioconda
 
@@ -48,6 +49,7 @@ cached=false
 cached_recipes_path=""
 
 ## Change environments
+eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 source deactivate 
 conda info --envs
 source activate check-ggd-recipes
@@ -109,6 +111,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 done
 
 ## Change Environments
+eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 source deacitvate 
 source activate bioconda
 
@@ -121,6 +124,7 @@ if [[ "$cached" == true ]] ; then
 
 
     ## Change environments
+    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
     source deactivate 
     source activate check-ggd-recipes
 
