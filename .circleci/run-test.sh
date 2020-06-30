@@ -50,10 +50,10 @@ bioconda-utils build --loglevel debug recipes/ config.yaml
 #ls $CONDA_ROOT/conda-bld/*
 #ls $CHECK_DIR
 
-for bz2 in $CHECK_DIR/*.bz2;
-do
-    echo $bz2
-done
+#for bz2 in $CHECK_DIR/*.bz2;
+#do
+#    echo $bz2
+#done
 
 conda config --set unsatisfiable_hints True
  
