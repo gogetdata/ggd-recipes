@@ -21,7 +21,7 @@ rmbuild() {
 trap rmbuild EXIT
 
 ## Set the CONDA_SOURCE_PREFIX env var 
-export CONDA_SOURCE_PREFIX=$(conda info --root)
+#export CONDA_SOURCE_PREFIX=$(conda info --root)
 #export CONDA_SOURCE_PREFIX="$(conda info --root)/envs/check-ggd-recipes"
 
 ## Build/filter all recipes using bioconda-utils build
@@ -46,6 +46,9 @@ recipe_uploaded=false
 cached=false
 cached_recipes_path=""
 
+## Change environments
+source deactivate 
+source activate check-ggd-recipes
 
 for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
@@ -103,12 +106,21 @@ for bz2 in $CHECK_DIR/*.bz2; do
     set -o nounset
 done
 
+## Change Environments
+source deacitvate 
+source activate bioconda
+
 if [[ "$cached" == true ]] ; then
 
     rm $CHECK_DIR/*.bz2
 
     ## build the new pacakges
     bioconda-utils build $cached_recipes_path config.yaml
+
+
+    ## Change environments
+    source deactivate 
+    source activate check-ggd-recipes
 
     ## run recipe check and upload
     for bz2 in $CHECK_DIR/*.bz2; do

@@ -11,7 +11,13 @@ package:
   version: '1'
 requirements:
   build:
+  - gsort
+  - htslib
+  - zlib
   run:
+  - gsort
+  - htslib
+  - zlib
 source:
   path: .
 about:
