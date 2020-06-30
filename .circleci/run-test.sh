@@ -74,7 +74,7 @@ conda info --envs
 
 ###cp -r $CHECK_DIR "$(conda info --root)/envs/check-ggd-recipes/conda-bld/*"
 
-cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR/*
+cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR
 
 source activate check-ggd-recipes
 
