@@ -56,7 +56,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     source activate check-ggd-recipes
 
     #mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
-    ###mkdir -p $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/$tag-64
+    mkdir -p $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/$tag-64
     mkdir -p $WORKSPACE/anaconda/envs/bioconda/conda-bld/$tag-64
 
     # step 2: setup channels
@@ -110,7 +110,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #conda index $WORKSPACE/anaconda/conda-bld/
     #conda index $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/
     conda index $WORKSPACE/anaconda/envs/bioconda/conda-bld/
-   ### conda index $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/
+    conda index $WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld/
     #conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
     #conda config --system --add channels file://$WORKSPACE/anaconda/envs/check-ggd-recipes/conda-bld
     conda config --system --add channels file://$WORKSPACE/anaconda/envs/bioconda/conda-bld
