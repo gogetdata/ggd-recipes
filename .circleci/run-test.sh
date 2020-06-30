@@ -47,7 +47,7 @@ cached=false
 cached_recipes_path=""
 
 ## Change environments
-conda deactivate 
+source deactivate 
 conda info --envs
 source activate check-ggd-recipes
 
