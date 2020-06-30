@@ -112,12 +112,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda config --system --add channels file://$WORKSPACE/anaconda/envs/bioconda/conda-bld
 fi
 
-conda info --envs
-ggd -h
 bioconda-utils -h
-
-conda list
-
 
 conda config --get
 
