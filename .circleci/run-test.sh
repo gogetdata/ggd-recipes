@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
+WORKSPACE=$(pwd)
 
 eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
