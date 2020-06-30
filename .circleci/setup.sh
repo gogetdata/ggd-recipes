@@ -81,6 +81,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #BIOCONDA_UTILS_TAG=v0.16.7
     #$WORKSPACE/anaconda/bin/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     source deactivate 
+    conda info --envs
     $WORKSPACE/anaconda/bin/conda create --name bioconda python=3 -y
     source activate bioconda
     conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
@@ -116,6 +117,7 @@ fi
 bioconda-utils -h
 
 source deactivate
+conda info --envs
 
 conda config --get
 
