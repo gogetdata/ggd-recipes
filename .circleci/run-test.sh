@@ -66,6 +66,8 @@ recipe_uploaded=false
 cached=false
 cached_recipes_path=""
 
+ggd check-recipe recipes/genomics/Homo_sapiens/GRCh37/grch37-canonical-transcript-features-ensembl-v1  -du --dont-add-md5sum-for-checksum 
+
 ## Change environments
 
 source deactivate 
