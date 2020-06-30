@@ -47,7 +47,8 @@ cached=false
 cached_recipes_path=""
 
 ## Change environments
-source deactivate 
+conda deactivate 
+conda info --envs
 source activate check-ggd-recipes
 
 for bz2 in $CHECK_DIR/*.bz2; do
