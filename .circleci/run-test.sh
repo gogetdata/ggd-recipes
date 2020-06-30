@@ -50,8 +50,9 @@ cached=false
 cached_recipes_path=""
 
 ## Change environments
-eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
+
 source deactivate 
+eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
 source activate check-ggd-recipes
 
@@ -112,8 +113,8 @@ for bz2 in $CHECK_DIR/*.bz2; do
 done
 
 ## Change Environments
-eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 source deacitvate 
+eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 source activate bioconda
 
 if [[ "$cached" == true ]] ; then
@@ -125,8 +126,8 @@ if [[ "$cached" == true ]] ; then
 
 
     ## Change environments
-    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
     source deactivate 
+    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
     source activate check-ggd-recipes
 
     ## run recipe check and upload
