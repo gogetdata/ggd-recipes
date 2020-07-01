@@ -10,9 +10,9 @@ WORKSPACE=$(pwd)
 
 cat >> $BASH_ENV <<EOF
 # Set path
-export PATH="${WORKSPACE}/miniconda/bin:${PATH}"
-if [ -f "${WORKSPACE}/miniconda/etc/profile.d/conda.sh" ] ; then
-    . "${WORKSPACE}/miniconda/etc/profile.d/conda.sh"
+export PATH="${WORKSPACE}/anaconda/bin:${PATH}"
+if [ -f "${WORKSPACE}/anaconda/etc/profile.d/conda.sh" ] ; then
+    . "${WORKSPACE}/anaconda/etc/profile.d/conda.sh"
 fi
 EOF
 
