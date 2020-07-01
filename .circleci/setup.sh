@@ -4,6 +4,16 @@ set -exo pipefail
 
 WORKSPACE=$(pwd)
 
+cat >> $BASH_ENV <<EOF
+# Set path
+export PATH="${WORKSPACE}/anaconda/bin:${PATH}"
+if [ -f "${WORKSPACE}/anaconda/etc/profile.d/conda.sh" ] ; then
+    . "${WORKSPACE}/anaconda/etc/profile.d/conda.sh"
+fi
+EOF
+
+. $BASH_ENV
+
 # Set path
 echo "export PATH=$WORKSPACE/anaconda/bin:$PATH" >> $BASH_ENV
 echo "export PATH=$WORKSPACE/anaconda/envs/check-ggd-recipes/bin:$PATH" >> $BASH_ENV
@@ -33,6 +43,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     curl -L -O https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VER-$tag-x86_64.sh
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
+    . $BASH_ENV
+    conda activate base
 
     mkdir -p /home/circleci/.conda
     sudo chown -R $USER /home/circleci/.conda
