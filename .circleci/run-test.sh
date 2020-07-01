@@ -74,13 +74,15 @@ source deactivate
 eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
 conda info --envs
 
-ggd check-recipe recipes/genomics/Homo_sapiens/GRCh37/grch37-canonical-transcript-features-ensembl-v1  -du --dont-add-md5sum-for-checksum 
+
 
 ###cp -r $CHECK_DIR "$(conda info --root)/envs/check-ggd-recipes/conda-bld/*"
 
 cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR
 
 source activate check-ggd-recipes
+
+ggd check-recipe recipes/genomics/Homo_sapiens/GRCh37/grch37-canonical-transcript-features-ensembl-v1  -du --dont-add-md5sum-for-checksum 
 
 #for bz2 in $CHECK_DIR/*.bz2; do
 for bz2 in $GGD_CHECK_DIR/*/*.bz2; do
