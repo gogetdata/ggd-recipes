@@ -71,6 +71,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     ## Install ggd-cli
     pip install -U git+git://github.com/gogetdata/ggd-cli 
 
+    ggd check-recipe recipes/genomics/Homo_sapiens/GRCh37/grch37-canonical-transcript-features-ensembl-v1  -du --dont-add-md5sum-for-checksum 
+
     ## Temporarily use the cli_update 
     #pip install -U git+git://github.com/gogetdata/ggd-cli@test-without-conda 
 
