@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
-. $BASH_ENV
 conda activate base
 
 CONDA_ROOT=$(conda info --root)
