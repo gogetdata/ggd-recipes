@@ -5,8 +5,18 @@ set -exo pipefail
 WORKSPACE=$(pwd)
 
 # Set path
-echo "export PATH=$WORKSPACE/anaconda/bin:$PATH" >> $BASH_ENV
-source $BASH_ENV
+#echo "export PATH=$WORKSPACE/anaconda/bin:$PATH" >> $BASH_ENV
+#source $BASH_ENV
+
+cat >> $BASH_ENV <<EOF
+# Set path
+export PATH="${WORKSPACE}/miniconda/bin:${PATH}"
+if [ -f "${WORKSPACE}/miniconda/etc/profile.d/conda.sh" ] ; then
+    . "${WORKSPACE}/miniconda/etc/profile.d/conda.sh"
+fi
+EOF
+
+. $BASH_ENV
 
 ## Get bioconda version requirements
 curl -s https://raw.githubusercontent.com/bioconda/bioconda-common/master/common.sh > .circleci/bioconda-common.sh
@@ -31,6 +41,9 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     curl -L -O https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VER-$tag-x86_64.sh
     sudo bash Miniconda3-$MINICONDA_VER-$tag-x86_64.sh -b -p $WORKSPACE/anaconda/
     sudo chown -R $USER $WORKSPACE/anaconda/
+    . $BASH_ENV
+    conda activate base
+    
 
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
 
