@@ -65,6 +65,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda config --system --add channels conda-forge
     conda config --system --add channels ggd-genomics
 
+    conda config --get 
+    cat /home/circleci/.condarc
     # step 3: install ggd requirements 
     conda install -y --file requirements.txt 
 
