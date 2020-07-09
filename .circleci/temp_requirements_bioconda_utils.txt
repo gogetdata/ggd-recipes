@@ -4,3 +4,4 @@ pandas=0.23.*
 aiohttp=3.4.*
 backoff=1.6.*
 boltons=18.*
+aioftp=0.12.*
