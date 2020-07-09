@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
+echo "1"
 if [[ -z $(conda info --envs | grep "*" | grep -o "\/.*") ]]; then
     export CONDA_ROOT=$(conda info --root)
     env_dir=$CONDA_ROOT
@@ -16,19 +17,25 @@ else
 fi
 
 
+echo "2"
 PKG_DIR=`find "$CONDA_SOURCE_PREFIX/pkgs/" -name "$PKG_NAME-$PKG_VERSION*" | grep -v ".tar.bz2" |  grep "$PKG_VERSION.*$PKG_BUILDNUM$"`
+echo $CONDA_SOURCE_PREFIX
 
 
+echo "3"
 if [ -d $RECIPE_DIR ]; then
     rm -r $RECIPE_DIR
 fi
 
+echo "4"
 mkdir -p $RECIPE_DIR
 
+echo "5"
 (cd $RECIPE_DIR && bash $PKG_DIR/info/recipe/recipe.sh)
 
 cd $RECIPE_DIR
 
+echo "6"
 ## Iterate over new files and replace file name with data package name and data version  
 for f in *; do
     ext="${f#*.}"
@@ -39,6 +46,7 @@ for f in *; do
     fi  
 done
 
+echo "7"
 ## Add environment variables 
 #### File
 if [[ `find $RECIPE_DIR -type f -maxdepth 1 | wc -l | sed 's/ //g'` == 1 ]] ## If only one file
@@ -58,6 +66,7 @@ then
     fi
 fi 
 
+echo "8"
 #### Dir
 recipe_env_dir_name="ggd_grch37-self-chain-ucsc-v1_dir"
 recipe_env_dir_name="$(echo "$recipe_env_dir_name" | sed 's/-/_/g' | sed 's/\./_/g')"
@@ -71,6 +80,7 @@ mkdir -p $deactivate_dir
 echo "export $recipe_env_dir_name=$RECIPE_DIR" >> $activate_dir/env_vars.sh
 echo "unset $recipe_env_dir_name">> $deactivate_dir/env_vars.sh
 
+echo "9"
 #### File
     ## If the file env variable exists, set the env file var
 if [[ ! -z "${recipe_env_file_name:-}" ]] 
