@@ -1,3 +1,6 @@
 argh=0.26.*
 networkx=1.11
 pandas=0.23.*
+aiohttp=3.4.*
+backoff=1.6.*
+boltons=18.*
