@@ -69,7 +69,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     ## Temporarily use an older version of bioconda utils
     #BIOCONDA_UTILS_TAG=v0.16.7
     #$WORKSPACE/anaconda/bin/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
-    $WORKSPACE/anaconda/bin/conda install -y --file temp_requirements_bioconda_utils.txt
+    $WORKSPACE/anaconda/bin/conda install -y --file ../temp_requirements_bioconda_utils.txt
     $WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
     # step 5: cleanup
