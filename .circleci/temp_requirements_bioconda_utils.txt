@@ -6,4 +6,3 @@ backoff=1.6.*
 boltons=18.*
 aioftp=0.12.*
 pyaml=17.12.*
-

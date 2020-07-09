@@ -29,6 +29,9 @@ echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
 echo -e "############################################################\n"
 
+biconda_minimal_reqs="$(cut -f 1 -d "=" .circleci/temp_requirements_bioconda_utils.txt | tr '\n' ' ' )"
+conda uninstall $biconda_minimal_reqs
+
 recipe_uploaded=false
 cached=false
 cached_recipes_path=""
