@@ -15,7 +15,6 @@ if [ -f "${WORKSPACE}/anaconda/etc/profile.d/conda.sh" ] ; then
     . "${WORKSPACE}/anaconda/etc/profile.d/conda.sh"
 fi
 EOF
-
 . $BASH_ENV
 
 ## Get bioconda version requirements
@@ -43,8 +42,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     sudo chown -R $USER $WORKSPACE/anaconda/
     . $BASH_ENV
     conda activate base
-    echo $PS1
-    
 
     mkdir -p $WORKSPACE/anaconda/conda-bld/$tag-64
 
@@ -68,25 +65,26 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     ## Temporarily use an older version of bioconda utils
     #BIOCONDA_UTILS_TAG=v0.16.7
-    BIOCONDA_UTILS_TAG='v0.16.18'
-    $WORKSPACE/anaconda/bin/conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
-    #$WORKSPACE/anaconda/bin/conda install -y --file .circleci/temp_requirements_bioconda_utils.txt
-    $WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+    conda install \ 
+        -y \ 
+        --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt \ 
+        --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/test-requirements.txt 
 
-
+    pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
     # step 5: cleanup
     conda clean -y --all
 
     # step 6: download conda_build_config.yaml from conda_forge and put into conda root (Required for using bioconda-utils build)
-    cur=`pwd`
-    CONDA_ROOT=$(conda info --root)
-    cd $CONDA_ROOT
-    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
-    cd $cur
+#    cur=`pwd`
+#    CONDA_ROOT=$(conda info --root)
+#    cd $CONDA_ROOT
+#    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
+#    cd $cur
 
     # step 7: set up local channels
     # Add local channel as highest priority
+    mkdir -p $WORKSPACE/anaconda/conda-bld/{noarch,linux-64,osx-64}
     conda index $WORKSPACE/anaconda/conda-bld/
     conda config --system --add channels file://$WORKSPACE/anaconda/conda-bld
 fi
