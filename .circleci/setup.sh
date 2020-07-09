@@ -64,7 +64,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     ## Install bioconda-utils
 
     ## Temporarily use an older version of bioconda utils
-    BIOCONDA_UTILS_TAG=v0.16.7
+    BIOCONDA_UTILS_TAG=v0.16.17
     conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt 
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
@@ -72,11 +72,11 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #conda clean -y --all
 
     # step 6: download conda_build_config.yaml from conda_forge and put into conda root (Required for using bioconda-utils build)
-    cur=`pwd`
-    CONDA_ROOT=$(conda info --root)
-    cd $CONDA_ROOT
-    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
-    cd $cur
+#    cur=`pwd`
+#    CONDA_ROOT=$(conda info --root)
+#    cd $CONDA_ROOT
+#    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
+#    cd $cur
 
     # step 7: set up local channels
     # Add local channel as highest priority
