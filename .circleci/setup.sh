@@ -69,7 +69,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
     # step 5: cleanup
-    conda clean -y --all
+    #conda clean -y --all
 
     # step 6: download conda_build_config.yaml from conda_forge and put into conda root (Required for using bioconda-utils build)
     cur=`pwd`
