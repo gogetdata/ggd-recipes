@@ -72,7 +72,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     $WORKSPACE/anaconda/bin/conda install -y --file .circleci/temp_requirements_bioconda_utils.txt
     $WORKSPACE/anaconda/bin/pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
-    conda install -y python=3.6.*
+
 
     # step 5: cleanup
     conda clean -y --all
