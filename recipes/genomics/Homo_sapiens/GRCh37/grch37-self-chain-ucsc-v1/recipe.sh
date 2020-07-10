@@ -5,8 +5,9 @@ genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Ho
 
 ## Get the chromomsome mapping file
 chrom_mapping=$(ggd get-files grch37-chrom-mapping-ucsc2ensembl-ncbi-v1 --pattern "*.txt")
-awk '{if (NR > 1) print "s/"$1"/"$2"/g"} ' $chrom_mapping \
-    | sort -r > remap.sed
+awk '{if (NR > 1) print $1,$2} ' $chrom_mapping \
+    | sort -k2,2n -r \
+    | awk '{print "s/"$1"/"$2"/g"}' > remap.sed
 
 wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/chainSelf.txt.gz \
     | gzip -dc \
@@ -18,5 +19,5 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/chainS
 
 tabix grch37-selfchain-ucsc-v1.bed.gz
 
-rm remap.sed
+#rm remap.sed
 
