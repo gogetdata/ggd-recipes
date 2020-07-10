@@ -35,12 +35,12 @@ about:
     Self Alignemnts track on UCSC.
   tags:
     data-provider: UCSC
-    data-version: 06-Mar-2014
+    data-version: 21-Jun-2020
     file-type:
     - bed
     final-file-sizes:
-      hg38-self-chain-ucsc-v1.bed.gz: 2.36G
-      hg38-self-chain-ucsc-v1.bed.gz.tbi: 870.29K
+      hg38-self-chain-ucsc-v1.bed.gz: 800.36M
+      hg38-self-chain-ucsc-v1.bed.gz.tbi: 716.61K
     final-files:
     - hg38-self-chain-ucsc-v1.bed.gz
     - hg38-self-chain-ucsc-v1.bed.gz.tbi
