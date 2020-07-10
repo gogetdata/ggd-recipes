@@ -1,0 +1,2 @@
+grch37-hg002-svs-giab-v1.6.sorted.vcf.gz.tbi	3246b73f53052028f579d79ec3557643
+grch37-hg002-svs-giab-v1.6.sorted.vcf.gz	02bca5925a42e253871a63b6e04c5b89

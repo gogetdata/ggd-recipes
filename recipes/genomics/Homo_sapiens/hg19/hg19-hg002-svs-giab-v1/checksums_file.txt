@@ -1,0 +1,2 @@
+hg19-hg002-svs-giab-v1.6.sorted.vcf.gz	40b4dce25ab8ba8bbd8396790de1bd4f
+hg19-hg002-svs-giab-v1.6.sorted.vcf.gz.tbi	bdf10a08d5cf20fbd42845174f2739bd
