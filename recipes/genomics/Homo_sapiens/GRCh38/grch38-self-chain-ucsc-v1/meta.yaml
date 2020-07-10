@@ -1,0 +1,49 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-self-chain-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - Self-Chain
+  - Self-Alignment
+  - Repeats
+  - low-copy-repeats
+  summary: Self chain alignemnts of the human genome with an improved gap scoring
+    system. Alignemtns point out areas of duplication wihtin the human genome, with
+    the exception of the pseudoautosomal regions on X and Y. From the Human Chained
+    Self Alignemnts track on UCSC. Remapped from UCSC hg38 to Ensembl GRCh37
+  tags:
+    data-provider: UCSC
+    data-version: 06-Mar-2014
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-self-chain-ucsc-v1.bed.gz: 790.34M
+      grch38-self-chain-ucsc-v1.bed.gz.tbi: 700.77K
+    final-files:
+    - grch38-self-chain-ucsc-v1.bed.gz
+    - grch38-self-chain-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
