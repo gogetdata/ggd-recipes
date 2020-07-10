@@ -1,0 +1,2 @@
+grch38-self-chain-ucsc-v1.bed.gz.tbi	d727b426a1f569d2f154d4ca6908a673
+grch38-self-chain-ucsc-v1.bed.gz	c593b635e6e43bd24fabfcfbd259d2a2

@@ -1,0 +1,2 @@
+hg19-self-chain-ucsc-v1.bed.gz.tbi	d13b77c54e4c150ac0a00b675d008c99
+hg19-self-chain-ucsc-v1.bed.gz	c13a6731baab76c49752dfbd108c7958
