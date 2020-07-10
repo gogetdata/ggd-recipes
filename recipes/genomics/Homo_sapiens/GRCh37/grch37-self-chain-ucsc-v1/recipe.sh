@@ -19,5 +19,4 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/chainS
 
 tabix grch37-selfchain-ucsc-v1.bed.gz
 
-#rm remap.sed
-
+rm remap.sed
