@@ -1,0 +1,1 @@
+grch37-chrom-mapping-ucsc2refseq-ncbi-v1.txt	37ff04c8900cf0765e28e448fae2dd6f

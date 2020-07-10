@@ -1,0 +1,47 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files:
+  - grch37-chrom-mapping-refseq2ensembl-ncbi-v1.txt
+package:
+  name: grch37-chrom-mapping-refseq2ensembl-ncbi-v1
+  version: '1'
+requirements:
+  build:
+  - bioawk
+  run:
+  - bioawk
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - Chromosome-mapping
+  - mapping
+  - chrommapping
+  - RefSeq2Ensembl
+  - scaffolding-ids
+  - txt
+  - patch-13
+  - hg19-to-GRCh37
+  summary: A tab delimited file containing scaffolding ids that maps GRCh37 RefSeq
+    scaffoldings to GRCh37 Ensembl(GenBank) scaffoldings. This is specific to patch
+    13 of the GRCh37 Human genome build. (1st column = RefSeq ids, 2nd column = Ensembl
+    ids)
+  tags:
+    data-provider: NCBI
+    data-version: 12-October-2016-(patch13)
+    file-type:
+    - txt
+    final-file-sizes:
+      grch37-chrom-mapping-refseq2ensembl-ncbi-v1.txt: 7.27K
+    final-files:
+    - grch37-chrom-mapping-refseq2ensembl-ncbi-v1.txt
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
