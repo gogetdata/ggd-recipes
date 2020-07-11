@@ -7,14 +7,23 @@ extra:
   authors: mjc
   extra-files: []
   genome_file:
-    commands: "## get base genome file\ngenome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome\n\
-      wget --quiet $genome\ngenome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome\n\
-      wget --quiet $genome2\n## Get GTF file with alternative scaffoldings\nwget --quiet\
-      \ ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz\n\
-      ## If no chrom mapping, use existing patch/scaffolding name\ngzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz\
-      \ \\\n    | grep -v \"^#\" \\\n    | awk -v OFS=\"\\t\" '{ if ( ! ($1 ~ /^chr/\
-      \ ) ) print $1}' \\\n    | uniq \\\n    | grep -f - GRCh38.genome >> hg38.genome\n\
-      \nrm gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz\nrm GRCh38.genome\n"
+    commands: |
+      ## get base genome file
+      genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
+      wget --quiet $genome
+      genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+      wget --quiet $genome2
+      
+      ## Get GTF file with alternative scaffoldings
+      wget --quiet ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
+      ## If no chrom mapping, use existing patch/scaffolding name
+      gzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz \
+        | grep -v "^#" \
+        | awk -v OFS="\t" '{ if ( ! ($1 ~ /^chr/ ) ) print $1}' \
+        | uniq \
+        | grep -f - GRCh38.genome >> hg38.genome
+      rm gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
+      rm GRCh38.genome
     file_name: hg38.genome
 package:
   name: hg38-canonical-transcript-features-gencode-v1
