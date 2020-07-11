@@ -37,6 +37,9 @@ about:
     data-version: '2'
     file-type:
     - vcf
+    final-file-sizes:
+      grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz: 32.07M
+      grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi: 442.27K
     final-files:
     - grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz
     - grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi
