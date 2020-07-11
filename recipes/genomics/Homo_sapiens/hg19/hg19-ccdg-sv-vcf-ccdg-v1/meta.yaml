@@ -38,6 +38,9 @@ about:
     data-version: '2'
     file-type:
     - vcf
+    final-file-sizes:
+      hg19-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz: 32.13M
+      hg19-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz.tbi: 442.36K
     final-files:
     - hg19-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz
     - hg19-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz.tbi

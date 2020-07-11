@@ -37,6 +37,9 @@ about:
     data-version: '2'
     file-type:
     - vcf
+    final-file-sizes:
+      hg38-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz: 50.47M
+      hg38-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi: 375.59K
     final-files:
     - hg38-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz
     - hg38-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi
