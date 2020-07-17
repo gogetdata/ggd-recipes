@@ -1,14 +1,14 @@
 #!/bin/sh
 set -eo pipefail -o nounset
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
 wget -q $genome
 
 #eiee genes
 wget -q https://static-content.springer.com/esm/art%3A10.1038%2Fs41525-018-0061-8/MediaObjects/41525_2018_61_MOESM1_ESM.xlsx
 
 ## Get a gtf file
-grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
+grch38_gtf="$(ggd get-files grch38-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh38' -p 'grch38-gene-features-ensembl-v1.gtf.gz')"
 
 
 cat << EOF > pyscript.py
@@ -84,7 +84,7 @@ with open(outfile, "w") as o:
             o.write("\t".join(line) + "\n")
 EOF
 
-python parse_gtf_by_gene.py $grch37_gtf eiee_genes.tsv  unflattened_grch37-eiee-genes-ostrander-v1.bed 
+python parse_gtf_by_gene.py $grch38_gtf eiee_genes.tsv  unflattened_grch38-eiee-genes-ostrander-v1.bed 
 
 cat << EOF > sort_columns.py
 """
@@ -105,25 +105,25 @@ for line in sys.stdin.readlines():
 EOF
 
 # creates flattened representation of protein-coding exome covering AD genes
-gsort unflattened_grch37-eiee-genes-ostrander-v1.bed $genome \
+gsort unflattened_grch38-eiee-genes-ostrander-v1.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
     | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-eiee-genes-ostrander-v1.bed.gz
-tabix -p bed grch37-eiee-genes-ostrander-v1.bed.gz
+    | bgzip -c > grch38-eiee-genes-ostrander-v1.bed.gz
+tabix -p bed grch38-eiee-genes-ostrander-v1.bed.gz
 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-eiee-genes-ostrander-v1.bed.gz) -g /dev/stdin \
+sed "1d" GRCh38.genome \
+    | bedtools complement -i <(zgrep -v "#" grch38-eiee-genes-ostrander-v1.bed.gz) -g /dev/stdin \
     | gsort /dev/stdin $genome \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' \
-    | bgzip -c > grch37-eiee-genes-ostrander-v1.complement.bed.gz
-tabix -p bed grch37-eiee-genes-ostrander-v1.complement.bed.gz
+    | bgzip -c > grch38-eiee-genes-ostrander-v1.complement.bed.gz
+tabix -p bed grch38-eiee-genes-ostrander-v1.complement.bed.gz
 
 #cleanup
 rm eiee_genes.tsv
-rm unflattened_grch37-eiee-genes-ostrander-v1.bed
-rm GRCh37.genome
+rm unflattened_grch38-eiee-genes-ostrander-v1.bed
+rm GRCh38.genome
 rm 41525_2018_61_MOESM1_ESM.xlsx
 rm pyscript.py
 rm parse_gtf_by_gene.py
