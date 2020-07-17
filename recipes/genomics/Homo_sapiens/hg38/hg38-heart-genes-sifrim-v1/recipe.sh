@@ -1,11 +1,15 @@
 #!/bin/sh
 set -eo pipefail -o nounset
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-wget -q $genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+## Get the .genome  file
+genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
+wget -q $genome2
+## Get the chromomsome mapping file
+chr_mapping=$(ggd get-files hg38-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
 ## Get a gtf file
-grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
+grch38_gtf="$(ggd get-files grch38-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh38' -p 'grch38-gene-features-ensembl-v1.gtf.gz')"
 
 #Manually curated list of congenital heart disease (CHD) genes from Sifrim et al.: www.nature.com/articles/ng.3627
 wget -q https://media.nature.com/original/nature-assets/ng/journal/v48/n9/extref/ng.3627-S13.xlsx
@@ -17,7 +21,7 @@ import pyexcel as pe
 
 book = pe.get_book(file_name=sys.argv[1])
 
-genelist = open('grch37-heart-genes-sifrim-v1.tsv', 'w')
+genelist = open('grch38-heart-genes-sifrim-v1.tsv', 'w')
 
 sheet = book['Suppl Table 20']
 for i, record in enumerate(sheet):
@@ -80,7 +84,7 @@ with open(outfile, "w") as o:
             o.write("\t".join(line) + "\n")
 EOF
 
-python parse_gtf_by_gene.py $grch37_gtf grch37-heart-genes-sifrim-v1.tsv unflattened_grch37-heart-genes-sifrim-v1.bed 
+python parse_gtf_by_gene.py $grch38_gtf grch38-heart-genes-sifrim-v1.tsv unflattened_grch38-heart-genes-sifrim-v1.bed 
 
 cat << EOF > sort_columns.py
 """
@@ -102,27 +106,27 @@ EOF
 
 
 # creates flattened representation of protein-coding exome covering AD genes
-gsort unflattened_grch37-heart-genes-sifrim-v1.bed $genome \
+gsort unflattened_grch38-heart-genes-sifrim-v1.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
-    | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-heart-genes-sifrim-v1.bed.gz
-tabix grch37-heart-genes-sifrim-v1.bed.gz
+    | gsort --chromosomemappings $chr_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg38-heart-genes-sifrim-v1.bed.gz
+tabix hg38-heart-genes-sifrim-v1.bed.gz
 
 # bedtools complement so we can use the EXCLUDE option
 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-heart-genes-sifrim-v1.bed.gz) -g /dev/stdin \
-    | gsort /dev/stdin $genome \
+sed "1d" hg38.genome \
+    | bedtools complement -i <(zgrep -v "#" hg38-heart-genes-sifrim-v1.bed.gz) -g /dev/stdin \
+    | gsort /dev/stdin $genome2 \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $0}' \
-    | bgzip -c > grch37-heart-genes-sifrim-v1.complement.bed.gz
-tabix -f grch37-heart-genes-sifrim-v1.complement.bed.gz
+    | bgzip -c > hg38-heart-genes-sifrim-v1.complement.bed.gz
+tabix -f hg38-heart-genes-sifrim-v1.complement.bed.gz
 
-rm grch37-heart-genes-sifrim-v1.tsv
-rm unflattened_grch37-heart-genes-sifrim-v1.bed
+rm grch38-heart-genes-sifrim-v1.tsv
+rm unflattened_grch38-heart-genes-sifrim-v1.bed
 rm ng.3627-S13.xlsx
 rm pyscript.py
 rm sort_columns.py
 rm parse_gtf_by_gene.py
-rm GRCh37.genome
+rm hg38.genome
