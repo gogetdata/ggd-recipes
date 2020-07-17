@@ -299,6 +299,13 @@ def write_file(file_path,file_name,file_str):
 # 2) file_name: The name of the file
 # 3) yaml_dict: The dictionary that contains the yaml file 
 def write_yaml(file_path, file_name, yaml_dict):
+
+    ## Add literal block if needed
+    if "genome_file" in yaml_dict["extra"]:
+        from ggd import utils
+        yaml_dict["extra"]["genome_file"]["commands"] = utils.literal_block(yaml_dict["extra"]["genome_file"]["commands"])
+        utils.add_yaml_literal_block(yaml)
+
     if not os.path.isdir(file_path):
         print("\n-> Making a new directory: %s" %(file_path)) 
         os.makedirs(file_path)

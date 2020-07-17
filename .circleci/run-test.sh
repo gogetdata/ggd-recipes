@@ -1,62 +1,29 @@
 #!/bin/bash
 set -eo pipefail -o nounset
 
-WORKSPACE=$(pwd)
-
-eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
-conda info --envs
-source activate bioconda
+PS1="(base)"
+conda activate base
 
 CONDA_ROOT=$(conda info --root)
-#CONDA_ROOT="$(conda info --root)/envs/check-ggd-recipes"
-#CONDA_ROOT="$(conda info --root)/envs/bioconda"
-
-echo "CONDA ROOT = $CONDA_ROOT"
 
 rm -rf $CONDA_ROOT/conda-bld/*
 
 ## bz2 location of built recipes (conda-bld/<platform>/<.bz2>) (platform = noarch, linux, macos, etc.)
-BIOCONDA_CHECK_DIR="$CONDA_ROOT/envs/bioconda/conda-bld/*"
-GGD_CHECK_DIR="$CONDA_ROOT/envs/check-ggd-recipes/conda-bld"
-#rm -rf $CHECK_DIR
-#mkdir -p $CHECK_DIR
-#
-#echo "CHECK DIR = $CHECK_DIR"
-#
-### cleanup
-#rmbuild() {
-#    rm -rf $CHECK_DIR
-#}
-#trap rmbuild EXIT
-
-rm -rf $BIOCONDA_CHECK_DIR
-mkdir -p $BIOCONDA_CHECK_DIR
-
-echo "CHECK DIR = $BIOCONDA_CHECK_DIR"
+CHECK_DIR=$CONDA_ROOT/conda-bld/*
+rm -rf $CHECK_DIR
+mkdir -p $CHECK_DIR
 
 ## cleanup
 rmbuild() {
-    rm -rf $BIOCONDA_CHECK_DIR
+    rm -rf $CHECK_DIR
 }
 trap rmbuild EXIT
 
 ## Set the CONDA_SOURCE_PREFIX env var 
-#export CONDA_SOURCE_PREFIX=$(conda info --root)
-#export CONDA_SOURCE_PREFIX="$(conda info --root)/envs/check-ggd-recipes"
+export CONDA_SOURCE_PREFIX=$(conda info --root)
 
 ## Build/filter all recipes using bioconda-utils build
 bioconda-utils build --loglevel debug recipes/ config.yaml
-
-#ls $CONDA_ROOT/conda-bld/*
-#ls $CHECK_DIR
-
-#for bz2 in $CHECK_DIR/*.bz2;
-#do
-#    echo $bz2
-#done
-
-conda config --set unsatisfiable_hints True
- 
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
@@ -66,27 +33,7 @@ recipe_uploaded=false
 cached=false
 cached_recipes_path=""
 
-
-
-## Change environments
-
-source deactivate 
-eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
-conda info --envs
-
-
-
-###cp -r $CHECK_DIR "$(conda info --root)/envs/check-ggd-recipes/conda-bld/*"
-
-cp -r $BIOCONDA_CHECK_DIR $GGD_CHECK_DIR
-
-source activate check-ggd-recipes
-
-ggd check-recipe recipes/genomics/Homo_sapiens/GRCh37/grch37-canonical-transcript-features-ensembl-v1  -du --dont-add-md5sum-for-checksum 
-
-#for bz2 in $CHECK_DIR/*.bz2; do
-for bz2 in $GGD_CHECK_DIR/*/*.bz2; do
-    echo $bz2
+for bz2 in $CHECK_DIR/*.bz2; do
     if [[ "$(basename $bz2)" == *".json.bz2" ]]; then
         continue
     fi
@@ -142,23 +89,12 @@ for bz2 in $GGD_CHECK_DIR/*/*.bz2; do
     set -o nounset
 done
 
-## Change Environments
-source deactivate 
-eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
-source activate bioconda
-
 if [[ "$cached" == true ]] ; then
 
     rm $CHECK_DIR/*.bz2
 
     ## build the new pacakges
     bioconda-utils build $cached_recipes_path config.yaml
-
-
-    ## Change environments
-    source deactivate 
-    eval "$($WORKSPACE/anaconda/bin/conda shell.bash hook)"
-    source activate check-ggd-recipes
 
     ## run recipe check and upload
     for bz2 in $CHECK_DIR/*.bz2; do

@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-self-chain-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Self-Chain
+  - Self-Alignment
+  - Repeats
+  - low-copy-repeats
+  summary: Self chain alignemnts of the human genome with an improved gap scoring
+    system. Alignemtns point out areas of duplication wihtin the human genome, with
+    the exception of the pseudoautosomal regions on X and Y. From the Human Chained
+    Self Alignemnts track on UCSC.
+  tags:
+    data-provider: UCSC
+    data-version: 27-Apr-2009
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-self-chain-ucsc-v1.bed.gz: 21.74M
+      hg19-self-chain-ucsc-v1.bed.gz.tbi: 201.69K
+    final-files:
+    - hg19-self-chain-ucsc-v1.bed.gz
+    - hg19-self-chain-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

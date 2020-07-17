@@ -12,8 +12,8 @@ git=2.14.*
 gitpython>=3.0.8,3.0.*
 gitdb
 smmap
-samtools
 gsort>=0.1.4
+samtools
 htslib
 zlib
 python>=3.7
@@ -27,4 +27,3 @@ pytest-socket
 bioawk
 pysam
 cyvcf2
-pip

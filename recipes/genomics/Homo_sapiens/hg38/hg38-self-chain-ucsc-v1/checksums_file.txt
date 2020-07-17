@@ -1,0 +1,2 @@
+hg38-self-chain-ucsc-v1.bed.gz.tbi	e9bb898ebc7c6aabe731c273c7cf221a
+hg38-self-chain-ucsc-v1.bed.gz	55ed16525e738fbeeaf4e640f7d1b49f
