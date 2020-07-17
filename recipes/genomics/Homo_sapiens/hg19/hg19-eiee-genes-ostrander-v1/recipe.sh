@@ -1,8 +1,13 @@
 #!/bin/sh
 set -eo pipefail -o nounset
 
+
 genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-wget -q $genome
+## Get the .genome  file
+genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+wget --quiet $genome2
+## Get the chromomsome mapping file
+chr_mapping=$(ggd get-files hg19-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
 #eiee genes
 wget -q https://static-content.springer.com/esm/art%3A10.1038%2Fs41525-018-0061-8/MediaObjects/41525_2018_61_MOESM1_ESM.xlsx
@@ -109,21 +114,21 @@ gsort unflattened_grch37-eiee-genes-ostrander-v1.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
-    | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-eiee-genes-ostrander-v1.bed.gz
-tabix -p bed grch37-eiee-genes-ostrander-v1.bed.gz
+    | gsort --chromosomemappings $chr_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg19-eiee-genes-ostrander-v1.bed.gz
+tabix -p bed hg19-eiee-genes-ostrander-v1.bed.gz
 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-eiee-genes-ostrander-v1.bed.gz) -g /dev/stdin \
-    | gsort /dev/stdin $genome \
+sed "1d" hg19.genome \
+    | bedtools complement -i <(zgrep -v "#" hg19-eiee-genes-ostrander-v1.bed.gz) -g /dev/stdin \
+    | gsort /dev/stdin $genome2 \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' \
-    | bgzip -c > grch37-eiee-genes-ostrander-v1.complement.bed.gz
-tabix -p bed grch37-eiee-genes-ostrander-v1.complement.bed.gz
+    | bgzip -c > hg19-eiee-genes-ostrander-v1.complement.bed.gz
+tabix -p bed hg19-eiee-genes-ostrander-v1.complement.bed.gz
 
 #cleanup
 rm eiee_genes.tsv
 rm unflattened_grch37-eiee-genes-ostrander-v1.bed
-rm GRCh37.genome
+rm hg19.genome
 rm 41525_2018_61_MOESM1_ESM.xlsx
 rm pyscript.py
 rm parse_gtf_by_gene.py

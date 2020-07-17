@@ -1,4 +1,4 @@
-grch37-eiee-genes-ostrander-v1.bed.gz.tbi	562e3ba3d0de078db4418baea34a1c0c
-grch37-eiee-genes-ostrander-v1.complement.bed.gz.tbi	f29b7859c3b84976b32a3fbb3267c2fb
-grch37-eiee-genes-ostrander-v1.bed.gz	f283e30a9c18c8e1d05b5051530eb055
-grch37-eiee-genes-ostrander-v1.complement.bed.gz	b70d8c9b6a760fbb3385996120886fad
+grch37-eiee-genes-ostrander-v1.complement.bed.gz.tbi	02943a347efbeb04b8581a7ab81d98e2
+grch37-eiee-genes-ostrander-v1.bed.gz.tbi	1b6253600305caefa4506ade4569812d
+grch37-eiee-genes-ostrander-v1.complement.bed.gz	1b4979c7da5ccfb756ffbb97566b40ad
+grch37-eiee-genes-ostrander-v1.bed.gz	8dd92ca2c3419555be03f351c46356ae
