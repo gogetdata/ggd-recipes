@@ -1,0 +1,2 @@
+grch38-canonical-transcript-features-ensembl-v1.gtf.gz	5417230b45e33c5dc0f784461c1792b4
+grch38-canonical-transcript-features-ensembl-v1.gtf.gz.tbi	1e7b6d771c21e85b09e4e0be6c7442b2
