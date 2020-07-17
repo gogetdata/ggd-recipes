@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-heart-genes-sifrim-v1
+  name: grch38-heart-genes-sifrim-v1
   version: '1'
 requirements:
   build:
@@ -19,7 +19,7 @@ requirements:
   - zlib
   run:
   - bedtools
-  - grch37-gene-features-ensembl-v1
+  - grch38-gene-features-ensembl-v1
   - gsort
   - htslib
   - pyexcel
@@ -29,7 +29,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - heart
@@ -47,14 +47,14 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      grch37-heart-genes-sifrim-v1.bed.gz: 39.03K
-      grch37-heart-genes-sifrim-v1.bed.gz.tbi: 12.38K
-      grch37-heart-genes-sifrim-v1.complement.bed.gz: 26.32K
-      grch37-heart-genes-sifrim-v1.complement.bed.gz.tbi: 13.63K
+      grch38-heart-genes-sifrim-v1.bed.gz: 42.23K
+      grch38-heart-genes-sifrim-v1.bed.gz.tbi: 12.05K
+      grch38-heart-genes-sifrim-v1.complement.bed.gz: 28.85K
+      grch38-heart-genes-sifrim-v1.complement.bed.gz.tbi: 19.29K
     final-files:
-    - grch37-heart-genes-sifrim-v1.bed.gz
-    - grch37-heart-genes-sifrim-v1.bed.gz.tbi
-    - grch37-heart-genes-sifrim-v1.complement.bed.gz
-    - grch37-heart-genes-sifrim-v1.complement.bed.gz.tbi
+    - grch38-heart-genes-sifrim-v1.bed.gz
+    - grch38-heart-genes-sifrim-v1.bed.gz.tbi
+    - grch38-heart-genes-sifrim-v1.complement.bed.gz
+    - grch38-heart-genes-sifrim-v1.complement.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
