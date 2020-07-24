@@ -2,7 +2,11 @@
 set -eo pipefail -o nounset
 
 genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-wget -q $genome
+## Get the .genome  file
+genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+wget --quiet $genome2
+## Get the chromomsome mapping file
+chr_mapping=$(ggd get-files hg19-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
 ## Get a gtf file
 grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
@@ -110,18 +114,18 @@ gsort unflattened_grch37-haploinsufficient-genes-dang-v1.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
-    | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-haploinsufficient-genes-dang-v1.bed.gz
-tabix grch37-haploinsufficient-genes-dang-v1.bed.gz
+    | gsort --chromosomemappings $chr_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg19-haploinsufficient-genes-dang-v1.bed.gz
+tabix hg19-haploinsufficient-genes-dang-v1.bed.gz
 
 # bedtools complement so we can use the EXCLUDE option
 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-haploinsufficient-genes-dang-v1.bed.gz) -g /dev/stdin \
-    | gsort /dev/stdin $genome \
+sed "1d" hg19.genome \
+    | bedtools complement -i <(zgrep -v "#" hg19-haploinsufficient-genes-dang-v1.bed.gz) -g /dev/stdin \
+    | gsort /dev/stdin $genome2 \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $0}' \
-    | bgzip -c > grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
-tabix -f grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
+    | bgzip -c > hg19-haploinsufficient-genes-dang-v1.complement.bed.gz
+tabix -f hg19-haploinsufficient-genes-dang-v1.complement.bed.gz
 
 
 rm haploinsufficient.tsv
@@ -130,6 +134,6 @@ rm ejhg2008111x1.xls
 rm pyscript.py
 rm sort_columns.py
 rm parse_gtf_by_gene.py
-rm GRCh37.genome
+rm hg19.genome
 
 

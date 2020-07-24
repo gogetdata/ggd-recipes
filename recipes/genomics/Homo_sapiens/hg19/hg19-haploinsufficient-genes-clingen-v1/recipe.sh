@@ -2,36 +2,16 @@
 set -eo pipefail -o nounset
 
 genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-wget -q $genome
+## Get the .genome  file
+genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+## Get the chromomsome mapping file
+chr_mapping=$(ggd get-files hg19-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
-## Get a gtf file
-grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
+grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
 
+# ClinGen haploinsufficient set from MacArthur lab
+wget -q https://raw.githubusercontent.com/macarthur-lab/gene_lists/master/lists/clingen_level3_genes_2015_02_27.tsv
 
-#Dang et al., manually curated HI set of genes
-wget -q https://media.nature.com/original/nature-assets/ejhg/journal/v16/n11/extref/ejhg2008111x1.xls
-
-
-#######################################################################################################
-#nested python to convert from xls
-cat << EOF > pyscript.py
-from __future__ import print_function
-import sys
-import pyexcel as pe
-book = pe.get_book(file_name=sys.argv[1])
-genelist = open('haploinsufficient.tsv', 'w')
-sheet = book['hap_with_blocks']
-for i, record in enumerate(sheet):
-    if i == 0:
-        continue
-    print(record[0], file=genelist)
-genelist.close()
-EOF
-
-python pyscript.py ejhg2008111x1.xl\s
-
-
-#######################################################################################################
 cat << EOF > parse_gtf_by_gene.py
 """
 Get a list of genome coordinates for a list of haploinsufficient genes
@@ -39,6 +19,7 @@ Get a list of genome coordinates for a list of haploinsufficient genes
 import sys 
 import io
 import gzip
+
 gtf_file = sys.argv[1] ## A gtf file with CDS features
 haploinsufficient_gene_file = sys.argv[2] ## A single column tsv file for haploinsufficient genes
 outfile = sys.argv[3] ## File to write to
@@ -67,14 +48,14 @@ for line in fh:
         if line_dict["feature"] == "CDS" or line_dict["feature"] == "stop_codon":
             ## Change 1 based start to zero based start
             haploinsufficient_gene_dict[line_dict["gene_name"]].append([str(line_dict["#chrom"]), 
-                                                           str(int(line_dict["start"]) - 1),  
-                                                           str(line_dict["end"]), 
-                                                           str(line_dict["strand"]), 
-                                                           str(line_dict["gene_id"]), 
-                                                           str(line_dict["gene_name"]),
-                                                           str(line_dict["transcript_id"]),
-                                                           str(line_dict["gene_biotype"])
-                                                          ])
+                                                         str(int(line_dict["start"]) - 1),  
+                                                         str(line_dict["end"]), 
+                                                         str(line_dict["strand"]), 
+                                                         str(line_dict["gene_id"]), 
+                                                         str(line_dict["gene_name"]),
+                                                         str(line_dict["transcript_id"]),
+                                                         str(line_dict["gene_biotype"])
+                                                        ])
 fh.close()
 ## Write dict out
 with open(outfile, "w") as o:
@@ -84,7 +65,9 @@ with open(outfile, "w") as o:
 EOF
 
 
-python parse_gtf_by_gene.py $grch37_gtf haploinsufficient.tsv unflattened_grch37-haploinsufficient-genes-dang-v1.bed 
+python parse_gtf_by_gene.py $grch37_gtf clingen_level3_genes_2015_02_27.tsv unflattened_haploinsufficient_genes.bed  
+
+
 
 cat << EOF > sort_columns.py
 """
@@ -105,31 +88,30 @@ for line in sys.stdin.readlines():
 EOF
 
 
-# creates flattened representation of protein-coding exome covering AD genes
-gsort unflattened_grch37-haploinsufficient-genes-dang-v1.bed $genome \
+
+## Merge and sort ad genes with coordinates
+gsort unflattened_haploinsufficient_genes.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
-    | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-haploinsufficient-genes-dang-v1.bed.gz
-tabix grch37-haploinsufficient-genes-dang-v1.bed.gz
+    | gsort --chromosomemappings $chr_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg19-haploinsufficient-genes-clingen-v1.bed.gz 
+tabix hg19-haploinsufficient-genes-clingen-v1.bed.gz
 
-# bedtools complement so we can use the EXCLUDE option
+wget --quiet $genome2
 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-haploinsufficient-genes-dang-v1.bed.gz) -g /dev/stdin \
-    | gsort /dev/stdin $genome \
-    | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $0}' \
-    | bgzip -c > grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
-tabix -f grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
+## Get ad gene complement coordinates 
+sed "1d" hg19.genome \
+    | bedtools complement -i <(zgrep -v "#" hg19-haploinsufficient-genes-clingen-v1.bed.gz) -g /dev/stdin \
+    | gsort /dev/stdin $genome2 \
+    | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $1,$2,$3}' \
+    | bgzip -c > hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz 
+tabix hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz 
 
 
-rm haploinsufficient.tsv
-rm unflattened_grch37-haploinsufficient-genes-dang-v1.bed
-rm ejhg2008111x1.xls 
-rm pyscript.py
-rm sort_columns.py
+rm hg19.genome
+rm clingen_level3_genes_2015_02_27.tsv 
+rm unflattened_haploinsufficient_genes.bed
 rm parse_gtf_by_gene.py
-rm GRCh37.genome
-
+rm sort_columns.py
 

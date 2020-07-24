@@ -1,0 +1,4 @@
+grch38-haploinsufficient-genes-clingen-v1.compliment.bed.gz	f012efd3ce7efe9c51a6a59b6bae5702
+grch38-haploinsufficient-genes-clingen-v1.bed.gz	e00f285521006b6c798180cd872e3816
+grch38-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi	c4b95e5c07ad41a47c4ff4a77b034894
+grch38-haploinsufficient-genes-clingen-v1.bed.gz.tbi	ad341a9f35a34b9cee838b641c9a1799

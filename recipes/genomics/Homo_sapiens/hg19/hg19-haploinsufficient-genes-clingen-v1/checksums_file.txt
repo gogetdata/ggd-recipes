@@ -1,0 +1,4 @@
+hg19-haploinsufficient-genes-clingen-v1.bed.gz.tbi	89272ae3aabf6391b49c725722a6ef38
+hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi	fb703e5fa51b26e8c00bfa83ae047c3d
+hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz	5d8af52ca4fcba5c35cc194303718591
+hg19-haploinsufficient-genes-clingen-v1.bed.gz	909204ad828ba2e2c7c0ca908644f2cc

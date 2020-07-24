@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-haploinsufficient-genes-dang-v1
+  name: hg19-haploinsufficient-genes-dang-v1
   version: '1'
 requirements:
   build:
@@ -21,6 +21,7 @@ requirements:
   - bedtools
   - grch37-gene-features-ensembl-v1
   - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - pyexcel
   - pyexcel-xls
@@ -29,7 +30,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: hg19
     species: Homo_sapiens
   keywords:
   - haploinsufficiency
@@ -49,14 +50,14 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      grch37-haploinsufficient-genes-dang-v1.bed.gz: 51.37K
-      grch37-haploinsufficient-genes-dang-v1.bed.gz.tbi: 15.42K
-      grch37-haploinsufficient-genes-dang-v1.complement.bed.gz: 31.55K
-      grch37-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi: 14.81K
+      hg19-haploinsufficient-genes-dang-v1.bed.gz: 51.60K
+      hg19-haploinsufficient-genes-dang-v1.bed.gz.tbi: 15.41K
+      hg19-haploinsufficient-genes-dang-v1.complement.bed.gz: 31.81K
+      hg19-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi: 11.21K
     final-files:
-    - grch37-haploinsufficient-genes-dang-v1.bed.gz
-    - grch37-haploinsufficient-genes-dang-v1.bed.gz.tbi
-    - grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
-    - grch37-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi
+    - hg19-haploinsufficient-genes-dang-v1.bed.gz
+    - hg19-haploinsufficient-genes-dang-v1.bed.gz.tbi
+    - hg19-haploinsufficient-genes-dang-v1.complement.bed.gz
+    - hg19-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
