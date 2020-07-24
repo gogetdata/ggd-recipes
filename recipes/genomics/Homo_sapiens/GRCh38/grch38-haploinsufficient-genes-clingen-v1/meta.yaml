@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-haploinsufficient-genes-clingen-v1
+  name: grch38-haploinsufficient-genes-clingen-v1
   version: '1'
 requirements:
   build:
@@ -19,7 +19,7 @@ requirements:
   - zlib
   run:
   - bedtools
-  - grch37-gene-features-ensembl-v1
+  - grch38-gene-features-ensembl-v1
   - gsort
   - htslib
   - pyexcel
@@ -29,7 +29,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - haploinsufficiency
@@ -51,14 +51,14 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      grch37-haploinsufficient-genes-clingen-v1.bed.gz: 42.42K
-      grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi: 14.19K
-      grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz: 27.33K
-      grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi: 13.98K
+      grch38-haploinsufficient-genes-clingen-v1.bed.gz: 49.96K
+      grch38-haploinsufficient-genes-clingen-v1.bed.gz.tbi: 14.33K
+      grch38-haploinsufficient-genes-clingen-v1.compliment.bed.gz: 30.46K
+      grch38-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi: 19.68K
     final-files:
-    - grch37-haploinsufficient-genes-clingen-v1.bed.gz
-    - grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi
-    - grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz
-    - grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi
+    - grch38-haploinsufficient-genes-clingen-v1.bed.gz
+    - grch38-haploinsufficient-genes-clingen-v1.bed.gz.tbi
+    - grch38-haploinsufficient-genes-clingen-v1.compliment.bed.gz
+    - grch38-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

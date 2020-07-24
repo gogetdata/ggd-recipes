@@ -1,0 +1,4 @@
+grch38-haploinsufficient-genes-dang-v1.bed.gz	29432a019fe432d40b830bd661207eef
+grch38-haploinsufficient-genes-dang-v1.complement.bed.gz	79d462f493961a921383aae5aacf17f0
+grch38-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi	f98ba6e93227260dca25a1ffa6c6c09b
+grch38-haploinsufficient-genes-dang-v1.bed.gz.tbi	d3262463afa5fb50903e46b52f8c7228

@@ -1,11 +1,15 @@
 #!/bin/sh
 set -eo pipefail -o nounset
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-wget -q $genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+## Get the .genome  file
+genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
+wget -q $genome2
+## Get the chromomsome mapping file
+chr_mapping=$(ggd get-files hg38-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
 ## Get a gtf file
-grch37_gtf="$(ggd get-files grch37-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh37' -p 'grch37-gene-features-ensembl-v1.gtf.gz')"
+grch38_gtf="$(ggd get-files grch38-gene-features-ensembl-v1 -s 'Homo_sapiens' -g 'GRCh38' -p 'grch38-gene-features-ensembl-v1.gtf.gz')"
 
 
 #Dang et al., manually curated HI set of genes
@@ -84,7 +88,7 @@ with open(outfile, "w") as o:
 EOF
 
 
-python parse_gtf_by_gene.py $grch37_gtf haploinsufficient.tsv unflattened_grch37-haploinsufficient-genes-dang-v1.bed 
+python parse_gtf_by_gene.py $grch38_gtf haploinsufficient.tsv unflattened_grch38-haploinsufficient-genes-dang-v1.bed 
 
 cat << EOF > sort_columns.py
 """
@@ -106,30 +110,30 @@ EOF
 
 
 # creates flattened representation of protein-coding exome covering AD genes
-gsort unflattened_grch37-haploinsufficient-genes-dang-v1.bed $genome \
+gsort unflattened_grch38-haploinsufficient-genes-dang-v1.bed $genome \
     | bedtools merge -i - -c 4,5,6,7,8 -o collapse \
     | awk -v OFS="\t" 'BEGIN { print "#chrom\tstart\tend\tstrand\tgene_ids\tgene_symbols\ttranscript_ids\tgene_biotypes" } {print $0}' \
     | python sort_columns.py \
-    | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-haploinsufficient-genes-dang-v1.bed.gz
-tabix grch37-haploinsufficient-genes-dang-v1.bed.gz
+    | gsort --chromosomemappings $chr_mapping /dev/stdin $genome2 \
+    | bgzip -c > hg38-haploinsufficient-genes-dang-v1.bed.gz
+tabix hg38-haploinsufficient-genes-dang-v1.bed.gz
 
 # bedtools complement so we can use the EXCLUDE option
 
-sed "1d" GRCh37.genome \
-    | bedtools complement -i <(zgrep -v "#" grch37-haploinsufficient-genes-dang-v1.bed.gz) -g /dev/stdin \
-    | gsort /dev/stdin $genome \
+sed "1d" hg38.genome \
+    | bedtools complement -i <(zgrep -v "#" hg38-haploinsufficient-genes-dang-v1.bed.gz) -g /dev/stdin \
+    | gsort /dev/stdin $genome2 \
     | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend"} {print $0}' \
-    | bgzip -c > grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
-tabix -f grch37-haploinsufficient-genes-dang-v1.complement.bed.gz
+    | bgzip -c > hg38-haploinsufficient-genes-dang-v1.complement.bed.gz
+tabix -f hg38-haploinsufficient-genes-dang-v1.complement.bed.gz
 
 
 rm haploinsufficient.tsv
-rm unflattened_grch37-haploinsufficient-genes-dang-v1.bed
+rm unflattened_grch38-haploinsufficient-genes-dang-v1.bed
 rm ejhg2008111x1.xls 
 rm pyscript.py
 rm sort_columns.py
 rm parse_gtf_by_gene.py
-rm GRCh37.genome
+rm hg38.genome
 
 
