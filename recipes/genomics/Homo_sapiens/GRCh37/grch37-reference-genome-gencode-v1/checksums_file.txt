@@ -1,0 +1,3 @@
+grch37-reference-genome-gencode-v1.fa.gz.gzi	ecd2d81039fd9a6b820a5305abac9f54
+grch37-reference-genome-gencode-v1.fa.gz.fai	8d2e54c629265924f6aeb095e6af0de6
+grch37-reference-genome-gencode-v1.fa.gz	56ccbcb62bb4b4f44677686937ba61d9
