@@ -1,0 +1,50 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-reference-genome-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Reference-Genome
+  - Fasta
+  - DNA-Sequence
+  - GENCODE-34
+  - Fasta-sequence
+  - primary-assemlby
+  summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include
+    reference chromsomes and scaffoldings. Mapped to hg19
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - fa
+    final-file-sizes:
+      hg19-reference-genome-gencode-v1.fa.gz: 881.99M
+      hg19-reference-genome-gencode-v1.fa.gz.fai: 2.82K
+      hg19-reference-genome-gencode-v1.fa.gz.gzi: 772.92K
+    final-files:
+    - hg19-reference-genome-gencode-v1.fa.gz
+    - hg19-reference-genome-gencode-v1.fa.gz.fai
+    - hg19-reference-genome-gencode-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
