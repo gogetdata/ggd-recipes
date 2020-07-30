@@ -1,0 +1,2 @@
+grch38-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz.tbi	2846d4c77ec6d51fe2702bd1138849bc
+grch38-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz	7fc514216cc8d42f16709e93fa3a710c

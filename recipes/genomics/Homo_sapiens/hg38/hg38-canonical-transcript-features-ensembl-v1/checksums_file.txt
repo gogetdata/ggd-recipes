@@ -1,0 +1,2 @@
+hg38-canonical-transcript-features-ensembl-v1.gtf.gz.tbi	e223484d7221fb24c8ba95b8eb4e09ff
+hg38-canonical-transcript-features-ensembl-v1.gtf.gz	5cd4ff6eb9ee9f53f98ae8f8f1b1b5e3

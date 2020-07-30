@@ -1,0 +1,83 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+  genome_file:
+    commands: |
+      ## get base genome file
+      genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
+      wget --quiet $genome
+      genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+      wget --quiet $genome2
+      
+      ## Get GTF file with alternative scaffoldings
+      wget --quiet ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
+      ## If no chrom mapping, use existing patch/scaffolding name
+      gzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz \
+        | grep -v "^#" \
+        | awk -v OFS="\t" '{ if ( ! ($1 ~ /^chr/ ) ) print $1}' \
+        | uniq \
+        | grep -f - GRCh38.genome >> hg38.genome
+      rm gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
+      rm GRCh38.genome
+    file_name: hg38.genome
+package:
+  name: hg38-canonical-transcript-features-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Canonical
+  - Canonical-Transcripts
+  - Canonical-Isoforms
+  - Gene-Features
+  - GTF
+  - Gene-Features
+  - Gene-Annotations
+  - GTF
+  - GENOCDOE-GTF
+  - GENCODE-Gene-Sets
+  - Annotated-Transcripts
+  summary: 'Protein Coding Canonical Transcript Features for each protein coding gene
+    id from GENCODE''s v34 (Ensembl 100) comprehensive set of gene anntotations. Canonical
+    Transcripts are determined using the APPRIS annotation dataset. In short, for
+    all protein coding transcripts, transcripts are filtered based on APPRIS isoform
+    flags. If multiple transcripts of the same gene have equal flags, the isoform
+    with the most exons is chosen. If all transcritps for a gene are not annotated
+    by APPRIS, the transcript with the most exons is chosen as the canonical transcript.
+    APPRIS flag information can be found here: http://appris-tools.org/#/downloads
+    or here: https://uswest.ensembl.org/info/genome/genebuild/transcript_quality_tags.html.
+    Features include: gene, transcript, exon, CDS, UTR, start_codon, stop_codon, and
+    Selenocysteine. Remapped from Ensembl GRCh38 to UCSC hg38. (Scaffoldings wihtout
+    UCSC matches are kept with Ensebml ids)'
+  tags:
+    data-provider: GENCODE
+    data-version: release-34_03-24-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-canonical-transcript-features-gencode-v1.gtf.gz: 12.30M
+      hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 288.24K
+    final-files:
+    - hg38-canonical-transcript-features-gencode-v1.gtf.gz
+    - hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

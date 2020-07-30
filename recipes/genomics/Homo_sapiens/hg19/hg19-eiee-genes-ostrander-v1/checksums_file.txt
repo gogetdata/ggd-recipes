@@ -1,0 +1,4 @@
+hg19-eiee-genes-ostrander-v1.complement.bed.gz.tbi	0a82f50ed67c4f41829fc05b46cd9481
+hg19-eiee-genes-ostrander-v1.bed.gz	8b937802febaa6bbbb798d6406ad99c7
+hg19-eiee-genes-ostrander-v1.bed.gz.tbi	78700aeb4370b0b623f3ae1fd9334ca6
+hg19-eiee-genes-ostrander-v1.complement.bed.gz	f21f1a5d6128ffdc5d9631f8146e330b

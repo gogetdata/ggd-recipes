@@ -4,7 +4,7 @@ build:
   noarch: generic
   number: 0
 extra:
-  authors: jrb
+  authors: mjc
   extra-files: []
 package:
   name: grch37-haploinsufficient-genes-dang-v1
@@ -12,21 +12,18 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
   - pyexcel
   - pyexcel-xls
-  - wget
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
   - pyexcel
   - pyexcel-xls
-  - wget
   - zlib
 source:
   path: .
@@ -35,21 +32,27 @@ about:
     genome-build: GRCh37
     species: Homo_sapiens
   keywords:
-  - haploinsufficient
   - haploinsufficiency
-  - dang
-  - bed-file
+  - haploinsufficient
+  - haploinsufficient-genes
   - genes
-  - pathoscore
-  summary: 'The haploinsufficient gene set comes from Dang et al. (2008): https://www.nature.com/articles/ejhg2008111.
+  - Dang
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a set of haploinsufficient genes from Dang et al. (2008): https://www.nature.com/articles/ejhg2008111.
     They used text-searching and database-mining on Pubmed and OMIM to extract an
     annotated list of human haploinsufficient genes, their associated diseases, and
-    functions. In total there are 299 genes.'
+    functions. Any genes in patch regions or non-reference scaffoldings are not included.'
   tags:
     data-provider: Dang
     data-version: 04-June-2008
     file-type:
     - bed
+    final-file-sizes:
+      grch37-haploinsufficient-genes-dang-v1.bed.gz: 51.37K
+      grch37-haploinsufficient-genes-dang-v1.bed.gz.tbi: 15.42K
+      grch37-haploinsufficient-genes-dang-v1.complement.bed.gz: 31.55K
+      grch37-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi: 14.81K
     final-files:
     - grch37-haploinsufficient-genes-dang-v1.bed.gz
     - grch37-haploinsufficient-genes-dang-v1.bed.gz.tbi

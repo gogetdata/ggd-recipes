@@ -1,0 +1,4 @@
+hg38-eiee-genes-ostrander-v1.complement.bed.gz	66f1b3dc1ffe909aa4572c183b076858
+hg38-eiee-genes-ostrander-v1.complement.bed.gz.tbi	5fabab152a3a50503ea0d468c57dae10
+hg38-eiee-genes-ostrander-v1.bed.gz	ba471da90db462bd2e8b495bc3c69e2e
+hg38-eiee-genes-ostrander-v1.bed.gz.tbi	565248e37dbbd842f9d9972e9a214add

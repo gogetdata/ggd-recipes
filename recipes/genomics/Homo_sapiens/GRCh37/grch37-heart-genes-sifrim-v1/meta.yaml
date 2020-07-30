@@ -4,7 +4,7 @@ build:
   noarch: generic
   number: 0
 extra:
-  authors: jrb
+  authors: mjc
   extra-files: []
 package:
   name: grch37-heart-genes-sifrim-v1
@@ -12,21 +12,18 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
   - pyexcel
   - pyexcel-xls
-  - wget
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
   - pyexcel
   - pyexcel-xls
-  - wget
   - zlib
 source:
   path: .
@@ -37,17 +34,23 @@ about:
   keywords:
   - heart
   - heart-disease
+  - heart-genes
   - genes
   - sifrim
-  - bed-file
-  - pathoscore
-  summary: 'Manually curated list of congenital heart disease (CHD) genes from Sifrim
-    et al.: www.nature.com/articles/ng.3627. Used Supplemental Table 20 here: https://media.nature.com/original/nature-assets/ng/journal/v48/n9/extref/ng.3627-S13.xlsx'
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a manually curated set of congenital heart disease (CHD) genes from Sifrim et
+    al. (www.nature.com/articles/ng.3627). Used Supplemental Table 20 here: https://media.nature.com/original/nature-assets/ng/journal/v48/n9/extref/ng.3627-S13.xlsx'
   tags:
-    data-provider: sifrim
+    data-provider: Sifrim
     data-version: 01-Aug-2016
     file-type:
     - bed
+    final-file-sizes:
+      grch37-heart-genes-sifrim-v1.bed.gz: 39.03K
+      grch37-heart-genes-sifrim-v1.bed.gz.tbi: 12.38K
+      grch37-heart-genes-sifrim-v1.complement.bed.gz: 26.32K
+      grch37-heart-genes-sifrim-v1.complement.bed.gz.tbi: 13.63K
     final-files:
     - grch37-heart-genes-sifrim-v1.bed.gz
     - grch37-heart-genes-sifrim-v1.bed.gz.tbi
