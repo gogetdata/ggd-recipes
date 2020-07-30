@@ -1,0 +1,47 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-ccdg-sv-vcf-ccdg-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - sv
+  - ccdg
+  - structural-variants
+  - sv
+  - structural
+  - vcf-file
+  summary: SV callset 2 from ccdg in grch37
+  tags:
+    data-provider: ccdg
+    data-version: '2'
+    file-type:
+    - vcf
+    final-file-sizes:
+      grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz: 32.07M
+      grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi: 442.27K
+    final-files:
+    - grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz
+    - grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

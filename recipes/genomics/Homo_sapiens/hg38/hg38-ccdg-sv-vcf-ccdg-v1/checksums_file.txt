@@ -1,0 +1,2 @@
+hg38-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi	923a7726f851a125baad5da6b9b01924
+hg38-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz	479db45be73b5cbccc0715218a479e13

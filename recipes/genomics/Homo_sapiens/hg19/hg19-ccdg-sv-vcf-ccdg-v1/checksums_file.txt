@@ -1,0 +1,2 @@
+hg19-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz.tbi	c0ee4e0ce8ae37a37d9f22f4d6d2c49e
+hg19-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz	12533a583bbe8265840f0815f2f68ae5
