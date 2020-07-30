@@ -1,0 +1,60 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-heart-genes-sifrim-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+  run:
+  - bedtools
+  - grch38-gene-features-ensembl-v1
+  - gsort
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - heart
+  - heart-disease
+  - heart-genes
+  - genes
+  - sifrim
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a manually curated set of congenital heart disease (CHD) genes from Sifrim et
+    al. (www.nature.com/articles/ng.3627). Used Supplemental Table 20 here: https://media.nature.com/original/nature-assets/ng/journal/v48/n9/extref/ng.3627-S13.xlsx'
+  tags:
+    data-provider: Sifrim
+    data-version: 01-Aug-2016
+    file-type:
+    - bed
+    final-file-sizes:
+      grch38-heart-genes-sifrim-v1.bed.gz: 42.23K
+      grch38-heart-genes-sifrim-v1.bed.gz.tbi: 12.05K
+      grch38-heart-genes-sifrim-v1.complement.bed.gz: 28.85K
+      grch38-heart-genes-sifrim-v1.complement.bed.gz.tbi: 19.29K
+    final-files:
+    - grch38-heart-genes-sifrim-v1.bed.gz
+    - grch38-heart-genes-sifrim-v1.bed.gz.tbi
+    - grch38-heart-genes-sifrim-v1.complement.bed.gz
+    - grch38-heart-genes-sifrim-v1.complement.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

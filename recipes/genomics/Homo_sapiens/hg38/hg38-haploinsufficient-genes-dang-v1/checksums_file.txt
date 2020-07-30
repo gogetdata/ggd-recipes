@@ -1,0 +1,4 @@
+hg38-haploinsufficient-genes-dang-v1.complement.bed.gz	bacad3712393c5d6ed7b9ccc8c21ef67
+hg38-haploinsufficient-genes-dang-v1.bed.gz	a79a78b90af86b0784619a0e3694e9d2
+hg38-haploinsufficient-genes-dang-v1.bed.gz.tbi	c8d9a3794c3476c815fb9a44a646b456
+hg38-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi	fd19d8cdac28a6a31d25e503195d4331

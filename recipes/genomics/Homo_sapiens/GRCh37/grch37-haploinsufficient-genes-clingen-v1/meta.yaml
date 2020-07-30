@@ -4,7 +4,7 @@ build:
   noarch: generic
   number: 0
 extra:
-  authors: jrb
+  authors: mjc
   extra-files: []
 package:
   name: grch37-haploinsufficient-genes-clingen-v1
@@ -12,17 +12,18 @@ package:
 requirements:
   build:
   - bedtools
-  - grch37-gtf-ensembl-v1
   - gsort
   - htslib
-  - wget
+  - pyexcel
+  - pyexcel-xls
   - zlib
   run:
   - bedtools
-  - grch37-gtf-ensembl-v1
+  - grch37-gene-features-ensembl-v1
   - gsort
   - htslib
-  - wget
+  - pyexcel
+  - pyexcel-xls
   - zlib
 source:
   path: .
@@ -31,26 +32,33 @@ about:
     genome-build: GRCh37
     species: Homo_sapiens
   keywords:
-  - haploinsufficient
   - haploinsufficiency
-  - clingen
-  - bed-file
+  - haploinsufficient
+  - haploinsufficient-genes
   - genes
-  - pathoscore
-  summary: 'The ''clingen_hi_gene'' haploinsufficient gene set comes from ClinGen''s
-    Dosage Sensitivity Map and is curated by Daniel MacArthur''s lab. The genes used
-    are those that are haplosensitive and not triplosensitive, and are level 3 (the
-    maximum level) dosage sensitive. Original work on this is part of the Cytogenomic
-    Arrays Consortium. Paper at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5008023/'
+  - Clingen
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a set of haploinsufficient genes from ClinGen''s Dosage Sensitivity Map curated
+    by Daniel MacArthur''''s lab. The genes used are those that are haplosensitive
+    and not triplosensitive, and are level 3 (the maximum level) dosage sensitive.
+    Original work on this is part of the Cytogenomic Arrays Consortium. Paper at:
+    ''https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5008023/''. Any genes in patch
+    regions or non-reference scaffoldings are not included.'
   tags:
     data-provider: ClinGen
     data-version: 01-Sept-2016
     file-type:
     - bed
+    final-file-sizes:
+      grch37-haploinsufficient-genes-clingen-v1.bed.gz: 42.42K
+      grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi: 14.19K
+      grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz: 27.33K
+      grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi: 13.98K
     final-files:
     - grch37-haploinsufficient-genes-clingen-v1.bed.gz
     - grch37-haploinsufficient-genes-clingen-v1.bed.gz.tbi
-    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz
-    - grch37-haploinsufficient-genes-clingen-v1.complement.bed.gz.tbi
+    - grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz
+    - grch37-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

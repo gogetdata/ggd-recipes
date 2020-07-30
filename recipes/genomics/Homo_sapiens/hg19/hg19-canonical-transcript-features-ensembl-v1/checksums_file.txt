@@ -1,0 +1,2 @@
+hg19-canonical-transcript-features-ensembl-v1.gtf.gz	c6d39cc15937bed4d73e5369ab2bb00d
+hg19-canonical-transcript-features-ensembl-v1.gtf.gz.tbi	b13552b30593e0885b582c3b236cea2e

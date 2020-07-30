@@ -1,0 +1,50 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-reference-genome-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Reference-Genome
+  - Fasta
+  - DNA-Sequence
+  - GENCODE-34
+  - Fasta-sequence
+  summary: The GRCh38, patch13, DNA nucleotide sequence for all regions including
+    reference chromomsomes, scaffoldings, assembly patches, and haplotypes. Mapped
+    to hg38
+  tags:
+    data-provider: GENCODE
+    data-version: release-34,patch-13
+    file-type:
+    - fa
+    final-file-sizes:
+      hg38-reference-genome-gencode-v1.fa.gz: 942.24M
+      hg38-reference-genome-gencode-v1.fa.gz.fai: 22.03K
+      hg38-reference-genome-gencode-v1.fa.gz.gzi: 814.12K
+    final-files:
+    - hg38-reference-genome-gencode-v1.fa.gz
+    - hg38-reference-genome-gencode-v1.fa.gz.fai
+    - hg38-reference-genome-gencode-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
