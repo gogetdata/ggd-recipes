@@ -35,6 +35,9 @@ about:
     data-version: 2.1.1
     file-type:
     - vcf
+    final-file-sizes:
+      grch37-gnomad-sv-gnomad-v1.sites.vcf.gz: 140.88M
+      grch37-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi: 452.41K
     final-files:
     - grch37-gnomad-sv-gnomad-v1.sites.vcf.gz
     - grch37-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi
