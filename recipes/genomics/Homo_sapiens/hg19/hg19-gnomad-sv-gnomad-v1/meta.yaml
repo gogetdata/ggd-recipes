@@ -16,6 +16,7 @@ requirements:
   - zlib
   run:
   - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib
 source:
