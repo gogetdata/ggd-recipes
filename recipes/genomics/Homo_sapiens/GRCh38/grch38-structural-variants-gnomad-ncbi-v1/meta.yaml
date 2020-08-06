@@ -7,7 +7,7 @@ extra:
   authors: jrb
   extra-files: []
 package:
-  name: hg19-gnomad-sv-gnomad-v1
+  name: grch38-structural-variants-gnomad-ncbi-v1
   version: '1'
 requirements:
   build:
@@ -15,32 +15,34 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-refseq2ensembl-ncbi-v1
   - gsort
-  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - sv
   - gnomAD
   - structural-variants
   - vcf-file
-  summary: SV callset 2.1 from gnomAD
+  - liftover
+  - ncbi
+  summary: SV callset 2.1 from gnomAD, lifted over to build 38 in NCBI
   tags:
-    data-provider: gnomad
-    data-version: 2.1.1
+    data-provider: NCBI
+    data-version: '2.1'
     file-type:
     - vcf
     final-file-sizes:
-      hg19-gnomad-sv-gnomad-v1.sites.vcf.gz: 141.05M
-      hg19-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi: 451.90K
+      grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz: 12.01M
+      grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz.tbi: 399.29K
     final-files:
-    - hg19-gnomad-sv-gnomad-v1.sites.vcf.gz
-    - hg19-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi
+    - grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz
+    - grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

@@ -7,7 +7,7 @@ extra:
   authors: jrb
   extra-files: []
 package:
-  name: grch38-gnomad-sv-ncbi-liftover-ncbi-v1
+  name: hg38-structural-variants-gnomad-ncbi-v1
   version: '1'
 requirements:
   build:
@@ -15,15 +15,15 @@ requirements:
   - htslib
   - zlib
   run:
-  - grch38-chrom-mapping-refseq2ensembl-ncbi-v1
   - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh38
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
   - sv
@@ -32,17 +32,17 @@ about:
   - vcf-file
   - liftover
   - ncbi
-  summary: SV callset 2.1 from gnomAD, lifted over to build 38 in NCBI
+  summary: SV callset 2.1 from gnomAD, lifted over to build 38 in NCBI. Remapped from Ensembl GRCh38 to UCSC hg38
   tags:
     data-provider: NCBI
     data-version: '2.1'
     file-type:
     - vcf
     final-file-sizes:
-      grch38-gnomad-sv-ncbi-liftover-ncbi-v1.sites.vcf.gz: 12.01M
-      grch38-gnomad-sv-ncbi-liftover-ncbi-v1.sites.vcf.gz.tbi: 399.29K
+      hg38-structural-variants-gnomad-ncbi-v1.hg38.sites.vcf.gz: 12.03M
+      hg38-structural-variants-gnomad-ncbi-v1.hg38.sites.vcf.gz.tbi: 399.53K
     final-files:
-    - grch38-gnomad-sv-ncbi-liftover-ncbi-v1.sites.vcf.gz
-    - grch38-gnomad-sv-ncbi-liftover-ncbi-v1.sites.vcf.gz.tbi
+    - hg38-structural-variants-gnomad-ncbi-v1.hg38.sites.vcf.gz
+    - hg38-structural-variants-gnomad-ncbi-v1.hg38.sites.vcf.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics

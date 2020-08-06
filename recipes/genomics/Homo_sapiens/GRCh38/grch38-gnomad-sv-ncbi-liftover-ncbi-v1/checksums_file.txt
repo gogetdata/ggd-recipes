@@ -1,2 +1,0 @@
-grch38-gnomad-sv-ncbi-liftover-ncbi-v1.sites.vcf.gz	6ffbc490d4eece9c255ef2a0150a82db
-grch38-gnomad-sv-ncbi-liftover-ncbi-v1.sites.vcf.gz.tbi	373867db7d1f085e82a69a03cbd73662
