@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch38-structural-variants-gnomad-ncbi-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-refseq2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - sv
+  - gnomAD
+  - structural-variants
+  - vcf-file
+  - liftover
+  - ncbi
+  summary: SV callset 2.1 from gnomAD, lifted over to build 38 in NCBI
+  tags:
+    data-provider: NCBI
+    data-version: '2.1'
+    file-type:
+    - vcf
+    final-file-sizes:
+      grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz: 12.01M
+      grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz.tbi: 399.29K
+    final-files:
+    - grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz
+    - grch38-structural-variants-gnomad-ncbi-v1.sites.vcf.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
