@@ -43,6 +43,9 @@ about:
     data-version: '0.6'
     file-type:
     - vcf
+    final-file-sizes:
+      grch37-hg002-svs-giab-v1.6.sorted.vcf.gz: 25.50M
+      grch37-hg002-svs-giab-v1.6.sorted.vcf.gz.tbi: 451.75K
     final-files:
     - grch37-hg002-svs-giab-v1.6.sorted.vcf.gz
     - grch37-hg002-svs-giab-v1.6.sorted.vcf.gz.tbi
