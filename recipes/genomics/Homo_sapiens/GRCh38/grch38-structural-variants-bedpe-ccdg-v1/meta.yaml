@@ -7,7 +7,7 @@ extra:
   authors: jrb
   extra-files: []
 package:
-  name: hg38-ccdg-sv-bedpe-ccdg-v1
+  name: grch38-structural-variants-bedpe-ccdg-v1
   version: '1'
 requirements:
   build:
@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -22,7 +23,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg38
+    genome-build: GRCh38
     species: Homo_sapiens
   keywords:
   - sv
@@ -39,10 +40,10 @@ about:
     file-type:
     - bedpe
     final-file-sizes:
-      hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz: 52.01M
-      hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi: 1.22M
+      grch38-structural-variants-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz: 51.98M
+      grch38-structural-variants-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz.tbi: 1.22M
     final-files:
-    - hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz
-    - hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi
+    - grch38-structural-variants-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz
+    - grch38-structural-variants-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
