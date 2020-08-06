@@ -1,0 +1,39 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files:
+  - grch37-liftover-chain-38-to-37-ensembl-v1.chain.gz
+package:
+  name: grch37-liftover-chain-38-to-37-ensembl-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - chain
+  - liftover
+  - grch38
+  - grch37
+  - ensembl
+  summary: Liftover chain file from ensembl
+  tags:
+    data-provider: ensembl
+    data-version: '1'
+    file-type:
+    - chain.gz
+    final-file-sizes:
+      grch37-liftover-chain-38-to-37-ensembl-v1.chain.gz: 730.39K
+    final-files:
+    - grch37-liftover-chain-38-to-37-ensembl-v1.chain.gz
+    genomic-coordinate-base: NA
+    ggd-channel: genomics

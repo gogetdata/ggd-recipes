@@ -1,0 +1,43 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files:
+  - hg19-liftover-chain-38-to-19-ucsc-v1.over.chain.gz
+package:
+  name: hg19-liftover-chain-38-to-19-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - zlib
+  run:
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - chain
+  - liftover
+  - hg38
+  - hg19
+  - ucsc
+  summary: Liftover chain file from UCSC
+  tags:
+    data-provider: ucsc
+    data-version: '1'
+    file-type:
+    - over.chain.gz
+    final-file-sizes:
+      hg19-liftover-chain-38-to-19-ucsc-v1.over.chain.gz: 1.25M
+    final-files:
+    - hg19-liftover-chain-38-to-19-ucsc-v1.over.chain.gz
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
