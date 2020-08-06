@@ -15,8 +15,8 @@ requirements:
   - htslib
   - zlib
   run:
-  - grch38-chrom-mapping-refseq2ensembl-ncbi-v1
   - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib
 source:
@@ -38,6 +38,9 @@ about:
     data-version: '2.1'
     file-type:
     - vcf
+    final-file-sizes:
+      hg38-gnomad-sv-ncbi-liftover-ncbi-v1.hg38.sites.vcf.gz: 12.03M
+      hg38-gnomad-sv-ncbi-liftover-ncbi-v1.hg38.sites.vcf.gz.tbi: 399.53K
     final-files:
     - hg38-gnomad-sv-ncbi-liftover-ncbi-v1.hg38.sites.vcf.gz
     - hg38-gnomad-sv-ncbi-liftover-ncbi-v1.hg38.sites.vcf.gz.tbi
