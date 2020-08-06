@@ -1,1 +1,0 @@
-grch38-liftover-chain-38-to-37-ensembl-v1.chain.gz	9573fe0b0a4715f0dd4fa62d5bd7810d

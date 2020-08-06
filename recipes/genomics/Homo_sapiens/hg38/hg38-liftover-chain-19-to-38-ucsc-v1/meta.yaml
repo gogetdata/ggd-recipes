@@ -6,9 +6,9 @@ build:
 extra:
   authors: jrb
   extra-files:
-  - hg38-liftover-chain-38-to-19-ucsc-v1.over.chain.gz
+  - hg38-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
 package:
-  name: hg38-liftover-chain-38-to-19-ucsc-v1
+  name: hg38-liftover-chain-19-to-38-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -36,8 +36,8 @@ about:
     file-type:
     - over.chain.gz
     final-file-sizes:
-      hg38-liftover-chain-38-to-19-ucsc-v1.over.chain.gz: 1.25M
+      hg38-liftover-chain-19-to-38-ucsc-v1.over.chain.gz: 227.70K
     final-files:
-    - hg38-liftover-chain-38-to-19-ucsc-v1.over.chain.gz
+    - hg38-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
     genomic-coordinate-base: NA
     ggd-channel: genomics

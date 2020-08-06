@@ -6,9 +6,9 @@ build:
 extra:
   authors: jrb
   extra-files:
-  - grch37-liftover-chain-37-to-38-ensembl-v1.chain.gz
+  - grch37-liftover-chain-38-to-37-ensembl-v1.chain.gz
 package:
-  name: grch37-liftover-chain-37-to-38-ensembl-v1
+  name: grch37-liftover-chain-38-to-37-ensembl-v1
   version: '1'
 requirements:
   build: []
@@ -32,8 +32,8 @@ about:
     file-type:
     - chain.gz
     final-file-sizes:
-      grch37-liftover-chain-37-to-38-ensembl-v1.chain.gz: 285.25K
+      grch37-liftover-chain-38-to-37-ensembl-v1.chain.gz: 730.39K
     final-files:
-    - grch37-liftover-chain-37-to-38-ensembl-v1.chain.gz
+    - grch37-liftover-chain-38-to-37-ensembl-v1.chain.gz
     genomic-coordinate-base: NA
     ggd-channel: genomics
