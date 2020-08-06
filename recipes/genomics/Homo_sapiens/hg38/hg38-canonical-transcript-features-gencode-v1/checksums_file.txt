@@ -1,0 +1,2 @@
+hg38-canonical-transcript-features-gencode-v1.gtf.gz	cb6c6c03191c9b1e3d4b1548fc8df88d
+hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi	b085cc64206df9aa57104e974ae33d72

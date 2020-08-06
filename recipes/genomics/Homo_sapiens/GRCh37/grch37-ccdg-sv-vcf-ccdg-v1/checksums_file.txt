@@ -1,0 +1,2 @@
+grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz.tbi	064a424074a640151bcf3185c5ab5cc2
+grch37-ccdg-sv-vcf-ccdg-v1.public.v2.sorted.vcf.gz	00dc543ddc6efc266de4d3396659a3ee

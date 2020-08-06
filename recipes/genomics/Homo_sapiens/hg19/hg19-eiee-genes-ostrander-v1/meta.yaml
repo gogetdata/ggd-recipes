@@ -1,0 +1,66 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-eiee-genes-ostrander-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+  run:
+  - bedtools
+  - grch37-gene-features-ensembl-v1
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - eiee
+  - early-infantile
+  - epileptic
+  - epilepsy
+  - encephalopathy
+  - ostrander
+  - genes
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a set of eiee genes. The eiee gene set comes from a paper on EIEE (Early Infantile
+    Epileptic Encephalopathy) a severe, fatal epileptic syndrome that occurs within
+    the first few months of life. The gene set is a compilation of gene sets from
+    a few different companies, gene panels, as well as one from the U of Chicago.
+    Paper at: https://www.nature.com/articles/s41525-018-0061-8'
+  tags:
+    data-provider: Ostrander
+    data-version: 13-Aug-2018
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-eiee-genes-ostrander-v1.bed.gz: 48.78K
+      hg19-eiee-genes-ostrander-v1.bed.gz.tbi: 14.85K
+      hg19-eiee-genes-ostrander-v1.complement.bed.gz: 30.71K
+      hg19-eiee-genes-ostrander-v1.complement.bed.gz.tbi: 11.01K
+    final-files:
+    - hg19-eiee-genes-ostrander-v1.bed.gz
+    - hg19-eiee-genes-ostrander-v1.bed.gz.tbi
+    - hg19-eiee-genes-ostrander-v1.complement.bed.gz
+    - hg19-eiee-genes-ostrander-v1.complement.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
