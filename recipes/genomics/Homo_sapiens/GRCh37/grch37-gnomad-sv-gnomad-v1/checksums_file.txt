@@ -1,2 +1,0 @@
-grch37-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi	22262e283f015de7111c0a074ad57ba5
-grch37-gnomad-sv-gnomad-v1.sites.vcf.gz	3fbbb44712cc93c59df57be4e155b0d9
