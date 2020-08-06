@@ -6,9 +6,9 @@ build:
 extra:
   authors: jrb
   extra-files:
-  - hg19-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
+  - hg38-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
 package:
-  name: hg19-liftover-chain-19-to-38-ucsc-v1
+  name: hg38-liftover-chain-19-to-38-ucsc-v1
   version: '1'
 requirements:
   build:
@@ -21,7 +21,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: hg19
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
   - chain
@@ -36,8 +36,8 @@ about:
     file-type:
     - over.chain.gz
     final-file-sizes:
-      hg19-liftover-chain-19-to-38-ucsc-v1.over.chain.gz: 227.70K
+      hg38-liftover-chain-19-to-38-ucsc-v1.over.chain.gz: 227.70K
     final-files:
-    - hg19-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
+    - hg38-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
     genomic-coordinate-base: NA
     ggd-channel: genomics

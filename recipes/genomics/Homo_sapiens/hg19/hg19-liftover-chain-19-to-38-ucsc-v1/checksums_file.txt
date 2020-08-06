@@ -1,1 +1,0 @@
-hg19-liftover-chain-19-to-38-ucsc-v1.over.chain.gz	35887f73fe5e2231656504d1f6430900
