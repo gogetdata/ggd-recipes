@@ -1,0 +1,4 @@
+hg19-haploinsufficient-genes-dang-v1.complement.bed.gz	1dffbf9a900b77f6c8b36f64fb97d843
+hg19-haploinsufficient-genes-dang-v1.bed.gz	4758fb45703450b2407246b40b0d16b8
+hg19-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi	ce0ae5acb445c1643caa6347d1cbe532
+hg19-haploinsufficient-genes-dang-v1.bed.gz.tbi	27e70179abfa7beb90a7be1d33da3c24

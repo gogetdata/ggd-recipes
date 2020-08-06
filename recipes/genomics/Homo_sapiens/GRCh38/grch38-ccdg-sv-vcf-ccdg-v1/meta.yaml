@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
@@ -37,6 +38,9 @@ about:
     data-version: '2'
     file-type:
     - vcf
+    final-file-sizes:
+      grch38-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz: 50.44M
+      grch38-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz.tbi: 375.58K
     final-files:
     - grch38-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz
     - grch38-ccdg-sv-vcf-ccdg-v1.public.v2.vcf.gz.tbi

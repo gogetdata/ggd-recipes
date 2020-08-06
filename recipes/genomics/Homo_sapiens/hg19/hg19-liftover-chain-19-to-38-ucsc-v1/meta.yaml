@@ -35,6 +35,8 @@ about:
     data-version: '1'
     file-type:
     - over.chain.gz
+    final-file-sizes:
+      hg19-liftover-chain-19-to-38-ucsc-v1.over.chain.gz: 227.70K
     final-files:
     - hg19-liftover-chain-19-to-38-ucsc-v1.over.chain.gz
     genomic-coordinate-base: NA

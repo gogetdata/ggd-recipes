@@ -1,0 +1,63 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-haploinsufficient-genes-dang-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+  run:
+  - bedtools
+  - grch38-gene-features-ensembl-v1
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - haploinsufficiency
+  - haploinsufficient
+  - haploinsufficient-genes
+  - genes
+  - Dang
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a set of haploinsufficient genes from Dang et al. (2008): https://www.nature.com/articles/ejhg2008111.
+    They used text-searching and database-mining on Pubmed and OMIM to extract an
+    annotated list of human haploinsufficient genes, their associated diseases, and
+    functions. Any genes in patch regions or non-reference scaffoldings are not included.'
+  tags:
+    data-provider: Dang
+    data-version: 04-June-2008
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-haploinsufficient-genes-dang-v1.bed.gz: 58.23K
+      hg38-haploinsufficient-genes-dang-v1.bed.gz.tbi: 14.95K
+      hg38-haploinsufficient-genes-dang-v1.complement.bed.gz: 35.93K
+      hg38-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi: 19.91K
+    final-files:
+    - hg38-haploinsufficient-genes-dang-v1.bed.gz
+    - hg38-haploinsufficient-genes-dang-v1.bed.gz.tbi
+    - hg38-haploinsufficient-genes-dang-v1.complement.bed.gz
+    - hg38-haploinsufficient-genes-dang-v1.complement.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

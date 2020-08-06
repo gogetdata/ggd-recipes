@@ -1,0 +1,3 @@
+hg19-reference-genome-gencode-v1.fa.gz.gzi	8d9835e74007c00962cc7164021481b4
+hg19-reference-genome-gencode-v1.fa.gz.fai	0a1f2a3060a889383f3d823c4cde7b52
+hg19-reference-genome-gencode-v1.fa.gz	488ebb12b5c545efd334defc31f3ec6c

@@ -1,0 +1,65 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-haploinsufficient-genes-clingen-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+  run:
+  - bedtools
+  - grch37-gene-features-ensembl-v1
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - pyexcel
+  - pyexcel-xls
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - haploinsufficiency
+  - haploinsufficient
+  - haploinsufficient-genes
+  - genes
+  - Clingen
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a set of haploinsufficient genes from ClinGen''s Dosage Sensitivity Map curated
+    by Daniel MacArthur''''s lab. The genes used are those that are haplosensitive
+    and not triplosensitive, and are level 3 (the maximum level) dosage sensitive.
+    Original work on this is part of the Cytogenomic Arrays Consortium. Paper at:
+    ''https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5008023/''. Any genes in patch
+    regions or non-reference scaffoldings are not included.'
+  tags:
+    data-provider: ClinGen
+    data-version: 01-Sept-2016
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-haploinsufficient-genes-clingen-v1.bed.gz: 42.48K
+      hg19-haploinsufficient-genes-clingen-v1.bed.gz.tbi: 14.23K
+      hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz: 27.43K
+      hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi: 10.45K
+    final-files:
+    - hg19-haploinsufficient-genes-clingen-v1.bed.gz
+    - hg19-haploinsufficient-genes-clingen-v1.bed.gz.tbi
+    - hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz
+    - hg19-haploinsufficient-genes-clingen-v1.compliment.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
