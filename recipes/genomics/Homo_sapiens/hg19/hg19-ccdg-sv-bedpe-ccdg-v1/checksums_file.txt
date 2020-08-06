@@ -1,0 +1,2 @@
+hg19-ccdg-sv-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz	3785883f60842f094d66963127e3e8cd
+hg19-ccdg-sv-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz.tbi	30fc9c12b9cfb8695b722269b3080710

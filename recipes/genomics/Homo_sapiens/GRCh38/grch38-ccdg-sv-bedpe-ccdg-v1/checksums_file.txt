@@ -1,0 +1,2 @@
+grch38-ccdg-sv-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz.tbi	752e02a7a53c96264630ffd05db8113b
+grch38-ccdg-sv-bedpe-ccdg-v1.public.sorted.v2.bedpe.gz	f31725de3c64d47fa17f192b83490020

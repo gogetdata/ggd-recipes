@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: hg38-ccdg-sv-bedpe-ccdg-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - sv
+  - ccdg
+  - structural-variants
+  - sv
+  - structural
+  - bedpe-file
+  - bed-file
+  summary: SV callset 2 from ccdg in hg38, bedpe format
+  tags:
+    data-provider: ccdg
+    data-version: '2'
+    file-type:
+    - bedpe
+    final-file-sizes:
+      hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz: 52.01M
+      hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi: 1.22M
+    final-files:
+    - hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz
+    - hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

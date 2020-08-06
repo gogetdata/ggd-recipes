@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-ccdg-sv-bedpe-ccdg-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - sv
+  - ccdg
+  - structural-variants
+  - sv
+  - structural
+  - bedpe-file
+  - bed-file
+  summary: SV callset 2 from ccdg in grch37, bedpe format
+  tags:
+    data-provider: ccdg
+    data-version: '2'
+    file-type:
+    - bedpe
+    final-file-sizes:
+      grch37-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz: 32.87M
+      grch37-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi: 1.01M
+    final-files:
+    - grch37-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz
+    - grch37-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

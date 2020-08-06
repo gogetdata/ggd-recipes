@@ -1,0 +1,2 @@
+hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz.tbi	bf86dd51deefa7aab9526c2c172175f9
+hg38-ccdg-sv-bedpe-ccdg-v1.public.v2.sorted.bedpe.gz	65c35c9a657a517acb432dcb72f8db47
