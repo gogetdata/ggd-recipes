@@ -7,7 +7,7 @@ extra:
   authors: jrb
   extra-files: []
 package:
-  name: grch37-gnomad-sv-gnomad-v1
+  name: hg19-structural-variants-gnomad-v1
   version: '1'
 requirements:
   build:
@@ -16,30 +16,31 @@ requirements:
   - zlib
   run:
   - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: hg19
     species: Homo_sapiens
   keywords:
   - sv
   - gnomAD
   - structural-variants
   - vcf-file
-  summary: SV callset 2.1 from gnomAD
+  summary: SV callset 2.1 from gnomAD. Remapped from Ensembl GRCh37 to UCSC hg19
   tags:
     data-provider: gnomad
     data-version: 2.1.1
     file-type:
     - vcf
     final-file-sizes:
-      grch37-gnomad-sv-gnomad-v1.sites.vcf.gz: 140.88M
-      grch37-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi: 452.41K
+      hg19-structural-variants-gnomad-v1.sites.vcf.gz: 141.05M
+      hg19-structural-variants-gnomad-v1.sites.vcf.gz.tbi: 451.90K
     final-files:
-    - grch37-gnomad-sv-gnomad-v1.sites.vcf.gz
-    - grch37-gnomad-sv-gnomad-v1.sites.vcf.gz.tbi
+    - hg19-structural-variants-gnomad-v1.sites.vcf.gz
+    - hg19-structural-variants-gnomad-v1.sites.vcf.gz.tbi
     genomic-coordinate-base: 0-based-inclusive
     ggd-channel: genomics
