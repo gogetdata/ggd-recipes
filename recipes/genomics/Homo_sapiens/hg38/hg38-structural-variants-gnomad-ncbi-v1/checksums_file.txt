@@ -1,0 +1,2 @@
+hg38-structural-variants-gnomad-ncbi-v1.hg38.sites.vcf.gz.tbi	097f6e355861cdc0877e29d96dd6e3dc
+hg38-structural-variants-gnomad-ncbi-v1.hg38.sites.vcf.gz	deba943afb5f8d8cee149e383b10d47a
