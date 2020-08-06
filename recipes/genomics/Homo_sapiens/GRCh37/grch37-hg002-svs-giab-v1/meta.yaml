@@ -1,0 +1,53 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-hg002-svs-giab-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - sv
+  - nist
+  - structural-variants
+  - sv
+  - structural
+  - vcf-file
+  - giab
+  - ashkenazi
+  - na24385
+  - hg002
+  - trio
+  - son
+  summary: SV callset for the Ashkenazi trio son HG002 in grch37
+  tags:
+    data-provider: giab
+    data-version: '0.6'
+    file-type:
+    - vcf
+    final-file-sizes:
+      grch37-hg002-svs-giab-v1.6.sorted.vcf.gz: 25.50M
+      grch37-hg002-svs-giab-v1.6.sorted.vcf.gz.tbi: 451.75K
+    final-files:
+    - grch37-hg002-svs-giab-v1.6.sorted.vcf.gz
+    - grch37-hg002-svs-giab-v1.6.sorted.vcf.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
