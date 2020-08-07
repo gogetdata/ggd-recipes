@@ -1,0 +1,4 @@
+hg38-cancer-genes-futreal-v1.bed.gz	5a31b1a0f7510f9adc6bf98bd5aded38
+hg38-cancer-genes-futreal-v1.compliment.bed.gz.tbi	25eb9c30e1c5f8ba35ab479a3c8734c7
+hg38-cancer-genes-futreal-v1.compliment.bed.gz	60fc9bfeaa873b6a5e5c67986b4c169f
+hg38-cancer-genes-futreal-v1.bed.gz.tbi	2227011c2c1a82a735bf307146298744
