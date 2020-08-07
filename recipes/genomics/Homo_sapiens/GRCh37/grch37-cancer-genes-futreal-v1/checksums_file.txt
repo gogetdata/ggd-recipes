@@ -1,0 +1,4 @@
+grch37-cancer-genes-futreal-v1.compliment.bed.gz.tbi	a0092abb8804119acde879c97f724c12
+grch37-cancer-genes-futreal-v1.bed.gz	fde691db51e95f76a3c9ce60b22eb2ca
+grch37-cancer-genes-futreal-v1.bed.gz.tbi	86fbaa7c5e3dd12bde812cc97db1e165
+grch37-cancer-genes-futreal-v1.compliment.bed.gz	846ba9a0892e376fd0e9c06854af0e62

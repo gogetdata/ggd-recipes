@@ -1,0 +1,57 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-cancer-genes-futreal-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - bedtools
+  - grch38-gene-features-ensembl-v1
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Cancer
+  - cancer-genes
+  - genes
+  - Futreal
+  - gene-set
+  summary: 'CDS region genomic coordinates, along with complement coordinates, for
+    a manually curated set of cancer genes from Futreal et al. https://www.nature.com/articles/nrc1299.
+    Gene symbols manually extracted from the supplemental PDF table here: https://media.nature.com/original/nature-assets/nrc/journal/v4/n3/extref/nrc1299-S1.pdf.
+    Gene symbols manually translated to HGNC nomeclature.'
+  tags:
+    data-provider: Futreal
+    data-version: 01-March-2004
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-cancer-genes-futreal-v1.bed.gz: 48.87K
+      hg38-cancer-genes-futreal-v1.bed.gz.tbi: 13.72K
+      hg38-cancer-genes-futreal-v1.compliment.bed.gz: 32.68K
+      hg38-cancer-genes-futreal-v1.compliment.bed.gz.tbi: 19.54K
+    final-files:
+    - hg38-cancer-genes-futreal-v1.bed.gz
+    - hg38-cancer-genes-futreal-v1.bed.gz.tbi
+    - hg38-cancer-genes-futreal-v1.compliment.bed.gz
+    - hg38-cancer-genes-futreal-v1.compliment.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,4 @@
+hg19-cancer-genes-futreal-v1.compliment.bed.gz	3f2eb144ca23a6ee5e7ae490a1bfc8c8
+hg19-cancer-genes-futreal-v1.compliment.bed.gz.tbi	f04dabdb67d936615d21dd2ce2a9838b
+hg19-cancer-genes-futreal-v1.bed.gz.tbi	5950c2a262eb211ad484b52ad40f6521
+hg19-cancer-genes-futreal-v1.bed.gz	7a4985e0d4cef7f09ec635c42d1f6f6c
