@@ -1,6 +1,5 @@
 #!/bin/sh
 set -eo pipefail -o nounset
-set -e
 wget -q http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/dgvSupporting.txt.gz
 genome="https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome"
 chrom_mapping=$(ggd get-files grch37-chrom-mapping-ucsc2ensembl-ncbi-v1 --pattern "*.txt")

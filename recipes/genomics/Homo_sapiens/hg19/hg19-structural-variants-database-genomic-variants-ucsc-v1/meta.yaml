@@ -38,8 +38,8 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz: 74.49M
-      hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi: 1.05M
+      hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz: 74.51M
+      hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi: 216.71K
     final-files:
     - hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz
     - hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi
