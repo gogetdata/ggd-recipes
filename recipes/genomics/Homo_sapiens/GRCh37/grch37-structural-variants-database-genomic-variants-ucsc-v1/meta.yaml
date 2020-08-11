@@ -39,8 +39,8 @@ about:
     file-type:
     - bed
     final-file-sizes:
-      grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz: 73.95M
-      grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi: 1.05M
+      grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz: 73.99M
+      grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi: 215.69K
     final-files:
     - grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz
     - grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi
