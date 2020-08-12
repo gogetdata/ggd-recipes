@@ -1,2 +1,2 @@
-hg38-structural-variants-database-genomic-variants-ucsc-v1.bed.gz	479323c1930ddc2dce97c95cf7b90901
-hg38-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi	8181e9ae680b4b8a37482e98d466a527
+hg38-structural-variants-database-genomic-variants-ucsc-v1.bed.gz	4656e3e1f67e6f417b24fef3b8a1f00b
+hg38-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi	642a95bc7563dbcc39eb14597c11b11e
