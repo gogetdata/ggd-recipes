@@ -1,0 +1,2 @@
+hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz	b73e696d20c3596ef074f6b4f236c71b
+hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi	734728fdad41c9ce9360a5ae951d8624

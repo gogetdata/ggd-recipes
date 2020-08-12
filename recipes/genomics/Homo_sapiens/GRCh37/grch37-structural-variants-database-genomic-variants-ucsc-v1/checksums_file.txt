@@ -1,0 +1,2 @@
+grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz	1d02a4626501443b3aa925130c76adf7
+grch37-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi	c9fce0c068fc2d15e85f916ff704f922
