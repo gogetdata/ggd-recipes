@@ -4,7 +4,7 @@ build:
   noarch: generic
   number: 0
 extra:
-  authors: mjc
+  authors: jrb
   extra-files: []
 package:
   name: grch38-reference-genome-gencode-v1
@@ -13,10 +13,12 @@ requirements:
   build:
   - htslib
   - samtools
+  - samtools>=1.10
   - zlib
   run:
   - htslib
   - samtools
+  - samtools>=1.10
   - zlib
 source:
   path: .
@@ -25,22 +27,21 @@ about:
     genome-build: GRCh38
     species: Homo_sapiens
   keywords:
-  - Reference-Genome
-  - Fasta
-  - DNA-Sequence
-  - GENCODE-34
-  - Fasta-sequence
-  summary: The GRCh38, patch13, DNA nucleotide sequence for all regions including
-    reference chromomsomes, scaffoldings, assembly patches, and haplotypes.
+  - reference
+  - primary-assembly
+  - gencode
+  - fasta
+  summary: Genome sequence, primary assembly. Nucleotide sequence of the GRCh38 primary
+    genome assembly (chromosomes and scaffolds)
   tags:
     data-provider: GENCODE
     data-version: release-34,patch-13
     file-type:
     - fa
     final-file-sizes:
-      grch38-reference-genome-gencode-v1.fa.gz: 942.24M
-      grch38-reference-genome-gencode-v1.fa.gz.fai: 21.95K
-      grch38-reference-genome-gencode-v1.fa.gz.gzi: 814.12K
+      grch38-reference-genome-gencode-v1.fa.gz: 895.57M
+      grch38-reference-genome-gencode-v1.fa.gz.fai: 6.41K
+      grch38-reference-genome-gencode-v1.fa.gz.gzi: 769.38K
     final-files:
     - grch38-reference-genome-gencode-v1.fa.gz
     - grch38-reference-genome-gencode-v1.fa.gz.fai
