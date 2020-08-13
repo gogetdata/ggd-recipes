@@ -30,7 +30,7 @@ about:
   - fasta
   - non-coding
   - noncoding
-  - long-longcoding
+  - long-noncoding
   - lncrna
   - transcript
   summary: Long non-coding RNA transcript sequences for CHR regions. Nucleotide sequences
