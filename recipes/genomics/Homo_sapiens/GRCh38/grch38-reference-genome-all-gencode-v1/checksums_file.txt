@@ -1,3 +1,3 @@
-grch38-reference-genome-all-gencode-v1.fa.gz	60f7709b4c1063ed4a803df1283b3c85
+grch38-reference-genome-all-gencode-v1.fa.gz	1b181f0a768f6305b0f6f06e583854e6
 grch38-reference-genome-all-gencode-v1.fa.gz.fai	3905173016c05e57a3bad83dce1acf14
-grch38-reference-genome-all-gencode-v1.fa.gz.gzi	a31f0c01b6f9c031919fc48817c4d1bf
+grch38-reference-genome-all-gencode-v1.fa.gz.gzi	1bb0250d356b06320b95a202fd53348a

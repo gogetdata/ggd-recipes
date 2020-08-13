@@ -40,9 +40,9 @@ about:
     file-type:
     - fa
     final-file-sizes:
-      grch38-reference-genome-all-gencode-v1.fa.gz: 943.38M
+      grch38-reference-genome-all-gencode-v1.fa.gz: 942.24M
       grch38-reference-genome-all-gencode-v1.fa.gz.fai: 21.95K
-      grch38-reference-genome-all-gencode-v1.fa.gz.gzi: 810.94K
+      grch38-reference-genome-all-gencode-v1.fa.gz.gzi: 814.12K
     final-files:
     - grch38-reference-genome-all-gencode-v1.fa.gz
     - grch38-reference-genome-all-gencode-v1.fa.gz.fai
