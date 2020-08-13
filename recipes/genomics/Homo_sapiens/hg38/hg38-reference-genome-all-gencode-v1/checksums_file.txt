@@ -1,3 +1,0 @@
-hg38-reference-genome-all-gencode-v1.fa.gz.fai	77858c10a85ee4c70f49de4a2a3da7f5
-hg38-reference-genome-all-gencode-v1.fa.gz.gzi	ad2f5c8581a8681505abc05409b37251
-hg38-reference-genome-all-gencode-v1.fa.gz	2917cfd9e2da4d49969086d15a9c8631
