@@ -40,9 +40,9 @@ about:
     file-type:
     - fa
     final-file-sizes:
-      hg38-reference-genome-all-gencode-v1.fa.gz: 943.38M
+      hg38-reference-genome-all-gencode-v1.fa.gz: 942.24M
       hg38-reference-genome-all-gencode-v1.fa.gz.fai: 22.03K
-      hg38-reference-genome-all-gencode-v1.fa.gz.gzi: 810.94K
+      hg38-reference-genome-all-gencode-v1.fa.gz.gzi: 814.12K
     final-files:
     - hg38-reference-genome-all-gencode-v1.fa.gz
     - hg38-reference-genome-all-gencode-v1.fa.gz.fai
