@@ -13,10 +13,12 @@ requirements:
   build:
   - htslib
   - samtools
+  - samtools>=1.10
   - zlib
   run:
   - htslib
   - samtools
+  - samtools>=1.10
   - zlib
 source:
   path: .
@@ -41,9 +43,9 @@ about:
     file-type:
     - fa
     final-file-sizes:
-      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.11M
+      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.05M
       grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai: 6.57M
-      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.34K
+      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.40K
     final-files:
     - grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz
     - grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai

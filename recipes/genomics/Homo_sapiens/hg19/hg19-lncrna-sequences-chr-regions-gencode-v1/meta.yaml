@@ -13,10 +13,12 @@ requirements:
   build:
   - htslib
   - samtools
+  - samtools>=1.10
   - zlib
   run:
   - htslib
   - samtools
+  - samtools>=1.10
   - zlib
 source:
   path: .
@@ -41,9 +43,9 @@ about:
     file-type:
     - fa
     final-file-sizes:
-      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.11M
+      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.05M
       hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai: 6.57M
-      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.34K
+      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.40K
     final-files:
     - hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz
     - hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai
