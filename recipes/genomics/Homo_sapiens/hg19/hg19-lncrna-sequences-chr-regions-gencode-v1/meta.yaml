@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: hg19-lncrna-sequences-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - reference
+  - gencode
+  - fasta
+  - non-coding
+  - noncoding
+  - long-longcoding
+  - lncrna
+  - transcript
+  summary: Long non-coding RNA transcript sequences for CHR regions. Nucleotide sequences
+    of long non-coding RNA transcripts on the reference chromosomes
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - fa
+    final-file-sizes:
+      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.11M
+      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai: 6.57M
+      hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.34K
+    final-files:
+    - hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz
+    - hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai
+    - hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics

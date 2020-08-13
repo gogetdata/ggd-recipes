@@ -1,0 +1,3 @@
+hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi	b755a753b23bae4accaf7f1778300d56
+hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz	4090b07518e9c5cc751e3191b4c80337
+hg19-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai	9c332d379c687c0d29e0ed847d98c841
