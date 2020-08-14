@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-amino-acid-sequences-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - amino
+  - amino-acid
+  - gencode
+  - fasta
+  - protein
+  - coding
+  - protein-coding
+  - transcript
+  summary: Protein-coding transcript translation sequences. Amino acid sequences of
+    coding transcript translations on the reference chromosomes
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - fa
+    final-file-sizes:
+      grch37-amino-acid-sequences-chr-regions-gencode-v1.fa.gz: 12.60M
+      grch37-amino-acid-sequences-chr-regions-gencode-v1.fa.gz.fai: 14.48M
+      grch37-amino-acid-sequences-chr-regions-gencode-v1.fa.gz.gzi: 12.62K
+    final-files:
+    - grch37-amino-acid-sequences-chr-regions-gencode-v1.fa.gz
+    - grch37-amino-acid-sequences-chr-regions-gencode-v1.fa.gz.fai
+    - grch37-amino-acid-sequences-chr-regions-gencode-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
