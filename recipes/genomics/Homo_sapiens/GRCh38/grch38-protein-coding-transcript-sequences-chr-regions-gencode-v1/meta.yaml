@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - samtools>=1.10
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - samtools>=1.10
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - gencode
+  - fasta
+  - protein
+  - coding
+  - protein-coding
+  - transcript
+  summary: Nucleotide sequences of coding transcripts on the reference chromosomes
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - fa
+    final-file-sizes:
+      grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz: 49.32M
+      grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai: 15.29M
+      grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi: 58.36K
+    final-files:
+    - grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz
+    - grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai
+    - grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
