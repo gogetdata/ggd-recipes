@@ -5,8 +5,8 @@ ggd uninstall
 
 [:ref:`Click here to return to the home page <home-page>`]
 
-ggd uninstall is used to uninstall a ggd package from your local machine. It ensures a correct uninstall of the
-data package along with removal of additional files created during installation.
+:code:`ggd uninstall` is used to uninstall ggd package(s) from your local conda environment that has been installed by
+ggd. It ensures a correct uninstall of the data package along with removal of additional files created during installation.
 
     .. note::
 
@@ -19,30 +19,38 @@ Using ggd uninstall
 Use :code:`ggd uninstall` to uninstall a ggd data package previously installed using  :code:`ggd install`.
 Running :code:`ggd uninstall -h` will give you the following message:
 
+
 Uninstall arguments: 
 
--h, --help      show this help message and exit
-
-/name           (Positional) The name of the recipe to uninstall.
-                ('/' indicates a placeholder and is not part of the argument name)
-
--c, --channel   (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)
++----------------+-------------------------------------------------------------------------------------+
+| ggd uninstall  | Use ggd to uninstall a ggd data package installed in the current conda              |
+|                | environment                                                                         |
++================+=====================================================================================+
+| -h, --help     | show this help message and exit                                                     |
++----------------+-------------------------------------------------------------------------------------+
+| names          | the name(s) of the ggd package(s) to uninstall                                      |           
++----------------+-------------------------------------------------------------------------------------+
+| -c, --channel  | (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)     |
++----------------+-------------------------------------------------------------------------------------+
 
 
 Additional argument explanation: 
 ++++++++++++++++++++++++++++++++
 
-Required argumnets: 
+Required arguments: 
 
-* *name:* The :code:`name` is the name of the ggd data package to uninstall.
+* *names:* The :code:`names` is the name or names of the ggd data package(s) to uninstall.
 
 Optional arguments: 
 
 * *-c:* The :code:`-c` flag represents the ggd channel. The default channel is *genomics*. If the data package you want to uninstall
-  is in a different ggd channel you will need to supply the channel name using this flag. For example, if your data package was
-  in the 'proteomics' channel, you would use::
+  is in a different ggd channel you will need to supply the channel name using this flag. 
 
-    ggd uninstall <package> -c proteomics
+    .. note::
+
+        You need to be in the conda environment/prefix in which the data has been installed in order to uninstall it. 
+        If the data packages you are trying to uninstall is not in the current/active conda environment it will not be 
+        uninstalled, or it will uninstall the package that is in that environment which would not be the intent.
 
 
 Examples
@@ -55,19 +63,14 @@ Examples
 
     $ ggd uninstall hg19-ga
 
-      Checking for installation of hg19-ga
+      :ggd:uninstall: Checking for installation of hg19-ga
 
-      hg19-ga is not in the ggd-genomics channel
+      :ggd:uninstall: hg19-ga is not in the ggd-genomics channel
 
-      Packages installed on your system that are similar include:
-             Package         Channel
-             -hg19-gaps      ggd-genomics
+      :ggd:uninstall: Unable to find any package similar to the package entered. Use 'ggd search' or 'conda find' to identify the right package
 
-      If one of these packages is the desired package to uninstall please rerun ggd uninstall with the desired package name and correct ggd channel name
+      :ggd:uninstall: This package may not be installed on your system
 
-      Note: If the the package is not a part of a ggd channel run 'conda uninstall <pkg>' to uninstall
-
-      GGD channels include: genomics, etc.
 
 2. Successful uninstall example:
 ++++++++++++++++++++++++++++++++
@@ -76,31 +79,40 @@ Examples
 
     $ ggd uninstall hg19-gaps-ucsc-v1
 
-      Checking for installation of hg19-gaps-ucsc-v1
+      :ggd:uninstall: Checking for installation of hg19-gaps-ucsc-v1
 
-      hg19-gaps-ucsc-v1 is installed by conda on your system
+      :ggd:uninstall: hg19-gaps-ucsc-v1 is installed by conda on your system
 
-      Uninstalling hg19-gaps-ucsc-v1
+      :ggd:uninstall: Uninstalling hg19-gaps-ucsc-v1
+      Collecting package metadata (repodata.json): done
       Solving environment: done
 
       ## Package Plan ##
 
-      environment location: <conda root>
+        environment location: <env>
 
-      removed specs:
-        - hg19-gaps-ucsc-v1
+        removed specs:
+          - hg19-gaps-ucsc-v1
 
 
       The following packages will be REMOVED:
 
-        hg19-gaps-ucsc-v1: 1-0 ggd-genomics
+        hg19-gaps-ucsc-v1-1-1
+
 
       Preparing transaction: done
       Verifying transaction: done
       Executing transaction: done
 
-      Removing hg19-gaps-ucsc-v1 version 1 file(s) from ggd recipe storage
+      :ggd:uninstall: Removing hg19-gaps-ucsc-v1 version 1 file(s) from ggd recipe storage
 
-      Deleting 2 items of hg19-gaps-ucsc-v1 version 1 from your conda root
+      :ggd:uninstall: Deleting 9 items of hg19-gaps-ucsc-v1 version 1 from your conda root
 
-      DONE
+      :ggd:env: Removing the ggd_hg19_gaps_ucsc_v1_dir environment variable
+
+      :ggd:env: Removing the ggd_hg19_gaps_ucsc_v1_file environment variable
+
+      :ggd:uninstall: Updating installed package list
+
+      :ggd:uninstall: DONE
+

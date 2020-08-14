@@ -13,7 +13,9 @@ You will need to update the forked ggd-recipes repo on your local machine before
 you add a recipe to it.
 
 * Navigate to the forked ggd-recipes repo on your local machine
-* Once in the directory run the following commands::
+* Once in the directory run the following commands
+
+::
 
     $ git checkout master
     $ git pull upstream master
@@ -36,9 +38,11 @@ The following will outline steps used to create the hg19-gaps ggd data recipe:
 
 * Next, identify if you need a genome coordinates file. Many of these are hosted on the ggd-recipes repo.
   If the coordinates file is not available you can either add one to the ggd-recipes repo or ask a member of the
-  ggd team to add one.
+  ggd team to add one by requesting it using the `GGD Recipe Request <https://forms.gle/3WEWgGGeh7ohAjcJA>`_ Form. 
 
-* Example: hg19 genome build coordinates file::
+* Example: hg19 genome build coordinates file
+
+::
 
     https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
 
@@ -50,8 +54,16 @@ The following will outline steps used to create the hg19-gaps ggd data recipe:
         4. need to bgzip the new sorted extraction
         5. need to tabix the bgzip sorted file
 
+.. note::
+
+    If a data file can contain a header please add one. If a header can be added to a data file and it is not added, 
+    the data recipe will be rejected during the PR until a header is added. (See next step for an example of adding 
+    a header to the gaps data file.)
+
 * Next, create bash script that contains the steps in order to extract and process the data file:
-    * Example (bash script)::
+    * Example (bash script)
+
+    ::
 
         genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
         wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.txt.gz \
@@ -75,7 +87,14 @@ You should run the script to make sure it works and that the processed files are
        will be replaced with the ggd recipe name, and the genomic file extention will be kept. For example, in the 
        hg19-gaps example above *gaps.bed.gz* and the tabix companion *gaps.bed.gz.tbi* will be renmaed to *hg19-gaps.bed.gz*
        and *hg19-gaps.bed.gz.tbi*. Because of the complexities with genomic file extentions all extentions will be retained
-       and only the beginning name before the first . will be replaced with the recipe name. 
+       and only the beginning name before the first '.' will be replaced with the recipe name. 
+
+
+    .. note:: 
+
+        Make sure that any intermediate files or other files used for data processing are removed after processing. Only the 
+        final processed data files should remain once the script has finished. If extra files are not removed they will be
+        added as members of the data recipe, which is most likley un-wanted and un-needed. 
 
 
 3. Create a ggd recipe using the ggd cli
@@ -92,10 +111,11 @@ Example:
     Assuming your bash script created in step 2 is called *hg19_data_recipe.sh*, run the following command to turn
     it into a ggd recipe::
 
-        $ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc \
-            --ggd_version 1 --data_version 27-Apr-2009 \
+        $ ggd make-recipe -s Homo_sapiens -g hg19 --author name \
+            --package-version 1 --data-version 27-Apr-2009 \
+            --data-provider UCSC -cb 0-based-inclusive \
             --summary 'Assembly gaps from USCS' \
-            -k gaps -k region gaps-ucsc hg19_data_recipe.sh
+            -k gaps -k region --name gaps hg19_data_recipe.sh
 
     The :code:`ggd make-recipe` tool transforms the bash script you created into a data recipe. Running the above code will create
     a data recipe called *hg19-gaps-ucsc-v1*, which will be a directory and will contain three files. For more information on the
@@ -141,7 +161,7 @@ The recipes file convention is as follows:
       * :code:`recipes` is the **recipes** directory.
       * :code:`<ggd channel>` is the ggd channel that recipe should go in. This depends on the type of data you are adding.
         For the hg19-gaps example the channel would be **genomics**.
-      * :code:`<species>` is the species corresponding to these data. For the hg19-gaps example this would be **Homo_sapiens**.
+      * :code:`<species>` is the species corresponding to the data. For the hg19-gaps example this would be **Homo_sapiens**.
       * :code:`<genome-build>` is the genome build for the data. For the hg19-gaps example this would be **hg19**.
 
 For the hg19-gaps recipe above you would use the following commands::
@@ -155,7 +175,7 @@ Navigate to the forked ggd-recipe directory and use the following commands:
 
         $ git add /recipes/genomics/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/
 
-    * Commit the addition to the repo (A text editor will open up. Add a comment about the new recipe and save it)::
+    * Commit the addition to the repo (The vim text editor will open up. Add a comment about the new recipe and save it)::
 
         $ git commit
 

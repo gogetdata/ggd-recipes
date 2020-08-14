@@ -5,7 +5,17 @@ ggd pkg-info
 
 [:ref:`Click here to return to the home page <home-page>`]
 
-ggd pkg-info is used to get package information for a specific ggd data package installed on your system.
+:code:`ggd pkg-info` is used to get package information for a specific ggd data package installed on your system.
+
+This is a great resource for identifying the information for a specific ggd data package installed on your system. 
+It will provide information about the data type, the provider of the data, the actual version of the data, the 
+version of the ggd data package, and more. 
+
+The examples below help to illustrate what is available from :code:`ggd pkg-info`. 
+
+This tool provides a resource to help enforce reproducibility. The information provide from running 
+:code:`ggd pkg-info` will help to distinguish the data package and allow you to provide such information to 
+other or in a citation
 
 Using ggd pkg-info
 ------------------
@@ -15,27 +25,28 @@ and process the data.
 
 .. note::
 
-    The ggd data package must be installed on your system in order to get the package information.
+    The ggd data package must be installed on your system in order to get the package information
 
 
 Running :code:`ggd pkg-info -h` will give you the following help message:
 
 pkg-info arguments:
 
--h, --help              show this help message and exit
 
-/name                   (Positional) The name of the recipe to get info about.
-                        ('/' indicates a placeholder and is not part of the argument name) 
-
--c, --channel           (Optional) The ggd channel of the recipe to list info about (default: genomics)
-
--av, --all_versions     (Optional) When the flag is set, list all ggd versions of a
-                        ggd-recipe for a specific ggd-channel. (NOTE: -av flag does not
-                        accept arguments)
-
--sr, --show_recipe      (Optional) When the flag is set, the recipe will be printed to the
-                        stdout. This will provide info on where the data is hosted and how
-                        it was processed. (NOTE: -sr flag does not accept arguments)
++---------------------+-----------------------------------------------------------------------------------+
+| pkg-info            | Get the information for a specific ggd data package installed in the current      |
+|                     |  conda environment                                                                |
++=====================+===================================================================================+
+| -h, --help          | show this help message and exit                                                   |
++---------------------+-----------------------------------------------------------------------------------+
+| name                | **Required** The name of the recipe to get info about.                            |
++---------------------+-----------------------------------------------------------------------------------+
+| -c, --channel       | (Optional) The ggd channel of the recipe to list info about (default: genomics)   |
++---------------------+-----------------------------------------------------------------------------------+
+| -sr, --show_recipe  | (Optional) When the flag is set, the recipe will be printed to the                |
+|                     |  stdout. This will provide info on where the data is hosted and how               |
+|                     |  it was processed. (NOTE: -sr flag does not accept arguments)                     |
++---------------------+-----------------------------------------------------------------------------------+
 
 Additional argument explanation: 
 ++++++++++++++++++++++++++++++++
@@ -49,15 +60,11 @@ Optional arguments:
 
 * *-c:* The :code:`-c` flag represents the ggd channel the package came from. The default is genomics.
 
-* *-av:* The :code:`-av` flag is used to list *all available* versions of the ggd package. Not all versions
-  will be installed on your system. This flag only needs to be set and will not accept additional arguments.
-
 * *-sr:* The :code:`-sr` flag is used to *show the recipe* for the data package. Showing the recipe will allow
   the user to identify where the data was originally downloaded, how it was processed, and other information
   about the data being used.
 
 If the package has not been installed on your system then the package info will not be displayed and the recipe will not be accessible.
-However, you can use the -av flag to list all of the available versions.
 
 Examples
 --------
@@ -67,88 +74,114 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd pkg-info hg19-phastcons-ucsc-v1
+    $ ggd pkg-info hg19-gaps-ucsc-v1 
 
-      GGD-Recipe: hg19-phastcons-ucsc-v1
-      GGD-Channel: genomics
-      Summary: phastCons scores for MSA of 99 genomes to hg19
-      Pkg Version: 1
-      Pkg Build: 0
-      Species: Homo_sapiens
-      Genome Build: hg19
-      Keywords: ['phastCons', 'conservation']
-      Data Version: 09-Feb-2014
-      Build Requirements: []
-      Run Requirements: []
-      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1
-      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1/hg19.100way.phastCons.bw
+      ----------------------------------------------------------------------------------------------------
 
-2. Example listing pkg info and all available versions:
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        GGD-Package: hg19-gaps-ucsc-v1
 
-.. code-block:: bash
+        GGD-Channel: ggd-genomics
 
-    $ ggd pkg-info hg19-phastcons-ucsc-v1 -av
+        GGD Pkg Version: 1
 
-      GGD-Recipe: hg19-phastcons-ucsc-v1
-      GGD-Channel: genomics
-      Summary: phastCons scores for MSA of 99 genomes to hg19
-      Pkg Version: 1
-      Pkg Build: 0
-      Species: Homo_sapiens
-      Genome Build: hg19
-      Keywords: ['phastCons', 'conservation']
-      Data Version: 09-Feb-2014
-      Build Requirements: []
-      Run Requirements: []
-      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1
-      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-phastcons-ucsc-v1/1/hg19.100way.phastCons.bw
+        Summary: Assembly gaps from UCSC in bed format
 
+        Species: Homo_sapiens
 
-      Listing all ggd-recipe version for the hg19-phastcons-ucsc-v1 recipe in the ggd-genomics channel
+        Genome Build: hg19
 
-        Loading channels: ...working... done
-        - # Name                       Version      Build  Channel
-        - hg19-phastcons-ucsc-v1             1          0  ggd-genomics
-        - hg19-phastcons-ucsc-v1             1          1  ggd-genomics
-        - hg19-phastcons-uscs-v1             1          2  ggd-genomics
-        - hg19-phastcons-uscs-v1             2          0  ggd-genomics
-        - hg19-phastcons-ucsc-v1             3          0  ggd-genomics
+        Keywords: gaps, region, bed-file
 
-3. Example listing pkg info and recipe:
+        Cached: uploaded_to_aws
+
+        Data Version: 27-Apr-2009
+
+        File type(s): bed
+
+        Data file coordinate base: 0-based-inclusive
+
+        Included Data Files:
+		  hg19-gaps-ucsc-v1.bed.gz
+		  hg19-gaps-ucsc-v1.bed.gz.tbi
+
+        Approximate Data File Sizes:
+		  hg19-gaps-ucsc-v1.bed.gz: 5.16K
+		  hg19-gaps-ucsc-v1.bed.gz.tbi: 8.22K
+
+        Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1
+
+        Installed Pkg Files: 
+          <conda root>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1/hg19-gaps-ucsc-v1.bed.gz.tbi
+          <conda root>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1/hg19-gaps-ucsc-v1.bed.gz
+
+      ---------------------------------------------------------------------------------------------------- 
+
+2. Example listing pkg info and recipe:
 +++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
-    $ ggd pkg-info hg19-repeatmasker-ucsc-v1 -sr
-
-      GGD-Recipe: hg19-repeatmasker-ucsc-v1
-      GGD-Channel: genomics
-      Summary: RepeatMasker track from UCSC
-      Pkg Version: 1
-      Pkg Build: 0
-      Species: Homo_sapiens
-      Genome Build: hg19
-      Keywords: ['rmsk', 'region']
-      Data Version: 27-Apr-2009
-      Build Requirements: ['gsort', 'htslib', 'zlib']
-      Run Requirements: ['gsort', 'htslib', 'zlib']
-      Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker-uscs-v1/1
-      Pkg Files: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker-ucsc-v1/1/rmsk.bed.gz, <conda root>/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker-ucsc-v1/1/rmsk.bed.gz.tbi
+    $ ggd pkg-info hg19-gaps-ucsc-v1 -sr
 
 
-      hg19-repeatmasker-ucsc-v1 recipe file:
-      *****************************************************************
+      ----------------------------------------------------------------------------------------------------
+
+        GGD-Package: hg19-gaps-ucsc-v1
+
+        GGD-Channel: ggd-genomics
+
+        GGD Pkg Version: 1
+
+        Summary: Assembly gaps from UCSC in bed format
+
+        Species: Homo_sapiens
+
+        Genome Build: hg19
+
+        Keywords: gaps, region, bed-file
+
+        Cached: uploaded_to_aws
+
+        Data Version: 27-Apr-2009
+
+        File type(s): bed
+
+        Data file coordinate base: 0-based-inclusive
+
+        Included Data Files:
+		  hg19-gaps-ucsc-v1.bed.gz
+		  hg19-gaps-ucsc-v1.bed.gz.tbi
+
+        Approximate Data File Sizes:
+		  hg19-gaps-ucsc-v1.bed.gz: 5.16K
+		  hg19-gaps-ucsc-v1.bed.gz.tbi: 8.22K
+
+        Pkg File Path: <conda root>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1
+
+        Installed Pkg Files: 
+          <conda root>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1/hg19-gaps-ucsc-v1.bed.gz.tbi
+          <conda root>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1/hg19-gaps-ucsc-v1.bed.gz
+
+      ---------------------------------------------------------------------------------------------------- 
+
+
+
+      hg19-gaps-ucsc-v1 recipe file:
+      *****************************************************************************
       * #!/bin/sh
       * set -eo pipefail -o nounset
       * genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
-      * wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/rmsk.txt.gz \
+      * wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.txt.gz \
       * | gzip -dc \
-      * | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tfamily_class_name\tdiv+del+ins\tstrand"} {print $6,$7,$8,$12"_"$13"_"$11,$3+$4+$5,$10}' \
+      * | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tsize\ttype\tstrand"} {print $2,$3,$4,$7,$8,"+"}' \
       * | gsort /dev/stdin $genome \
-      * | bgzip -c > hg19-repeatmasker-ucsc-v1.bed.gz
-      *
-      * tabix hg19-repeatmasker-ucsc-v1.bed.gz
-      *
-      *****************************************************************
-      NOTE: The recipe provided above outlines where the data was accessed and how it was processed
+      * | bgzip -c > hg19-gaps-ucsc-v1.bed.gz
+      * 
+      * tabix hg19-gaps-ucsc-v1.bed.gz
+      *****************************************************************************
+      :ggd:pkg-info: NOTE: The recipe provided above outlines where the data was accessed and how it was processed
+
+
+
+
+
