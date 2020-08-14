@@ -35,13 +35,13 @@ about:
     genome assembly (chromosomes and scaffolds)
   tags:
     data-provider: GENCODE
-    data-version: release-34,patch-13
+    data-version: release-34
     file-type:
     - fa
     final-file-sizes:
-      hg38-reference-genome-gencode-v1.fa.gz: 895.57M
+      hg38-reference-genome-gencode-v1.fa.gz: 894.51M
       hg38-reference-genome-gencode-v1.fa.gz.fai: 6.48K
-      hg38-reference-genome-gencode-v1.fa.gz.gzi: 769.38K
+      hg38-reference-genome-gencode-v1.fa.gz.gzi: 772.41K
     final-files:
     - hg38-reference-genome-gencode-v1.fa.gz
     - hg38-reference-genome-gencode-v1.fa.gz.fai
