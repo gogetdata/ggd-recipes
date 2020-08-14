@@ -1,0 +1,3 @@
+grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz	f3478437a5331d4fe7c5e493bb42c493
+grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai	46de51e7cd829cb0a6587745d72b19a7
+grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi	0142cf157e04a4c89459350e89703ed7

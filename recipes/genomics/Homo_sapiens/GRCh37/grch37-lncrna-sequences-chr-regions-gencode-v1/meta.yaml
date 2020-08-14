@@ -1,0 +1,54 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch37-lncrna-sequences-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - htslib
+  - samtools
+  - samtools>=1.10
+  - zlib
+  run:
+  - htslib
+  - samtools
+  - samtools>=1.10
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - reference
+  - gencode
+  - fasta
+  - non-coding
+  - noncoding
+  - long-noncoding
+  - lncrna
+  - transcript
+  summary: Long non-coding RNA transcript sequences for CHR regions. Nucleotide sequences
+    of long non-coding RNA transcripts on the reference chromosomes
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - fa
+    final-file-sizes:
+      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.05M
+      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai: 6.57M
+      grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.40K
+    final-files:
+    - grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz
+    - grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai
+    - grch37-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
