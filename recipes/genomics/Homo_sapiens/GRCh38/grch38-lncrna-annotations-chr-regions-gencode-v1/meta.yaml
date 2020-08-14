@@ -1,0 +1,50 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch38-lncrna-annotations-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - gencode
+  - non-coding
+  - noncoding
+  - long-noncoding
+  - lncrna
+  - annotation
+  - gtf
+  summary: Long non-coding RNA gene annotation. It contains the comprehensive gene
+    annotation of lncRNA genes on the reference chromosomes. This is a subset of the
+    main annotation file
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-lncrna-annotations-chr-regions-gencode-v1.gtf.gz: 15.27K
+      grch38-lncrna-annotations-chr-regions-gencode-v1.gtf.gz.tbi: 8.77K
+    final-files:
+    - grch38-lncrna-annotations-chr-regions-gencode-v1.gtf.gz
+    - grch38-lncrna-annotations-chr-regions-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
