@@ -1,3 +1,3 @@
-hg38-reference-genome-gencode-v1.fa.gz.fai	77858c10a85ee4c70f49de4a2a3da7f5
-hg38-reference-genome-gencode-v1.fa.gz	7d37db5fb9bd010a4e8fcf90ac866fd9
-hg38-reference-genome-gencode-v1.fa.gz.gzi	7f9b8a45c8c2fc60aebbd65ef2f29368
+hg38-reference-genome-gencode-v1.fa.gz	c0185bb90a7ae72816a466edd85a2430
+hg38-reference-genome-gencode-v1.fa.gz.gzi	9239809688277d588537e8b52a836276
+hg38-reference-genome-gencode-v1.fa.gz.fai	836914cbb995cc00995f87bae42d5afd
