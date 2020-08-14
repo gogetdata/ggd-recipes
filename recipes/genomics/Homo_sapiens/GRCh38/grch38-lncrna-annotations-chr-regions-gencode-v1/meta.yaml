@@ -15,6 +15,7 @@ requirements:
   - htslib
   - zlib
   run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
   - gsort
   - htslib
   - zlib
