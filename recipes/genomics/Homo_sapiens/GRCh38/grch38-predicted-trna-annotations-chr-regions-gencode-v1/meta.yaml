@@ -1,0 +1,49 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: grch38-predicted-trna-annotations-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - gencode
+  - tRNA
+  - transfer-RNA
+  - annotation
+  - gtf
+  summary: Predicted tRNA genes. tRNA genes predicted by ENSEMBL on the reference
+    chromosomes using tRNAscan-SE. This dataset does not form part of the main annotation
+    file.
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-predicted-trna-annotations-chr-regions-gencode-v1.gtf.gz: 15.27K
+      grch38-predicted-trna-annotations-chr-regions-gencode-v1.gtf.gz.tbi: 8.77K
+    final-files:
+    - grch38-predicted-trna-annotations-chr-regions-gencode-v1.gtf.gz
+    - grch38-predicted-trna-annotations-chr-regions-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
