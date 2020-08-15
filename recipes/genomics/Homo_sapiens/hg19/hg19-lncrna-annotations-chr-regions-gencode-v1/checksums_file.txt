@@ -1,0 +1,2 @@
+hg19-lncrna-annotations-chr-regions-gencode-v1.gtf.gz	6a4d3915cd4a143e234310a03331157f
+hg19-lncrna-annotations-chr-regions-gencode-v1.gtf.gz.tbi	e2587f3546d090d1cf9d403dd68e9637
