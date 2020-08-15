@@ -1,0 +1,3 @@
+hg38-transcript-sequences-chr-regions-gencode-v1.fa.gz	c70b24469588c2b8879f53575f892e84
+hg38-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai	2a570c54879012280ff12167a8423eb8
+hg38-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi	81c08655b1071ef3c30cc71a46b1cfa5
