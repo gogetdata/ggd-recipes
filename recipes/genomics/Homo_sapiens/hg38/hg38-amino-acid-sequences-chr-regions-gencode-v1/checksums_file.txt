@@ -1,0 +1,3 @@
+hg38-amino-acid-sequences-chr-regions-gencode-v1.fa.gz	5b3f0b97a359bbe9e04d783f9a2413b0
+hg38-amino-acid-sequences-chr-regions-gencode-v1.fa.gz.fai	faf48e4725a932d8fd7058ba646b6ec8
+hg38-amino-acid-sequences-chr-regions-gencode-v1.fa.gz.gzi	68ed3961f0916431356534efb67ef45c
