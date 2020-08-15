@@ -1,3 +1,0 @@
-grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz	d52553f782cc64d5ec18879516dc37ad
-grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai	fdaa1737561c85507c6ca453d664e35f
-grch38-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi	f19a8e1d83f8d99e48fb83d592abaabd

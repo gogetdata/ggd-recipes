@@ -7,7 +7,7 @@ extra:
   authors: jrb
   extra-files: []
 package:
-  name: hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1
+  name: hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1
   version: '1'
 requirements:
   build:
@@ -33,19 +33,19 @@ about:
   - coding
   - protein-coding
   - transcript
-  summary: Nucleotide sequences of coding transcripts on the reference chromosomes
+  summary: Nucleotide sequences of protein-coding transcripts on the reference chromosomes
   tags:
     data-provider: GENCODE
     data-version: release-34
     file-type:
     - fa
     final-file-sizes:
-      hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz: 49.59M
-      hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai: 16.10M
-      hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi: 58.54K
+      hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1.fa.gz: 49.59M
+      hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1.fa.gz.fai: 16.10M
+      hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1.fa.gz.gzi: 58.54K
     final-files:
-    - hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz
-    - hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai
-    - hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi
+    - hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1.fa.gz
+    - hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1.fa.gz.fai
+    - hg19-transcript-sequences-protein-coding-chr-regions-gencode-v1.fa.gz.gzi
     genomic-coordinate-base: NA
     ggd-channel: genomics

@@ -1,3 +1,0 @@
-hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz	175fcb9c0fdf766313e95375d32656f8
-hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.fai	bc4843558d957c3955175493e825cae0
-hg19-protein-coding-transcript-sequences-chr-regions-gencode-v1.fa.gz.gzi	fcb510f6e74c5c579b65dfc5292c8699
