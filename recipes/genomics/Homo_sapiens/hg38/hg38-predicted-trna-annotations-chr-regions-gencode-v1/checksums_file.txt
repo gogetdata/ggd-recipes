@@ -1,0 +1,2 @@
+hg38-predicted-trna-annotations-chr-regions-gencode-v1.gtf.gz	117512196c5896880d569bdc9ee78a4a
+hg38-predicted-trna-annotations-chr-regions-gencode-v1.gtf.gz.tbi	29d52146e1915d00abd4303ed09a7c9b
