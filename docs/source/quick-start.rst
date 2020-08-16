@@ -5,7 +5,7 @@ GGD Quick Start
 
 [:ref:`Click here to return to the home page <home-page>`]
 
-.. note::
+.. warning::
 
     After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
     be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 

@@ -1,5 +1,8 @@
 import os
 import os.path as op
+import yaml
+import copy
+import json
 from collections import defaultdict
 from jinja2.sandbox import SandboxedEnvironment
 from sphinx.util import logging as sphinx_logging
@@ -8,25 +11,10 @@ from sphinx.util.parallel import ParallelTasks, parallel_available, make_chunks
 from sphinx.util.rst import escape as rst_escape
 from sphinx.util.osutil import ensuredir
 from sphinx.jinja2glue import BuiltinTemplateLoader
-from distutils.version import LooseVersion
-from bioconda_utils.utils import RepoData, load_config
-from bioconda_utils.recipe import Recipe, RecipeError
-from typing import Any, Dict, List, Tuple, Optional
-from sphinx import addnodes
-from docutils import nodes
-from docutils.parsers import rst
 from docutils.statemachine import StringList
-from sphinx.domains import Domain, ObjType, Index
-from sphinx.directives import ObjectDescription
-from sphinx.environment import BuildEnvironment
-from sphinx.roles import XRefRole
-from sphinx.util.docfields import Field, GroupedField
-from sphinx.util.nodes import make_refnode
-from sphinx.util.rst import escape as rst_escape
-from sphinx.util.osutil import ensuredir
-from sphinx.util.docutils import SphinxDirective
-from sphinx.jinja2glue import BuiltinTemplateLoader
-from conda.exports import VersionOrder
+from ggd.utils import get_ggd_channels ,get_species 
+from collections import defaultdict
+
 
 
 # Aquire a logger
@@ -36,17 +24,11 @@ except AttributeError:  # not running within sphinx
     import logging
     logger = logging.getLogger(__name__)
 
-try:
-    from conda_build.metadata import MetaData
-    from conda_build.exceptions import UnableToParse
-except Exception:
-    logging.exception("Failed to import MetaData")
-    raise
-
 
 BASE_DIR = op.dirname(op.abspath(__file__))
 RECIPE_DIR = op.join(op.dirname(BASE_DIR), 'ggd-recipes', 'recipes')
 OUTPUT_DIR = op.join(BASE_DIR, 'recipes')
+GGD_GITHUB = "https://github.com/gogetdata/ggd-recipes/tree/master/recipes/"
 
 
 
@@ -83,6 +65,16 @@ def underline_filter(text):
     return text + "\n" + "=" * len(text)
 
 
+def rst_escape_filter(text):
+    """Jinja2 filter escaping RST symbols in text
+    >>> rst_excape_filter("running `cmd.sh`")
+    "running \`cmd.sh\`"
+    """
+    if text:
+        return rst_escape(text)
+    return text
+
+
 def escape_filter(text):
     """Jinja2 filter escaping RST symbols in text
 
@@ -91,6 +83,23 @@ def escape_filter(text):
     """
     if text:
         return rst_escape(text)
+    return text
+
+def prefixes_filter(text, split):
+    """Jinja2 filter"""
+    path = []
+    for part in text.split(split):
+        path.append(part)
+        yield {'path': split.join(path), 'part': part}
+
+
+def rst_link_filter(text, url):
+    """Jinja2 filter creating RST link
+    >>> rst_link_filter("bla", "https://somewhere")
+    "`bla <https://somewhere>`_"
+    """
+    if url:
+        return "`{} <{}>`_".format(text, url)
     return text
 
 
@@ -107,9 +116,11 @@ class Renderer(object):
         template_loader = BuiltinTemplateLoader()
         template_loader.init(app.builder)
         template_env = SandboxedEnvironment(loader=template_loader)
-        template_env.filters['escape'] = escape_filter
+        template_env.filters['rst_escape'] = rst_escape_filter
         template_env.filters['underline'] = underline_filter
         template_env.filters['as_extlink'] = as_extlink_filter
+        template_env.filters['prefixes'] = prefixes_filter
+        template_env.filters['rst_link'] = rst_link_filter
         self.env = template_env
         self.templates = {}
 
@@ -155,12 +166,11 @@ class Renderer(object):
         return True
 
 
-def generate_readme(folder, repodata, renderer):
+def generate_readme(recipe_dict, renderer):
     """Generates README.rst for the recipe in folder
 
     Args:
       folder: Toplevel folder name in recipes directory
-      repodata: RepoData object
       renderer: Renderer object
 
     Returns:
@@ -168,127 +178,53 @@ def generate_readme(folder, repodata, renderer):
       which meta.yaml files exist in the recipe folder and its
       subfolders
     """
-    # Subfolders correspond to different versions
-    versions = []
-    for sf in os.listdir(op.join(RECIPE_DIR, folder)):
-        if not op.isdir(op.join(RECIPE_DIR, folder, sf)):
-            # Not a folder
-            continue
-        try:
-            LooseVersion(sf)
-        except ValueError:
-            logger.error("'{}' does not look like a proper version!"
-                         "".format(sf))
-            continue
-        versions.append(sf)
 
     # Read the meta.yaml file(s)
     try:
-        recipe = op.join(RECIPE_DIR, folder, "meta.yaml")
-        if op.exists(recipe):
-            metadata = MetaData(recipe)
-            if metadata.version() not in versions:
-                versions.insert(0, metadata.version())
-        else:
-            if versions:
-                recipe = op.join(RECIPE_DIR, folder, versions[0], "meta.yaml")
-                metadata = MetaData(recipe)
-            else:
-                # ignore non-recipe folders
-                return []
-    except UnableToParse as e:
-        logger.error("Failed to parse recipe {}".format(recipe))
-        raise e
-
-    ## Get all versions and build numbers for data package
-    # Select meta yaml
-    meta_fname = op.join(RECIPE_DIR, folder, 'meta.yaml')
-    if not op.exists(meta_fname):
-        for item in os.listdir(op.join(RECIPE_DIR, folder)):
-            dname = op.join(RECIPE_DIR, folder, item)
-            if op.isdir(dname):
-                fname = op.join(dname, 'meta.yaml')
-                if op.exists(fname):
-                    meta_fname = fname
-                    break
-        else:
-            logger.error("No 'meta.yaml' found in %s", folder)
-            return []
-    meta_relpath = meta_fname[len(RECIPE_DIR)+1:]
-
-    # Read the meta.yaml file(s)
-    try:
-        recipe_object = Recipe.from_file(RECIPE_DIR, meta_fname)
-    except RecipeError as e:
-        logger.error("Unable to process %s: %s", meta_fname, e)
-        return []
+        ## Get recipe 
+        recipe_path = op.join(recipe_dict["meta_path"], "meta.yaml")
+        assert op.exists(recipe_path)
+        ## Get the recipe
+        recipe = yaml.safe_load(open(recipe_path))
+    except AssertionError as e:
+        print("meta.yaml file missing for {}".format(op.join(RECIPE_DIR,recipe_dict["meta_path"])))
+        print(str(e))
+        sys.exit(1)
+    except IOError as e:
+        print("Can't open meta.yaml file for {}".format(op.join(RECIPE_DIR,recipe_dict["meta_path"])))
+        print(str(e))
+        sys.exit(1)
 
     # Format the README
-    for package in sorted(list(set(recipe_object.package_names))):
-        versions_in_channel = set(repodata.get_package_data(['version', 'build_number'],
-                                                            channels='ggd-genomics', name=package))
-        sorted_versions = sorted(versions_in_channel,
-                                 key=lambda x: (VersionOrder(x[0]), x[1]),
-                                 reverse=False)
-        if sorted_versions:
-            depends = [
-                depstring.split(' ', 1) if ' ' in depstring else (depstring, '')
-                for depstring in
-                repodata.get_package_data('depends', name=package,
-                                          version=sorted_versions[0][0],
-                                          build_number=sorted_versions[0][1],
-                )[0]
-            ]
-        else:
-            depends = []
-
-
-
-    # Format the README
-    name = metadata.name()
-    versions_in_channel = repodata.get_versions(name)
+    name =  recipe["package"]["name"]
 
     template_options = {
         'name': name,
-        'about': (metadata.get_section('about') or {}),
-        'species': (metadata.get_section('about')["identifiers"]["species"] if "species" in metadata.get_section('about')["identifiers"] else {}),
-        'genome_build': (metadata.get_section('about')["identifiers"]["genome-build"] if "genome-build" in metadata.get_section('about')["identifiers"] else {}),
-        'ggd_channel': (metadata.get_section('about')["tags"]["ggd-channel"] if "ggd-channel" in metadata.get_section('about')["tags"] else "genomics"),
-        'extra': (metadata.get_section('extra') or {}),
-        'versions': ["-".join(str(w) for w in v) for v in sorted_versions],
+        'version': recipe["package"]["version"],
+        'summary': recipe["about"]["summary"],
+        'species':  recipe["about"]["identifiers"]["species"],
+        'genome_build':  recipe["about"]["identifiers"]["genome-build"],
+        'ggd_channel': recipe["about"]["tags"]["ggd-channel"],
+        'recipe_author': recipe["extra"]["authors"],
+        'keywords': recipe["about"]["keywords"],
+        'data_provider': recipe["about"]["tags"]["data-provider"] if "data-provider" in recipe["about"]["tags"] else "NA",
+        'data_version': recipe["about"]["tags"]["data-version"] if "data-version" in recipe["about"]["tags"] else "NA",
+        'file_type': recipe["about"]["tags"]["file-type"] if "file-type" in recipe["about"]["tags"] else ["NA"],
+        'final_files': recipe["about"]["tags"]["final-files"] if "final-files" in recipe["about"]["tags"] else ["NA"],
+        'final_file_sizes': ["{}: {}".format(name,size) for name, size in recipe["about"]["tags"]["final-file-sizes"].items()] if "final-file-sizes" in recipe["about"]["tags"] else ["NA"],
+        'coordinate_base': recipe["about"]["tags"]["genomic-coordinate-base"] if "genomic-coordinate-base" in recipe["about"]["tags"] else "NA", 
+        "deps": sorted(recipe["requirements"]["run"]),
         'gh_recipes': 'https://github.com/gogetdata/ggd-recipes/tree/master/recipes/',
-        'recipe_path': op.dirname(op.relpath(metadata.meta_path, RECIPE_DIR)),
-        'Package': '<a href="recipes/{0}/README.html">{0}</a>'.format(name)
+        'recipe_path': op.join(recipe_dict["channel"], recipe_dict["species"], recipe_dict["build"], name),
+        'Package': '<a href="recipes/{c}/{s}/{b}/{n}/README.html">{n}</a>'.format(c=recipe_dict["channel"],s=recipe_dict["species"],b=recipe_dict["build"],n=name)
     }
 
     renderer.render_to_file(
-        op.join(OUTPUT_DIR, name, 'README.rst'),
+        op.join(OUTPUT_DIR, recipe_dict["channel"], recipe_dict["species"], recipe_dict["build"], name ,'README.rst'),
         'readme.rst_t',
         template_options)
 
-    recipes = []
-    latest_version = "-".join(str(w) for w in sorted_versions[-1])
-    for version, version_info in sorted(versions_in_channel.items()):
-        t = template_options.copy()
-        if 'noarch' in version_info:
-            t.update({
-                'Linux': '<i class="fa fa-linux"></i>' if 'linux' in version_info else '<i class="fa fa-dot-circle-o"></i>',
-                'OSX': '<i class="fa fa-apple"></i>' if 'osx' in version_info else '<i class="fa fa-dot-circle-o"></i>',
-                'NOARCH': '<i class="fa fa-desktop"></i>' if 'noarch' in version_info else '',
-                'Version': latest_version ## The latest version
-                #'Version': version
-            })
-        else:
-            t.update({
-                'Linux': '<i class="fa fa-linux"></i>' if 'linux' in version_info else '',
-                'OSX': '<i class="fa fa-apple"></i>' if 'osx' in version_info else '',
-                'NOARCH': '<i class="fa fa-desktop"></i>' if 'noarch' in version_info else '',
-                'Version': latest_version ## The latest version
-                #'Version': version
-            })
-        recipes.append(t)
-    return recipes
-
+    return template_options
 
 def generate_recipes(app):
     """
@@ -297,17 +233,31 @@ def generate_recipes(app):
     the collected data.
     """
     renderer = Renderer(app)
-    load_config(os.path.join(os.path.dirname(RECIPE_DIR), "config.yaml"))
-    repodata = RepoData()
-    # Add ggd channels to repodata object
-    #repodata.channels = ['ggd-genomics', 'conda-forge', 'bioconda', 'defaults']
+
     recipes = []
+
     ## Get each folder that contains a meat.yaml file
     recipe_dirs = []
-    for root, dirs, files in os.walk(RECIPE_DIR):
-        if "meta.yaml" in files:
-            recipe_dirs.append(root)
 
+    ## Get Species, Genome Builds, and
+    species_build_dict = get_species(full_dict = True)
+    ggd_channels = set(get_ggd_channels())
+
+    ## Get recipe info
+    curr_channel = ""
+    curr_species = ""
+    curr_genome_build = ""
+
+    ## Get all sub_path combinations for channel, species, and build
+    sub_paths = {op.join(channel,species,build): {"channel":channel, "species": species, "build": build} for channel in ggd_channels for species, builds in species_build_dict.items() for build in builds}
+
+    for sub_path, info_dict in sub_paths.items():
+        for root, dirs, files in os.walk(op.join(RECIPE_DIR,sub_path)):
+            ## Get all paths to the yaml file
+            if "meta.yaml" in files:
+                info = copy.deepcopy(info_dict)
+                info["meta_path"] = root
+                recipe_dirs.append(info)
 
     if parallel_available and len(recipe_dirs) > 5:
         nproc = app.parallel
@@ -315,24 +265,23 @@ def generate_recipes(app):
         nproc = 1
 
     if nproc == 1:
-        for folder in status_iterator(
+        for recipe_dict in status_iterator(
                 recipe_dirs,
                 'Generating package READMEs...',
                 "purple", len(recipe_dirs), app.verbosity):
-            recipes.extend(generate_readme(folder, repodata, renderer))
+            recipes.append(generate_readme(recipe_dict, renderer))
     else:
         tasks = ParallelTasks(nproc)
         chunks = make_chunks(recipe_dirs, nproc)
 
         def process_chunk(chunk):
             _recipes = []
-            for folder in chunk:
-                _recipes.extend(generate_readme(folder, repodata, renderer))
+            for recipe_dict in chunk:
+                _recipes.extend(generate_readme(recipe_dict, renderer))
             return _recipes
 
         def merge_chunk(chunk, res):
             recipes.extend(res)
-
 
         for chunk in status_iterator(
                 chunks,
@@ -342,15 +291,29 @@ def generate_recipes(app):
         logger.info("waiting for workers...")
         tasks.join()
 
-    updated = renderer.render_to_file("source/recipes.rst", "recipes.rst_t", {
-        'recipes': recipes,
-        # order of columns in the table; must be keys in template_options
-        'keys': ['Package', 'Version', 'Linux', 'OSX', 'NOARCH'],
-		'noarch_symbol': '<i class="fa fa-desktop"></i>',
-		'linux_symbol': '<i class="fa fa-linux"></i>', 
-		'osx_symbol': '<i class="fa fa-apple"></i>',
-		'dot_symbol': '<i class="fa fa-dot-circle-o"></i>' 
-    })
+    
+    ## Create json file based on genome, species, and genome build
+    pkg_json = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(str))))
+    for recipe_d in recipes:
+
+        ## Get recipe info
+        channel = recipe_d["ggd_channel"]
+        species = recipe_d["species"]
+        genome_build = recipe_d["genome_build"]
+        name = recipe_d["name"]
+        print(name)
+        href = recipe_d["Package"]
+
+        ## Add to dict
+        pkg_json[channel][species][genome_build][name] = href
+   
+    ## Create a json file with recipe info in it 
+    with open("build/html/recipes.json", "w") as j:
+        j.write("recipe_data = ")
+        json.dump(pkg_json, j)
+
+    ## Update recipe.rst
+    updated = renderer.render_to_file("source/recipes.rst", "recipes.rst_t", {})
     if updated:
         logger.info("Updated source/recipes.rst")
 
@@ -358,7 +321,7 @@ def generate_recipes(app):
 def setup(app):
     app.connect('builder-inited', generate_recipes)
     return {
-        'version': "0.0.0",
+        'version': "0.0.1",
         'parallel_read_safe': True,
         'parallel_write_safe': True
     }

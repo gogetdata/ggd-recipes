@@ -16,7 +16,7 @@ is not sufficient as data packages are stored in conda root. Please install Anac
 The best way to install is with the `Miniconda <http://conda.pydata.org/miniconda.html>`_
 package. We specifically recommend using the Python 3 version.
 
-.. note::
+.. warning::
 
     After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
     be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 

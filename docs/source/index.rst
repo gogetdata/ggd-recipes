@@ -13,7 +13,7 @@
 
 **For details on creating and adding recipes to ggd see the** :ref:`Contribute <make-data-packages>` **page.**
 
-.. note::
+.. warning::
 
     After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
     be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 
@@ -121,7 +121,7 @@ maintenance provides a stable and structured way to ensure metadata is maintaine
 Data access and management
 --------------------------
 
-Finally, and most importantly, is the ability to access and manage the data on your local system. This is the main purpose of the command line interface (CLI)
+Finally, and most importantly, is the ability to access and manage the data on your local system. This is the main purpose of the command line interface \(CLI\)
 for ggd. Simply, ggd CLI provides tools for installing data packages on your local system, but more importantly, tools for access and use on your system. For 
 more information about the CLI tools see :ref:`GGD CLI <CLI>`.
 

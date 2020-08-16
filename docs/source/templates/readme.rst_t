@@ -4,18 +4,29 @@
 
 |downloads|
 
-{{ about.summary | escape }}
+{{ summary | escape }}
 
-================ ===========
-GGD Pacakge      {{ name }} 
-GGD Channel      {{ "ggd-" }}{{ ggd_channel }}
-Pkg Version(s)   {{ versions | join(", ") }}
-Recipe           {{ gh_recipes }}{{ recipe_path }}
-Species          {{ species }}
-Genome Build     {{ genome_build }}
-================ ===========
+=========================== ====================================
+GGD Pacakge                 {{ name }} 
+Species                     {{ species }}
+Genome Build                {{ genome_build }}
+GGD Channel                 {{ "ggd-" }}{{ ggd_channel }}
+Package Version             {{ version }}
+Recipe Author               {{ recipe_author }} 
+Data Provider               {{ data_provider }}
+Data Version                {{ data_version }}
+Genomic File Type           {{ file_type | join(", ") }}
+Data file coordinate basing {{ coordinate_base }}
+Package's Data Files        {{ final_files | join(", ") }}
+Size of Each Data File      {{ final_file_sizes | join(", ") }}
+Package Keywords            {{ keywords | join(", ") }}
+Package Dependencies:       {{ deps | join(", ") }}
+Recipe                      {{ gh_recipes }}{{ recipe_path }}
+=========================== ====================================
 
-{{ about.description | escape }}
+
+
+
 
 Installation
 ------------
@@ -25,21 +36,6 @@ Installation
 With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-{{ ggd_channel }} {{ name }}
-
-
-{% if extra.notes %}
-Notes
------
-{%- if extra.notes is string %}
-{{ extra.notes | escape }}
-{% else %}
-{%- for note in extra.notes %}
-- {{ note | escape }}
-{% endfor -%}
-{% endif -%}
-{% endif %}
-
-
 
 .. |downloads| image:: https://anaconda.org/ggd-{{ ggd_channel }}/{{ name }}/badges/downloads.svg
                :target: https://anaconda.org/ggd-{{ ggd_channel }}/{{ name }}
