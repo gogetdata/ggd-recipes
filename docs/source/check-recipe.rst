@@ -32,10 +32,10 @@ check-recipe arguments:
 | -d, --debug           |  (Optional) Set the stdout log level to debug                                    | 
 +-----------------------+----------------------------------------------------------------------------------+
 | -du, --dont_uninstall |   (Optional) By default the newly installed local ggd                            |
-|                       |    data package is uninstalled after the check has                               |
-|                       |    finished. To bypass this uninstall step (to keep the                          | 
-|                       |    local package installed) set this flag "--                                    |
-|                       |    dont_uninstall"                                                               |
+|                       |   data package is uninstalled after the check has                                |
+|                       |   finished. To bypass this uninstall step (to keep the                           | 
+|                       |   local package installed) set this flag "--                                     |
+|                       |   dont_uninstall"                                                                |
 +-----------------------+----------------------------------------------------------------------------------+
 | recipe_path           |   **Required** Path to recipe directory (can also be path to the .bz2)           |
 +-----------------------+----------------------------------------------------------------------------------+

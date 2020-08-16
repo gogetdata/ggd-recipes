@@ -36,23 +36,23 @@ Install arguments:
 | -h, --help         | show this help message and exit                                                                   |
 +--------------------+---------------------------------------------------------------------------------------------------+
 | name               | **Required** The data package name to install. Can use more than                                  |
-|                    |  once (e.g. ggd install <pkg 1> <pkg 2> <pkg 3> )                                                 |
-|                    |  (NOTE: No need to designate version as it is                                                     |
-|                    |  implicated in the package name)                                                                  |
+|                    | once (e.g. ggd install <pkg 1> <pkg 2> <pkg 3> )                                                  |
+|                    | (NOTE: No need to designate version as it is                                                      |
+|                    | implicated in the package name)                                                                   |
 +--------------------+---------------------------------------------------------------------------------------------------+
 | -c, --channel      | (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)                   |
 +--------------------+---------------------------------------------------------------------------------------------------+
 | -d, --debug        | (Optional) When the -d flag is set debug output will be printed to stdout.                        |
 +--------------------+---------------------------------------------------------------------------------------------------+
 | --file FILE        | A file with a list of ggd data packages to install.                                               |
-|                    |  One package per line. Can use more than one (e.g. ggd                                            |
-|                    |  install --file <file_1> --file <file_2> )                                                        |
+|                    | One package per line. Can use more than one (e.g. ggd                                             |
+|                    | install --file <file_1> --file <file_2> )                                                         |
 +--------------------+---------------------------------------------------------------------------------------------------+
-| --prefix PREFIX    | (Optional) The name or the full directory path to an                                              |
-|                    |  existing conda environment where you want to install a                                           |
-|                    |  ggd data package. (Only needed if you want to install                                            |
-|                    |  the data package into a different conda environment                                              |
-|                    |  then the one you are currently in)                                                               |
+| --prefix           | (Optional) The name or the full directory path to an                                              |
+|                    | existing conda environment where you want to install a                                            |
+|                    | ggd data package. (Only needed if you want to install                                             |
+|                    | the data package into a different conda environment                                               |
+|                    | then the one you are currently in)                                                                |
 +--------------------+---------------------------------------------------------------------------------------------------+
 
 
@@ -62,26 +62,26 @@ Additional argument explanation:
 Required arguments:
 
 * *name:* The :code:`name` represents the name(s) of the ggd package(s) to download and is required. If the name
-   provided is not in the ggd channel it will not be downloaded, and the user will be informed. At least one package
-   name is required, but multiple names can be supplied 
+  provided is not in the ggd channel it will not be downloaded, and the user will be informed. At least one package
+  name is required, but multiple names can be supplied 
 
 Optional arguments:
 
 * *-c:* The :code:`-c` flag represents the ggd channel. The default channel is *genomics*. If the data package
-   you want to install is in a different ggd channel you will need to supply the channel name using this flag.
+  you want to install is in a different ggd channel you will need to supply the channel name using this flag.
 
-   For example, if the data was located in the 'proteomics' channel, you would use::
+  For example, if the data was located in the 'proteomics' channel, you would use::
 
      ggd install <package> -c proteomics
 
 * *--file:* The :code:`--file` flag is used to install data packages listed in a file. It requires that the each package 
-   in the file be separated by a new line, that is, one package name per line. This is similar to a requirements.txt file
-   used for installing software packages from conda. (See  :ref:`example 4 below <ggd-install-example-4>`.
+  in the file be separated by a new line, that is, one package name per line. This is similar to a requirements.txt file
+  used for installing software packages from conda. (See  :ref:`example 4 below <ggd-install-example-4>`.
 
 * *--prefix:* The :code:`--prefix` flag is used to install a data package into a different conda environment/prefix then 
-   the current one you are in. This flag is commonly used when a environment has been created to store data packages without 
-   having duplicate copies of a packge in different environments. You can store all data packages in a single environment and
-   access them from any other environment using the :code:`--prefix` flag available in other ggd tools
+  the current one you are in. This flag is commonly used when a environment has been created to store data packages without 
+  having duplicate copies of a packge in different environments. You can store all data packages in a single environment and
+  access them from any other environment using the :code:`--prefix` flag available in other ggd tools
 
 
 

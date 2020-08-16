@@ -36,18 +36,18 @@ get-files arguments:
 +----------------------------------------------+------------------------------------------------------------------------------------+
 | -s, --species                                | (Optional) species recipe is for. Use '*' for any species                          |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -g GENOME_BUILD, --genome-build GENOME_BUILD |    (Optional) genome build the recipe is for. Use '*' for any genome build.        |
+| -g , --genome-build                          | (Optional) genome build the recipe is for. Use '*' for any genome build.           |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -v VERSION, --version VERSION                | (Optional) pattern to match the version of the file desired.                       |
-|                                              |  Use '*' for any version                                                           |
+| -v, --version                                | (Optional) pattern to match the version of the file desired.                       |
+|                                              | Use '*' for any version                                                            |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -p PATTERN, --pattern PATTERN                | (Optional) pattern to match the name of the file desired. To                       |
-|                                              |  list all files for a ggd package, do not use the -p option.                       |
+| -p, --pattern                                | (Optional) pattern to match the name of the file desired. To                       |
+|                                              | list all files for a ggd package, do not use the -p option.                        |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| --prefix PREFIX                              | (Optional) The name or the full directory path to an                               |      
-|                                              |  conda environment where a ggd recipe is stored. (Only                             |
-|                                              |  needed if not getting file paths for files in the                                 |
-|                                              |  current conda environment)                                                        |
+| --prefix                                     | (Optional) The name or the full directory path to an                               |      
+|                                              | conda environment where a ggd recipe is stored. (Only                              |
+|                                              | needed if not getting file paths for files in the                                  |
+|                                              | current conda environment)                                                         |
 +----------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
@@ -76,7 +76,7 @@ Optional arguments for filtering:
 * *-p:* The :code:`-p` flag is used to list files that have a specific pattern, such as '\*.fai' or '\*.bam'.
 
 * *--prefix:* The :code:`--prefix` flag is used to designate which conda environment/prefix to get the file from. 
-    **This allows one to store ggd data packages in one environment and access it from another.**
+  **This allows one to store ggd data packages in one environment and access it from another.**
 
 
 The **name** field is the only required parameter for :code:`ggd list-files`, however, the other flags are provided to help reduce the

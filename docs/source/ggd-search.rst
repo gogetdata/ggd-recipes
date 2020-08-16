@@ -45,7 +45,7 @@ Additional argument explanation:
 Required arguments:
 
 * *search_term:* The :code:`search_term` is a positional argument that represents the "terms" to search for. At least one search term is required, but multiple can be provided 
-   **NOTE: You do not need to add the keyword** :code:`search_term`. 
+  **NOTE: You do not need to add the keyword** :code:`search_term`. 
 
 .. note::
 
@@ -55,15 +55,15 @@ Required arguments:
 Optional arguments:
 
 * *-g:* The :code:`-g` flag is used to filter the search results on a specific "genome build". This flag is not required, however, if 
-   provided the resulting search will be filtered to only include data packages with that genome build.
+  provided the resulting search will be filtered to only include data packages with that genome build.
 * *-s:* The :code:`-s` flag is used to filter the search results on a specific "species". Only data packages for that specific species 
-   will be displayed.
+  will be displayed.
 * *-dn:* The :code:`-dn` flag is used to filter the search results based on the number of results to display. Default = 5. If more than 
-   5 results are available and you don't see the desired package in the results list, add the :code:`-dn {N}` flag where *N* is the number 
-   of results to show. 
+  5 results are available and you don't see the desired package in the results list, add the :code:`-dn {N}` flag where *N* is the number 
+  of results to show. 
 * *-m:* The :code:`-m` flag represents the "match" score to use for searching. A fuzzy word match is used to identify similar packages
-   to the terms search for, and the match score defines which packages will be displayed based on a cutoff. A default match score
-   cutoff is provided, but this flag can be used to provide more strict or more lenient search results. (Default = 75)
+  to the terms search for, and the match score defines which packages will be displayed based on a cutoff. A default match score
+  cutoff is provided, but this flag can be used to provide more strict or more lenient search results. (Default = 75)
 * *-c:* The :code:`-c` flag is used to set the ggd channel to search in. The *genomics* channel is set by default.
 
 

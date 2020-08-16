@@ -48,12 +48,12 @@ make-recipe arguments:
 | -c, --channel                               | (Optional) The ggd channel to use. (Default = genomics)                   |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -d, --dependency                            | any software dependencies (in bioconda, conda-forge) or                   |
-|                                             |  data-dependency (in ggd). May be used as many times as needed.           |
+|                                             | data-dependency (in ggd). May be used as many times as needed.            |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -p, --platform                              | (Optional) Whether to use noarch as the platform or the system            |
-|                                             |  platform. If set to 'none' the system platform will be                   |
-|                                             |  used. (Default = noarch. Noarch means no architecture                    |
-|                                             |  and is platform agnostic.)                                               |
+|                                             | platform. If set to 'none' the system platform will be                    |
+|                                             | used. (Default = noarch. Noarch means no architecture                     |
+|                                             | and is platform agnostic.)                                                |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -s, --species                               | **Required** Species recipe is for                                        |
 +---------------------------------------------+---------------------------------------------------------------------------+
@@ -62,39 +62,39 @@ make-recipe arguments:
 | --author                                    | **Required** The author(s) of the data recipe being created, (This recipe)|
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -pv, --package-version                      | **Required** The version of the ggd package. (First time package = 1,     |
-|                                             |  updated package > 1)                                                     |
+|                                             | updated package > 1)                                                      |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -dv, --data-version                         | **Required** The version of the data (itself) being downloaded and        |
-|                                             |  processed (EX: dbsnp-127) If there is no data version                    |
-|                                             |  apparent we recommend you use the date associated with                   |
-|                                             |  the files or something else that can uniquely identify                   |
-|                                             |  the 'version' of the data                                                |
+|                                             | processed (EX: dbsnp-127) If there is no data version                     |
+|                                             | apparent we recommend you use the date associated with                    |
+|                                             | the files or something else that can uniquely identify                    |
+|                                             | the 'version' of the data                                                 |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -dp, --data-provider                        | **Required** The data provider where the data was accessed.               |
-|                                             |  (Example: UCSC, Ensembl, gnomAD, etc.)                                   |
+|                                             | (Example: UCSC, Ensembl, gnomAD, etc.)                                    |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | --summary                                   | **Required** A detailed comment describing the recipe                     |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -k, --keyword                               | **Required** A keyword to associate with the recipe. May be               |
-|                                             |  specified more that once. Please add enough keywords                     |
-|                                             |  to better describe and distinguish the recipe                            |
+|                                             | specified more that once. Please add enough keywords                      |
+|                                             | to better describe and distinguish the recipe                             |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -cb, --coordinate-base                      | **Required** The genomic coordinate basing for the file(s) in the         |
-|                                             |  recipe. That is, the coordinates exclusive start at genomic              |
-|                                             |  coordinate 0 or 1, and the end coordinate is either                      |
-|                                             |  inclusive (everything up to and including the end                        |
-|                                             |  coordinate) or exclusive (everything up to but not                       |
-|                                             |  including the end coordinate) Files that do not have                     |
-|                                             |  coordinate basing, like fasta files, specify NA for                      |
-|                                             |  not applicable.                                                          |
+|                                             | recipe. That is, the coordinates exclusive start at genomic               |
+|                                             | coordinate 0 or 1, and the end coordinate is either                       |
+|                                             | inclusive (everything up to and including the end                         |
+|                                             | coordinate) or exclusive (everything up to but not                        |
+|                                             | including the end coordinate) Files that do not have                      |
+|                                             | coordinate basing, like fasta files, specify NA for                       |
+|                                             | not applicable.                                                           |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | -n, --name                                  | **Required** The sub-name of the recipe being created. (e.g. cpg-         |
-|                                             |  islands, pfam-domains, gaps, etc.) This will not be                      |
-|                                             |  the final name of the recipe, but will specific to the data gathered     |
-|                                             |  and processed by the recipe                                              |
+|                                             | islands, pfam-domains, gaps, etc.) This will not be                       |
+|                                             | the final name of the recipe, but will specific to the data gathered      |
+|                                             | and processed by the recipe                                               |
 +---------------------------------------------+---------------------------------------------------------------------------+
 | script                                      | **Required** bash script that contains the commands to obtain and         |
-|                                             |  process the data                                                         | 
+|                                             | process the data                                                          | 
 +---------------------------------------------+---------------------------------------------------------------------------+
 
 Additional argument explanation: 

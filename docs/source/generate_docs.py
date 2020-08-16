@@ -196,7 +196,7 @@ def generate_readme(recipe_dict, renderer):
         sys.exit(1)
 
     # Format the README
-    name =  recipe["package"]["name"]
+    name = recipe["package"]["name"]
 
     template_options = {
         'name': name,
@@ -213,12 +213,13 @@ def generate_readme(recipe_dict, renderer):
         'final_files': recipe["about"]["tags"]["final-files"] if "final-files" in recipe["about"]["tags"] else ["NA"],
         'final_file_sizes': ["{}: {}".format(name,size) for name, size in recipe["about"]["tags"]["final-file-sizes"].items()] if "final-file-sizes" in recipe["about"]["tags"] else ["NA"],
         'coordinate_base': recipe["about"]["tags"]["genomic-coordinate-base"] if "genomic-coordinate-base" in recipe["about"]["tags"] else "NA", 
-        "deps": sorted(recipe["requirements"]["run"]),
+        "deps": sorted(recipe["requirements"]["run"]) if recipe["requirements"]["run"] is not None else ["NA"],
         'gh_recipes': 'https://github.com/gogetdata/ggd-recipes/tree/master/recipes/',
         'recipe_path': op.join(recipe_dict["channel"], recipe_dict["species"], recipe_dict["build"], name),
         'Package': '<a href="recipes/{c}/{s}/{b}/{n}/README.html">{n}</a>'.format(c=recipe_dict["channel"],s=recipe_dict["species"],b=recipe_dict["build"],n=name)
     }
 
+        
     renderer.render_to_file(
         op.join(OUTPUT_DIR, recipe_dict["channel"], recipe_dict["species"], recipe_dict["build"], name ,'README.rst'),
         'readme.rst_t',
@@ -301,7 +302,6 @@ def generate_recipes(app):
         species = recipe_d["species"]
         genome_build = recipe_d["genome_build"]
         name = recipe_d["name"]
-        print(name)
         href = recipe_d["Package"]
 
         ## Add to dict

@@ -22,11 +22,11 @@ List arguments:
 +===============================+============================================================================+
 | -h, --help                    | show this help message and exit                                            |
 +-------------------------------+----------------------------------------------------------------------------+
-| -p PATTERN, --pattern PATTERN | (Optional) pattern to match the name of the ggd data package.              |
+| -p, --pattern                 | (Optional) pattern to match the name of the ggd data package.              |
 +-------------------------------+----------------------------------------------------------------------------+
-| --prefix PREFIX               | (Optional) The name or the full directory path to a                        |
-|                               |  conda environment where a ggd recipe is stored. (Only                     |
-|                               |  needed if listing data files not in the current environment)              |
+| --prefix                      | (Optional) The name or the full directory path to a                        |
+|                               | conda environment where a ggd recipe is stored. (Only                      |
+|                               | needed if listing data files not in the current environment)               |
 +-------------------------------+----------------------------------------------------------------------------+
 
 

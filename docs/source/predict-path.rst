@@ -28,21 +28,21 @@ predict-path arguments:
 +-----------------------------+---------------------------------------------------------------------------------------+
 | -c, --channel               | The ggd channel of the recipe to fine. (Deafult = genomics)                           |
 +-----------------------------+---------------------------------------------------------------------------------------+
-| --prefix PREFIX             | (Optional) The name or the full directory path to an                                  |
-|                             |  conda environment. The predicted path will be based on                               |
-|                             |  this conda environment. When installing, the data                                    |
-|                             |  package should also be installed in this environment.                                |
-|                             |  (Only needed if not predicting for a path in the                                     |
-|                             |  current conda environment)                                                           |
+| --prefix                    | (Optional) The name or the full directory path to an                                  |
+|                             | conda environment. The predicted path will be based on                                |
+|                             | this conda environment. When installing, the data                                     |
+|                             | package should also be installed in this environment.                                 |
+|                             | (Only needed if not predicting for a path in the                                      |
+|                             | current conda environment)                                                            |
 +-----------------------------+---------------------------------------------------------------------------------------+
 | -pn, --package-name         | **Required** The name of the data package to predict a                                |
-|                             |  file path for                                                                        |
+|                             | file path for                                                                         |
 +-----------------------------+---------------------------------------------------------------------------------------+
 | -fn, --file-name            | **Required** The name of the file to predict that path                                |
-|                             |  for. It is best if you give the full and correct name                                |
-|                             |  of the file to predict the path for. If not, ggd will                                |
-|                             |  try to identify the right file, but won't guarantee                                  |
-|                             |  that it is the right file                                                            |
+|                             | for. It is best if you give the full and correct name                                 |
+|                             | of the file to predict the path for. If not, ggd will                                 |
+|                             | try to identify the right file, but won't guarantee                                   |
+|                             | that it is the right file                                                             |
 +-----------------------------+---------------------------------------------------------------------------------------+
 
 
@@ -53,11 +53,11 @@ Additional argument explanation:
 Required arguments:
 
 * *-pn:* The :code:`-pn` flag represents the data package name for which to predict a file path for. (NOTE: the file 
-   path is for a data file from this data package and not the data package itself)
+  path is for a data file from this data package and not the data package itself)
 
 * *-fn:* The :code:`-fn` flag represents the name of the data file for which to predict the file path for. (NOTE: this is 
-   the actual file from the data package to predict the path for) You can use :code:`ggd search` or check the 
-   :ref:`Available packages <recipes>` page to get the name of the files provided by the package
+  the actual file from the data package to predict the path for) You can use :code:`ggd search` or check the 
+  :ref:`Available packages <recipes>` page to get the name of the files provided by the package
 
 
 Optional arguments:
@@ -65,7 +65,7 @@ Optional arguments:
 * *-c:* The :code:`-c` flag represents the ggd channel. The default channel is *genomics*.
    
 * *--prefix:* The :code:`--prefix` flag is used to get to the install path for a data file in a specific conda  environment/prefix
-   that is different then the current environment. 
+  that is different then the current environment. 
 
 
 Examples
