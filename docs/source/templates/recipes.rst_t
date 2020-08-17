@@ -43,11 +43,13 @@ Available data packages
                     <p><center><small> NOTE: A <b>GGD Channel selection</b> is required before a <b>Species</b> selection and a <b>Species</b> selection is required before a <b>Genome Build</b> selection </small></center></p>
                 </div>
             </div>
+            <hr>
             <div class="row pt-3">
                 <div class="col-12">
                     <table id="recipe_table"></table>
                 </div>
             </div>
+            <hr>
         </div>
     </body>
 
@@ -188,11 +190,15 @@ Available data packages
         */
 
         //Set local cookie info 
-        function setCookie() {
+        function setCookie(extraMinutes = 5) {
+
+            var d = new Date();
+            d.setTime(d.getTime() + (extraMinutes * 60 * 1000))
 
             document.cookie = "channel = " + cur_channel + ";"
             document.cookie = "species = " + cur_species + ";" 
             document.cookie  = "build = " + cur_build + ";" 
+            document.cookie = "expires = " + d.toUTCString() + ";"
         }
 
         //Unset local cookie info
@@ -202,14 +208,17 @@ Available data packages
             document.cookie = "species = " + "None" + ";" 
             document.cookie  = "build = " + "None" + ";" 
 
-            console.log(document.cookie)
         }
 
         //Get Cookie info and update page 
         function getCookie() {
 
+            var d = new Date();
+            d.setTime(d.getTime())
+
             var cookieElements = document.cookie.split(";")
 
+            let unset = false
             cookieElements.forEach(item => {
 
                 if (item.split("=")[0].trim() == "channel") {
@@ -218,9 +227,25 @@ Available data packages
                     cur_species = item.split("=")[1]
                 } else if (item.split("=")[0].trim() == "build") {
                     cur_build = item.split("=")[1]
+                } else if (item.split("=")[0].trim() == "expires") {
+                    //Check if the cookie has expired
+                    if (d.toUTCString() > item.split("=")[1]) {
+                        unset = true
+                    }
 
                 }
             });
+
+            //If cookie is expired, unset cookie info
+            if (unset == true) {
+
+                cur_channel = "None"
+                cur_species = "None"
+                cur_build = "None"
+
+                unsetCookie()
+
+            }
 
             //Add Channel Selection options
             add_channel_selection()
