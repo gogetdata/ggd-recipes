@@ -218,9 +218,9 @@ To move to the directory where the files are stored you can use the following co
 -------------------------------------------
 
 GGD also provides a tool to fetch installed data files if you don't want to use or don't have access to the environment variables. (You will only have access to the 
-environment variables if your are in the conda environment where the files were installed) 
+environment variables if you are in the conda environment where the files were installed) 
 
-If you are not in the conda environment where the data packages was installed, if you perfer not using the environment variables created for you, or if the environment variables available 
+If you are not in the conda environment where the data packages were installed, if you perfer not using the environment variables created for you, or if the environment variables available 
 don't point to the file you would like to access, you can use :code:`ggd get-files` to fetch the desired files.
 
 For example, if you wanted to get the GRCh38 reference genome fasta file you installed in step 3, you could use the following command:

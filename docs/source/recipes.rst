@@ -289,14 +289,12 @@ Available Data Packages
                 //Reset Selectors
                 $("#species_select").children().remove().end()
                 $("#build_select").children().remove().end()
-                add_species_selector()
-                add_build_selector()
 
-            } else {
-
-                add_species_selector()
-                add_build_selector()
             }
+
+            //Update selector
+            add_species_selector()
+            add_build_selector()
 
         });
 
@@ -312,17 +310,17 @@ Available Data Packages
             cur_species = selectedValue
 
             //Remove the recipe table
+            cur_build = "None"
             removeRecipeTable()
 
             if (cur_species == "choose one") {
 
                 //Reset build selector
                 $("#build_select").children().remove().end()
-
-            } else {
-
-                add_build_selector()
             }
+
+            //Update selector
+            add_build_selector()
 
         });
 
