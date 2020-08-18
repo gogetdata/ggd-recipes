@@ -1,6 +1,6 @@
 .. _recipes:
 
-Available data packages
+Available Data Packages
 =======================
 
 .. toctree::
@@ -40,36 +40,38 @@ Available data packages
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <p><center><small> NOTE: A <b>GGD Channel selection</b> is required before a <b>Species</b> selection and a <b>Species</b> selection is required before a <b>Genome Build</b> selection </small></center></p>
+                    <p><center><small> NOTE: A <b>GGD Channel</b> selection is required before a <b>Species</b> selection and a <b>Species</b> selection is required before a <b>Genome Build</b> selection </small></center></p>
                 </div>
             </div>
+            <hr>
             <div class="row pt-3">
                 <div class="col-12">
                     <table id="recipe_table"></table>
                 </div>
             </div>
+            <hr>
         </div>
     </body>
 
 
 
     <script>
-    
+
         /*
         ------------------------------------------------------------------------------------------------------------------
                                                           Initiate
         ------------------------------------------------------------------------------------------------------------------
         */
 
+        var channel_default = "genomics"
         var cur_channel = "None"
         var cur_species = "None"
         var cur_build = "None"
 
-        //Add channles to the GGD channel selector
-        add_channel_selection()
-
-        //Update view based on avaiable cookie info
-        getCookie()
+        //update view based on avaiable cookie info
+        $( document ).ready(function(){
+            getCookie()
+        })
 
         /*
         ------------------------------------------------------------------------------------------------------------------
@@ -82,6 +84,10 @@ Available data packages
 
             $("#ggd_channel").children().remove().end()
             $("#ggd_channel").append("<option>choose one</option>")
+
+            //Remove species and build info until a species is select
+            $("#species_select").children().remove().end()
+            $("#build_select").children().remove().end()
 
             for (channel of Object.keys(recipe_data)) {
                 //Add region to select options
@@ -188,11 +194,15 @@ Available data packages
         */
 
         //Set local cookie info 
-        function setCookie() {
+        function setCookie(extraMinutes = 5) {
+
+            var d = new Date();
+            d.setTime(d.getTime() + (extraMinutes * 60 * 1000))
 
             document.cookie = "channel = " + cur_channel + ";"
             document.cookie = "species = " + cur_species + ";" 
             document.cookie  = "build = " + cur_build + ";" 
+            document.cookie = "expires = " + d.toUTCString() + ";"
         }
 
         //Unset local cookie info
@@ -202,25 +212,50 @@ Available data packages
             document.cookie = "species = " + "None" + ";" 
             document.cookie  = "build = " + "None" + ";" 
 
-            console.log(document.cookie)
         }
 
         //Get Cookie info and update page 
         function getCookie() {
 
+            var d = new Date();
+            d.setTime(d.getTime())
+
             var cookieElements = document.cookie.split(";")
 
-            cookieElements.forEach(item => {
+            //check cookie 
+            for (item of cookieElements) {
 
                 if (item.split("=")[0].trim() == "channel") {
-                    cur_channel = item.split("=")[1]
+
+                    //check for set channel cookie. if none, set to default
+                    if (item.split("=")[1] == "None") {
+                        cur_channel = channel_default
+                    } else {
+                        cur_channel = item.split("=")[1]
+                    }
+
+                //check species cookie
                 } else if (item.split("=")[0].trim() == "species") {
                     cur_species = item.split("=")[1]
+                
+                //check build cookie
                 } else if (item.split("=")[0].trim() == "build") {
                     cur_build = item.split("=")[1]
+                
+                //check cookie expires 
+                } else if (item.split("=")[0].trim() == "expires") {
 
+                    //check if the cookie has expired
+                    if (d.toUTCString() > item.split("=")[1]) {
+                        cur_channel = channel_default
+                        cur_species = "None"
+                        cur_build = "None"
+                        unsetCookie()
+                        break;
+                    }
                 }
-            });
+            };
+
 
             //Add Channel Selection options
             add_channel_selection()
@@ -311,6 +346,5 @@ Available data packages
             }
 
         });
-        
 
     </script>

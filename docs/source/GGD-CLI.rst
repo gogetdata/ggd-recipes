@@ -6,6 +6,8 @@ GGD Commands
 
 [:ref:`Click here to return to the home page <home-page>`]
 
+**To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
+
 The ggd command line interface (cli) has multiple tools for data access and local management. Below you can find a short
 description of each tool, as well as links to specific pages about each. 
 

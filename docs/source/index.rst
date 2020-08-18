@@ -7,6 +7,8 @@
 
 .. image:: GoGetData_name_logo.png
 
+**To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
+
 **For a quick-start guide to using ggd see:** :ref:`GGD Quick Start <quick-start>`
 
 **To request a new data recipe please fill out the** `GGD Recipe Request <https://forms.gle/3WEWgGGeh7ohAjcJA>`_ **Form.** 
@@ -33,7 +35,7 @@ and provides a platform upon which to cite data access and use by way of the ggd
 
 Go Get Data acts as a multi use tool for genomic data access and management. It provide a system for simple data access all the way to a
 complete data management including version tracking, dependency handling, data format standards, and more. Whether using ggd for data 
-access in genomic workflows, for an analysis, or for any other reason, ggd has bee developed to work in many situations. 
+access in genomic workflows, for an analysis, or for any other reason, ggd has been developed to work in many situations. 
 
 We want to briefly highlight ggd's ability to work with multiple conda environments at the same time. Multiple tools in ggd use a 
 :code:`--prefix` flag. This prefix flag allows a user to install, manage, and access data in a specific conda environment. Therefore, 
@@ -83,11 +85,11 @@ desired data set into a bash script. Once the bash script has been created they 
 a ggd data recipe. 
 
 A data recipe consists of a meta data file, a data curation script, a local file and environment handling script, and 
-a checksum file. Together, these file represent the necessary instructions ggd will use to install and manage a data 
+a checksum file. Together, these files represent the necessary instructions ggd will use to install and manage a data 
 recipe on your local system. 
 
-Validation of the new recipe is a required part of the contribution process. ggd provides an additional tool for recipe 
-validation. After creating a recipe, simply run :code:`ggd check-recipe` to validate the recipe is working correctly. 
+Validation of the new recipe is a required part of the contribution process. After creating a recipe, simply run 
+:code:`ggd check-recipe` to validate the recipe is working correctly. 
 
 For further details about contributing data recipes to ggd see :ref:`Contribute <make-data-packages>`.
 
@@ -99,7 +101,7 @@ Data package infrastructure
 Another vital part of ggd is the infrastructure used to provide access to available data recipes. ggd has integrated multiple 
 ecosystems together in order to control such access. 
 
-First, recipes are complied together as "cookbooks" on github. This github repo acts as the first stage of recipe access.
+First, recipes are compiled together as "cookbooks" on github. This github repo acts as the first stage of recipe access.
 
 Second, a continuous integration (CI) system provides automatic data recipe validation. This CI system acts as a the second stage
 to ensure that each data recipe works correctly. 

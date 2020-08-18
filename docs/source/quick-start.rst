@@ -11,6 +11,8 @@ GGD Quick Start
     be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 
     python 2 compatibility for 1 year from the End-Of-Life of python 2.
 
+**To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
+
 Go Get Data (ggd) is a genomics data management system that provides access to processed and curated genomic data files. 
 ggd alleviates the difficulties and complexities of finding, obtaining, and processing the data sets and annotations
 germane to your experiments and analyses. 

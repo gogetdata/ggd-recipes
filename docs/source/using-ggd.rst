@@ -5,6 +5,8 @@ Using GGD
 
 [:ref:`Click here to return to the home page <home-page>`]
 
+**To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
+
 **For a brief introduction to how ggd works and to start using ggd see:** :ref:`GGD Quick Start <quick-start>`
 
 **To request a new data recipe please fill out the** `GGD Recipe Request <https://forms.gle/3WEWgGGeh7ohAjcJA>`_ **Form.** 

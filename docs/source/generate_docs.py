@@ -211,7 +211,7 @@ def generate_readme(recipe_dict, renderer):
         'data_version': recipe["about"]["tags"]["data-version"] if "data-version" in recipe["about"]["tags"] else "NA",
         'file_type': recipe["about"]["tags"]["file-type"] if "file-type" in recipe["about"]["tags"] else ["NA"],
         'final_files': recipe["about"]["tags"]["final-files"] if "final-files" in recipe["about"]["tags"] else ["NA"],
-        'final_file_sizes': ["{}: {}".format(name,size) for name, size in recipe["about"]["tags"]["final-file-sizes"].items()] if "final-file-sizes" in recipe["about"]["tags"] else ["NA"],
+        'final_file_sizes': ["{}: **{}**".format(name,size) for name, size in recipe["about"]["tags"]["final-file-sizes"].items()] if "final-file-sizes" in recipe["about"]["tags"] else ["NA"],
         'coordinate_base': recipe["about"]["tags"]["genomic-coordinate-base"] if "genomic-coordinate-base" in recipe["about"]["tags"] else "NA", 
         "deps": sorted(recipe["requirements"]["run"]) if recipe["requirements"]["run"] is not None else ["NA"],
         'gh_recipes': 'https://github.com/gogetdata/ggd-recipes/tree/master/recipes/',
