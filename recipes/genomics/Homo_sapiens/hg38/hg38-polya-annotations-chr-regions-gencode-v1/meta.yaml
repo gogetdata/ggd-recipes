@@ -26,15 +26,13 @@ about:
     species: Homo_sapiens
   keywords:
   - gencode
-  - non-coding
-  - noncoding
-  - long-noncoding
-  - lncrna
+  - polya
+  - polyadenylation
   - annotation
   - gtf
-  summary: Long non-coding RNA gene annotation. It contains the comprehensive gene
-    annotation of lncRNA genes on the reference chromosomes. This is a subset of the
-    main annotation file.
+  summary: PolyA feature annotation. It contains the polyA features (polyA_signal,
+    polyA_site, pseudo_polyA) manually annotated by HAVANA on the reference chromosomes.
+    This dataset does not form part of the main annotation file
   tags:
     data-provider: GENCODE
     data-version: release-34
