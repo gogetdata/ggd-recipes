@@ -1,0 +1,2 @@
+hg38-consensus-pseudogene-annotations-chr-regions-gencode-v1.gtf.gz	639f519cbf78b1122ace5d4d528be6b2
+hg38-consensus-pseudogene-annotations-chr-regions-gencode-v1.gtf.gz.tbi	96d51c6237cff50e742f4730a6cfca37
