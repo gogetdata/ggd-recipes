@@ -1,0 +1,48 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: jrb
+  extra-files: []
+package:
+  name: hg38-polya-annotations-chr-regions-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - gencode
+  - polya
+  - polyadenylation
+  - annotation
+  - gtf
+  summary: PolyA feature annotation. It contains the polyA features (polyA_signal,
+    polyA_site, pseudo_polyA) manually annotated by HAVANA on the reference chromosomes.
+    This dataset does not form part of the main annotation file
+  tags:
+    data-provider: GENCODE
+    data-version: release-34
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-polya-annotations-chr-regions-gencode-v1.gtf.gz: 2.02M
+      hg38-polya-annotations-chr-regions-gencode-v1.gtf.gz.tbi: 305.09K
+    final-files:
+    - hg38-polya-annotations-chr-regions-gencode-v1.gtf.gz
+    - hg38-polya-annotations-chr-regions-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

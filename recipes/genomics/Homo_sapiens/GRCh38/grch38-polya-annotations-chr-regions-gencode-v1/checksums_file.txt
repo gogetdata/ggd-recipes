@@ -1,0 +1,2 @@
+grch38-polya-annotations-chr-regions-gencode-v1.gtf.gz	76589f216fb9e25445ab2f9a53807af0
+grch38-polya-annotations-chr-regions-gencode-v1.gtf.gz.tbi	0871e80b5491ae35da11d8990fb714d2
