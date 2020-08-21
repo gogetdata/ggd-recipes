@@ -1,0 +1,56 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-gene-features-with-introns-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - Gene-Annotations
+  - All-Regions
+  - GTF
+  - GENOCDOE-GTF
+  - GENCODE-Gene-Sets
+  - Annotated-Transcripts
+  - Intron-Features
+  - Introns
+  summary: 'Comprehensive set of gene anntotations including reference chromosomes,
+    scaffoldings, assebly patches, and alternative loci. Intron features for each
+    transcripts have been added to the annotation set. Data is specific to GENCODE
+    Release 34 (Ensembl 100). Features include: gene, transcript, exon, intron, CDS,
+    UTR, start_codon, stop_codon, and Selenocysteine. Remapped from Ensembl GRCh38
+    to UCSC hg38. (Scaffoldings wihtout UCSC matches are kept with Ensebml ids)'
+  tags:
+    data-provider: GENCODE
+    data-version: release-34_03-24-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-gene-features-with-introns-gencode-v1.gtf.gz: 74.98M
+      hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi: 287.87K
+    final-files:
+    - hg38-gene-features-with-introns-gencode-v1.gtf.gz
+    - hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
