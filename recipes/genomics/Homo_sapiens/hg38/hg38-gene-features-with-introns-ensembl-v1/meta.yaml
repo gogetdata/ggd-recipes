@@ -1,0 +1,54 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-gene-features-with-introns-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - Ensembl-GTF
+  - Ensembl-Gene-Set
+  - Annotated-Transcripts
+  - Intron-Features
+  - Introns
+  summary: 'Gene features, including all annotated transcripts, that make up the Ensembl
+    gene sets. Intron features for each transcripts have been added to the annotation
+    set. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.). Features
+    include: CDS, Selenocysteine, UTR, exon, gene, intron, start_codon, stop_codon,
+    and  transcript. Features are in GTF format. Remapped from Ensembl GRCh38 to UCSC
+    hg38'
+  tags:
+    data-provider: Ensembl
+    data-version: release-100_3-7-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-gene-features-with-introns-ensembl-v1.gtf.gz: 72.41M
+      hg38-gene-features-with-introns-ensembl-v1.gtf.gz.tbi: 260.51K
+    final-files:
+    - hg38-gene-features-with-introns-ensembl-v1.gtf.gz
+    - hg38-gene-features-with-introns-ensembl-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
