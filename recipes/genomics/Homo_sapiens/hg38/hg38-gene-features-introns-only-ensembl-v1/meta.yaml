@@ -30,25 +30,23 @@ about:
   - GTF
   - Ensembl-GTF
   - Ensembl-Gene-Set
-  - Annotated-Transcripts
   - Intron-Features
   - Introns
   - Intron-Features-Only
   summary: 'Intron features created from the Ensembl gene features, including all
     annotated transcripts, that make up the Ensembl gene sets. Intron features for
-    each transcripts have been added to the annotation set. All other features, execpt
-    for gene and transcript features, are removed. gene and transcript features are
-    kept to provide gene and transcript reference for the intron. (Alignment based
-    annotation using proteins, cDNA, RNA-seq, etc.). Features include: gene, transcript,
-    and intron. Features are in GTF format. Remapped from Ensembl GRCh38 to UCSC hg38'
+    each transcripts have been added to the annotation set. All other features are
+    removed. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.). Features
+    include: intron. Features are in GTF format. Remapped from Ensembl GRCh38 to UCSC
+    hg38'
   tags:
     data-provider: Ensembl
     data-version: release-100_3-7-2020
     file-type:
     - gtf
     final-file-sizes:
-      hg38-gene-features-introns-only-ensembl-v1.gtf.gz: 19.50M
-      hg38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 194.66K
+      hg38-gene-features-introns-only-ensembl-v1.gtf.gz: 12.30M
+      hg38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 256.17K
     final-files:
     - hg38-gene-features-introns-only-ensembl-v1.gtf.gz
     - hg38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi

@@ -73,11 +73,6 @@ for line in fh:
     if line_dict["chrom"] not in chrom_set:
         continue
 
-    ## only print lines for gene and transcript features
-    if line_dict["feature"] == "gene" or line_dict["feature"] == "transcript":
-        ## Print current line to stdout 
-        print(line.strip())
-
     ## Print any intron lines
     if line_dict["feature"] == "exon":
         

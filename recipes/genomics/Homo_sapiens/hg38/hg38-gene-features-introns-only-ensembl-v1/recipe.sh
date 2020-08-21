@@ -65,11 +65,6 @@ for line in fh:
     line_dict = dict(zip(header,line.strip().split("\t")))
     line_dict.update({x.strip().replace("\"","").split(" ")[0]:x.strip().replace("\"","").split(" ")[1] for x in line_dict["attribute"].strip().split(";")[:-1]})
 
-    ## only print lines for gene and transcript features
-    if line_dict["feature"] == "gene" or line_dict["feature"] == "transcript":
-        ## Print current line to stdout 
-        print(line.strip())
-
     ## Print any intron lines
     if line_dict["feature"] == "exon":
         
