@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-gene-features-introns-only-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - Ensembl-GTF
+  - Ensembl-Gene-Set
+  - Intron-Features
+  - Introns
+  - Intron-Features-Only
+  summary: 'Intron features created from the Ensembl gene features, including all
+    annotated transcripts, that make up the Ensembl gene sets. Intron features for
+    each transcripts have been added to the annotation set. All other features are
+    removed. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.). Features
+    include: intron. Features are in GTF format.'
+  tags:
+    data-provider: Ensembl
+    data-version: release-100_3-7-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-gene-features-introns-only-ensembl-v1.gtf.gz: 12.27M
+      grch38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 256.09K
+    final-files:
+    - grch38-gene-features-introns-only-ensembl-v1.gtf.gz
+    - grch38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
