@@ -1,2 +1,2 @@
-hg38-gene-features-with-introns-gencode-v1.gtf.gz	0f897105a035d226f54b3431db1074a4
-hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi	eb82f4a34ce54a5af83d0401d62183d2
+hg38-gene-features-with-introns-gencode-v1.gtf.gz	16e8440a0f923c44d0ba7c399d15edb5
+hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi	f90e76a3d86dff29412268567ee3759a

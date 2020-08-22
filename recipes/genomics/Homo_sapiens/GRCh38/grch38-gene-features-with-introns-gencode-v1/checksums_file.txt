@@ -1,2 +1,2 @@
-grch38-gene-features-with-introns-gencode-v1.gtf.gz	71995d6be75e35735ef79fe308d95433
-grch38-gene-features-with-introns-gencode-v1.gtf.gz.tbi	94f974959429ee5bc6068aa8f9635253
+grch38-gene-features-with-introns-gencode-v1.gtf.gz	c7e966d94d319d1890ee6107505d0dbd
+grch38-gene-features-with-introns-gencode-v1.gtf.gz.tbi	4ae95617cae8314b5d9184ac4d9bf014
