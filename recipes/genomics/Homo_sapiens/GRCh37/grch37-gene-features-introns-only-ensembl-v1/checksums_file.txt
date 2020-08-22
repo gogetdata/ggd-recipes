@@ -1,2 +1,0 @@
-grch37-gene-features-introns-only-ensembl-v1.gtf.gz.tbi	bc3c39d59c12ff5ea238e22fc1f5639a
-grch37-gene-features-introns-only-ensembl-v1.gtf.gz	67bd6c8708b7fc113ea4086a897372b2

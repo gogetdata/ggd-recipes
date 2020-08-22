@@ -11,10 +11,6 @@ import gzip
 from collections import defaultdict
 
 gtf_file = sys.argv[1] ## A gtf file to filter
-genome_file = sys.argv[2] ## A .genome file
-
-with io.open(genome_file, "rt", encoding = "utf-8") as gf:
-    chrom_set = set([x.strip().split("\t")[0] for x in gf]) 
 
 ## Get per transcript exons
 fh = gzip.open(gtf_file, "rt", encoding = "utf-8") if gtf_file.endswith(".gz") else io.open(gtf_file, "rt", encoding = "utf-8")
@@ -66,10 +62,6 @@ for line in fh:
     if line[0] == "#":
         continue
 
-    ## Skip scaffoldings not in the genome file
-    if line.strip().split("\t")[0] not in chrom_set:
-        continue
-
     line_dict = dict(zip(header,line.strip().split("\t")))
     line_dict.update({x.strip().replace("\"","").split(" ")[0]:x.strip().replace("\"","").split(" ")[1] for x in line_dict["attribute"].strip().split(";")[:-1]})
 
@@ -92,16 +84,36 @@ for line in fh:
 
         ## Get attribute info from the exon
         attributes = []
-        attributes.append("gene_id \"" + line_dict["gene_id"] + "\"" if "gene_id" in line_dict else "")
-        attributes.append("gene_version \"" + line_dict["gene_version"] + "\"" if "gene_version" in line_dict else "")
-        attributes.append("transcript_id \"" + line_dict["transcript_id"] + "\"" if "transcript_id" in line_dict else "")
-        attributes.append("transcript_version \"" + line_dict["transcript_version"] + "\"" if "transcript_version" in line_dict else "")
-        attributes.append("gene_name \"" + line_dict["gene_name"] + "\"" if "gene_name" in line_dict else "")
-        attributes.append("gene_source \"" + line_dict["gene_source"] + "\"" if "gene_source" in line_dict else "")
-        attributes.append("gene_biotype \"" + line_dict["gene_biotype"] + "\"" if "gene_biotype" in line_dict else "")
-        attributes.append("transcript_name \"" + line_dict["transcript_name"] + "\"" if "transcript_name" in line_dict else "")
-        attributes.append("transcript_source \"" + line_dict["transcript_source"] + "\"" if "transcript_source" in line_dict else "")
-        attributes.append("transcript_biotype \"" + line_dict["transcript_biotype"] + "\"" if "transcript_biotype" in line_dict else "")
+
+        if "gene_id" in line_dict:
+            attributes.append("gene_id \"" + line_dict["gene_id"] + "\"")    
+
+        if "gene_version" in line_dict:
+            attributes.append("gene_version \"" + line_dict["gene_version"] + "\"")
+
+        if "transcript_id" in line_dict:
+            attributes.append("transcript_id \"" + line_dict["transcript_id"] + "\"") 
+
+        if "transcript_version" in line_dict:
+            attributes.append("transcript_version \"" + line_dict["transcript_version"] + "\"") 
+
+        if "gene_name" in line_dict:
+            attributes.append("gene_name \"" + line_dict["gene_name"] + "\"")
+
+        if "gene_source" in line_dict:
+            attributes.append("gene_source \"" + line_dict["gene_source"] + "\"")
+
+        if "gene_biotype" in line_dict:
+            attributes.append("gene_biotype \"" + line_dict["gene_biotype"] + "\"")
+
+        if "transcript_name" in line_dict:
+            attributes.append("transcript_name \"" + line_dict["transcript_name"] + "\"")
+
+        if "transcript_source" in line_dict:
+            attributes.append("transcript_source \"" + line_dict["transcript_source"] + "\"")
+
+        if "transcript_biotype" in line_dict:
+            attributes.append("transcript_biotype \"" + line_dict["transcript_biotype"] + "\"")
 
         ## Add feature info to the intron line
         intron_line.append("; ".join(attributes) + ";")
@@ -113,17 +125,16 @@ fh.close()
 
 EOF
 
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome
-wget --quiet $genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
+chrom_mapping=$(ggd get-files hg38-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
-wget --quiet ftp://ftp.ensembl.org/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.gtf.gz  
+wget --quiet ftp://ftp.ensembl.org/pub/release-100/gtf/homo_sapiens/Homo_sapiens.GRCh38.100.gtf.gz 
 
-python add_introns.py Homo_sapiens.GRCh37.75.gtf.gz GRCh37.genome \
-    | gsort /dev/stdin $genome \
-    | bgzip -c > grch37-gene-features-introns-only-v1.gtf.gz
+python add_introns.py Homo_sapiens.GRCh38.100.gtf.gz \
+    | gsort --chromosomemappings $chrom_mapping /dev/stdin $genome \
+    | bgzip -c > hg38-gene-features-introns-only-v1.gtf.gz
 
-tabix grch37-gene-features-introns-only-v1.gtf.gz
+tabix hg38-gene-features-introns-only-v1.gtf.gz
 
-rm Homo_sapiens.GRCh37.75.gtf.gz
+rm Homo_sapiens.GRCh38.100.gtf.gz
 rm add_introns.py
-rm GRCh37.genome

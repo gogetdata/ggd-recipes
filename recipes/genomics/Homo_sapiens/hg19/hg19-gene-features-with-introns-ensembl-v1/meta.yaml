@@ -45,8 +45,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      hg19-gene-features-with-introns-ensembl-v1.gtf.gz: 51.67M
-      hg19-gene-features-with-introns-ensembl-v1.gtf.gz.tbi: 256.73K
+      hg19-gene-features-with-introns-ensembl-v1.gtf.gz: 50.95M
+      hg19-gene-features-with-introns-ensembl-v1.gtf.gz.tbi: 256.65K
     final-files:
     - hg19-gene-features-with-introns-ensembl-v1.gtf.gz
     - hg19-gene-features-with-introns-ensembl-v1.gtf.gz.tbi
