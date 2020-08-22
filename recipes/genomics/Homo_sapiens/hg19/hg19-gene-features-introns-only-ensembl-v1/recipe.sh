@@ -92,16 +92,36 @@ for line in fh:
 
         ## Get attribute info from the exon
         attributes = []
-        attributes.append("gene_id \"" + line_dict["gene_id"] + "\"" if "gene_id" in line_dict else "")
-        attributes.append("gene_version \"" + line_dict["gene_version"] + "\"" if "gene_version" in line_dict else "")
-        attributes.append("transcript_id \"" + line_dict["transcript_id"] + "\"" if "transcript_id" in line_dict else "")
-        attributes.append("transcript_version \"" + line_dict["transcript_version"] + "\"" if "transcript_version" in line_dict else "")
-        attributes.append("gene_name \"" + line_dict["gene_name"] + "\"" if "gene_name" in line_dict else "")
-        attributes.append("gene_source \"" + line_dict["gene_source"] + "\"" if "gene_source" in line_dict else "")
-        attributes.append("gene_biotype \"" + line_dict["gene_biotype"] + "\"" if "gene_biotype" in line_dict else "")
-        attributes.append("transcript_name \"" + line_dict["transcript_name"] + "\"" if "transcript_name" in line_dict else "")
-        attributes.append("transcript_source \"" + line_dict["transcript_source"] + "\"" if "transcript_source" in line_dict else "")
-        attributes.append("transcript_biotype \"" + line_dict["transcript_biotype"] + "\"" if "transcript_biotype" in line_dict else "")
+
+        if "gene_id" in line_dict:
+            attributes.append("gene_id \"" + line_dict["gene_id"] + "\"")    
+
+        if "gene_version" in line_dict:
+            attributes.append("gene_version \"" + line_dict["gene_version"] + "\"")
+
+        if "transcript_id" in line_dict:
+            attributes.append("transcript_id \"" + line_dict["transcript_id"] + "\"") 
+
+        if "transcript_version" in line_dict:
+            attributes.append("transcript_version \"" + line_dict["transcript_version"] + "\"") 
+
+        if "gene_name" in line_dict:
+            attributes.append("gene_name \"" + line_dict["gene_name"] + "\"")
+
+        if "gene_source" in line_dict:
+            attributes.append("gene_source \"" + line_dict["gene_source"] + "\"")
+
+        if "gene_biotype" in line_dict:
+            attributes.append("gene_biotype \"" + line_dict["gene_biotype"] + "\"")
+
+        if "transcript_name" in line_dict:
+            attributes.append("transcript_name \"" + line_dict["transcript_name"] + "\"")
+
+        if "transcript_source" in line_dict:
+            attributes.append("transcript_source \"" + line_dict["transcript_source"] + "\"")
+
+        if "transcript_biotype" in line_dict:
+            attributes.append("transcript_biotype \"" + line_dict["transcript_biotype"] + "\"")
 
         ## Add feature info to the intron line
         intron_line.append("; ".join(attributes) + ";")

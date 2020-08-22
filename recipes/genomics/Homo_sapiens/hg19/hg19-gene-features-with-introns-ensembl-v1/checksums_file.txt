@@ -1,2 +1,2 @@
-hg19-gene-features-with-introns-ensembl-v1.gtf.gz	0e53464155ccfb169743fbb4a22ecd49
-hg19-gene-features-with-introns-ensembl-v1.gtf.gz.tbi	0dc4f5228a8397a844da1e78986406e3
+hg19-gene-features-with-introns-ensembl-v1.gtf.gz	0223b517a0a72909aceef2b566b58eba
+hg19-gene-features-with-introns-ensembl-v1.gtf.gz.tbi	7ec086389ef095ee9c7daad4e4f4b700

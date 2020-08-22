@@ -43,8 +43,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch37-gene-features-introns-only-ensembl-v1.gtf.gz: 8.93M
-      grch37-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 241.66K
+      grch37-gene-features-introns-only-ensembl-v1.gtf.gz: 8.91M
+      grch37-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 241.14K
     final-files:
     - grch37-gene-features-introns-only-ensembl-v1.gtf.gz
     - grch37-gene-features-introns-only-ensembl-v1.gtf.gz.tbi

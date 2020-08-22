@@ -1,2 +1,2 @@
-grch37-gene-features-with-introns-ensembl-v1.gtf.gz	805d2713342285a9b91a895556c911c6
-grch37-gene-features-with-introns-ensembl-v1.gtf.gz.tbi	81c0196983ba1a62f7da5dfc8346eee6
+grch37-gene-features-with-introns-ensembl-v1.gtf.gz	8106a5709c4c4fff296cd802235b89b0
+grch37-gene-features-with-introns-ensembl-v1.gtf.gz.tbi	3b50f42199b2f929d1b9c881bdc3f6b3
