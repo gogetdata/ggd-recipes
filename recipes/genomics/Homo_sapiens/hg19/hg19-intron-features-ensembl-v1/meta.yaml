@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch37-gene-features-introns-only-ensembl-v1
+  name: hg19-intron-features-ensembl-v1
   version: '1'
 requirements:
   build:
@@ -16,13 +16,14 @@ requirements:
   - zlib
   run:
   - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
   - htslib
   - zlib
 source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: hg19
     species: Homo_sapiens
   keywords:
   - Gene-Features
@@ -36,17 +37,18 @@ about:
     annotated transcripts, that make up the Ensembl gene sets. Intron features for
     each transcripts have been added to the annotation set. All other features are
     removed. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.). Features
-    include: intron. Features are in GTF format.'
+    include: intron. Features are in GTF format. Remapped from Ensembl GRCh37 to UCSC
+    hg19'
   tags:
     data-provider: Ensembl
     data-version: release-75_2-6-14
     file-type:
     - gtf
     final-file-sizes:
-      grch37-gene-features-introns-only-ensembl-v1.gtf.gz: 8.91M
-      grch37-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 241.14K
+      hg19-intron-features-ensembl-v1.gtf.gz: 8.90M
+      hg19-intron-features-ensembl-v1.gtf.gz.tbi: 241.37K
     final-files:
-    - grch37-gene-features-introns-only-ensembl-v1.gtf.gz
-    - grch37-gene-features-introns-only-ensembl-v1.gtf.gz.tbi
+    - hg19-intron-features-ensembl-v1.gtf.gz
+    - hg19-intron-features-ensembl-v1.gtf.gz.tbi
     genomic-coordinate-base: 1-based-inclusive
     ggd-channel: genomics

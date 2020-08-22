@@ -7,7 +7,7 @@ extra:
   authors: mjc
   extra-files: []
 package:
-  name: grch38-gene-features-introns-only-ensembl-v1
+  name: grch38-intron-features-ensembl-v1
   version: '1'
 requirements:
   build:
@@ -43,10 +43,10 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch38-gene-features-introns-only-ensembl-v1.gtf.gz: 12.27M
-      grch38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi: 256.09K
+      grch38-intron-features-ensembl-v1.gtf.gz: 12.27M
+      grch38-intron-features-ensembl-v1.gtf.gz.tbi: 256.09K
     final-files:
-    - grch38-gene-features-introns-only-ensembl-v1.gtf.gz
-    - grch38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi
+    - grch38-intron-features-ensembl-v1.gtf.gz
+    - grch38-intron-features-ensembl-v1.gtf.gz.tbi
     genomic-coordinate-base: 1-based-inclusive
     ggd-channel: genomics

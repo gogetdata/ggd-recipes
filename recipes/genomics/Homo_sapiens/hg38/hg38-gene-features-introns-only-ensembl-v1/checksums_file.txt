@@ -1,2 +1,0 @@
-hg38-gene-features-introns-only-ensembl-v1.gtf.gz.tbi	63c250c2612d584c8f8b956276099b36
-hg38-gene-features-introns-only-ensembl-v1.gtf.gz	1d02a816b32baec3bfe79b728c2a95e7
