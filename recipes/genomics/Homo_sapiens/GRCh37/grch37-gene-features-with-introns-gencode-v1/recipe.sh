@@ -106,8 +106,8 @@ for line in fh:
         if "gene_source" in line_dict:
             attributes.append("gene_source \"" + line_dict["gene_source"] + "\"")
 
-        if "gene_biotype" in line_dict:
-            attributes.append("gene_biotype \"" + line_dict["gene_biotype"] + "\"")
+        if "gene_type" in line_dict:
+            attributes.append("gene_type \"" + line_dict["gene_type"] + "\"")
 
         if "transcript_name" in line_dict:
             attributes.append("transcript_name \"" + line_dict["transcript_name"] + "\"")
@@ -115,8 +115,8 @@ for line in fh:
         if "transcript_source" in line_dict:
             attributes.append("transcript_source \"" + line_dict["transcript_source"] + "\"")
 
-        if "transcript_biotype" in line_dict:
-            attributes.append("transcript_biotype \"" + line_dict["transcript_biotype"] + "\"")
+        if "transcript_type" in line_dict:
+            attributes.append("transcript_type \"" + line_dict["transcript_type"] + "\"")
 
 
         ## Add feature info to the intron line

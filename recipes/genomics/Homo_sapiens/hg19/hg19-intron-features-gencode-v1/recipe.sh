@@ -62,13 +62,10 @@ for line in fh:
     if line[0] == "#":
         continue
 
-    ## Print current line to stdout 
-    print(line.strip())
-
     line_dict = dict(zip(header,line.strip().split("\t")))
     line_dict.update({x.strip().replace("\"","").split(" ")[0]:x.strip().replace("\"","").split(" ")[1] for x in line_dict["attribute"].strip().split(";")[:-1]})
 
-    ## Add intron if exon exists
+    ## Print any intron lines
     if line_dict["feature"] == "exon":
         
         ## Skip intron creation if transcript not in intron dict
@@ -87,6 +84,7 @@ for line in fh:
 
         ## Get attribute info from the exon
         attributes = []
+
         if "gene_id" in line_dict:
             attributes.append("gene_id \"" + line_dict["gene_id"] + "\"")    
 
@@ -128,19 +126,16 @@ fh.close()
 EOF
 
 ## Get .genome file
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
 
 ## Process GTF file
-wget --quiet ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
+wget --quiet ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/GRCh37_mapping/gencode.v34lift37.annotation.gtf.gz
 
-## Get the chromomsome mapping file
-chrom_mapping=$(ggd get-files grch38-chrom-mapping-ucsc2ensembl-ncbi-v1 --pattern "*.txt")
+cat <(gzip -dc gencode.v34lift37.annotation.gtf.gz | grep "^#") <(python add_introns.py gencode.v34lift37.annotation.gtf.gz) \
+    | gsort /dev/stdin $genome \
+    | bgzip -c > hg19-gene-features-introns-only.gtf.gz
 
-cat <(gzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz | grep "^#")  <(python add_introns.py gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz) \
-    | gsort --chromosomemappings $chrom_mapping /dev/stdin $genome \
-    | bgzip -c > grch38-gene-features-introns-added-v1.gtf.gz
+tabix hg19-gene-features-introns-only.gtf.gz
 
-tabix grch38-gene-features-introns-added-v1.gtf.gz
-
-rm gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
+rm gencode.v34lift37.annotation.gtf.gz
 rm add_introns.py

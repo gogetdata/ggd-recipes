@@ -11,6 +11,10 @@ import gzip
 from collections import defaultdict
 
 gtf_file = sys.argv[1] ## A gtf file to filter
+chrom_mapping = sys.argv[2] 
+
+with io.open(chrom_mapping, "rt", encoding = "utf-8") as cm:
+    skip_chrom = set([x.strip() for x in cm if len(x.strip().split("\t")) == 1]) 
 
 ## Get per transcript exons
 fh = gzip.open(gtf_file, "rt", encoding = "utf-8") if gtf_file.endswith(".gz") else io.open(gtf_file, "rt", encoding = "utf-8")
@@ -62,13 +66,13 @@ for line in fh:
     if line[0] == "#":
         continue
 
-    ## Print current line to stdout 
-    print(line.strip())
-
     line_dict = dict(zip(header,line.strip().split("\t")))
     line_dict.update({x.strip().replace("\"","").split(" ")[0]:x.strip().replace("\"","").split(" ")[1] for x in line_dict["attribute"].strip().split(";")[:-1]})
 
-    ## Add intron if exon exists
+    if line_dict["chrom"] in skip_chrom:
+        continue
+
+    ## Print any intron lines
     if line_dict["feature"] == "exon":
         
         ## Skip intron creation if transcript not in intron dict
@@ -87,6 +91,7 @@ for line in fh:
 
         ## Get attribute info from the exon
         attributes = []
+
         if "gene_id" in line_dict:
             attributes.append("gene_id \"" + line_dict["gene_id"] + "\"")    
 
@@ -128,19 +133,21 @@ fh.close()
 EOF
 
 ## Get .genome file
-genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
+genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg38/hg38.genome
 
 ## Process GTF file
 wget --quiet ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
 
-## Get the chromomsome mapping file
-chrom_mapping=$(ggd get-files grch38-chrom-mapping-ucsc2ensembl-ncbi-v1 --pattern "*.txt")
+## Chrom mapping
+chr_mapping=$(ggd get-files hg38-chrom-mapping-ensembl2ucsc-ncbi-v1 --pattern "*.txt")
 
-cat <(gzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz | grep "^#")  <(python add_introns.py gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz) \
-    | gsort --chromosomemappings $chrom_mapping /dev/stdin $genome \
-    | bgzip -c > grch38-gene-features-introns-added-v1.gtf.gz
+## Process, sort, and bgzip gtf 
+cat <(gzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz | grep "^#")  <(python add_introns.py gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz $chr_mapping) \
+    | gsort --chromosomemappings $chr_mapping /dev/stdin $genome \
+    | bgzip -c > hg38-gene-features-introns-added.gtf.gz
 
-tabix grch38-gene-features-introns-added-v1.gtf.gz
+tabix hg38-gene-features-introns-added.gtf.gz
 
+## remove extra files
 rm gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
 rm add_introns.py

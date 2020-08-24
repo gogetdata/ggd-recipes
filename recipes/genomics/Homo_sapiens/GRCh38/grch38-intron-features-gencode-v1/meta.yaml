@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-intron-features-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - GTF
+  - GENCODE-Gene-Sets
+  - Annotated-Transcripts
+  - Intron-Features
+  - Introns
+  summary: 'Intron features created from the comprehensive set of gene anntotations
+    including reference chromosomes, scaffoldings, assebly patches, and alternative
+    loci. Intron features for each transcripts have been added to the annotation set.
+    All other features are removed. Data is specific to GENCODE Release 34 (Ensembl
+    100). Features include: intron.'
+  tags:
+    data-provider: GENCODE
+    data-version: release-34_03-24-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-intron-features-gencode-v1.gtf.gz: 11.21M
+      grch38-intron-features-gencode-v1.gtf.gz.tbi: 276.54K
+    final-files:
+    - grch38-intron-features-gencode-v1.gtf.gz
+    - grch38-intron-features-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
