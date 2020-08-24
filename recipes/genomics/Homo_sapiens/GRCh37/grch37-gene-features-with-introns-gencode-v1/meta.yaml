@@ -47,8 +47,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch37-gene-features-with-introns-gencode-v1.gtf.gz: 85.98M
-      grch37-gene-features-with-introns-gencode-v1.gtf.gz.tbi: 267.58K
+      grch37-gene-features-with-introns-gencode-v1.gtf.gz: 88.02M
+      grch37-gene-features-with-introns-gencode-v1.gtf.gz.tbi: 268.98K
     final-files:
     - grch37-gene-features-with-introns-gencode-v1.gtf.gz
     - grch37-gene-features-with-introns-gencode-v1.gtf.gz.tbi

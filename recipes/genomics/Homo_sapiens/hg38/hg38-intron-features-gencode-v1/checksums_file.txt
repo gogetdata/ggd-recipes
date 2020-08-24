@@ -1,2 +1,2 @@
-hg38-intron-features-gencode-v1.gtf.gz.tbi	7af641d3339a50e57e121a5f0d1f4e9a
-hg38-intron-features-gencode-v1.gtf.gz	8e28cf7c7df7348438766d723238b625
+hg38-intron-features-gencode-v1.gtf.gz.tbi	00f407f068fda523ef169e79216ff0dd
+hg38-intron-features-gencode-v1.gtf.gz	7b96e5949c0406eea7e1d4698e7a857f

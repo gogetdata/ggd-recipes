@@ -1,2 +1,2 @@
-grch37-intron-features-gencode-v1.gtf.gz.tbi	0f1c22e87dbb2e887b45abe3d7dee50d
-grch37-intron-features-gencode-v1.gtf.gz	3e9b18ada7e76d5e9710e57723017649
+grch37-intron-features-gencode-v1.gtf.gz.tbi	d1be91a3c294ecf41122b35c050179e1
+grch37-intron-features-gencode-v1.gtf.gz	68e15988aac17e674bc5095a19609070

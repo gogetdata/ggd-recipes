@@ -47,8 +47,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      hg38-gene-features-with-introns-gencode-v1.gtf.gz: 74.88M
-      hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi: 287.62K
+      hg38-gene-features-with-introns-gencode-v1.gtf.gz: 77.00M
+      hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi: 288.63K
     final-files:
     - hg38-gene-features-with-introns-gencode-v1.gtf.gz
     - hg38-gene-features-with-introns-gencode-v1.gtf.gz.tbi

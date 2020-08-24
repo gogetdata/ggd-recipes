@@ -42,8 +42,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      hg19-intron-features-gencode-v1.gtf.gz: 9.60M
-      hg19-intron-features-gencode-v1.gtf.gz.tbi: 244.13K
+      hg19-intron-features-gencode-v1.gtf.gz: 10.65M
+      hg19-intron-features-gencode-v1.gtf.gz.tbi: 249.39K
     final-files:
     - hg19-intron-features-gencode-v1.gtf.gz
     - hg19-intron-features-gencode-v1.gtf.gz.tbi

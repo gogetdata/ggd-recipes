@@ -1,2 +1,2 @@
-grch38-intron-features-gencode-v1.gtf.gz.tbi	75804c20e0f1229da521c77d70fb073c
-grch38-intron-features-gencode-v1.gtf.gz	c3f0cbeb6ea1a88240fa5fa7e7c2c501
+grch38-intron-features-gencode-v1.gtf.gz.tbi	ed58c6eac441142183fbab5ed6f68ab9
+grch38-intron-features-gencode-v1.gtf.gz	b3a935286ad431d0b893b9cacadf06ad
