@@ -1,0 +1,2 @@
+grch38-gene-only-features-gencode-v1.gtf.gz	0187e5ee629add57c0044ea1cce76e7e
+grch38-gene-only-features-gencode-v1.gtf.gz.tbi	956a04a821401b75c42ed915b2773883
