@@ -25,14 +25,14 @@ Running :code:`ggd show-env -h` will give you the following message:
 
 show-env arguments:
 
-+----------------+-------------------------------------------------------------------------------------+
-| ggd show-env   | Display the environment variables for data packages installed in the current        |
-|                | conda environment                                                                   |
-+================+=====================================================================================+
-| -h, --help     | show this help message and exit                                                     |
-+----------------+-------------------------------------------------------------------------------------+
-| -p, --pattern  | (Optional) Regular expression pattern to match the name of the variable desired     |
-+----------------+-------------------------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------------------------+
+| ggd show-env           | Display the environment variables for data packages installed in the current        |
+|                        | conda environment                                                                   |
++========================+=====================================================================================+
+| ``-h``, ``--help``     | show this help message and exit                                                     |
++------------------------+-------------------------------------------------------------------------------------+
+| ``-p``, ``--pattern``  | (Optional) Regular expression pattern to match the name of the variable desired     |
++------------------------+-------------------------------------------------------------------------------------+
 
 
 Additional argument explanation: 

@@ -4,7 +4,7 @@ import yaml
 import copy
 import json
 from collections import defaultdict
-from jinja2.sandbox import SandboxedEnvironment
+from jinja2.sandbox import SandboxedEnvironment 
 from sphinx.util import logging as sphinx_logging
 from sphinx.util import status_iterator
 from sphinx.util.parallel import ParallelTasks, parallel_available, make_chunks
@@ -216,7 +216,8 @@ def generate_readme(recipe_dict, renderer):
         "deps": sorted(recipe["requirements"]["run"]) if recipe["requirements"]["run"] is not None else ["NA"],
         'gh_recipes': 'https://github.com/gogetdata/ggd-recipes/tree/master/recipes/',
         'recipe_path': op.join(recipe_dict["channel"], recipe_dict["species"], recipe_dict["build"], name),
-        'Package': '<a href="recipes/{c}/{s}/{b}/{n}/README.html">{n}</a>'.format(c=recipe_dict["channel"],s=recipe_dict["species"],b=recipe_dict["build"],n=name)
+        'Package': '<a href="recipes/{c}/{s}/{b}/{n}/README.html">{n}</a>'.format(c=recipe_dict["channel"],s=recipe_dict["species"],b=recipe_dict["build"],n=name),
+        'prefix_install_capable': "**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag." if "final-files" not in recipe["about"]["tags"] else "**Prefix install enabled:** *True*"
     }
 
         

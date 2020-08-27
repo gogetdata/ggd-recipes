@@ -16,26 +16,32 @@ Running :code:`ggd search -h` will give you the a similar help message as below:
 
 Search arguments: 
 
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| ggd search               | Search for available ggd data packages. Results are filtered by match score from high to low.     | 
-|                          | (Only 5 results will be reported unless the -dn flag is changed)                                  |
-+==========================+===================================================================================================+
-| -h, --help               | show this help message and exit                                                                   |
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| search_term              | **Required** The term(s) to search for. Multiple terms can be used. Example:                      |
-| (Positional Argument)    | 'ggd search reference genome', where "reference" and "genome" are the search terms                |
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| -g, --genome_build       | (Optional) Filter results by the genome build of the desired recipe                               |
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| -s, --species            | (Optional) Filter results by the species for the desired recipe                                   |
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| -dn, --display-number    | (Optional) The number of search results to display. (Default = 5)                                 |
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| -m, --match_score        | (Optional) A score between 0 and 100 to use to filter the results by. (Default = 75).             |
-|                          | The lower the number the more results will be output"                                             |
-+--------------------------+---------------------------------------------------------------------------------------------------+
-| -c, --channel            | (Optional) The ggd channel to search. (Default = genomics)                                        |
-+--------------------------+---------------------------------------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ggd search                       | Search for available ggd data packages. Results are filtered by match score from high to low.     | 
+|                                  | (Only 5 results will be reported unless the -dn flag is changed)                                  |
++==================================+===================================================================================================+
+| ``-h``, ``--help``               | show this help message and exit                                                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``search_term``                  | **Required** The term(s) to search for. Multiple terms can be used. Example:                      |
+|                                  | 'ggd search reference genome', where "reference" and "genome" are the search terms                |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``--search-type``                | (Optional) How to search for data packages with the search terms provided. Options =              |
+|                                  | 'combined-only', 'non-combined-only', and 'both'. 'combined-only' will use the provided search    |
+|                                  | terms as a single search term. 'non-combined-only' will use the provided search terms to search   | 
+|                                  | for data package that match each search term separately. 'both' will use the search terms combined| 
+|                                  | and each search term separately to search for data packages. Default = 'both'                     |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``-g``, ``--genome_build``       | (Optional) Filter results by the genome build of the desired recipe                               |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``-s``, ``--species``            | (Optional) Filter results by the species for the desired recipe                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``-dn``, ``--display-number``    | (Optional) The number of search results to display. (Default = 5)                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``-m``, ``--match_score``        | (Optional) A score between 0 and 100 to use to filter the results by. (Default = 75).             |
+|                                  | The lower the number the more results will be output"                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------+
+| ``-c``, ``--channel``            | (Optional) The ggd channel to search. (Default = genomics)                                        |
++----------------------------------+---------------------------------------------------------------------------------------------------+
 
 Any combination of search terms can be used to search for a package. 
 
@@ -54,6 +60,10 @@ Required arguments:
 
 Optional arguments:
 
+* *--search-type* The :code:`--search-type` flag is used to set search term combination filtering. There are three options. (1) Search
+  for :code:`combined-only` matches, meaning search for packages when the search terms are combined as a single search term. (2) Search 
+  for :code:`non-combined-only` matches, meaning search for packages where each term is used as a separate search term. (3) Search for 
+  :code:`both` combined and non-combined matches, meaning do both (1) and (2). The default behavior is set to :code:`both`.
 * *-g:* The :code:`-g` flag is used to filter the search results on a specific "genome build". This flag is not required, however, if 
   provided the resulting search will be filtered to only include data packages with that genome build.
 * *-s:* The :code:`-s` flag is used to filter the search results on a specific "species". Only data packages for that specific species 
@@ -204,13 +214,13 @@ Some examples of using the `ggd search` tool:
         hg19-reference-genome-gencode-v1
         ================================
 
-        Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromsomes and scaffoldings. Mapped to hg19
+        Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromosomes and scaffoldings. Mapped to hg19
 
         Species: Homo_sapiens
 
         Genome Build: hg19
 
-        Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assemlby
+        Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assembly
 
         Data Provider: GENCODE
 
@@ -235,6 +245,23 @@ Some examples of using the `ggd search` tool:
             ggd install hg19-reference-genome-gencode-v1
 
       ----------------------------------------------------------------------------------------------------
+
+      >>> Scroll up to see package details and install info <<<
+
+
+      ************************************
+      Package Name Results
+      ====================
+
+      mm10-reference-ucsc-v1
+      hg19-reference-genome-ucsc-v1
+      hg38-reference-genome-ucsc-v1
+      grch37-reference-genome-1000g-v1
+      hg19-reference-genome-gencode-v1
+      grch37-reference-genome-gencode-v1
+
+      NOTE: Name order matches order of packages in detailed section above
+      ************************************
 
 
       :ggd:search: NOTE  Only showing results for top 5 of 30 matches.
@@ -379,6 +406,25 @@ Some examples of using the `ggd search` tool:
 
       ----------------------------------------------------------------------------------------------------
 
+    >>> Scroll up to see package details and install info <<<
+
+
+    ***************************
+    Package Name Results
+    ====================
+
+    hg19-chromsizes-ggd-v1
+    hg38-chromsizes-ggd-v1
+    grch37-chromsizes-ggd-v1
+    grch38-chromsizes-ggd-v1
+
+    NOTE: Name order matches order of packages in detailed section above
+    ***************************
+
+    :ggd:search: NOTE: Only showing results for top 5 of 22 matches.
+    :ggd:search: To display all matches append your search command with '-dn 22'
+
+	    ggd search chrom sizes -dn 22
 
 
 3. Simple example with the genome build as a search term:
@@ -388,7 +434,7 @@ Some examples of using the `ggd search` tool:
 
     $ ggd search repeat masker hg19
 
-      ----------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------
 
         hg19-repeatmasker-ucsc-v1
         =========================
@@ -409,11 +455,11 @@ Some examples of using the `ggd search` tool:
 
         Data file coordinate base: 0-based-inclusive
 
-        Included Data Files:
+        Included Data Files: 
             hg19-repeatmasker-ucsc-v1.bed.gz
             hg19-repeatmasker-ucsc-v1.bed.gz.tbi
 
-        Approximate Data File Sizes:
+        Approximate Data File Sizes: 
             hg19-repeatmasker-ucsc-v1.bed.gz: 114.62M
             hg19-repeatmasker-ucsc-v1.bed.gz.tbi: 526.98K
 
@@ -421,7 +467,7 @@ Some examples of using the `ggd search` tool:
         To install run:
             ggd install hg19-repeatmasker-ucsc-v1
 
-      ----------------------------------------------------------------------------------------------------
+          ----------------------------------------------------------------------------------------------------
 
         hg19-simple-repeats-ucsc-v1
         ===========================
@@ -442,11 +488,11 @@ Some examples of using the `ggd search` tool:
 
         Data file coordinate base: 0-based-inclusive
 
-        Included Data Files:
+        Included Data Files: 
             hg19-simple-repeats-ucsc-v1.bed.gz
             hg19-simple-repeats-ucsc-v1.bed.gz.tbi
 
-        Approximate Data File Sizes:
+        Approximate Data File Sizes: 
             hg19-simple-repeats-ucsc-v1.bed.gz: 25.58M
             hg19-simple-repeats-ucsc-v1.bed.gz.tbi: 1.35M
 
@@ -454,8 +500,88 @@ Some examples of using the `ggd search` tool:
         To install run:
             ggd install hg19-simple-repeats-ucsc-v1
 
-      ----------------------------------------------------------------------------------------------------
+          ----------------------------------------------------------------------------------------------------
 
+        hg19-microsatellites-ucsc-v1
+        ============================
+
+        Summary: Microsatellites from UCSC. Region which tend to be highly polymorphic and with at least 15 di- or tri-nucletodie repeats
+
+        Species: Homo_sapiens
+
+        Genome Build: hg19
+
+        Keywords: microsatellites, microsats, STR, STRs, short-tandem-repeat, repeats, repeat-regions
+
+        Data Provider: UCSC
+
+        Data Version: 28-Nov-2010
+
+        File type(s): bed
+
+        Data file coordinate base: 0-based-inclusive
+
+        Included Data Files: 
+            hg19-microsatellites-ucsc-v1.bed.gz
+            hg19-microsatellites-ucsc-v1.bed.gz.tbi
+
+        Approximate Data File Sizes: 
+            hg19-microsatellites-ucsc-v1.bed.gz: 401.08K
+            hg19-microsatellites-ucsc-v1.bed.gz.tbi: 298.03K
+
+
+        To install run:
+            ggd install hg19-microsatellites-ucsc-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        hg19-self-chain-ucsc-v1
+        =======================
+
+        Summary: Self chain alignemnts of the human genome with an improved gap scoring system. Alignemtns point out areas of duplication wihtin the human genome, with the exception of the pseudoautosomal regions on X and Y. From the Human Chained Self Alignemnts track on UCSC.
+
+        Species: Homo_sapiens
+
+        Genome Build: hg19
+
+        Keywords: Self-Chain, Self-Alignment, Repeats, low-copy-repeats
+
+        Data Provider: UCSC
+
+        Data Version: 27-Apr-2009
+
+        File type(s): bed
+
+        Data file coordinate base: 0-based-inclusive
+
+        Included Data Files: 
+            hg19-self-chain-ucsc-v1.bed.gz
+            hg19-self-chain-ucsc-v1.bed.gz.tbi
+
+        Approximate Data File Sizes: 
+            hg19-self-chain-ucsc-v1.bed.gz: 21.74M
+            hg19-self-chain-ucsc-v1.bed.gz.tbi: 201.69K
+
+
+        To install run:
+            ggd install hg19-self-chain-ucsc-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+    >>> Scroll up to see package details and install info <<<
+
+
+    ******************************
+    Package Name Results
+    ====================
+
+    hg19-repeatmasker-ucsc-v1
+    hg19-simple-repeats-ucsc-v1
+    hg19-microsatellites-ucsc-v1
+    hg19-self-chain-ucsc-v1
+
+    NOTE: Name order matches order of 
+    ******************************
 
 
 4. Example using ``-g`` and ``-s`` flags to filter the results:
@@ -579,8 +705,27 @@ Some examples of using the `ggd search` tool:
       ----------------------------------------------------------------------------------------------------
 
 
+      >>> Scroll up to see package details and install info <<<
+
+
+    **************************************************
+    Package Name Results
+    ====================
+
+    grch37-autosomal-dominant-genes-berg-v1
+    grch37-autosomal-dominant-genes-blekhman-v1
+    grch37-autosomal-dominant-genes-berg-blekhman-v1
+
+    NOTE: Name order matches order of packages in detailed section above
+    **************************************************
+
+
 5. Example of searching for two different data packages at the same time for a specific genome build
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The default behavior is to serach for terms both combine and seperatly. Therefore, one does noes need 
+to set the :code:`--search-type` unless they would like to refine the results. The example below can also
+be done with setting search-type flag as such: :code:`--search type non-combined-only`
 
 .. code-block:: bash
 
@@ -653,5 +798,300 @@ Some examples of using the `ggd search` tool:
             ggd install hg19-cpg-islands-ucsc-v1
 
       ----------------------------------------------------------------------------------------------------
+
+    >>> Scroll up to see package details and install info <<<
+
+
+    ***************************
+    Package Name Results
+    ====================
+
+    hg19-pfam-domains-ucsc-v1
+    hg19-cpg-islands-ucsc-v1
+
+    NOTE: Name order matches order of packages in detailed section above
+    ***************************
+
+
+
+6. Example refining search results based on combined terms 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In this example the :code:`--search-term` flag is set to `combined-only`. This is often done when you know which
+package you want but don't know the exact package name. This will refnie the results to those based on a combination
+of the terms provided. 
+
+.. code-block:: bash
+
+    ggd search chrom sizes --search-type combined-only -dn 8
+
+        ----------------------------------------------------------------------------------------------------
+
+        grch37-chromsizes-ggd-v1
+        ========================
+
+        Summary: Chromosome lengths for GRCh37
+
+        Species: Homo_sapiens
+
+        Genome Build: GRCh37
+
+        Keywords: genome, chromosome, lengths, sizes
+
+        Data Provider: GGD
+
+        Data Version: 16-Apirl-2020
+
+        File type(s): txt
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            grch37-chromsizes-ggd-v1.txt
+
+        Approximate Data File Sizes:
+            grch37-chromsizes-ggd-v1.txt: 5.17K
+
+
+        To install run:
+            ggd install grch37-chromsizes-ggd-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        grch37-chromsizes-ncbi-v1
+        =========================
+
+        Summary: Chromosome lengths for the GRCh37 genome build from NCBI. (Used to create the Go Get Data (GGD) GRCh37.genome file)
+
+        Species: Homo_sapiens
+
+        Genome Build: GRCh37
+
+        Keywords: genome, chromosome, lengths, sizes, chrom-lengths
+
+        Data Provider: NCBI
+
+        Data Version: 12-October-2016-(patch13)
+
+        File type(s): genome
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            grch37-chromsizes-ncbi-v1.genome
+
+        Approximate Data File Sizes:
+            grch37-chromsizes-ncbi-v1.genome: 5.17K
+
+
+        To install run:
+            ggd install grch37-chromsizes-ncbi-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        grch38-chromsizes-ggd-v1
+        ========================
+
+        Summary: Chromosome lengths for GRCh38
+
+        Species: Homo_sapiens
+
+        Genome Build: GRCh38
+
+        Keywords: genome, chromosome, lengths, sizes
+
+        Data Provider: GGD
+
+        Data Version: 16-April-2020
+
+        File type(s): txt
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            grch38-chromsizes-ggd-v1.txt
+
+        Approximate Data File Sizes:
+            grch38-chromsizes-ggd-v1.txt: 11.14K
+
+
+        To install run:
+            ggd install grch38-chromsizes-ggd-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        grch38-chromsizes-ncbi-v1
+        =========================
+
+        Summary: Chromosome lengths for the GRCh38 genome build from NCBI. (Used to create the Go Get Data (GGD) GRCh38.genome file)
+
+        Species: Homo_sapiens
+
+        Genome Build: GRCh38
+
+        Keywords: genome, chromosome, lengths, sizes, chrom-lengths
+
+        Data Provider: NCBI
+
+        Data Version: 14-April-2020-(patch13)
+
+        File type(s): genome
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            grch38-chromsizes-ncbi-v1.genome
+
+        Approximate Data File Sizes:
+            grch38-chromsizes-ncbi-v1.genome: 11.14K
+
+
+        To install run:
+            ggd install grch38-chromsizes-ncbi-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        hg19-chromsizes-ggd-v1
+        ======================
+
+        Summary: Chromosome lengths for hg19
+
+        Species: Homo_sapiens
+
+        Genome Build: hg19
+
+        Keywords: genome, chromosome, lengths, sizes
+
+        Data Provider: GGD
+
+        Data Version: 16-Apirl-2020
+
+        File type(s): txt
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            hg19-chromsizes-ggd-v1.txt
+
+        Approximate Data File Sizes:
+            hg19-chromsizes-ggd-v1.txt: 1.99K
+
+
+        To install run:
+            ggd install hg19-chromsizes-ggd-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        hg19-chromsizes-ncbi-v1
+        =======================
+
+        Summary: Chromosome lengths for the hg19 genome build from NCBI. (Used to create the Go Get Data (GGD) hg19.genome file)
+
+        Species: Homo_sapiens
+
+        Genome Build: hg19
+
+        Keywords: genome, chromosome, lengths, sizes, chrom-lengths
+
+        Data Provider: NCBI
+
+        Data Version: 12-October-2016-(patch13)
+
+        File type(s): genome
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            hg19-chromsizes-ncbi-v1.genome
+
+        Approximate Data File Sizes:
+            hg19-chromsizes-ncbi-v1.genome: 1.99K
+
+
+        To install run:
+            ggd install hg19-chromsizes-ncbi-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        hg38-chromsizes-ggd-v1
+        ======================
+
+        Summary: Chromosome lengths for hg38
+
+        Species: Homo_sapiens
+
+        Genome Build: hg38
+
+        Keywords: genome, chromosome, lengths, sizes
+
+        Data Provider: GGD
+
+        Data Version: 16-Apirl-2020
+
+        File type(s): txt
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            hg38-chromsizes-ggd-v1.txt
+
+        Approximate Data File Sizes:
+            hg38-chromsizes-ggd-v1.txt: 15.53K
+
+
+        To install run:
+            ggd install hg38-chromsizes-ggd-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+        hg38-chromsizes-ncbi-v1
+        =======================
+
+        Summary: Chromosome lengths for the hg38 genome build from NCBI. (Used to create the Go Get Data (GGD) hg38.genome file)
+
+        Species: Homo_sapiens
+
+        Genome Build: hg38
+
+        Keywords: genome, chromosome, lengths, sizes, chrom-lengths
+
+        Data Provider: NCBI
+
+        Data Version: 14-April-2020-(patch13)
+
+        File type(s): genome
+
+        Data file coordinate base: NA
+
+        Included Data Files:
+            hg38-chromsizes-ncbi-v1.genome
+
+        Approximate Data File Sizes:
+            hg38-chromsizes-ncbi-v1.genome: 15.53K
+
+
+        To install run:
+            ggd install hg38-chromsizes-ncbi-v1
+
+          ----------------------------------------------------------------------------------------------------
+
+      >>> Scroll up to see package details and install info <<<
+
+
+      ***************************
+      Package Name Results
+      ====================
+
+      grch37-chromsizes-ggd-v1
+      grch37-chromsizes-ncbi-v1
+      grch38-chromsizes-ggd-v1
+      grch38-chromsizes-ncbi-v1
+      hg19-chromsizes-ggd-v1
+      hg19-chromsizes-ncbi-v1
+      hg38-chromsizes-ggd-v1
+      hg38-chromsizes-ncbi-v1
+
+      NOTE: Name order matches order of packages in detailed section above
+      ***************************
 
 

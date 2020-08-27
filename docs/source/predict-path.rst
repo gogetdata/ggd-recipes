@@ -24,21 +24,21 @@ predict-path arguments:
 | ggd predict-path            | Get a predicted install file path for a data package before it is installed.          |
 |                             | (Use for workflows, such as Snakemake)                                                |
 +=============================+=======================================================================================+
-| -h, --help                  | show this help message and exit                                                       | 
+| ``-h``, ``--help``          | show this help message and exit                                                       | 
 +-----------------------------+---------------------------------------------------------------------------------------+
-| -c, --channel               | The ggd channel of the recipe to fine. (Deafult = genomics)                           |
+| ``-c``, ``--channel``       | The ggd channel of the recipe to fine. (Deafult = genomics)                           |
 +-----------------------------+---------------------------------------------------------------------------------------+
-| --prefix                    | (Optional) The name or the full directory path to an                                  |
+| ``--prefix``                | (Optional) The name or the full directory path to an                                  |
 |                             | conda environment. The predicted path will be based on                                |
 |                             | this conda environment. When installing, the data                                     |
 |                             | package should also be installed in this environment.                                 |
 |                             | (Only needed if not predicting for a path in the                                      |
 |                             | current conda environment)                                                            |
 +-----------------------------+---------------------------------------------------------------------------------------+
-| -pn, --package-name         | **Required** The name of the data package to predict a                                |
+| ``-pn``, ``--package-name`` | **Required** The name of the data package to predict a                                |
 |                             | file path for                                                                         |
 +-----------------------------+---------------------------------------------------------------------------------------+
-| -fn, --file-name            | **Required** The name of the file to predict that path                                |
+| ``-fn``, ``--file-name``    | **Required** The name of the file to predict that path                                |
 |                             | for. It is best if you give the full and correct name                                 |
 |                             | of the file to predict the path for. If not, ggd will                                 |
 |                             | try to identify the right file, but won't guarantee                                   |

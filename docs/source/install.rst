@@ -30,30 +30,30 @@ Running :code:`ggd install -h` will give you the following message:
 
 Install arguments:
 
-+--------------------+---------------------------------------------------------------------------------------------------+
-| ggd install        | Install a ggd data package into the current or specified conda environment                        |
-+====================+===================================================================================================+
-| -h, --help         | show this help message and exit                                                                   |
-+--------------------+---------------------------------------------------------------------------------------------------+
-| name               | **Required** The data package name to install. Can use more than                                  |
-|                    | once (e.g. ggd install <pkg 1> <pkg 2> <pkg 3> )                                                  |
-|                    | (NOTE: No need to designate version as it is                                                      |
-|                    | implicated in the package name)                                                                   |
-+--------------------+---------------------------------------------------------------------------------------------------+
-| -c, --channel      | (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)                   |
-+--------------------+---------------------------------------------------------------------------------------------------+
-| -d, --debug        | (Optional) When the -d flag is set debug output will be printed to stdout.                        |
-+--------------------+---------------------------------------------------------------------------------------------------+
-| --file FILE        | A file with a list of ggd data packages to install.                                               |
-|                    | One package per line. Can use more than one (e.g. ggd                                             |
-|                    | install --file <file_1> --file <file_2> )                                                         |
-+--------------------+---------------------------------------------------------------------------------------------------+
-| --prefix           | (Optional) The name or the full directory path to an                                              |
-|                    | existing conda environment where you want to install a                                            |
-|                    | ggd data package. (Only needed if you want to install                                             |
-|                    | the data package into a different conda environment                                               |
-|                    | then the one you are currently in)                                                                |
-+--------------------+---------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------------------+
+| ggd install             | Install a ggd data package into the current or specified conda environment                        |
++=========================+===================================================================================================+
+| ``-h``, ``--help``      | show this help message and exit                                                                   |
++-------------------------+---------------------------------------------------------------------------------------------------+
+| ``name``                | **Required** The data package name to install. Can use more than                                  |
+|                         | once (e.g. ggd install <pkg 1> <pkg 2> <pkg 3> )                                                  |
+|                         | (NOTE: No need to designate version as it is                                                      |
+|                         | implicated in the package name)                                                                   |
++-------------------------+---------------------------------------------------------------------------------------------------+
+| ``-c``, ``--channel``   | (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)                   |
++-------------------------+---------------------------------------------------------------------------------------------------+
+| ``-d``, ``--debug``     | (Optional) When the -d flag is set debug output will be printed to stdout.                        |
++-------------------------+---------------------------------------------------------------------------------------------------+
+| ``--file``              | A file with a list of ggd data packages to install.                                               |
+|                         | One package per line. Can use more than one (e.g. ggd                                             |
+|                         | install --file <file_1> --file <file_2> )                                                         |
++-------------------------+---------------------------------------------------------------------------------------------------+
+| ``--prefix``            | (Optional) The name or the full directory path to an                                              |
+|                         | existing conda environment where you want to install a                                            |
+|                         | ggd data package. (Only needed if you want to install                                             |
+|                         | the data package into a different conda environment                                               |
+|                         | then the one you are currently in)                                                                |
++-------------------------+---------------------------------------------------------------------------------------------------+
 
 
 Additional argument explanation: 
@@ -80,7 +80,7 @@ Optional arguments:
 
 * *--prefix:* The :code:`--prefix` flag is used to install a data package into a different conda environment/prefix then 
   the current one you are in. This flag is commonly used when a environment has been created to store data packages without 
-  having duplicate copies of a packge in different environments. You can store all data packages in a single environment and
+  having duplicate copies of a package in different environments. You can store all data packages in a single environment and
   access them from any other environment using the :code:`--prefix` flag available in other ggd tools
 
 
@@ -88,7 +88,7 @@ Optional arguments:
     .. note::
     
         During the installation you will see a multiple progress spinners. The time it takes to install the data package(s) 
-        is dependent on how big the data package is being installed as well as the internet bandwith you have. When you see: 
+        is dependent on how big the data package is being installed as well as the internet bandwidth you have. When you see: 
         **Executing Transaction |-** you are in the final stages of installation, however, this stage takes the longest. 
         Please be patient as the package is being installed, processed, and curated. 
 

@@ -17,7 +17,7 @@ This tool is used to find the location of a file(s) downloaded using ggd. For ex
 reference genome using :code:`ggd install grch37-reference-genome-ensembl-v1` and you want the fasta file and the fai file you would
 run :code:`ggd get-files grch37-reference-genome-ensembl-v1`. The file locations would then be provided via STDOUT.
 
-Using ggd list-files
+Using ggd get-files
 --------------------
 Use :code:`ggd get-files` to list the files associated with a previously installed ggd package.
 Running :code:`ggd get-files -h` will give you the following message:
@@ -28,23 +28,23 @@ get-files arguments:
 +----------------------------------------------+------------------------------------------------------------------------------------+
 | get-files                                    | Get a list of file(s) for a specific installed ggd package                         |
 +==============================================+====================================================================================+
-| -h, --help                                   | show this help message and exit                                                    |
+| ``-h``, ``--help``                           | show this help message and exit                                                    |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| name                                         | **Required**  recipe name                                                          |
+| ``name``                                     | **Required**  recipe name                                                          |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -c, --channel                                | (Optional) The ggd channel of the recipe to find. (Default = genomics)             |
+| ``-c``, ``--channel``                        | (Optional) The ggd channel of the recipe to find. (Default = genomics)             |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -s, --species                                | (Optional) species recipe is for. Use '*' for any species                          |
+| ``-s``, ``--species``                        | (Optional) species recipe is for. Use '*' for any species                          |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -g , --genome-build                          | (Optional) genome build the recipe is for. Use '*' for any genome build.           |
+| ``-g`` , ``--genome-build``                  | (Optional) genome build the recipe is for. Use '*' for any genome build.           |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -v, --version                                | (Optional) pattern to match the version of the file desired.                       |
+| ``-v``, ``--version``                        | (Optional) pattern to match the version of the file desired.                       |
 |                                              | Use '*' for any version                                                            |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| -p, --pattern                                | (Optional) pattern to match the name of the file desired. To                       |
+| ``-p``, ``--pattern``                        | (Optional) pattern to match the name of the file desired. To                       |
 |                                              | list all files for a ggd package, do not use the -p option.                        |
 +----------------------------------------------+------------------------------------------------------------------------------------+
-| --prefix                                     | (Optional) The name or the full directory path to an                               |      
+| ``--prefix``                                 | (Optional) The name or the full directory path to an                               |      
 |                                              | conda environment where a ggd recipe is stored. (Only                              |
 |                                              | needed if not getting file paths for files in the                                  |
 |                                              | current conda environment)                                                         |
@@ -79,7 +79,7 @@ Optional arguments for filtering:
   **This allows one to store ggd data packages in one environment and access it from another.**
 
 
-The **name** field is the only required parameter for :code:`ggd list-files`, however, the other flags are provided to help reduce the
+The **name** field is the only required parameter for :code:`ggd get-files`, however, the other flags are provided to help reduce the
 search space and refine the final file list.
 
 Examples
@@ -90,7 +90,7 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd list-files grch37-reference-genome-1000g-v1
+    $ ggd get-files grch37-reference-genome-1000g-v1
 
       <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1/1/hs37d5.fa.fai
       <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome-1000g-v1/1/hs37d5.fa
@@ -100,12 +100,12 @@ Examples
 
 .. code-block:: bash
 
-    $ ggd list-files grch37-esp-variants-uw-v1 -s Homo_sapiens -g GRCh37 -p *.vcf.gz
+    $ ggd get-files grch37-esp-variants-uw-v1 -s Homo_sapiens -g GRCh37 -p *.vcf.gz
 
      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1/1/grch37-esp-variants-uw-v1.vcf.gz
 
 
-    $ ggd list-files grch37-esp-variants-uw-v1 -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
+    $ ggd get-files grch37-esp-variants-uw-v1 -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
 
      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants-uw-v1/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
 

@@ -117,7 +117,7 @@ are stored, as well as an environment variable that can be used to access the da
 
 .. note:: 
     
-    You can install mutliple data packages with a single install command, or you can break the installation up into multiple commands. 
+    You can install multiple data packages with a single install command, or you can break the installation up into multiple commands. 
     For example, if you wanted to install pfam domains and cpg islands annotation file for the human genome build hg19 you could use the 
     following commands: 
     
@@ -152,7 +152,7 @@ You could list all installed data packages installed in a different conda enviro
 
     Example (list all data packages in the "my_data_environment" conda environment): 
 
-        $ ggd list --prefix my_data_environmnet 
+        $ ggd list --prefix my_data_environment 
 
 You can also list a subset of packages or even a specific package based on a pattern using the following command: 
 
@@ -176,7 +176,7 @@ use the following command:
     $ ggd show-env
 
 These are the same environment variables that are seen when running :code:`ggd list`, however, this command is specific to information 
-on avaiable environment variables that can be used for each data packages that has been installed on your system. 
+on available environment variables that can be used for each data packages that has been installed on your system. 
 
 If the environment variables are inactive, the output will tell you how to activate them. Once active, the environment variable 
 can be used to access the data packages install by ggd. 
@@ -220,7 +220,7 @@ To move to the directory where the files are stored you can use the following co
 GGD also provides a tool to fetch installed data files if you don't want to use or don't have access to the environment variables. (You will only have access to the 
 environment variables if you are in the conda environment where the files were installed) 
 
-If you are not in the conda environment where the data packages were installed, if you perfer not using the environment variables created for you, or if the environment variables available 
+If you are not in the conda environment where the data packages were installed, if you prefer not using the environment variables created for you, or if the environment variables available 
 don't point to the file you would like to access, you can use :code:`ggd get-files` to fetch the desired files.
 
 For example, if you wanted to get the GRCh38 reference genome fasta file you installed in step 3, you could use the following command:
@@ -229,7 +229,7 @@ For example, if you wanted to get the GRCh38 reference genome fasta file you ins
 
     $ ggd get-files grch38-reference-genome-ensembl-v1 -p "*.fa"
 
-    (Where -p is either the whole name of the data file you are interested in or a pattern to match the data file you are interseted in)
+    (Where -p is either the whole name of the data file you are interested in or a pattern to match the data file you are interested in)
 
 or if you wanted both the fasta file and the fasta indexed file you could run the following command:
 

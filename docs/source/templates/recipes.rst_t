@@ -68,7 +68,7 @@ Available Data Packages
         var cur_species = "None"
         var cur_build = "None"
 
-        //update view based on avaiable cookie info
+        //update view based on available cookie info
         $( document ).ready(function(){
             getCookie()
         })
@@ -269,7 +269,7 @@ Available Data Packages
         }
 
         //Select Channel
-        /// Add species available for taht channel
+        /// Add species available for that channel
         $("#ggd_channel").on('change', function(e) {
             var selectedValue = this.value
             
@@ -299,7 +299,7 @@ Available Data Packages
         });
 
         //Select Species
-        /// Add genome build available for that specices
+        /// Add genome build available for that species
         $("#species_select").on('change', function(e) {
             var selectedValue = this.value
 
@@ -325,7 +325,7 @@ Available Data Packages
         });
 
         //Select build
-        /// Add genome build available for that specices
+        /// Add genome build available for that species
         $("#build_select").on('change', function(e) {
             var selectedValue = this.value
 

@@ -20,11 +20,11 @@ List arguments:
 | ggd list                      | Get a list of ggd data packages installed in the current or                |
 |                               | specified conda prefix/environment.                                        |
 +===============================+============================================================================+
-| -h, --help                    | show this help message and exit                                            |
+| ``-h``, ``--help``            | show this help message and exit                                            |
 +-------------------------------+----------------------------------------------------------------------------+
-| -p, --pattern                 | (Optional) pattern to match the name of the ggd data package.              |
+| ``-p,`` ``--pattern``         | (Optional) pattern to match the name of the ggd data package.              |
 +-------------------------------+----------------------------------------------------------------------------+
-| --prefix                      | (Optional) The name or the full directory path to a                        |
+| ``--prefix``                  | (Optional) The name or the full directory path to a                        |
 |                               | conda environment where a ggd recipe is stored. (Only                      |
 |                               | needed if listing data files not in the current environment)               |
 +-------------------------------+----------------------------------------------------------------------------+

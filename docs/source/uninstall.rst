@@ -22,16 +22,16 @@ Running :code:`ggd uninstall -h` will give you the following message:
 
 Uninstall arguments: 
 
-+----------------+-------------------------------------------------------------------------------------+
-| ggd uninstall  | Use ggd to uninstall a ggd data package installed in the current conda              |
-|                | environment                                                                         |
-+================+=====================================================================================+
-| -h, --help     | show this help message and exit                                                     |
-+----------------+-------------------------------------------------------------------------------------+
-| names          | the name(s) of the ggd package(s) to uninstall                                      |           
-+----------------+-------------------------------------------------------------------------------------+
-| -c, --channel  | (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)     |
-+----------------+-------------------------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------------------------+
+| ggd uninstall          | Use ggd to uninstall a ggd data package installed in the current conda              |
+|                        | environment                                                                         |
++========================+=====================================================================================+
+| ``-h``, ``--help``     | show this help message and exit                                                     |
++------------------------+-------------------------------------------------------------------------------------+
+| ``names``              | the name(s) of the ggd package(s) to uninstall                                      |           
++------------------------+-------------------------------------------------------------------------------------+
+| ``-c``, ``--channel``  | (Optional) The ggd channel the desired recipe is stored in.(Default = genomics)     |
++------------------------+-------------------------------------------------------------------------------------+
 
 
 Additional argument explanation: 

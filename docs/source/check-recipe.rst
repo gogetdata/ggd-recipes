@@ -27,17 +27,17 @@ check-recipe arguments:
 | ggd check-recipe      | Convert a ggd recipe created from `ggd make-recipe` into a data package. Test    |
 |                       | both ggd data recipe and data package                                            |
 +=======================+==================================================================================+
-| -h, --help            |   show this help message and exit                                                |
+| ``-h``, ``--help``    |   show this help message and exit                                                |
 +-----------------------+----------------------------------------------------------------------------------+
-| -d, --debug           |  (Optional) Set the stdout log level to debug                                    | 
+| ``-d``, ``--debug``   |  (Optional) Set the stdout log level to debug                                    | 
 +-----------------------+----------------------------------------------------------------------------------+
-| -du, --dont_uninstall |   (Optional) By default the newly installed local ggd                            |
-|                       |   data package is uninstalled after the check has                                |
-|                       |   finished. To bypass this uninstall step (to keep the                           | 
-|                       |   local package installed) set this flag "--                                     |
-|                       |   dont_uninstall"                                                                |
+| ``-du``,              | (Optional) By default the newly installed local ggd                              |
+| ``--dont_uninstall``  | data package is uninstalled after the check has                                  |
+|                       | finished. To bypass this uninstall step (to keep the                             | 
+|                       | local package installed) set this flag "--                                       |
+|                       | dont_uninstall"                                                                  |
 +-----------------------+----------------------------------------------------------------------------------+
-| recipe_path           |   **Required** Path to recipe directory (can also be path to the .bz2)           |
+| ``recipe_path``       |   **Required** Path to recipe directory (can also be path to the .bz2)           |
 +-----------------------+----------------------------------------------------------------------------------+
 
 

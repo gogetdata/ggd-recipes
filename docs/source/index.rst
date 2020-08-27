@@ -123,9 +123,9 @@ maintenance provides a stable and structured way to ensure metadata is maintaine
 Data access and management
 --------------------------
 
-Finally, and most importantly, is the ability to access and manage the data on your local system. This is the main purpose of the command line interface \(CLI\)
+Finally, and most importantly, is the ability to access and manage the data on your local system. This is the main purpose of the command line interface (CLI)
 for ggd. Simply, ggd CLI provides tools for installing data packages on your local system, but more importantly, tools for access and use on your system. For 
-more information about the CLI tools see :ref:`GGD CLI <CLI>`.
+more information about the CLI tools see :ref:`GGD CLI <ggd_cli_page>`.
 
 .. image:: Data_managment.png
 
@@ -144,7 +144,7 @@ Example:
 .. note::
 
    The example below is not necessarily the 
-   correct data packge for your needs, but rather is an example of using ggd
+   correct data package for your needs, but rather is an example of using ggd
 
 
 .. code-block:: bash
@@ -161,13 +161,13 @@ Example:
       grch37-reference-genome-ensembl-v1
       ==================================
 
-	  Summary: The GRCh37 unmasked genomic DNA seqeunce reference genome from Ensembl-Release 75. Includes all sequence regions EXCLUDING haplotypes and patches. 'Primary Assembly file'
+	  Summary: The GRCh37 unmasked genomic DNA sequence reference genome from Ensembl-Release 75. Includes all sequence regions EXCLUDING haplotypes and patches. 'Primary Assembly file'
 
       Species: Homo_sapiens
 
       Genome Build: GRCh37
 
-      Keywords: Primary-Assembly, Release-75, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+      Keywords: Primary-Assembly, Release-75, ref, reference, Ensembl-ref, DNA-Sequence, Fasta-Sequence, fasta-file
 
       Data Provider: Ensembl
 
@@ -194,13 +194,13 @@ Example:
       grch37-reference-genome-gencode-v1
       ==================================
 
-      Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromsomes and scaffoldings.
+      Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromosomes and scaffoldings.
 
       Species: Homo_sapiens
 
       Genome Build: GRCh37
 
-      Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assemlby
+      Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assembly
 
       Data Provider: GENCODE
 
@@ -229,13 +229,13 @@ Example:
       grch37-toplevel-reference-genome-ensembl-v1
       ===========================================
 
-      Summary: The GRCh37 unmasked genomic DNA seqeunce reference genome from Ensembl-Release 75. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes, regions not assembled into chromosomes, and N padded haplotype/patch regions. 'Top Level file'
+      Summary: The GRCh37 unmasked genomic DNA sequence reference genome from Ensembl-Release 75. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes, regions not assembled into chromosomes, and N padded haplotype/patch regions. 'Top Level file'
 
       Species: Homo_sapiens
 
       Genome Build: GRCh37
 
-      Keywords: Top-Level, Release-75, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+      Keywords: Top-Level, Release-75, ref, reference, Ensembl-ref, DNA-Sequence, Fasta-Sequence, fasta-file
 
       Data Provider: Ensembl
 
@@ -274,7 +274,7 @@ Example:
 
 
     #******************************
-    #2. Install the grch37 reference genome from Ensebml
+    #2. Install the grch37 reference genome from Ensembl
     #   (See ggd install)
     #******************************
 
@@ -352,7 +352,7 @@ Example:
       Install Path: <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome-ensembl-v1/1
 
 
-      :ggd:install: To activate environment variables run `source activate base` in the environmnet the packages were installed in
+      :ggd:install: To activate environment variables run `source activate base` in the environment the packages were installed in
 
       :ggd:install: NOTE: These environment variables are specific to the <env> conda environment and can only be accessed from within that environment
       ======================================================================================================================

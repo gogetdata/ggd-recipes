@@ -77,7 +77,7 @@ data packages. These tools include:
 - :code:`$ ggd make-recipe`: Create a ggd recipe from a bash script
 - :code:`$ ggd check-recipe`: Check/test a ggd recipe
 
-For information about specifc tools see: :ref:`GGD-CLI <ggd_cli_page>`
+For information about specific tools see: :ref:`GGD-CLI <ggd_cli_page>`
 
 5. Contributing to ggd
 ----------------------
@@ -145,13 +145,13 @@ and install available processed genomic data packages using the ggd tool.
         grch38-reference-genome-ensembl-v1
         ==================================
 
-        Summary: The GRCh38 unmasked genomic DNA seqeunce reference genome from Ensembl-Release 99. Includes all sequence regions EXCLUDING haplotypes and patches. 'Primary Assembly file'
+        Summary: The GRCh38 unmasked genomic DNA sequence reference genome from Ensembl-Release 99. Includes all sequence regions EXCLUDING haplotypes and patches. 'Primary Assembly file'
 
         Species: Homo_sapiens
 
         Genome Build: GRCh38
 
-        Keywords: Primary-Assembly, Release-99, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+        Keywords: Primary-Assembly, Release-99, ref, reference, Ensembl-ref, DNA-Sequence, Fasta-Sequence, fasta-file
 
         Data Provider: Ensembl
 

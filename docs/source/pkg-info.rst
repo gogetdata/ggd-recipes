@@ -33,20 +33,20 @@ Running :code:`ggd pkg-info -h` will give you the following help message:
 pkg-info arguments:
 
 
-+---------------------+-----------------------------------------------------------------------------------+
-| pkg-info            | Get the information for a specific ggd data package installed in the current      |
-|                     | conda environment                                                                 |
-+=====================+===================================================================================+
-| -h, --help          | show this help message and exit                                                   |
-+---------------------+-----------------------------------------------------------------------------------+
-| name                | **Required** The name of the recipe to get info about.                            |
-+---------------------+-----------------------------------------------------------------------------------+
-| -c, --channel       | (Optional) The ggd channel of the recipe to list info about (default: genomics)   |
-+---------------------+-----------------------------------------------------------------------------------+
-| -sr, --show_recipe  | (Optional) When the flag is set, the recipe will be printed to the                |
-|                     | stdout. This will provide info on where the data is hosted and how                |
-|                     | it was processed. (NOTE: -sr flag does not accept arguments)                      |
-+---------------------+-----------------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------------------------------+
+| pkg-info                    | Get the information for a specific ggd data package installed in the current      |
+|                             | conda environment                                                                 |
++=============================+===================================================================================+
+| ``-h``, ``--help``          | show this help message and exit                                                   |
++-----------------------------+-----------------------------------------------------------------------------------+
+| ``name``                    | **Required** The name of the recipe to get info about.                            |
++-----------------------------+-----------------------------------------------------------------------------------+
+| ``-c``, ``--channel``       | (Optional) The ggd channel of the recipe to list info about (default: genomics)   |
++-----------------------------+-----------------------------------------------------------------------------------+
+| ``-sr``, ``--show_recipe``  | (Optional) When the flag is set, the recipe will be printed to the                |
+|                             | stdout. This will provide info on where the data is hosted and how                |
+|                             | it was processed. (NOTE: -sr flag does not accept arguments)                      |
++-----------------------------+-----------------------------------------------------------------------------------+
 
 Additional argument explanation: 
 ++++++++++++++++++++++++++++++++
