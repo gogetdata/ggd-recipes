@@ -723,7 +723,7 @@ Some examples of using the `ggd search` tool:
 5. Example of searching for two different data packages at the same time for a specific genome build
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The default behavior is to search for terms both combine and seperatly. Therefore, one does noes need 
+The default behavior is to search for terms both combine and separately. Therefore, one does noes need 
 to set the :code:`--search-type` unless they would like to refine the results. The example below can also
 be done with setting search-type flag as such: :code:`--search type non-combined-only`
 
