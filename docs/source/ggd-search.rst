@@ -818,7 +818,7 @@ be done with setting search-type flag as such: :code:`--search type non-combined
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In this example the :code:`--search-term` flag is set to `combined-only`. This is often done when you know which
-package you want but don't know the exact package name. This will refnie the results to those based on a combination
+package you want but don't know the exact package name. This will refine the results to those based on a combination
 of the terms provided. 
 
 .. code-block:: bash
