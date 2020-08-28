@@ -1,3 +1,5 @@
+![GoGetData](https://github.com/gogetdata/gogetdata.github.io/blob/master/_images/GoGetData_name_logo.png)
+
 Go Get Data: Access to and Use of Standardized and Reproducible Genomic Data
 ==============================================================================
 
