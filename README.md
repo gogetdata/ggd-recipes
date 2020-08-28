@@ -1,37 +1,45 @@
-Go Get Data: "Easily Managing Your Genomic Data"
-================================================
+Go Get Data: Access to and Use of Standardized and Reproducible Genomic Data
+==============================================================================
 
 [![CircleCI](https://circleci.com/gh/gogetdata/ggd-recipes/tree/master.svg?style=shield)](https://circleci.com/gh/gogetdata/ggd-recipes/tree/master)
 
 
-`ggd-recipes` houses conda recipes for genomic data. The automated tests ensure data quality and fidelity to
-the specified genome and build. See below for specific checks that are implemented.
+`ggd-recipes` are  conda recipes for genomic data. They provided a standardized and reproducible means for accessing, using, and managing 
+genomic data. Built upon similar concepts of software management systems like Conda, ggd provides a simple way to find, access, use, and 
+manage genomic data. ggd also eliminates the common problems a research has with finding, accessing, curating and processing genomic data. 
+`ggd-recipes` are the fundamental elements within ggd that provide the infrastructure of data curation and management. 
 
 
 <!--- Please see the design.md document in this directory l
 --->
 
-For any comments / issues or to be added to the project, open an issue or email bpederse@gmail.com
+Much like `Conda` and `Bioconda`, ggd-recipes are commonly built by the community. We encourage community contributions and have 
+a set of pages on the ggd documentation website with instructions to do so. See [GGD docs:contribute](https://gogetdata.github.io/contribute.html). Additionally, 
+the command line interface (cli) [GGD docs:CLI](https://gogetdata.github.io/GGD-CLI.html) for ggd provides tools that simplify ggd recipe creation 
+and testing. If you are familiar with creating a software recipe for Conda or Bioconda you will find GGD's approach much more simple and intuitive. 
 
-You can use the recipes from this repo using the [ggd-genomics channel](https://anaconda.org/ggd-genomics/) from anaconda.org, e.g:
+Although the GGD team is working hard to add new recipes, our ability to add new recipes is limited. You are always welcome to 
+request a recipe be added to ggd, but we encourage you to create one if you can. This will ensure that the recipe is created 
+within a reasonable time frame, and that the recipe contains the information you are interested in.
 
-```
-conda install -c ggd-genomics hg19-dbsnp
-```
-
-**NOTE**: many recipes will depend on software in [bioconda](https://github.com/bioconda/bioconda-recipes) so please use: 
-
-```
-conda config --add channels bioconda
-```
+To request a new data recipe please fill out the [GGD Recipe Request](https://forms.gle/3WEWgGGeh7ohAjcJA) Form.
 
 ## Documentation 
-ggd documentation is provide on the [ggd docs](https://gogetdata.github.io/index.html) website. This is the best place to review and understand ggd, as well as to try to answer any questions you may have.  
+ggd documentation is provide on the [GGD docs](https://gogetdata.github.io/index.html) website. This is the best place to review and understand ggd, 
+as well as to try to answer any questions you may have.   
 
-Please see the [ggd docs: contribute](https://gogetdata.github.io/contribute.html) section to get detailed information on how to create a ggd data package, how to check the package, and how to add it to the ggd repo. This is the best place for information.
+Please see the [GGD docs: contribute](https://gogetdata.github.io/contribute.html) section to get detailed information on how to create a ggd data package, 
+how to check the package, and how to add it to the ggd repo. This is the best place for information.
 
 
 ## QuickStart
+
+---
+**NOTE**
+You will need the ggd cli installed on your system in order to do this. If you don't have it installed already see the
+[GGD docs:Using GGD](https://gogetdata.github.io/using-ggd.html) page. Once ggd is installed on your system you can use 
+it to create a recipe.
+---
 
 Building a ggd data recipe. First you need to make a bash script. Here's an example that gets cpg-island for hg19.
 We will place it in a file called `cpg.sh`
@@ -48,13 +56,15 @@ tabix cpg.bed.gz
 
 ```
 
-A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort`)
-that will sort according the a genome file.
+A piece that may not be familiar is gsort (available via `conda install -c bioconda gsort`).
+gsort will sort genomic files using a reference genome file. Genome files are available in the 
+`genomes` folder above. 
 
 `ggd` requires that the chromosomes be ordered as specified in the genome file and that files are bgzipped
 and tabix where possible.
 
-Now, we use the ggd command-line tool to turn this into a proper recipe:
+
+Here is an example of setting up your conda environment, installing ggd, and creating a recipe
 
 ```
 $ conda config --add channels defaults
@@ -62,46 +72,50 @@ $ conda config --add channels ggd-genomics
 $ conda config --add channels bioconda
 $ conda config --add channels conda-forge
 
-$ conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
-$ pip install -U git+git://github.com/gogetdata/ggd-cli
+conda install -c bioconda ggd
 
-ggd make-bash --species Homo_sapiens --genome-build hg19 \
-              --authors bsp --ggd_version 1 \
-              --data_version 27-Apr-2009 \
-              --dependency htslib --dependency gsort \
-              --summary "cpg islands from UCSC" \
-              --keyword CpG --keyword region \
-              cpg-islands \
-              cpg.sh
+ggd make-recipe --species Homo_sapiens \
+                --genome-build hg19 \
+                --authors <your name> \
+                --package-version 1 \
+                --data-version 27-Apr-2009 \
+                --data-provider UCSC \
+                --coordinate-base "0-based-inclusive" \
+                --summary "cpg islands from UCSC" \
+                --dependency htslib \
+                --dependency gsort \
+                --keyword CpG \
+                --keyword region \
+                --name cpg-islands \
+                cpg.sh
 ```
 
-This will write the recipe to `hg19-cpg-islands`
+This will write the recipe to `hg19-cpg-islands-ucsc-v1`
 
-Those are all the options for the `make-bash` command we specify `gsort` as a dependency
-along with `htslib` which provides tabix and bgzip (any software in bioconda can be used
-as a dependency). We can also depend on other ggd recipes.
-The species and genome-build arguments must be available in the master branch of `ggd`.
+The `make-recipe` command is used to create a new recipe. We specify `gsort` as a dependency
+along with `htslib` which provides tabix and bgzip (any software in bioconda or conda-forge can be used
+as a dependency). If a ggd recipe is available through ggd it can also be used as a dependency. 
 
-You will no need to test that the recipe was built correctly and make sure it install the correct data. to do this run: 
+You will now need to test that the recipe was built correctly and make sure it install the correct data. to do this run: 
 
 ```
-ggd check-recipe hg19-cpg-islands/
+ggd check-recipe hg19-cpg-islands-ucsc-v1/
 ```
 
-If this exits successfully, move this into its place in the ggd-recipes repo,
-push to your fork on github and then open a PR.
+If this exits successfully, move the `hg19-cpg-islands-ucsc-v1` into the ggd-recipes repo,
+push to your fork to github and then open a PR.
 
 ```
 git checkout -b cpg-islands
-mv hg19-cpg-islands recipes/Homo_sapiens/hg19/
-git add recipes/Homo_sapiens/hg19/hg19-cpg-islands
-git push brentp cpg-islands
+mv hg19-cpg-islands-ucsc-v1 recipes/Homo_sapiens/hg19/
+git add recipes/Homo_sapiens/hg19/hg19-cpg-islands-ucsc-v1
+git push cpg-islands
 # now go to github and open pull-request
 ```
 
 Once the tests are done running (and passing), gogetdata members
 can merge the pull-request. At that time, it will be added to the
-`ggd-alpha` channel on anaconda.org.
+`ggd-genomics` channel on anaconda.org.
 
 
 ## Recipe Requirements
@@ -119,11 +133,12 @@ can merge the pull-request. At that time, it will be added to the
 
 * Use `--quiet` argument to `wget` or log will be filled with progress
 * each PR should add or change as few recipes as possible.
-* recipes should install to `$PREFIX/$species/$build/$recipe/`. This is facilitated by the [ggd command-line tool](https://github.com/gogetdata/ggd-cli) which will create a conda recipe from a simple bash script and handle the directory location.
+* recipes should install to `$PREFIX/$species/$build/$recipe/`. This is facilitated by the [ggd command-line tool](https://github.com/gogetdata/ggd-cli) 
+   which will create a conda recipe from a simple bash script and handle the directory location.
 * scripts use `set -eo pipefail -o nounset`
 
 
 ## Contributing 
 
-Vist the [ggd docs:contribute](https://gogetdata.github.io/contribute.html) page to get more information on how to contribute a ggd data package to the ggd repo. 
+Visit the [ggd docs:contribute](https://gogetdata.github.io/contribute.html) page to get more information on how to contribute a ggd data package to the ggd repo. 
 
