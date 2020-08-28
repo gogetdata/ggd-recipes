@@ -1,0 +1,2 @@
+hg19-cds-only-features-ensembl-v1.gtf.gz	8555f87c8b783fc0d5a8a3bc714b7a2c
+hg19-cds-only-features-ensembl-v1.gtf.gz.tbi	ace6a82945c7135c797cf7885f47a836

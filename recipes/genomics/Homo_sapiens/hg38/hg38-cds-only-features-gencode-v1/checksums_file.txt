@@ -1,0 +1,2 @@
+hg38-cds-only-features-gencode-v1.gtf.gz	fce45dc0a2a962b452b49e6095246bf8
+hg38-cds-only-features-gencode-v1.gtf.gz.tbi	b49a4fb36ce2de09d88000e7d520d0b5
