@@ -1,0 +1,1 @@
+hg19-scores-by-amino-acid-change-ggd-v1.txt	5b438eee237a0f09b81b8da72034ba2e
