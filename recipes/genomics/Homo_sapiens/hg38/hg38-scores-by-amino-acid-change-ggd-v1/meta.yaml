@@ -2,13 +2,13 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 2
+  number: 0
 extra:
   authors: mjc
   extra-files:
-  - grch37-scores-by-amino-acid-change-ggd-v1.txt
+  - hg38-scores-by-amino-acid-change-ggd-v1.txt
 package:
-  name: grch37-scores-by-amino-acid-change-ggd-v1
+  name: hg38-scores-by-amino-acid-change-ggd-v1
   version: '1'
 requirements:
   build: []
@@ -17,7 +17,7 @@ source:
   path: .
 about:
   identifiers:
-    genome-build: GRCh37
+    genome-build: hg38
     species: Homo_sapiens
   keywords:
   - amion-acid
@@ -34,8 +34,8 @@ about:
     file-type:
     - txt
     final-file-sizes:
-      grch37-scores-by-amino-acid-change-ggd-v1.txt: 4.86K
+      hg38-scores-by-amino-acid-change-ggd-v1.txt: 4.86K
     final-files:
-    - grch37-scores-by-amino-acid-change-ggd-v1.txt
+    - hg38-scores-by-amino-acid-change-ggd-v1.txt
     genomic-coordinate-base: NA
     ggd-channel: genomics
