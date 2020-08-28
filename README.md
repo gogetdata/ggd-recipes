@@ -25,7 +25,7 @@ within a reasonable time frame, and that the recipe contains the information you
 To request a new data recipe please fill out the [GGD Recipe Request](https://forms.gle/3WEWgGGeh7ohAjcJA) Form.
 
 ## Documentation 
-ggd documentation is provide on the [GGD docs](https://gogetdata.github.io/index.html) website. This is the best place to review and understand ggd, 
+ggd documentation is provided on the [GGD docs](https://gogetdata.github.io/index.html) website. This is the best place to review and understand ggd, 
 as well as to try to answer any questions you may have.   
 
 Please see the [GGD docs: contribute](https://gogetdata.github.io/contribute.html) section to get detailed information on how to create a ggd data package, 
@@ -34,14 +34,10 @@ how to check the package, and how to add it to the ggd repo. This is the best pl
 
 ## QuickStart
 
----
-**NOTE**
-You will need the ggd cli installed on your system in order to do this. If you don't have it installed already see the
-[GGD docs:Using GGD](https://gogetdata.github.io/using-ggd.html) page. Once ggd is installed on your system you can use 
-it to create a recipe.
----
+> **_NOTE:_** You will need the ggd cli installed on your system. If you don't have it installed already see the [GGD docs:Using GGD](https://gogetdata.github.io/using-ggd.html) page. Once ggd is installed on your system you can use it to create a recipe.
 
-Building a ggd data recipe. First you need to make a bash script. Here's an example that gets cpg-island for hg19.
+#### Building a ggd data recipe. 
+First you need to make a bash script. Here's an example that gets cpg-island for hg19.
 We will place it in a file called `cpg.sh`
 
 ```
