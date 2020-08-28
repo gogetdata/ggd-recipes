@@ -1,0 +1,2 @@
+hg38-transcript-only-features-gencode-v1.gtf.gz.tbi	27f5109a323e82e8c279293242523396
+hg38-transcript-only-features-gencode-v1.gtf.gz	d5c422f067339144c8f085a114c9b555

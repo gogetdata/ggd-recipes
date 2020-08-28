@@ -1,0 +1,2 @@
+hg19-transcript-only-features-gencode-v1.gtf.gz.tbi	64a5ccdfd1aa363b2b3cf1ab1e1fe0ac
+hg19-transcript-only-features-gencode-v1.gtf.gz	6e1be697cb26c75db93334f6f0b59ba6
