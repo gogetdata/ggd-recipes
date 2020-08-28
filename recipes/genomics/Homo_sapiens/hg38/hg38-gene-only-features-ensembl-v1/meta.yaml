@@ -43,7 +43,7 @@ about:
     - gtf
     final-file-sizes:
       hg38-gene-only-features-ensembl-v1.gtf.gz: 1.46M
-      hg38-gene-only-features-ensembl-v1.gtf.gz.tbi: 192.91K
+      hg38-gene-only-features-ensembl-v1.gtf.gz.tbi: 192.79K
     final-files:
     - hg38-gene-only-features-ensembl-v1.gtf.gz
     - hg38-gene-only-features-ensembl-v1.gtf.gz.tbi

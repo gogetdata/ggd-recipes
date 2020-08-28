@@ -40,8 +40,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch38-gene-only-features-ensembl-v1.gtf.gz: 1.45M
-      grch38-gene-only-features-ensembl-v1.gtf.gz.tbi: 192.27K
+      grch38-gene-only-features-ensembl-v1.gtf.gz: 1.46M
+      grch38-gene-only-features-ensembl-v1.gtf.gz.tbi: 192.36K
     final-files:
     - grch38-gene-only-features-ensembl-v1.gtf.gz
     - grch38-gene-only-features-ensembl-v1.gtf.gz.tbi
