@@ -1,0 +1,9 @@
+sphinx>=2
+sphinx-autodoc-typehints
+sphinx_rtd_theme
+alabaster=0.7.*
+docutils
+celery
+ggd
+
+

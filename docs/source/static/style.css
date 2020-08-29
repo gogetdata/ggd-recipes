@@ -14,7 +14,7 @@
    adjustments same as above; 
 */
 a.conda-package::after {
-    background-image: url('logo/ggd.png');
+    background-image: url('logo/GGD_acronymn_logo2.png');
     background-size: 100% 100%;
     content: '';
     height: .7em;

@@ -56,7 +56,6 @@ clean:
 .PHONY: html
 html:
 	if [ ! -e ggd-recipes ]; then git clone --depth=1 https://github.com/gogetdata/ggd-recipes.git ggd-recipes; fi
-#	if [ ! -e ggd-recipes ]; then git clone --depth=1 https://github.com/mikecormier/ggd-recipes.git ggd-recipes; fi
 	(cd ggd-recipes && git pull origin master)
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
