@@ -1,0 +1,2 @@
+grch38-transcript-only-features-gencode-v1.gtf.gz	c4cb0b9bbdb16307f97e62337c333ecb
+grch38-transcript-only-features-gencode-v1.gtf.gz.tbi	a4d7f23d0538d7d4f7e9afa890267904

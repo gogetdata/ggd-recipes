@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-cds-only-features-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - GENOCDOE-GTF
+  - GENCODE-Gene-Sets
+  - Annotated-Transcripts
+  - CDS-Only-Features
+  summary: 'CDS only features from the comprehensive set of gene annotations created
+    on GRCh38 and mapped to GRCh37 by GENCODE (v34lift37). All other features have
+    been removed. Some annotations were obtained from GENCODE v19 when mapping failed.
+    Scaffoldings, assenbly patches, and alternative loci are NOT included. Features
+    include: CDS. Remapped from Ensembl GRCh37 to UCSC hg19'
+  tags:
+    data-provider: GENCODE
+    data-version: release-34_03-24-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg19-cds-only-features-gencode-v1.gtf.gz: 21.13M
+      hg19-cds-only-features-gencode-v1.gtf.gz.tbi: 517.72K
+    final-files:
+    - hg19-cds-only-features-gencode-v1.gtf.gz
+    - hg19-cds-only-features-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

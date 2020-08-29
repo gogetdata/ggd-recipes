@@ -42,12 +42,19 @@ def setup(app):
 # ones.
 extensions = [
     'generate_docs',
+
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.napoleon',
+    'sphinx_autodoc_typehints',  # must be loaded after napoleon
+    'celery.contrib.sphinx',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -65,9 +72,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'ggd'
-copyright = '2016-{}, The gogetdata team'.format(datetime.datetime.now().year)
-author = 'Michael Cormier & the gogetdata team'
+project = 'GGD'
+copyright = '2016-{}, The GoGetData team'.format(datetime.datetime.now().year)
+author = 'Michael Cormier & the GoGetData team'
 language = None
 
 
@@ -120,7 +127,7 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'logo': 'logo/gogetdata_temp.png',
+    'logo': 'logo/GoGetData_name_logo.png',
     'sidebar_includehidden': False,
     'show_related': True,
     'font_family': "Raleway, sans-serif",
