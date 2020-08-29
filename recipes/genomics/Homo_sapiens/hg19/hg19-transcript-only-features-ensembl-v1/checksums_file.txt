@@ -1,0 +1,2 @@
+hg19-transcript-only-features-ensembl-v1.gtf.gz	bde5ee167bf4d8b42eec3e9953c5b8cc
+hg19-transcript-only-features-ensembl-v1.gtf.gz.tbi	9c7bc8940ab05a929412adf2a9a692e4

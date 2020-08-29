@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-transcript-only-features-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - Ensembl-GTF
+  - Ensembl-Gene-Set
+  - Annotated-Transcripts
+  - Transcript-Only-Features
+  summary: 'Transcript only features from Ensembl gene sets. All other features have
+    been removed. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.).
+    Features include: transcript. Features are in GTF format. Remapped from Ensembl
+    GRCh38 to UCSC hg38'
+  tags:
+    data-provider: Ensembl
+    data-version: release-100_3-7-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-transcript-only-features-ensembl-v1.gtf.gz: 6.91M
+      hg38-transcript-only-features-ensembl-v1.gtf.gz.tbi: 201.73K
+    final-files:
+    - hg38-transcript-only-features-ensembl-v1.gtf.gz
+    - hg38-transcript-only-features-ensembl-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

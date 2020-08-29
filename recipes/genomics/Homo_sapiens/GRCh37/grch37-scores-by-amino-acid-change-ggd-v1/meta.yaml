@@ -2,9 +2,9 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
-  authors: bsp
+  authors: mjc
   extra-files:
   - grch37-scores-by-amino-acid-change-ggd-v1.txt
 package:
@@ -20,14 +20,21 @@ about:
     genome-build: GRCh37
     species: Homo_sapiens
   keywords:
-  - amino-acid
+  - amion-acid
+  - amino-acid-change
   - constraint
-  summary: missense badnass, blosum, grantham scores foreach amino acid change
+  - missense-badness-score
+  - blosum-score
+  - granthams-score
+  - amino-acid-score
+  summary: Scores for each amino acid changes from missense badnass, blosum, and granthams
   tags:
     data-provider: ggd
     data-version: '1'
     file-type:
     - txt
+    final-file-sizes:
+      grch37-scores-by-amino-acid-change-ggd-v1.txt: 4.86K
     final-files:
     - grch37-scores-by-amino-acid-change-ggd-v1.txt
     genomic-coordinate-base: NA

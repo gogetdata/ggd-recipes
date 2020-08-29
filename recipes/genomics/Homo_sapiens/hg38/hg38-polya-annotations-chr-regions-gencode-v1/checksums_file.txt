@@ -1,0 +1,2 @@
+hg38-polya-annotations-chr-regions-gencode-v1.gtf.gz	fb9334850fb0ab4d3b2f7e9403d29c25
+hg38-polya-annotations-chr-regions-gencode-v1.gtf.gz.tbi	b77756283044370f62616b3cb7b6e8bb

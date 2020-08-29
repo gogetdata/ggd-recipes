@@ -1,0 +1,2 @@
+hg19-cds-only-features-gencode-v1.gtf.gz.tbi	4c13e5f23cdbb6d0ff10162ae44ba390
+hg19-cds-only-features-gencode-v1.gtf.gz	b46f7a799c65c3ea73264d81b22e92c5

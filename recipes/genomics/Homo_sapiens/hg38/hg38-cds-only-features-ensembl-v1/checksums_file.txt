@@ -1,0 +1,2 @@
+hg38-cds-only-features-ensembl-v1.gtf.gz	30ea2700be36aa99af5965ed9ae4c116
+hg38-cds-only-features-ensembl-v1.gtf.gz.tbi	30bb434ade208411bf41ece7c87c16ce

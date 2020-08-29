@@ -1,0 +1,2 @@
+hg19-gene-only-features-gencode-v1.gtf.gz.tbi	811d1c0a8bac727d27026f73fe0fd806
+hg19-gene-only-features-gencode-v1.gtf.gz	b1f41eebf5205f3eddd1d0ed6887bfbf

@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch37-cds-only-features-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch37-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh37
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - GENOCDOE-GTF
+  - GENCODE-Gene-Sets
+  - Annotated-Transcripts
+  - CDS-Only-Features
+  summary: 'CDS only features from the comprehensive set of gene annotations created
+    on GRCh38 and mapped to GRCh37 by GENCODE (v34lift37). All other features have
+    been removed. Some annotations were obtained from GENCODE v19 when mapping failed.
+    Scaffoldings, assenbly patches, and alternative loci are NOT included. Features
+    include: CDS.'
+  tags:
+    data-provider: GENCODE
+    data-version: release-34_03-24-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch37-cds-only-features-gencode-v1.gtf.gz: 21.08M
+      grch37-cds-only-features-gencode-v1.gtf.gz.tbi: 517.43K
+    final-files:
+    - grch37-cds-only-features-gencode-v1.gtf.gz
+    - grch37-cds-only-features-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

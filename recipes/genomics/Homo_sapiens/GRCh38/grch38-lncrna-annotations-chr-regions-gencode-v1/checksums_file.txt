@@ -1,0 +1,2 @@
+grch38-lncrna-annotations-chr-regions-gencode-v1.gtf.gz	6893f0707b6cd8aeb59249a8369f1d42
+grch38-lncrna-annotations-chr-regions-gencode-v1.gtf.gz.tbi	83937e9e47f8a77fbb835c35fd2ea1f5
