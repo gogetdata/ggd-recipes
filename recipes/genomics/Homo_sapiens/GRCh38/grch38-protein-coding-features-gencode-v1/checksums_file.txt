@@ -1,0 +1,2 @@
+grch38-protein-coding-features-gencode-v1.gtf.gz	d17cf8d3c9e88a45726ca03ebbce494a
+grch38-protein-coding-features-gencode-v1.gtf.gz.tbi	d3c2e0344cb9ad7b6239c0f688765444

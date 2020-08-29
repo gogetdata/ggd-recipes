@@ -1,0 +1,2 @@
+hg38-protein-coding-features-gencode-v1.gtf.gz.tbi	d4d1d72f315df067cf94c5c1be3bd0da
+hg38-protein-coding-features-gencode-v1.gtf.gz	8f0ea8627731e8b2cb93439e7f2cf13a

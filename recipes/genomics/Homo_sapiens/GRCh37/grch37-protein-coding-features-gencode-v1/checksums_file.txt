@@ -1,0 +1,2 @@
+grch37-protein-coding-features-gencode-v1.gtf.gz	0ca3840db56e6e63ce9890f3a797fc54
+grch37-protein-coding-features-gencode-v1.gtf.gz.tbi	4313a6b366c1f266a5369c59356e854d
