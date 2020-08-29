@@ -1,0 +1,2 @@
+hg38-protein-coding-features-ensembl-v1.gtf.gz	0a3c794d6dfb7d4b25606b767bf57bc7
+hg38-protein-coding-features-ensembl-v1.gtf.gz.tbi	580a5b95af50d2000d4d032c6f7ffef8

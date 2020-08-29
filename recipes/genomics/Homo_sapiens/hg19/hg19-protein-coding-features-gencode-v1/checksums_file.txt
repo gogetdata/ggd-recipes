@@ -1,0 +1,2 @@
+hg19-protein-coding-features-gencode-v1.gtf.gz	45c3525117f8f61c1b7642f2ca8eb0e1
+hg19-protein-coding-features-gencode-v1.gtf.gz.tbi	53b518c5277cecc95ca516a899d43ed0

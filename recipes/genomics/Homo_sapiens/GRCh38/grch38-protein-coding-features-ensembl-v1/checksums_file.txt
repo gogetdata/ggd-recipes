@@ -1,0 +1,2 @@
+grch38-protein-coding-features-ensembl-v1.gtf.gz	45b647cc2ea6cf5dad06e1eb530c77e8
+grch38-protein-coding-features-ensembl-v1.gtf.gz.tbi	904784947b201df32949835dca38de76

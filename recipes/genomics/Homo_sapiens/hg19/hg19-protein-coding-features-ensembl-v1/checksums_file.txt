@@ -1,0 +1,2 @@
+hg19-protein-coding-features-ensembl-v1.gtf.gz	9cdfede697b446a3c6ad5c0d1f3f2712
+hg19-protein-coding-features-ensembl-v1.gtf.gz.tbi	abbb5cbfad30780086961e53f73a99ce
