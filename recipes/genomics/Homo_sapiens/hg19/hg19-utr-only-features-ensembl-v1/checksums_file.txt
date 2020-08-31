@@ -1,0 +1,2 @@
+hg19-utr-only-features-ensembl-v1.gtf.gz	f5dd28e972b7104f1ac5ec84f354b0c1
+hg19-utr-only-features-ensembl-v1.gtf.gz.tbi	b91a69280118f950505e485dc4315173

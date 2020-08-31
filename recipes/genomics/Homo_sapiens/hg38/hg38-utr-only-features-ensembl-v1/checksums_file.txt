@@ -1,0 +1,2 @@
+hg38-utr-only-features-ensembl-v1.gtf.gz	bddee9f3c97cdab17cc11ced09b80ca9
+hg38-utr-only-features-ensembl-v1.gtf.gz.tbi	7ac9eacff1034b323a6339afc4a895df

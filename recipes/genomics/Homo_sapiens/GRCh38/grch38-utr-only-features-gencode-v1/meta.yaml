@@ -1,0 +1,54 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-utr-only-features-gencode-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - GENOCDOE-GTF
+  - GENCODE-Gene-Sets
+  - Annotated-Transcripts
+  - UTR-Only-Features
+  - Five-Prime-UTR
+  - Three-Prime-UTR
+  summary: 'UTR only features from the comprehensive set of gene annotations including
+    reference chromosomes, scaffoldings, assembly patches, and alternative loci. All
+    other features have been removed. UTRs have been designated as 5'' UTRs or 3''
+    UTRs based on the coding region and strand of the associated gene. Data is specific
+    to GENCODE Release 34 (Ensembl 100). Features include: five_prime_utr, three_prime_utr.'
+  tags:
+    data-provider: GENCODE
+    data-version: release-34_03-24-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-utr-only-features-gencode-v1.gtf.gz: 10.17M
+      grch38-utr-only-features-gencode-v1.gtf.gz.tbi: 438.78K
+    final-files:
+    - grch38-utr-only-features-gencode-v1.gtf.gz
+    - grch38-utr-only-features-gencode-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

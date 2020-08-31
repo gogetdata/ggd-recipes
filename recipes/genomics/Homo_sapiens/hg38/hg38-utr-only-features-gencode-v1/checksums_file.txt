@@ -1,0 +1,2 @@
+hg38-utr-only-features-gencode-v1.gtf.gz	d1d2f74d625b74a7918fc741303a6bd5
+hg38-utr-only-features-gencode-v1.gtf.gz.tbi	b5b0a9a7ed70e6742cdc59685c80121f
