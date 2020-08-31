@@ -1,0 +1,51 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: grch38-utr-only-features-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: GRCh38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - Ensembl-GTF
+  - Ensembl-Gene-Set
+  - Annotated-Transcripts
+  - UTR-Only-Features
+  - Five-Prime-UTR
+  - Three-Prime-UTR
+  summary: 'UTR only features from Ensembl gene sets. All other features have been
+    removed. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.). Features
+    include: five_prime_utr, three_prime_utr. Features are in GTF format'
+  tags:
+    data-provider: Ensembl
+    data-version: release-100_3-7-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      grch38-utr-only-features-ensembl-v1.gtf.gz: 5.62M
+      grch38-utr-only-features-ensembl-v1.gtf.gz.tbi: 402.43K
+    final-files:
+    - grch38-utr-only-features-ensembl-v1.gtf.gz
+    - grch38-utr-only-features-ensembl-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

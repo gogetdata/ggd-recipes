@@ -1,0 +1,2 @@
+grch38-utr-only-features-ensembl-v1.gtf.gz	3746077d5066aac70d0f19c2146b5a24
+grch38-utr-only-features-ensembl-v1.gtf.gz.tbi	07a5ed22799c391c6752d4c34a28a790

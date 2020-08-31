@@ -1,0 +1,2 @@
+grch38-utr-only-features-gencode-v1.gtf.gz	306d69a80577eec2f1a53fa0834221ad
+grch38-utr-only-features-gencode-v1.gtf.gz.tbi	f9b74460baa6dc328ac73e9726e3066d
