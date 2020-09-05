@@ -1,0 +1,2 @@
+grch38-coding-exons-gencode-v1.gtf.gz	5fc64b919d8f92b5a6b2dfbf4e7d5e2b
+grch38-coding-exons-gencode-v1.gtf.gz.tbi	46151ad0cf88f64fdfbd317bac13bc47

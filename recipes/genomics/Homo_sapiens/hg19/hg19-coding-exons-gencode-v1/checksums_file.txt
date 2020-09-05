@@ -1,0 +1,2 @@
+hg19-coding-exons-gencode-v1.gtf.gz	6d17c13b046ad7b7318069facc96f65d
+hg19-coding-exons-gencode-v1.gtf.gz.tbi	44010e7c12bd73df31f4dbbd94f4b4e6
