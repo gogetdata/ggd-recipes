@@ -1,0 +1,55 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-coding-exons-ensembl-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - hg38-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Gene-Features
+  - GTF
+  - Ensembl-GTF
+  - Ensembl-Gene-Set
+  - Annotated-Transcripts
+  - Protein-Coding-Exon-Features
+  - Coding-Exon
+  - Protein-Coding-Exons
+  summary: 'Exon Coding Features. Exons that overlap coding regions in protein coding
+    genes. Features are from Ensembl gene sets. All other features, including non-coding
+    exon features and non-protein coding exon features, have been removed. (Alignment
+    based annotation using proteins, cDNA, RNA-seq, etc.). Features include: exon
+    (exons that overlap coding regions in protein coding genes). Features are in GTF
+    format. Remapped from Ensembl GRCh38 to UCSC hg38'
+  tags:
+    data-provider: Ensembl
+    data-version: release-100_3-7-2020
+    file-type:
+    - gtf
+    final-file-sizes:
+      hg38-coding-exons-ensembl-v1.gtf.gz: 16.56M
+      hg38-coding-exons-ensembl-v1.gtf.gz.tbi: 472.11K
+    final-files:
+    - hg38-coding-exons-ensembl-v1.gtf.gz
+    - hg38-coding-exons-ensembl-v1.gtf.gz.tbi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
