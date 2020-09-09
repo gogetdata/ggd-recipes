@@ -5,12 +5,6 @@ GGD Quick Start
 
 [:ref:`Click here to return to the home page <home-page>`]
 
-.. warning::
-
-    After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
-    be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 
-    python 2 compatibility for 1 year from the End-Of-Life of python 2.
-
 **To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
 
 Go Get Data (ggd) is a genomics data management system that provides access to processed and curated genomic data files. 
@@ -40,6 +34,12 @@ Add the required conda channels, including the ggd-genomics channel, to your sys
     $ conda config --add channels conda-forge
 
 Install ggd with the following command:
+
+.. warning::
+
+    After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
+    be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 
+    python 2 compatibility for 1 year from the End-Of-Life of python 2.
 
 .. code-block:: bash
 

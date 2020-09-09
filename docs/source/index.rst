@@ -15,12 +15,6 @@
 
 **For details on creating and adding recipes to ggd see the** :ref:`Contribute <make-data-packages>` **page.**
 
-.. warning::
-
-    After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
-    be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain 
-    python 2 compatibility for 1 year from the End-Of-Life of python 2.
-
 Go Get Data (ggd) is a data management system that provides access to data packages containing auto curated genomic data.
 ggd data packages contain all necessary information for data extraction, handling, and processing. With a  growing number 
 of scientific datasets, ggd provides access to these datasets without the hassle of finding, downloading, and processing them
