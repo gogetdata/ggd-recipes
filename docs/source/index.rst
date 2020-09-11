@@ -24,7 +24,7 @@ retrieve processed annotations and datasets, supporting data provenance, and pro
 Using the ggd data management system allows any user to quickly access all desired datasets, manage that data within an environment, 
 and provides a platform upon which to cite data access and use by way of the ggd data package name and version.
 
-.. image:: Figure_1.png
+.. image:: ggd-Figure1.png
 
 
 Go Get Data acts as a multi use tool for genomic data access and management. It provide a system for simple data access all the way to a
