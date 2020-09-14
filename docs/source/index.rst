@@ -441,5 +441,6 @@ Contents:
    using-ggd
    GGD-CLI
    contribute
+   private_recipes
    recipes
 
