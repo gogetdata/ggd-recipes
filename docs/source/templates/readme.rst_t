@@ -10,7 +10,7 @@
 GGD Package                        {{ name }} 
 Species                            {{ species }}
 Genome Build                       {{ genome_build }}
-GGD Channel                        {{ "ggd-" }}{{ ggd_channel }}
+GGD Channel                        {{"ggd-"}}{{ ggd_channel }}
 Package Version                    {{ version }}
 Recipe Author                      {{ recipe_author }} 
 Data Provider                      {{ data_provider }}
@@ -35,7 +35,19 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c ggd-{{ ggd_channel }} {{ name }}
+   ggd install -c {{ ggd_channel }} {{ name }}
 
 .. |downloads| image:: https://anaconda.org/ggd-{{ ggd_channel }}/{{ name }}/badges/downloads.svg
                :target: https://anaconda.org/ggd-{{ ggd_channel }}/{{ name }}
+
+Activating Environment Variables
+--------------------------------
+
+Run :code:`source activate base` after installing the data package to activate the environment variables 
+associated with this data package.
+
+.. note::
+    
+    You must be in the conda environment where the data package was installed in order to use the 
+    associated environment variables. Otherwise, use :code:`ggd get-files` to access this package's
+    data files.

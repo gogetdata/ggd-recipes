@@ -130,6 +130,20 @@ are stored, as well as an environment variable that can be used to access the da
     :code:`$ ggd install hg19-cpg-islands-ucsc-v1`
     
 
+Each data package comes with a set of environment variables. To activate those environment variables run:
+
+.. code-block:: bash
+
+    $ source activate base
+
+.. note::
+
+    In order to activate and use a data package's environment variables you must be in the conda environment where the 
+    data package was installed. If you used the :code:`--prefix` argument during install or you are in an different
+    conda environment than the one where the data package was installed you will not be able to use the data package's
+    environment variables. Instead, use :code:`ggd get-files`
+
+
 4) Listing installed packages
 -----------------------------
 
