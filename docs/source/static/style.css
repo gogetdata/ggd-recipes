@@ -1,3 +1,15 @@
+div.document {
+    width: 90% !important;
+}
+
+div.body {
+    max-width: 1200px !important;
+}
+
+div.footer {
+    padding-right: 20px;
+}
+
 .recipe .descname {
     font-size: 240%;
     font-weight: normal;
@@ -11,7 +23,7 @@
 }
 
 /* append ggd logo to package links
-   adjustments same as above; 
+   adjustments same as above;
 */
 a.conda-package::after {
     background-image: url('logo/GGD_acronymn_logo2.png');

@@ -15,7 +15,6 @@
 import datetime
 import sys
 import os
-import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -133,6 +132,8 @@ html_theme_options = {
     'font_family': "Raleway, sans-serif",
     'head_font_family': "'Lato', sans-serif",
     'fixed_sidebar': True,
+    'page_width': 1200,
+    'show_powered_by': False,
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
