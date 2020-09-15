@@ -63,7 +63,7 @@ for more information on the :code:`ggd check-recipe` command see :ref:`ggd check
 .. note::
     
     Installing private data recipes will take longer because the recipe goes through the normal check and validation step before it is 
-    installed. Additionally, there is now way to cache private data recipes, so the speedup seen from installing public data recipes is 
+    installed. Additionally, there is no way to cache private data recipes, so the speedup seen from installing public data recipes is 
     not available. 
 
 
@@ -75,7 +75,7 @@ Now that the data recipe has been created, it has been checked, and installed, y
 
 .. note::
     
-    We are suggesting adding the *data recipe* not the actual data to the private github repository 
+    We are suggesting adding the *data recipe*, not the actual data to the private github repository 
 
 
 
@@ -104,7 +104,7 @@ C. Listing installed private recipes
         
         :code:`ggd list` has a :code:`--prefix` argument that is used to list installed data recipes in different 
         conda environments. The :code:`--prefix` argument  **can** be used for private recipes. This means you can list 
-        private data recipes that are installed in a different conda environment then the currently active environment 
+        private data recipes that are installed in a different conda environment than the currently active environment 
         you are using. 
 
     For more information about the :code:`ggd list` command see: :ref:`ggd-list`
@@ -117,7 +117,7 @@ D. Getting data files for private recipes
 
         :code:`ggd get-files` has a :code:`--prefix` argument that is used to get installed data files from different conda environments. 
         This :code:`--prefix` argument **can** be used for private recipes. This means you can get installed data files from private recipes
-        that are in a different conda environment then the currently active one. 
+        that are in a different conda environment than the currently active one. 
 
     For more information about the :code:`ggd get-files` command see: :ref:`ggd-get-files`
 
@@ -144,20 +144,20 @@ data recipe.
 
 .. note::
 
-    The :code:`-du` argument is absent from the :code:`ggd check-recipe` command. 
+    To uninstall the private data recipe you must omit the :code:`-du` argument from the :code:`ggd check-recipe` command. 
 
 
 
 Finally
 -------
 
-GGD is a data management system built to mange and distribute publicly available scientific data. As this is the main purpose of GGD we encourage 
+GGD is a data management system built to manage and distribute publicly available scientific data. As this is the main purpose of GGD we encourage 
 user to add ggd recipes to the public ggd repositories for the scientific community to use. GGD is built to help remove the inconsistencies with 
-data processing and management that has plagued researchers for year. Therefore, GGD will continue to encourage public data access, management, and 
-reproducibility. We understand that sometimes data cannot be shared publicly, but that the convenience and power of GGD can assist researchers and 
-scientist during an analysis. The features on this page are here to assist if you want to use GGD but truly need to retain data privacy. 
-However, GGD will continue to promote public data sharing whenever possible, and therefore, the GGD features will be maintained to support such 
-goals. 
+data processing and management that have plagued researchers for year. Therefore, GGD will continue to encourage public data access, management, and 
+reproducibility. We understand that sometimes data cannot be shared publicly, but a user may wish to use GGD to process and manage their data, as well
+as to use the infrastructure of data recipes for reproducibility. The features on this page are here to assist if you want to use GGD but truly need 
+to retain data privacy. However, GGD will continue to promote public data sharing whenever possible, and therefore, the GGD features will be maintained 
+to support such goals. 
 
 
 
