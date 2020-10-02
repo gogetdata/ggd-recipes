@@ -1,0 +1,2 @@
+hg19-exome-variants-gnomad-v1.bcf	e4588cb4e19fe04a938a021e7c8c27dc
+hg19-exome-variants-gnomad-v1.bcf.csi	442b7d83148128c9e197f7c947de5b2e

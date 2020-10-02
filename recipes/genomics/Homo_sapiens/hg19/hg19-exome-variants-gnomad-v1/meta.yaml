@@ -1,0 +1,47 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-exome-variants-gnomad-v1
+  version: '1'
+requirements:
+  build:
+  - bcftools
+  - gsort
+  run:
+  - bcftools
+  - gsort
+  - hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
+  - hg19-reference-genome-ucsc-v1
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - gnomAD
+  - variants
+  - population-variation
+  - Genome-Aggergation-Database
+  summary: SNV and INDEL varaints from 125,748 exomes in the gnomAD dataset version
+    2.1.1 in bcf format. The file constains all subsets of non-neuro, non-cancer,
+    controls-only, and non-TOPMed samples. Remapped from Ensembl GRCh37 to UCSC hg19
+  tags:
+    data-provider: gnomAD
+    data-version: v2.1.1
+    file-type:
+    - bcf
+    final-file-sizes:
+      hg19-exome-variants-gnomad-v1.bcf: 28.98G
+      hg19-exome-variants-gnomad-v1.bcf.csi: 707.78K
+    final-files:
+    - hg19-exome-variants-gnomad-v1.bcf
+    - hg19-exome-variants-gnomad-v1.bcf.csi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics
