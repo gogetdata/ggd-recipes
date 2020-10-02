@@ -1,0 +1,47 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-exome-variants-gnomad-v1
+  version: '1'
+requirements:
+  build:
+  - bcftools
+  - gsort
+  run:
+  - bcftools
+  - gsort
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - gnomAD
+  - variants
+  - population-variation
+  - Genome-Aggergation-Database
+  - gnomAd-liftover
+  summary: SNV and INDEL varaints from 125,748 exomes in the gnomAD dataset version
+    2.1.1 in bcf format. These variants were lifted over from gnomAD v2.1.1 GRCh37
+    to GRCh38 by the gnomAD group. The file constains all subsets of non-neuro, non-cancer,
+    controls-only, and non-TOPMed samples. Remapped from Ensembl GRCh38 to UCSC hg38
+  tags:
+    data-provider: gnomAD
+    data-version: v2.1.1
+    file-type:
+    - bcf
+    final-file-sizes:
+      hg38-exome-variants-gnomad-v1.bcf: 28.51G
+      hg38-exome-variants-gnomad-v1.bcf.csi: 705.50K
+    final-files:
+    - hg38-exome-variants-gnomad-v1.bcf
+    - hg38-exome-variants-gnomad-v1.bcf.csi
+    genomic-coordinate-base: 1-based-inclusive
+    ggd-channel: genomics

@@ -1,0 +1,2 @@
+grch38-exome-variants-gnomad-v1.bcf	832196eb90e523d71c8853d1f7ad1b25
+grch38-exome-variants-gnomad-v1.bcf.csi	b60316db8e137de29725cc0c13a50b76

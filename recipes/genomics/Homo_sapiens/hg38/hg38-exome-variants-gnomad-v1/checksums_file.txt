@@ -1,0 +1,2 @@
+hg38-exome-variants-gnomad-v1.bcf.csi	e43681b7d354dfe9b9c4c3de1454628a
+hg38-exome-variants-gnomad-v1.bcf	99cf91b8dacc3520cc335f8aa21373e7

@@ -1,0 +1,2 @@
+grch37-exome-variants-gnomad-v1.bcf	f0a4c6ec7df3838d72701e473584f8d3
+grch37-exome-variants-gnomad-v1.bcf.csi	1783d691fc2bd1e93ff511ba1a147424
