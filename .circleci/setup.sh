@@ -62,10 +62,9 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     ## Temporarily use an older version of bioconda utils
     BIOCONDA_UTILS_TAG=v0.16.17
-    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt 
+    #conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt 
+    conda install -y --file .circleci/bioconda_utils-requirements.txt  
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
-
-    conda update conda
 
     # step 5: cleanup
     conda clean -y --all
