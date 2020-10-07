@@ -53,8 +53,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch38-canonical-transcript-features-gencode-v1.gtf.gz: 12.25M
-      grch38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 286.97K
+      grch38-canonical-transcript-features-gencode-v1.gtf.gz: 12.13M
+      grch38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 280.81K
     final-files:
     - grch38-canonical-transcript-features-gencode-v1.gtf.gz
     - grch38-canonical-transcript-features-gencode-v1.gtf.gz.tbi

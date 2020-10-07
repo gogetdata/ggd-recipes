@@ -56,8 +56,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch37-canonical-transcript-features-gencode-v1.gtf.gz: 15.54M
-      grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 266.50K
+      grch37-canonical-transcript-features-gencode-v1.gtf.gz: 15.42M
+      grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 260.39K
     final-files:
     - grch37-canonical-transcript-features-gencode-v1.gtf.gz
     - grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi

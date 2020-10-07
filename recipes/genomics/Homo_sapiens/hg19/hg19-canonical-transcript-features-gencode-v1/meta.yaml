@@ -55,8 +55,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      hg19-canonical-transcript-features-gencode-v1.gtf.gz: 15.56M
-      hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 266.51K
+      hg19-canonical-transcript-features-gencode-v1.gtf.gz: 15.44M
+      hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 260.95K
     final-files:
     - hg19-canonical-transcript-features-gencode-v1.gtf.gz
     - hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi
