@@ -67,7 +67,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #conda install -y --file .circleci/bioconda_utils-requirements.txt  
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
-    conda install -y "python=3.7"
+    conda install -y "python=3.6"
 
     # step 5: cleanup
     conda clean -y --all
@@ -78,6 +78,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 #    cd $CONDA_ROOT
 #    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
 #    cd $cur
+
+    python --version
 
     # step 7: set up local channels
     # Add local channel as highest priority
