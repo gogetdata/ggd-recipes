@@ -67,6 +67,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #conda install -y --file .circleci/bioconda_utils-requirements.txt  
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
+    conda install -y "python=3.7"
+
     # step 5: cleanup
     conda clean -y --all
 
