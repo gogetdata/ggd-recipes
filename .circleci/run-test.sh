@@ -22,8 +22,7 @@ trap rmbuild EXIT
 ## Set the CONDA_SOURCE_PREFIX env var 
 export CONDA_SOURCE_PREFIX=$(conda info --root)
 
-## Build/filter all recipes using bioconda-utils build
-#bioconda-utils build --loglevel debug recipes/ config.yaml
+## Build/filter all recipes using build_recipes.py 
 python .circleci/build_recipes.py --recipe-dir recipes/ --config-file build_recipes_config.yaml
 
 echo -e  "\n############################################################"
@@ -95,7 +94,7 @@ if [[ "$cached" == true ]] ; then
     rm $CHECK_DIR/*.bz2
 
     ## build the new pacakges
-    bioconda-utils build $cached_recipes_path config.yaml
+    python .circleci/build_recipes.py --recipe-dir $cached_recipes_path --config-file build_recipes_config.yaml
 
     ## run recipe check and upload
     for bz2 in $CHECK_DIR/*.bz2; do

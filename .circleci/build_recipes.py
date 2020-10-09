@@ -514,7 +514,7 @@ def load_conda_build_config(platform=None, trim_skip=True):
     if os.path.basename(os.getcwd()) == "ggd-recipes":
         config.exclusive_config_files = [
             os.path.join(
-                os.getcwd(), ".cirlceci", "bioconda_utils-conda_build_config.yaml"
+                os.getcwd(), "bioconda_utils-conda_build_config.yaml"
             )
         ]
     else:

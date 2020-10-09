@@ -67,6 +67,10 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     #conda install -y --file .circleci/bioconda_utils-requirements.txt  
     #pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
+    ## Get bioconda conda build config
+    BIOCONDA_UTILS_TAG=v0.16.21
+    wget https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-conda_build_config.yaml
+
     #conda install -y "python=3.6"
 
     # step 5: cleanup
