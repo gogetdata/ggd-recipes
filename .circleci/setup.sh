@@ -4,10 +4,6 @@ set -exo pipefail
 
 WORKSPACE=$(pwd)
 
-# Set path
-#echo "export PATH=$WORKSPACE/anaconda/bin:$PATH" >> $BASH_ENV
-#source $BASH_ENV
-
 cat >> $BASH_ENV <<EOF
 # Set path
 export PATH="${WORKSPACE}/anaconda/bin:${PATH}"
@@ -58,31 +54,12 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     pip install -U git+git://github.com/gogetdata/ggd-cli 
 
     # step 4: install requirments from git repos
-    ## Install bioconda-utils
-
-    ## Temporarily use an older version of bioconda utils
-    #BIOCONDA_UTILS_TAG=v0.16.17
-    #BIOCONDA_UTILS_TAG=v0.16.21
-    #conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt 
-    #conda install -y --file .circleci/bioconda_utils-requirements.txt  
-    #pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
-
     ## Get bioconda conda build config
     BIOCONDA_UTILS_TAG=v0.16.21
     wget https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-conda_build_config.yaml
 
-    #conda install -y "python=3.6"
-
     # step 5: cleanup
     conda clean -y --all
-
-    # step 6: download conda_build_config.yaml from conda_forge and put into conda root (Required for using bioconda-utils build)
-#    cur=`pwd`
-#    CONDA_ROOT=$(conda info --root)
-#    cd $CONDA_ROOT
-#    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
-#    cd $cur
-
 
     # step 7: set up local channels
     # Add local channel as highest priority
