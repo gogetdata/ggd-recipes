@@ -24,7 +24,7 @@ export CONDA_SOURCE_PREFIX=$(conda info --root)
 
 ## Build/filter all recipes using bioconda-utils build
 #bioconda-utils build --loglevel debug recipes/ config.yaml
-python .circleci/build_recipes.py --recipe_dir recipes/ --config-file build_recipes_config.yaml
+python .circleci/build_recipes.py --recipe-dir recipes/ --config-file build_recipes_config.yaml
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
