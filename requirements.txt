@@ -28,3 +28,4 @@ bioawk
 pysam
 cyvcf2
 networkx
+wget
