@@ -62,12 +62,12 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     ## Temporarily use an older version of bioconda utils
     #BIOCONDA_UTILS_TAG=v0.16.17
-    BIOCONDA_UTILS_TAG=v0.16.21
-    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt 
+    #BIOCONDA_UTILS_TAG=v0.16.21
+    #conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt 
     #conda install -y --file .circleci/bioconda_utils-requirements.txt  
-    pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+    #pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
-    conda install -y "python=3.6"
+    #conda install -y "python=3.6"
 
     # step 5: cleanup
     conda clean -y --all
@@ -79,7 +79,6 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 #    curl -O https://raw.githubusercontent.com/conda-forge/conda-forge-pinning-feedstock/master/recipe/conda_build_config.yaml
 #    cd $cur
 
-    python --version
 
     # step 7: set up local channels
     # Add local channel as highest priority
