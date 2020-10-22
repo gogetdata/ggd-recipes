@@ -23,8 +23,7 @@ trap rmbuild EXIT
 export CONDA_SOURCE_PREFIX=$(conda info --root)
 
 ## Build/filter all recipes using build_recipes.py 
-#python .circleci/build_recipes.py --recipe-dir recipes/ --config-file build_recipes_config.yaml
-bioconda-utils build --loglevel debug recipes/ config.yaml
+python .circleci/build_recipes.py --recipe-dir recipes/ --config-file build_recipes_config.yaml
 
 echo -e  "\n############################################################"
 echo "-> Checking Dependencies"
@@ -95,8 +94,7 @@ if [[ "$cached" == true ]] ; then
     rm $CHECK_DIR/*.bz2
 
     ## build the new pacakges
-    #python .circleci/build_recipes.py --recipe-dir $cached_recipes_path --config-file build_recipes_config.yaml
-    bioconda-utils build $cached_recipes_path config.yaml
+    python .circleci/build_recipes.py --recipe-dir $cached_recipes_path --config-file build_recipes_config.yaml
 
     ## run recipe check and upload
     for bz2 in $CHECK_DIR/*.bz2; do
