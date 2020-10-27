@@ -1,7 +1,6 @@
 #!/bin/sh
 set -eo pipefail -o nounset
 
-
 cat << EOF > get_canonical_transcripts.py
 
 import sys
@@ -29,28 +28,26 @@ for line in fh:
                     exon_count_by_transcript[line_dict["transcript_id"]] = int(line_dict["exon_number"])
 fh.close()
 
-
 def score_appris(appris_level):
     """
     Get a score between 0-7 based on the appris level
     """
     
-    if appris_level == "PRINCIPAL:1":
+    if appris_level == "appris_principal_1":
         return(1)
-    if appris_level == "PRINCIPAL:2":
+    if appris_level == "appris_principal_2":
         return(2)
-    if appris_level == "PRINCIPAL:3":
+    if appris_level == "appris_principal_3":
         return(3)
-    if appris_level == "PRINCIPAL:4":
+    if appris_level == "appris_principal_4":
         return(4)
-    if appris_level == "PRINCIPAL:5":
+    if appris_level == "appris_principal_5":
         return(5)
-    if appris_level == "ALTERNATIVE:1":
+    if appris_level == "appris_alternative_1":
         return(6)
-    if appris_level == "ALTERNATIVE:2":
+    if appris_level == "appris_alternative_2":
         return(7)
     return(1000)
-
 
 
 def best_appris(first_appris, second_appris):

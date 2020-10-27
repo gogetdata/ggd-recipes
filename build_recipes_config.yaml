@@ -1,0 +1,6 @@
+
+channels:
+  - ggd-genomics
+  - bioconda
+  - conda-forge
+  - defaults

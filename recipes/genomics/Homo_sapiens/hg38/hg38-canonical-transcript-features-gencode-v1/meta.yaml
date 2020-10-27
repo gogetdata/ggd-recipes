@@ -13,15 +13,15 @@ extra:
       wget --quiet $genome
       genome2=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh38/GRCh38.genome
       wget --quiet $genome2
-      
       ## Get GTF file with alternative scaffoldings
       wget --quiet ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
       ## If no chrom mapping, use existing patch/scaffolding name
       gzip -dc gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz \
-        | grep -v "^#" \
-        | awk -v OFS="\t" '{ if ( ! ($1 ~ /^chr/ ) ) print $1}' \
-        | uniq \
-        | grep -f - GRCh38.genome >> hg38.genome
+          | grep -v "^#" \
+          | awk -v OFS="\t" '{ if ( ! ($1 ~ /^chr/ ) ) print $1}' \
+          | uniq \
+          | grep -f - GRCh38.genome >> hg38.genome
+
       rm gencode.v34.chr_patch_hapl_scaff.annotation.gtf.gz
       rm GRCh38.genome
     file_name: hg38.genome
@@ -74,8 +74,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      hg38-canonical-transcript-features-gencode-v1.gtf.gz: 12.30M
-      hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 288.24K
+      hg38-canonical-transcript-features-gencode-v1.gtf.gz: 12.18M
+      hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 281.30K
     final-files:
     - hg38-canonical-transcript-features-gencode-v1.gtf.gz
     - hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi
