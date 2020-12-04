@@ -83,12 +83,12 @@ if not os.path.exists(tmp_dir):
 print("\n\t-> Writing species_to_build.json")
 species_file_path = os.path.join(tmp_dir,"species_to_build.json")  
 with open(species_file_path, "w") as sf:
-    json.dump(sorted(species_dict.items(), key=lambda t: t[0]),sf)
+    json.dump(species_dict, sf, sort_keys=True)
 
 print("\n\t-> Writing build_to_species.json")
 build_file_path = os.path.join(tmp_dir,"build_to_species.json") 
 with open(build_file_path, "w") as gf:
-    json.dump(sorted(build_dict.items(), key=lambda t: t[0]),gf)
+    json.dump(build_dict, gf,sort_keys=True)
 
 print("\n\t-> Writing ggd_channels.json")
 ggd_channels_path = os.path.join(tmp_dir,"ggd_channels.json") 
