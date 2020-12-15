@@ -1,0 +1,44 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+package:
+  name: meta-recipe-geo-accession-geo-v1
+  version: '1'
+requirements:
+  build: []
+  run: []
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: meta-recipe
+    species: meta-recipe
+  keywords:
+  - Gene-Expression-Omnibus
+  - GEO
+  - GEO-Accession-ID
+  - GEO-meta-recipe
+  summary: 'A meta-recipe for the Gene Expression Omnibus (GEO) database from NCBI.
+    This meta-recipe contains the instructions for accessing GEO data using GEO Accession
+    IDs. GEO Datasets (GDS), GEO Platforms (GPL), GEO Series (GSE), and GEO Samples
+    (GSM) are all accessible through this meta-recipe. Files downloaded for each type
+    are: (GDS) SOFT files. (GPL) SOFT files and ANNOT files if they exist. (GSE) SOFT
+    file and MATRIX files if they exist. (GSM) The main table file as a .txt file.
+    Additionally, for all 4 types, all supplemental files are downloaded if they exist.
+    Once installed, GEO ID specific recipes will contain ID specific info, such as
+    a summary of the data and a url to the GEO Accession ID specific page. This info
+    can be accessed using ''ggd pkg-info''. To install simply add the ''--id'' flag
+    with the desired GEO Accession ID when running ''ggd install''. Additional info
+    about GEO can be found at http://www.ncbi.nlm.nih.gov/geo'
+  tags:
+    data-provider: GEO
+    data-version: meta-recipe
+    file-type: []
+    final-file-sizes: {}
+    final-files: []
+    genomic-coordinate-base: NA
+    ggd-channel: genomics
