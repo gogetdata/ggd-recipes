@@ -1,0 +1,2 @@
+grch37-self-chain-high-identity-ucsc-v1.bed.gz	d3159c8256c755bb1550cba2712d7470
+grch37-self-chain-high-identity-ucsc-v1.bed.gz.tbi	17ebc93a08368ed2aa8d6b1e5ff89f3f

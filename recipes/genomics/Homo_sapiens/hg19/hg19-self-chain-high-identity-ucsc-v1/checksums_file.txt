@@ -1,0 +1,2 @@
+hg19-self-chain-high-identity-ucsc-v1.bed.gz	5b44f5908799744b3de25999682a57bf
+hg19-self-chain-high-identity-ucsc-v1.bed.gz.tbi	ca58c1f91b02cceae82cc61550c9b424

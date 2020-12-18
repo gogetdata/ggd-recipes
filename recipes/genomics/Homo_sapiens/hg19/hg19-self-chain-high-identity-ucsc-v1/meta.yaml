@@ -1,0 +1,54 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg19-self-chain-high-identity-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - bedtools
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - bedtools
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg19
+    species: Homo_sapiens
+  keywords:
+  - Self-Chain
+  - Self-Alignment
+  - Repeats
+  - low-copy-repeats
+  - High-Identity
+  - '>=90%-Identity'
+  summary: High identity, >=90%, Self chain alignments of the human genome with an
+    improved gap scoring system. Genomic coordinates are merged across all overlapping
+    intervals, providing continuous high identity self chain repeat regions. Alignments
+    point out areas of duplication within the human genome, with the exception of
+    the pseudoautosomal regions on X and Y. From the Human Chained Self Alignments
+    track on UCSC.
+  tags:
+    data-provider: UCSC
+    data-version: 27-Apr-2009
+    file-type:
+    - bed
+    final-file-sizes:
+      hg19-self-chain-high-identity-ucsc-v1.bed.gz: 54.73K
+      hg19-self-chain-high-identity-ucsc-v1.bed.gz.tbi: 40.85K
+    final-files:
+    - hg19-self-chain-high-identity-ucsc-v1.bed.gz
+    - hg19-self-chain-high-identity-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
