@@ -1,0 +1,2 @@
+hg38-self-chain-high-identity-ucsc-v1.bed.gz.tbi	b937cc4a4cb4c0e25be914f1cdf518a6
+hg38-self-chain-high-identity-ucsc-v1.bed.gz	e9e5548f498e8ca5f41d7e592229f397

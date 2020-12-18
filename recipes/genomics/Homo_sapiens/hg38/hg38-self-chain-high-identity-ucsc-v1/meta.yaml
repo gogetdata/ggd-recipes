@@ -1,0 +1,52 @@
+build:
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  noarch: generic
+  number: 0
+extra:
+  authors: mjc
+  extra-files: []
+package:
+  name: hg38-self-chain-high-identity-ucsc-v1
+  version: '1'
+requirements:
+  build:
+  - gsort
+  - htslib
+  - zlib
+  run:
+  - gsort
+  - htslib
+  - zlib
+source:
+  path: .
+about:
+  identifiers:
+    genome-build: hg38
+    species: Homo_sapiens
+  keywords:
+  - Self-Chain
+  - Self-Alignment
+  - Repeats
+  - low-copy-repeats
+  - High-Identity
+  - '>=90%-Identity'
+  summary: High identity, >=90%, Self chain alignments of the human genome with an
+    improved gap scoring system. Genomic coordinates are merged across all overlapping
+    intervals, providing continuous high identity self chain repeat regions. Alignments
+    point out areas of duplication within the human genome, with the exception of
+    the pseudoautosomal regions on X and Y. From the Human Chained Self Alignemnts
+    track on UCSC.
+  tags:
+    data-provider: UCSC
+    data-version: 06-Mar-2014
+    file-type:
+    - bed
+    final-file-sizes:
+      hg38-self-chain-high-identity-ucsc-v1.bed.gz: 64.21K
+      hg38-self-chain-high-identity-ucsc-v1.bed.gz.tbi: 52.58K
+    final-files:
+    - hg38-self-chain-high-identity-ucsc-v1.bed.gz
+    - hg38-self-chain-high-identity-ucsc-v1.bed.gz.tbi
+    genomic-coordinate-base: 0-based-inclusive
+    ggd-channel: genomics
