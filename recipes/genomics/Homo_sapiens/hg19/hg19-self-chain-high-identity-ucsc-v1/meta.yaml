@@ -11,10 +11,12 @@ package:
   version: '1'
 requirements:
   build:
+  - bedtools
   - gsort
   - htslib
   - zlib
   run:
+  - bedtools
   - gsort
   - htslib
   - zlib
