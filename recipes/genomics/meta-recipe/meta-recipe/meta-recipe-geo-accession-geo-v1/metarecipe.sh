@@ -15,7 +15,8 @@ json_outfile=$3
 commands_outfile=$4
 
 ## Force Upper Case
-geo_acc_id=$(echo ${geo_acc_id^^})
+#geo_acc_id=$(echo ${geo_acc_id^^}) Requires bash >= 4.2 (macOSX bash version == < 4)
+geo_acc_id="$(echo $geo_acc_id | tr '[:lower:]' '[:upper:]')"
 
 echo -e "\n    Checking GEO for $geo_acc_id"
 echo -e "  ================================\n"
