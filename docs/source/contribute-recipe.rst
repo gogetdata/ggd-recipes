@@ -5,6 +5,8 @@ Contributing a ggd recipe
 
 [:ref:`Click here to return to the home page <home-page>`]
 
+This page is specific to creating a ggd **recipe**. For information on creating a meta-recipe see :ref:`Creating a ggd meta-recipe <contribute-meta-recipe>`
+
 The following steps outline how to create, check, and add a ggd data recipe.
 
 1. Update local forked repo

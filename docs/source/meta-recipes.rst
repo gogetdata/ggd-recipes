@@ -332,7 +332,7 @@ Creating and Testing meta-recipes
 
 Creating and testing a meta-recipe is similar to a normal recipe. However, meta-recipes required more detail within the data curation script(s). 
 
-More information about creating and testing a meta-recipe see SOMTHING.
+For more information about creating and testing a meta-recipe see :ref:`Creating a ggd meta-recipe <contribute-meta-recipe>`.
 
 
 

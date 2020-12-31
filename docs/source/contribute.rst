@@ -29,10 +29,15 @@ recipe and add it to the ggd data repository.
     * You will need a github account and a forked repository of ggd-recipes.
     * Once you have a github account and you have a forked ggd-recipes repo, you do not need to do step 1 again.
 
-2. :ref:`Make a ggd recipe <contrib-recipe>`
+2a. :ref:`Make a ggd recipe <contrib-recipe>`
 
     * The following steps will outline how to create a ggd data recipe, how to test it, and how to add it to the
       gogetdata/ggd-recipes repo.
+
+2b. :ref:`Make a ggd meta-recipe <contribute-meta-recipe>`
+
+    * The following steps will outline how to create a ggd data meta-recipe, how to test it, and how to add it 
+      to the gogetdata/ggd-recipe repo.
 
 3. Continuous Integration testing with Circle CI
 
@@ -48,3 +53,4 @@ Contents:
 
     github-setup
     contribute-recipe
+    making-meta-recipes

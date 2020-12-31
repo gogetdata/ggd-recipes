@@ -5,6 +5,8 @@ ggd make-meta-recipe
 
 [:ref:`Click here to return to the home page <home-page>`]
 
+For general information on meta-recipes see :ref:`Meta-Recipes <meta-recipes>`
+
 ggd make-meta-recipe is used to create a ggd data meta-recipe from a single or group of script which contains the information on
 extracting and processing the data.
 
@@ -16,7 +18,6 @@ docs on  :ref:`contributing <make-data-packages>` recipes to ggd for more inform
 
 The first step in this process is to create a bash script, and subsequent support scripts if needed, with instructions 
 on downloading and processing the data, then using :code:`ggd make-meta-recipe` to create a ggd data meta-recipe
-
 
 Using ggd make-meta-recipe
 --------------------------
@@ -130,7 +131,7 @@ Optional arguments:
 
 * *extra-scripts:* The :code:`extra-scripts` parameter is used to add any additional scripts used for the meta-recipe that are not the main bash script. 
   If the main bash script, for example, uses a python script to set ID specific meta-recipe environment variables, then that python script should be added
-  here.
+  here. To add mutliple, seperate each script by a space aftter the :code:`--extra-scripts` parameter. (Example :code:`--extra-scripts script1.sh script2.py script3.prl`)
 
 * *-c:* The :code:`-c` flag is used to declare which ggd channel to use. (genomics is the default)
 
@@ -158,7 +159,7 @@ ggd make-recipe
 
 .. code-block:: bash
 
-  $ ggd make-meta-recipe ggd make-meta-recipe \
+  $ ggd make-meta-recipe \
         --authors mjc \
         --package-version 1 \
         --data-provider GEO \

@@ -35,7 +35,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c {{ ggd_channel }} {{ name }}
+   ggd install -c {{ ggd_channel }} {{ name }} {{ metarecipe_id }}
 
 .. |downloads| image:: https://anaconda.org/ggd-{{ ggd_channel }}/{{ name }}/badges/downloads.svg
                :target: https://anaconda.org/ggd-{{ ggd_channel }}/{{ name }}
