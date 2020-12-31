@@ -37,6 +37,10 @@ check-recipe arguments:
 |                       | local package installed) set this flag "--                                       |
 |                       | dont_uninstall"                                                                  |
 +-----------------------+----------------------------------------------------------------------------------+
+| ``--id``,             | If checking a meta-recipe the associated meta-recipe id needs to be supplied.    |
+| ``(meta-recipe ID)``  | (Example: for a geo meta-recipe use something like --id GSE123) NOTE: GGD does   | 
+|                       | not try to correct the ID. Please provide the correct case sensitive ID.         |
++-----------------------+----------------------------------------------------------------------------------+
 | ``recipe_path``       |   **Required** Path to recipe directory (can also be path to the .bz2)           |
 +-----------------------+----------------------------------------------------------------------------------+
 
@@ -61,11 +65,20 @@ Optional arguments:
   The default functionality for `check-recipe` is to uninstall that file once the tests have finished. If you would like 
   to keep the local data package installed add :code:`-du` to your `check-recipe` command.
 
+* *id:* The :code:`--id` parameter is used to designate the ID to use when checking a meta-recipe. This ID is required in order
+   to check the meta-recipe. The ID represents a unique identifier that the meta-recipe can used to download data from the 
+   database the meta-recipe is created for. The ID entered is based on an ID that can be used by the specific meta-recipe being 
+   checked. NOTE: GGD does not try to fix IDs. They must be entered correctly including being 
+   case sensitive with proper alphanumeric order. 
 
 The only required argument is the :code:`recipe_path` and refers to the directory you would like ``ggd check-recipe``
 to check. When using :ref:`ggd make-recipe <ggd-make-recipe>` to create a ggd recipe, make-recipe will
 create a new directory with four new files. The recipe_path should be the path to the new directory created
 from using `ggd make-recipe`.
+
+    .. note:: 
+        
+        The :code:`--id` parameter is required if checking a meta-recipe
 
 Running :code:`ggd check-recipe <recipe-path>` will build, install, and test and validate the recipe to ensure the recipe works correctly.
 
@@ -127,8 +140,8 @@ Example
           Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
           WARNING:conda_build.build:Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
           WARNING conda_build.build:bundle_conda(1030): Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
-          INFO:conda_build.variants:Adding in variants from /scratch/local/u1138933/tmpn3m0b150/info/recipe/conda_build_config.yaml
-          INFO conda_build.variants:_combine_spec_dictionaries(189): Adding in variants from /scratch/local/u1138933/tmpn3m0b150/info/recipe/conda_build_config.yaml
+          INFO:conda_build.variants:Adding in variants from /scratch/tmpn3m0b150/info/recipe/conda_build_config.yaml
+          INFO conda_build.variants:_combine_spec_dictionaries(189): Adding in variants from /scratch/local/tmpn3m0b150/info/recipe/conda_build_config.yaml
           Collecting package metadata (current_repodata.json): ...working... Unable to retrieve repodata (response: 404) for https://conda.anaconda.org/ggd-genomics/linux-64/current_repodata.json
 
           done
@@ -202,7 +215,7 @@ Example
 
           :ggd:uninstall: Removing hg19-phastcons-ucsc-v1 version 1 file(s) from ggd recipe storage
 
-          :ggd:uninstall: Deleteing 10 items of hg19-phastcons-ucsc-v1 version 1 from your conda root
+          :ggd:uninstall: Deleting 10 items of hg19-phastcons-ucsc-v1 version 1 from your conda root
 
           :ggd:env: Removing the ggd_hg19_phastcons_ucsc_v1_dir environment variable
 

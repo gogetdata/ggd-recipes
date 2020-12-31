@@ -440,6 +440,7 @@ Contents:
    quick-start
    using-ggd
    GGD-CLI
+   meta-recipes
    contribute
    private_recipes
    recipes
