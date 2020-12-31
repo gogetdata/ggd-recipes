@@ -124,6 +124,15 @@ more information about the CLI tools see :ref:`GGD CLI <ggd_cli_page>`.
 .. image:: Data_managment.png
 
 
+GGD meta-recipes
+----------------
+
+meta-recipes are recipes that provide access to a database of data using an identifier specific to that database. This is different then a normal ggd recipe,
+which consists of a set of instructions for a specific data file(s) to be installed and processed. Meta-recipes are powerful tools to provide access to database 
+with large amounts of data which would be unreasonable to create a specific ggd recipe for individual data types/identifiers. 
+
+For more information about meta-recipes see: :ref:`Meta-Recipes <meta-recipes>`
+
 ========
 
 Example:
@@ -440,6 +449,7 @@ Contents:
    quick-start
    using-ggd
    GGD-CLI
+   meta-recipes
    contribute
    private_recipes
    recipes

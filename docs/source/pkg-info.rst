@@ -15,7 +15,7 @@ The examples below help to illustrate what is available from :code:`ggd pkg-info
 
 This tool provides a resource to help enforce reproducibility. The information provide from running 
 :code:`ggd pkg-info` will help to distinguish the data package and allow you to provide such information to 
-other or in a citation
+others or in a citation
 
 Using ggd pkg-info
 ------------------
@@ -47,6 +47,11 @@ pkg-info arguments:
 |                             | stdout. This will provide info on where the data is hosted and how                |
 |                             | it was processed. (NOTE: -sr flag does not accept arguments)                      |
 +-----------------------------+-----------------------------------------------------------------------------------+
+| ``--prefix``                | (Optional) The name or the full directory path to a conda environment where a ggd |
+|                             | recipe is stored. (Only needed if listing pkg data info for a pkg not installed   |
+|                             | in the current environment)                                                       |
++-----------------------------+-----------------------------------------------------------------------------------+
+
 
 Additional argument explanation: 
 ++++++++++++++++++++++++++++++++
@@ -64,7 +69,12 @@ Optional arguments:
   the user to identify where the data was originally downloaded, how it was processed, and other information
   about the data being used.
 
+* *--prefix:* The :code:`--prefix` flag is used to designate which conda environment/prefix to get the file from. 
+  **This allows one to store ggd data packages in one environment and access it from another.**
+
+
 If the package has not been installed on your system then the package info will not be displayed and the recipe will not be accessible.
+
 
 Examples
 --------
@@ -180,6 +190,77 @@ Examples
       * tabix hg19-gaps-ucsc-v1.bed.gz
       *****************************************************************************
       :ggd:pkg-info: NOTE: The recipe provided above outlines where the data was accessed and how it was processed
+
+
+
+3. Example listing pkg info and recipe in a different prefix:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Using the code:`ggd pkg-info` to get the package metadata info in a different conda environment such as a conda environment called `ggd_data`
+
+.. code-block:: bash
+
+    $ ggd pkg-info hg19-gaps-ucsc-v1 -sr --prefix ggd_data
+
+
+      ----------------------------------------------------------------------------------------------------
+
+        GGD-Package: hg19-gaps-ucsc-v1
+
+        GGD-Channel: ggd-genomics
+
+        GGD Pkg Version: 1
+
+        Summary: Assembly gaps from UCSC in bed format
+
+        Species: Homo_sapiens
+
+        Genome Build: hg19
+
+        Keywords: gaps, region, bed-file
+
+        Cached: uploaded_to_aws
+
+        Data Version: 27-Apr-2009
+
+        File type(s): bed
+
+        Data file coordinate base: 0-based-inclusive
+
+        Included Data Files:
+		  hg19-gaps-ucsc-v1.bed.gz
+		  hg19-gaps-ucsc-v1.bed.gz.tbi
+
+        Approximate Data File Sizes:
+		  hg19-gaps-ucsc-v1.bed.gz: 5.16K
+		  hg19-gaps-ucsc-v1.bed.gz.tbi: 8.22K
+
+        Pkg File Path: <ggd_data env>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1
+
+        Installed Pkg Files: 
+          <ggd_data env>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1/hg19-gaps-ucsc-v1.bed.gz.tbi
+          <ggd_data env>/share/ggd/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/1/hg19-gaps-ucsc-v1.bed.gz
+
+      ---------------------------------------------------------------------------------------------------- 
+
+
+
+      hg19-gaps-ucsc-v1 recipe file:
+      *****************************************************************************
+      * #!/bin/sh
+      * set -eo pipefail -o nounset
+      * genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+      * wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.txt.gz \
+      * | gzip -dc \
+      * | awk -v OFS="\t" 'BEGIN {print "#chrom\tstart\tend\tsize\ttype\tstrand"} {print $2,$3,$4,$7,$8,"+"}' \
+      * | gsort /dev/stdin $genome \
+      * | bgzip -c > hg19-gaps-ucsc-v1.bed.gz
+      * 
+      * tabix hg19-gaps-ucsc-v1.bed.gz
+      *****************************************************************************
+      :ggd:pkg-info: NOTE: The recipe provided above outlines where the data was accessed and how it was processed
+
+
 
 
 

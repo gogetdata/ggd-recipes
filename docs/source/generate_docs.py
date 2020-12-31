@@ -217,7 +217,8 @@ def generate_readme(recipe_dict, renderer):
         'gh_recipes': 'https://github.com/gogetdata/ggd-recipes/tree/master/recipes/',
         'recipe_path': op.join(recipe_dict["channel"], recipe_dict["species"], recipe_dict["build"], name),
         'Package': '<a href="recipes/{c}/{s}/{b}/{n}/README.html">{n}</a>'.format(c=recipe_dict["channel"],s=recipe_dict["species"],b=recipe_dict["build"],n=name),
-        'prefix_install_capable': "**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag." if "final-files" not in recipe["about"]["tags"] else "**Prefix install enabled:** *True*"
+        'prefix_install_capable': "**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag." if "final-files" not in recipe["about"]["tags"] else "**Prefix install enabled:** *True*",
+        'metarecipe_id': "--id <Specific ID>" if recipe["about"]["identifiers"]["species"] == "meta-recipe" and recipe["about"]["identifiers"]["genome-build"] == "meta-recipe" else ""
     }
 
         

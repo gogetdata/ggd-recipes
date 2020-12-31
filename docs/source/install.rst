@@ -54,6 +54,10 @@ Install arguments:
 |                         | the data package into a different conda environment                                               |
 |                         | then the one you are currently in)                                                                |
 +-------------------------+---------------------------------------------------------------------------------------------------+
+| ``--id``,               | The ID to use for the meta recipe being installed. For example, if installing the GEO meta-recipe |
+| ``(meta-recipe ID)``    | for GEO Accession ID GSE123, use `--id GSE123` NOTE: GGD will NOT try to correct the ID. The ID   | 
+|                         | must be accurately entered with case sensitive alphanumeric order                                 |
++-------------------------+---------------------------------------------------------------------------------------------------+
 
 
 Additional argument explanation: 
@@ -83,21 +87,37 @@ Optional arguments:
   having duplicate copies of a package in different environments. You can store all data packages in a single environment and
   access them from any other environment using the :code:`--prefix` flag available in other ggd tools
 
+Required if meta-recipe:
 
+* *id:* The :code:`--id` parameter is used to designate the ID to use when installing a meta-recipe. This ID is required in order
+   to install the meta-recipe. The ID represents a unique identifier that the meta-recipe can used to download data from the 
+   database the meta-recipe is created for. For example, if you are using the GEO meta-recipe and want to install the data for 
+   the GEO accession ID `GSE123`, you would add :code:`--id GSE123` to the end of your install command. The ID entered is based 
+   on an ID that can be used by the specific meta-recipe being installed. The meta-recipe should have a description of what IDs 
+   can be entered and what they should be. NOTE: GGD does not try to fix IDs. They must be entered correctly including being 
+   case sensitive with proper alphanumeric order. 
 
     .. note::
-    
-        During the installation you will see a multiple progress spinners. The time it takes to install the data package(s) 
-        is dependent on how big the data package is being installed as well as the internet bandwidth you have. When you see: 
-        **Executing Transaction |-** you are in the final stages of installation, however, this stage takes the longest. 
-        Please be patient as the package is being installed, processed, and curated. 
+        
+        Installing a meta-recipe takes slightly longer then a normal recipe because the ID specific meta-recipe is build locally 
+        prior to installation 
 
 
-    .. note::
+.. note::
+
+    During the installation you will see a multiple progress spinners. The time it takes to install the data package(s) 
+    is dependent on how big the data package is being installed as well as the internet bandwidth you have. When you see: 
+    **Executing Transaction |-** you are in the final stages of installation, however, this stage takes the longest. 
+    Please be patient as the package is being installed, processed, and curated. 
+
+
+.. note::
+
+    Environment variable(s) are created for each data package installed for easy access and use. Most of the time these
+    environment variables need to be activated. After the installation is complete, run the following command to activate:
+    :code:`source activate base`
+
     
-        Environment variable(s) are created for each data package installed for easy access and use. Most of the time these
-        environment variables need to be activated. After the installation is complete, run the following command to activate:
-        :code:`source activate base`
 
 Examples
 --------
@@ -367,7 +387,7 @@ the same time.
 
            ---------------------------------------------------------------------------------------------------- 
 
-      :ggd:install: To activate environment variables run `source activate base` in the environmnet the packages were installed in
+      :ggd:install: To activate environment variables run `source activate base` in the environment the packages were installed in
 
       :ggd:install: NOTE: These environment variables are specific to the <env> conda environment and can only be accessed from within that environment
       ======================================================================================================================
@@ -554,7 +574,7 @@ We could install each of those data packages at the same tile using the :code:`-
 
            ---------------------------------------------------------------------------------------------------- 
 
-      :ggd:install: To activate environment variables run `source activate base` in the environmnet the packages were installed in
+      :ggd:install: To activate environment variables run `source activate base` in the environment the packages were installed in
 
       :ggd:install: NOTE: These environment variables are specific to the <env> conda environment and can only be accessed from within that environment
       ======================================================================================================================
@@ -684,7 +704,7 @@ data package into that conda environment without having to be in the conda envir
 
            ---------------------------------------------------------------------------------------------------- 
 
-      :ggd:install: To activate environment variables run `source activate base` in the environmnet the packages were installed in
+      :ggd:install: To activate environment variables run `source activate base` in the environment the packages were installed in
 
       :ggd:install: NOTE: These environment variables are specific to the <data environment> conda environment and can only be accessed from within that environment
       ======================================================================================================================
@@ -702,5 +722,128 @@ data package into that conda environment without having to be in the conda envir
     :code:`ggd get-files` tool with the :code:`--prefix` flag. See :ref:`ggd get-files`<ggd-get-files>, 
 
 
+
+6. Successful install of a meta-recipe:
++++++++++++++++++++++++++++++++++++++++
+
+A meta-recipe is installed with the :code:`--id` parameter added. NOTE: you can use :code:`--prefix` to install the meta-recipe
+into a different conda environment. 
+
+.. note::
+    
+    Only a single meta-recipe can be installed at a time. If multiple meta-recipes or multiple recipes include at least one 
+    meta-recipe are added to the install command the install command will exit with a notification that while installing a 
+    meta-recipe only a single meta-recipe is allowed. 
+
+
+.. code-block:: bash
+
+    $ ggd install meta-recipe-geo-accession-geo-v1 --id GSE123
+
+    :ggd:install: Looking for meta-recipe-geo-accession-geo-v1 in the 'ggd-genomics' channel
+
+    :ggd:install: meta-recipe-geo-accession-geo-v1 exists in the ggd-genomics channel
+
+    :ggd:install: meta-recipe-geo-accession-geo-v1 is a meta-recipe. Checking meta-recipe for installation
+
+    :ggd:install: The ID specific recipe to be installed is 'gse123-geo-v1'.
+
+    :ggd:install: gse123-geo-v1 version 1 is not installed on your system
+
+    :ggd:repodata: Loading repodata from the Anaconda Cloud for the following channels: ggd-genomics
+
+    :ggd:meta-recipe: Downloading meta-recipe package from conda to: '<conda root>/pkgs'
+
+    :ggd:meta-recipe: Checking md5sum
+
+    :ggd:meta-recipe: Successfully downloaded meta-recipe-geo-accession-geo-v1-1-0.tar.bz2 to <conda root>/pkgs
+
+    :ggd:meta-recipe: Updating meta-recipe with ID info
+
+    :ggd:install: Building new ID specific pkg
+
+    :ggd:install: Successfully built new ID specific meta recipe
+
+    :ggd:install: gse123-geo-v1 version 1 is not installed on your system
+
+    :ggd:install: gse123-geo-v1 has not been installed by conda
+
+
+    :ggd:install:   Attempting to install the following non-cached package(s):
+        gse123-geo-v1
+
+    ## Package Plan ##
+
+      environment location: <conda root>
+
+      added / updated specs:
+        - gse123-geo-v1
+
+
+    The following packages will be downloaded:
+
+        package                    |            build
+        ---------------------------|-----------------
+        gse123-geo-v1-1            |                0           8 KB  local
+        ------------------------------------------------------------
+                                               Total:           8 KB
+
+    The following NEW packages will be INSTALLED:
+
+      gse123-geo-v1      ::gse123-geo-v1-1-0
+
+
+    Downloading and Extracting Packages
+    gse123-geo-v1-1      | 8 KB      | ####################################################################################################################################### | 100%
+    Preparing transaction: done
+    Verifying transaction: done
+    Executing transaction: done
+
+    :ggd:install: Loading Meta-Recipe ID specific environment variables
+
+    :ggd:meta-recipe: Updating meta-recipe package metadata
+
+    :ggd:install: Updating installed package list
+
+    :ggd:install: Initiating data file content validation using checksum
+
+    :ggd:install: Checksum for gse123-geo-v1
+
+    :ggd:install: NOTICE: Skipping checksum for meta-recipe meta-recipe-geo-accession-geo-v1 => gse123-geo-v1
+
+    :ggd:install: Install Complete
+
+
+    :ggd:install: Installed file locations
+    ======================================================================================================================
+
+             GGD Package                                     Environment Variable(s)
+         ----------------------------------------------------------------------------------------------------
+    ->      gse123-geo-v1                                $ggd_gse123_geo_v1_dir
+
+
+    Install Path: <conda root>/share/ggd/meta-recipe/meta-recipe/gse123-geo-v1/1
+
+
+         ----------------------------------------------------------------------------------------------------
+
+    :ggd:install: To activate environment variables run `source activate base` in the environment the packages were installed in
+
+    :ggd:install: NOTE: These environment variables are specific to the <conda root> conda environment and can only be accessed from within that environment
+    ======================================================================================================================
+
+
+    :ggd:install: Environment Variables
+    *****************************
+
+    Active environment variables:
+    > $ggd_gse123_geo_v1_dir
+
+    To activate inactive or out-of-date vars, run:
+    source activate base
+
+    *****************************
+
+    :ggd:install: DONE
 
 

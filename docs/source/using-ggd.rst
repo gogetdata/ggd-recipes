@@ -75,6 +75,7 @@ data packages. These tools include:
 - :code:`$ ggd pkg-info`: Show a specific ggd package's info
 - :code:`$ ggd show-env`: Show the ggd specific environment variables
 - :code:`$ ggd make-recipe`: Create a ggd recipe from a bash script
+- :code:`$ ggd make-meta-recipe`: Create a ggd meta-recipe 
 - :code:`$ ggd check-recipe`: Check/test a ggd recipe
 
 For information about specific tools see: :ref:`GGD-CLI <ggd_cli_page>`
