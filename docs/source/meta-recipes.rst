@@ -32,6 +32,7 @@ Most GGD commands work with meta-recipes. These include:
  - :code:`ggd show-env` to show the environment variables for ID specific meta-recipe(s)  
  - :code:`ggd pkg-info` to get the metadata/information of a ID specific meta-recipe 
  - :code:`ggd get-files` to get the installed data files for an ID specific meta-recipe 
+ - :code:`ggd predict-path` to predict the directory path of an ID specific meta-recipe
  - :code:`ggd uninstall` to uninstall an ID specific meta-recipe(s) 
  - :code:`ggd make-meta-recipe` to make a meta-recipe from a single or group of scripts
  - :code:`ggd check-recipe` to test and check a new meta-recipe 
@@ -41,7 +42,6 @@ Most GGD commands work with meta-recipes. These include:
 Commands the don't work with meta-recipes include:
 
  - :code:`ggd make-recipe`: This command will only created a GGD recipe not a GGD meta-recipe. 
- - :code:`ggd predict-path`: Currently, the `predict-path` command does not work with meta-recipes.  
 
 
 Conda Environments and Prefix
@@ -321,7 +321,7 @@ ID specific meta-recipe data files can be accessed just like any other GGD recip
 
 5) PREFIX
 
-As mentioned above, any GGD command that can use the :code:`--prefix` parameter can be used with meta-recipes. (Excluding the :code:`predict-path` command)
+As mentioned above, any GGD command that can use the :code:`--prefix` parameter can be used with meta-recipes. 
 
 Therefore, one can install and access the data files of a ID specific meta-recipe in an environment that is different then the active one. Additionally, 
 a meta-recipes metadata can be accessed in a different environment using :code:`ggd pkg-info` with the :code:`--prefix` parameter. 

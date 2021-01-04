@@ -1,0 +1,1 @@
+pip install git+git://github.com/SuperKogito/sphinxcontrib-pdfembed

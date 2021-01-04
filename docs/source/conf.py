@@ -53,6 +53,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.napoleon',
     'sphinx_autodoc_typehints',  # must be loaded after napoleon
+    'sphinxcontrib.pdfembed', ## pdf embedder 
     'celery.contrib.sphinx',
 ]
 

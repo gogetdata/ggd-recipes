@@ -1,7 +1,9 @@
 .. _contribute-meta-recipe:
 
 Creating a ggd meta-recipe
---------------------------
+==========================
+
+[:ref:`Click here to return to the home page <home-page>`]
 
 This page is specific to creating a ggd **meta-recipe**. If you are looking to create a normal ggd recipe see :ref:`Creating a ggd recipe <contrib-recipe>`
 
