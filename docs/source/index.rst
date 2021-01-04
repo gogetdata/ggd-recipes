@@ -452,5 +452,6 @@ Contents:
    meta-recipes
    contribute
    private_recipes
+   workflows
    recipes
 
