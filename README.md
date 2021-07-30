@@ -6,6 +6,9 @@ Go Get Data: Access to and Use of Standardized and Reproducible Genomic Data
 [![CircleCI](https://circleci.com/gh/gogetdata/ggd-recipes/tree/master.svg?style=shield)](https://circleci.com/gh/gogetdata/ggd-recipes/tree/master)
 
 
+Please cite the [Nature Communications GGD paper](https://www.nature.com/articles/s41467-021-22381-z) if you used GGD.
+
+
 `ggd-recipes` are  conda recipes for genomic data. They provided a standardized and reproducible means for accessing, using, and managing 
 genomic data. Built upon similar concepts of software management systems like Conda, ggd provides a simple way to find, access, use, and 
 manage genomic data. ggd also eliminates the common problems a research has with finding, accessing, curating and processing genomic data. 
