@@ -1,2 +1,2 @@
-grch38-canonical-transcript-features-gencode-v1.gtf.gz	0cd52b84830442033014dc3da5c3cdaa
-grch38-canonical-transcript-features-gencode-v1.gtf.gz.tbi	670d8eb9cf76b1487bef47cfbc36fc6a
+grch38-canonical-transcript-features-gencode-v1.gtf.gz	3a3bfd89fb642a71d5a8d1ff48efa002
+grch38-canonical-transcript-features-gencode-v1.gtf.gz.tbi	0fc9d5cfc3e5ad9a6f6d594de0c5c0d7

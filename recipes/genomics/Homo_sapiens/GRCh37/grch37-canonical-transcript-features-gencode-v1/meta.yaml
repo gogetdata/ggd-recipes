@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -56,8 +56,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      grch37-canonical-transcript-features-gencode-v1.gtf.gz: 15.42M
-      grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 260.39K
+      grch37-canonical-transcript-features-gencode-v1.gtf.gz: 14.99M
+      grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 257.76K
     final-files:
     - grch37-canonical-transcript-features-gencode-v1.gtf.gz
     - grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi

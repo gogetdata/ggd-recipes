@@ -1,2 +1,2 @@
-hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi	bc6e3d76a026582cbf9dc0e86fdc6ff3
-hg19-canonical-transcript-features-gencode-v1.gtf.gz	52c791ae1a594ad43c5b5084fcb691a1
+hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi	de70b6b1cd4b089161a2b555e384b8cc
+hg19-canonical-transcript-features-gencode-v1.gtf.gz	105b9daa7885ad03221cf1911df0d380

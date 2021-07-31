@@ -1,5 +1,7 @@
 #!/bin/sh
 set -eo pipefail -o nounset
+#!/bin/sh
+set -eo pipefail -o nounset
 
 cat << EOF > get_canonical_transcripts.py
 
@@ -27,6 +29,7 @@ for line in fh:
                 if int(line_dict["exon_number"]) > exon_count_by_transcript[line_dict["transcript_id"]]:
                     exon_count_by_transcript[line_dict["transcript_id"]] = int(line_dict["exon_number"])
 fh.close()
+
 
 def score_appris(appris_level):
     """
@@ -86,12 +89,19 @@ for line in fh:
     
     line_dict = dict(zip(header,line.strip().split("\t")))
     line_dict.update({x.strip().replace("\"","").split(" ")[0]:x.strip().replace("\"","").split(" ")[1] for x in line_dict["attribute"].strip().split(";")[:-1]})
-    
+
     ## Only look at transcripts
     if line_dict["feature"] == "transcript":
-        ## Get only protein-coding only biotype 
-        if line_dict["gene_type"] == "protein_coding":
+        ## Skip nonsense_mediated_decay transcripts
+        if line_dict["transcript_type"] == "nonsense_mediated_decay":
+            continue
+        ## Skip readthrough transcripts:
+        if "readthrough_transcript" in line:
+            continue
+        ## Get protein-coding only biotype 
+        if line_dict["gene_type"] == "protein_coding" and line_dict["transcript_type"] == "protein_coding":
             gene_id = line_dict["gene_id"]
+            gene_name = line_dict["gene_name"]
             transcript_id = line_dict["transcript_id"] if "transcript_id" in line_dict else None
 
             ## Check for appris tag
@@ -100,13 +110,22 @@ for line in fh:
             else:
                 appris_level = None
 
+            ## Check for MANE_Select
+            if "MANE_Select" in line:
+                mane = True
+            else:
+                mane = False
+            
+
             ## cheack appris score
             if gene_id in primary_transcripts:
                 best_appris_transcript = best_appris(appris_level, primary_transcripts[gene_id]["appris_level"])
                 ## If new transcript has better appris level, replace transcript
                 if best_appris_transcript == 1:
                     primary_transcripts[gene_id]["transcript_id"] = transcript_id
+                    primary_transcripts[gene_id]["gene_name"] = gene_name
                     primary_transcripts[gene_id]["appris_level"] = appris_level
+                    primary_transcripts[gene_id]["MANE"] = mane
 
                 ## If both transcripts are the same, use the one that is the largest 
                 if best_appris_transcript == 0:
@@ -114,20 +133,93 @@ for line in fh:
                         continue
                     if primary_transcripts[gene_id]["transcript_id"] not in exon_count_by_transcript:
                         continue
-                    prev_exon_count = exon_count_by_transcript[primary_transcripts[gene_id]["transcript_id"]] 
-                    cur_exon_count = exon_count_by_transcript[transcript_id]
-                    ## if the exon count of the current transcript is greater then the one be stored, replace the old one
-                    ## If the exon count is the same or the current transcript has less, don't replace
-                    if cur_exon_count > prev_exon_count:
+                    ## Check the MANE tag
+                    if mane and not primary_transcripts[gene_id]["MANE"]:
                         primary_transcripts[gene_id]["transcript_id"] = transcript_id
+                        primary_transcripts[gene_id]["gene_name"] = gene_name
                         primary_transcripts[gene_id]["appris_level"] = appris_level
-                        
+                        primary_transcripts[gene_id]["MANE"] = mane
+                    else:
+                        prev_exon_count = exon_count_by_transcript[primary_transcripts[gene_id]["transcript_id"]] 
+                        cur_exon_count = exon_count_by_transcript[transcript_id]
+                        ## if the exon count of the current transcript is greater then the one be stored, replace the old one
+                        ## If the exon count is the same or the current transcript has less, don't replace
+                        if cur_exon_count > prev_exon_count:
+                            primary_transcripts[gene_id]["transcript_id"] = transcript_id
+                            primary_transcripts[gene_id]["appris_level"] = appris_level
+                            
             else:
                 primary_transcripts[gene_id] = {"transcript_id": transcript_id,
-                                                "appris_level": appris_level}
+                                                "gene_name": gene_name, 
+                                                "appris_level": appris_level,
+                                                "MANE": mane}
 
 fh.close()
-        
+
+
+## Check for genes present more than once
+gene_to_id = dict()
+duplicate_genes = set()
+
+for key, value in primary_transcripts.items():
+    gene_name = value["gene_name"]
+
+    if gene_name not in gene_to_id:
+        gene_to_id[gene_name] = key
+    else:   
+        duplicate_genes.add(gene_name)
+        if isinstance(gene_to_id[gene_name], str):
+            gene_to_id[gene_name] = [gene_to_id[gene_name], key] 
+        else:
+            gene_to_id[gene_name].append(key) 
+
+
+## Get the best gene id from the duplicate genes
+best_gene_ids = set()
+for gene in duplicate_genes:
+    
+    best_id = ""
+    for gene_id in gene_to_id[gene]:
+
+        ## If no best_id has been chosen make the first occurance the best
+        if best_id == "":
+            best_id = gene_id
+
+        else:
+            ## Check appris tags between the 'best' and current gene_id
+            best_appris_transcript = best_appris(primary_transcripts[gene_id]["appris_level"], 
+                                                 primary_transcripts[best_id]["appris_level"])
+
+            ## New id has a better appris tag 
+            if best_appris_transcript == 1:
+                best_id = gene_id
+
+            ## If the ids have the same appris tag
+            if best_appris_transcript == 0:
+                if primary_transcripts[gene_id]["MANE"] and not primary_transcripts[best_id]["MANE"]:
+                    best_id = gene_id
+
+            else:
+                prev_exon_count = exon_count_by_transcript[primary_transcripts[best_id]["transcript_id"]] 
+                cur_exon_count = exon_count_by_transcript[primary_transcripts[gene_id]["transcript_id"]]
+                ## if the exon count of the current transcript is greater then the one be stored, replace the old one
+                ## If the exon count is the same or the current transcript has less, don't replace
+                if cur_exon_count > prev_exon_count:
+                    best_id = gene_id
+
+                    
+    best_gene_ids.add(best_id)
+
+
+## Remove duplicate gene
+for gene in duplicate_genes:
+    
+    for gene_id in gene_to_id[gene]:
+
+        if gene_id not in best_gene_ids:
+
+            del primary_transcripts[gene_id]
+
 
 fh = gzip.open(gtf_file, "rt", encoding = "utf-8") if gtf_file.endswith(".gz") else io.open(gtf_file, "rt", encoding = "utf-8")
 header = ["chrom","source","feature","start","end","score","strand","frame","attribute"]

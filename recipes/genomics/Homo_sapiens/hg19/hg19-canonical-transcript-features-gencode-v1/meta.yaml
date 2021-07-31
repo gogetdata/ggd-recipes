@@ -2,7 +2,7 @@ build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
   noarch: generic
-  number: 0
+  number: 2
 extra:
   authors: mjc
   extra-files: []
@@ -55,8 +55,8 @@ about:
     file-type:
     - gtf
     final-file-sizes:
-      hg19-canonical-transcript-features-gencode-v1.gtf.gz: 15.44M
-      hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 260.95K
+      hg19-canonical-transcript-features-gencode-v1.gtf.gz: 15.01M
+      hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi: 258.07K
     final-files:
     - hg19-canonical-transcript-features-gencode-v1.gtf.gz
     - hg19-canonical-transcript-features-gencode-v1.gtf.gz.tbi

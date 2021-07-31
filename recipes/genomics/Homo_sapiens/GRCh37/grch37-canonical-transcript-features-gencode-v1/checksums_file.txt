@@ -1,2 +1,2 @@
-grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi	498bb9f7acbbf7ee9349f9ee2b7eb266
-grch37-canonical-transcript-features-gencode-v1.gtf.gz	2c84e80bea0ef9d692e5e699ce656818
+grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi	dd8ec004038dd07a589d7d14425dc96a
+grch37-canonical-transcript-features-gencode-v1.gtf.gz	a22164d5e64fae10c2b23ced445d0d3d
