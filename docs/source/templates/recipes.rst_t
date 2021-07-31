@@ -41,6 +41,7 @@ Available Data Packages
             <div class="row">
                 <div class="col-sm-12">
                     <p><center><small> NOTE: A <b>GGD Channel</b> selection is required before a <b>Species</b> selection and a <b>Species</b> selection is required before a <b>Genome Build</b> selection </small></center></p>
+                    <p><center><medium> <br> If you use GGD, please cite the <a href="https://www.nature.com/articles/s41467-021-22381-z"> Nature Communications GGD paper</a>  </medium></center></p>
                 </div>
             </div>
             <hr>

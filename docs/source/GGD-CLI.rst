@@ -8,6 +8,11 @@ GGD Commands
 
 **To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
+
+
 The ggd command line interface (cli) has multiple tools for data access and local management. Below you can find a short
 description of each tool, as well as links to specific pages about each. 
 

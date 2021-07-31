@@ -11,6 +11,10 @@ Using GGD
 
 **To request a new data recipe please fill out the** `GGD Recipe Request <https://forms.gle/3WEWgGGeh7ohAjcJA>`_ **Form.** 
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
+
 1. Install conda
 ----------------
 ggd requires the conda package management system be installed on your system. Loading conda from a module

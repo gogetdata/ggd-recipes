@@ -7,6 +7,9 @@ GGD meta-recipes
 
 **To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
 
 GGD supports the creation and use of non-specific recipes called `meta-recipe`. Meta-recipes are general recipes that can be used to access more specific recipes 
 based on an Identifier. For example, the Gene Expression Omnibus (GEO) database is a large database of data from gene expression experiments: http://www.ncbi.nlm.nih.gov/geo. 

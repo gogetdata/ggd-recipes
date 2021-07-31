@@ -5,6 +5,10 @@ GGD Quick Start
 
 [:ref:`Click here to return to the home page <home-page>`]
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
+
 **To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
 
 Go Get Data (ggd) is a genomics data management system that provides access to processed and curated genomic data files. 

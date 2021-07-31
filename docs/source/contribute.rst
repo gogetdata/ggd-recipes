@@ -7,6 +7,11 @@ Contribute
 
 **To see and/or search for data packages available through GGD, see:** :ref:`Available data packages <recipes>`
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
+
+
 Similar to **Conda** and **Bioconda**, ggd encourages and relies on community contributions. Our vision is that
 ggd will become a widely used data management system in genomics and other research fields. ggd will help reduce
 the time it takes to find, extract, and process the necessary data for any analysis and support research

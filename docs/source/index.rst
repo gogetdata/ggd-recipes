@@ -15,6 +15,10 @@
 
 **For details on creating and adding recipes to ggd see the** :ref:`Contribute <make-data-packages>` **page.**
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
+
 Go Get Data (ggd) is a data management system that provides access to data packages containing auto curated genomic data.
 ggd data packages contain all necessary information for data extraction, handling, and processing. With a  growing number 
 of scientific datasets, ggd provides access to these datasets without the hassle of finding, downloading, and processing them
@@ -453,5 +457,6 @@ Contents:
    contribute
    private_recipes
    workflows
+   cite
    recipes
 

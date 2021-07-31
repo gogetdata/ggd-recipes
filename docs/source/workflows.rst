@@ -5,6 +5,9 @@ Using GGD in Workflows
 
 [:ref:`Click here to return to the home page <home-page>`]
 
+.. important::
+
+    If you use GGD, please cite the `Nature Communications GGD paper <https://www.nature.com/articles/s41467-021-22381-z>`_
 
 GGD and Workflows 
 +++++++++++++++++
